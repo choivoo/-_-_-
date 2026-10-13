@@ -1,5 +1,5 @@
 # dodge b: stamina, cooldown, i-frames (tag+resistance), wall/edge-safe stepwise teleport
-scoreboard players operation @s bce_stam -= #cost_dodge bce_sys
+scoreboard players operation @s bce_stam -= _cost_dodge bce_sys
 scoreboard players set @s bce_cddodge 24
 scoreboard players set @s bce_iframe 10
 tag @s add bce_iframe

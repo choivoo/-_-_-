@@ -6,4 +6,4 @@ inputpermission set @s movement disabled
 inputpermission set @s camera disabled
 clear @s paper
 give @s paper 1
-execute if score #bstate bce_sys matches 0 run function bosses/summon
+execute if score _bstate bce_sys matches 0 run function bosses/summon

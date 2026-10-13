@@ -1,5 +1,5 @@
 # ULTIMATE step 1/4 (prepare): invulnerable while charging
-scoreboard players operation @s bce_stam -= #cost_judge bce_sys
+scoreboard players operation @s bce_stam -= _cost_judge bce_sys
 scoreboard players set @s bce_cdjudge 600
 scoreboard players set @s bce_ultt 1
 scoreboard players set @s bce_iframe 50

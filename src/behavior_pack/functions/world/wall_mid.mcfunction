@@ -1,4 +1,4 @@
-scoreboard players set #wall bce_sys 3
+scoreboard players set _wall bce_sys 3
 execute positioned 330 100 0 run function enemies/spawn_e4
 execute positioned 330 100 0 as @e[type=vindicator,r=3,tag=bce_e4] run function world/mid_boost
 tag @e[tag=bce_enemy,tag=!bce_wave,x=267,y=100,z=-38,dx=70,dy=30,dz=76] add bce_wave

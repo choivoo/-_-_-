@@ -1,45 +1,46 @@
-# zone 4 shell 0
-scoreboard players set #bzone bce_sys 4
-execute unless block 400 79 0 stone run scoreboard players set #bsm bce_sys 2
-execute unless block 400 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if block 400 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 400 79 0 stone run scoreboard players set #bstage bce_sys 1
-execute if block 400 79 0 stone run fill 374 100 -20 378 126 20 polished_blackstone_bricks
-execute if block 400 79 0 stone run fill 374 100 -4 378 112 4 air
-execute if block 400 79 0 stone run fill 374 113 -5 378 113 5 chiseled_polished_blackstone
-execute if block 400 79 0 stone run fill 373 100 -12 373 122 -12 blackstone
-execute if block 400 79 0 stone run setblock 373 123 -12 chiseled_polished_blackstone
-execute if block 400 79 0 stone run setblock 372 105 -12 soul_lantern
-execute if block 400 79 0 stone run fill 373 100 -8 373 122 -8 blackstone
-execute if block 400 79 0 stone run setblock 373 123 -8 chiseled_polished_blackstone
-execute if block 400 79 0 stone run setblock 372 105 -8 soul_lantern
-execute if block 400 79 0 stone run fill 373 100 8 373 122 8 blackstone
-execute if block 400 79 0 stone run setblock 373 123 8 chiseled_polished_blackstone
-execute if block 400 79 0 stone run setblock 372 105 8 soul_lantern
-execute if block 400 79 0 stone run fill 373 100 12 373 122 12 blackstone
-execute if block 400 79 0 stone run setblock 373 123 12 chiseled_polished_blackstone
-execute if block 400 79 0 stone run setblock 372 105 12 soul_lantern
-execute if block 400 79 0 stone run setblock 374 127 -20 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 -18 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 -16 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 -14 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 -12 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 -10 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 -8 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 -6 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 -4 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 -2 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 0 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 2 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 4 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 6 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 8 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 10 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 12 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 14 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 16 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 18 polished_blackstone_bricks
-execute if block 400 79 0 stone run setblock 374 127 20 polished_blackstone_bricks
-execute if block 400 79 0 stone run scoreboard players add #bstep bce_sys 1
+# zone 3 detail 6
+scoreboard players set _bzone bce_sys 3
+function build/ready_z3
+execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bstage bce_sys 3
+execute if score _bready bce_sys matches 1 run fill 269 102 -19 271 102 -19 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 271 100 21 273 100 21 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 270 100 22 274 100 22 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 269 100 23 275 100 23 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 269 100 24 275 100 24 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 269 100 25 275 100 25 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 270 100 26 274 100 26 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 271 100 27 273 100 27 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 271 101 22 273 101 22 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 270 101 23 274 101 23 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 270 101 24 274 101 24 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 270 101 25 274 101 25 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 271 101 26 273 101 26 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 271 102 23 273 102 23 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 271 102 24 273 102 24 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 271 102 25 273 102 25 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 327 100 -33 329 100 -33 cobblestone
+execute if score _bready bce_sys matches 1 run fill 326 100 -32 330 100 -32 cobblestone
+execute if score _bready bce_sys matches 1 run fill 325 100 -31 331 100 -31 cobblestone
+execute if score _bready bce_sys matches 1 run fill 325 100 -30 331 100 -30 cobblestone
+execute if score _bready bce_sys matches 1 run fill 325 100 -29 331 100 -29 cobblestone
+execute if score _bready bce_sys matches 1 run fill 326 100 -28 330 100 -28 cobblestone
+execute if score _bready bce_sys matches 1 run fill 327 100 -27 329 100 -27 cobblestone
+execute if score _bready bce_sys matches 1 run fill 327 101 -32 329 101 -32 cobblestone
+execute if score _bready bce_sys matches 1 run fill 326 101 -31 330 101 -31 cobblestone
+execute if score _bready bce_sys matches 1 run fill 326 101 -30 330 101 -30 cobblestone
+execute if score _bready bce_sys matches 1 run fill 326 101 -29 330 101 -29 cobblestone
+execute if score _bready bce_sys matches 1 run fill 327 101 -28 329 101 -28 cobblestone
+execute if score _bready bce_sys matches 1 run fill 327 102 -31 329 102 -31 cobblestone
+execute if score _bready bce_sys matches 1 run fill 327 102 -30 329 102 -30 cobblestone
+execute if score _bready bce_sys matches 1 run fill 327 102 -29 329 102 -29 cobblestone
+execute if score _bready bce_sys matches 1 run fill 329 100 27 331 100 27 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 328 100 28 332 100 28 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 327 100 29 333 100 29 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 327 100 30 333 100 30 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 327 100 31 333 100 31 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1

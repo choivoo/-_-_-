@@ -62,10 +62,10 @@ def pure_commands():
     out_dir = os.path.join(SRC, "pure_commands")
     for sub in ('bootstrap', 'command_blocks', 'combat', 'gameplay', 'cutscenes'):
         shutil.rmtree(os.path.join(out_dir, sub), ignore_errors=True)
-    M = lambda n: "execute if score #m%d bce_sys matches 0 run " % n
-    sched = ["scoreboard players add #tick bce_sys 1"]
+    M = lambda n: "execute if score _m%d bce_sys matches 0 run " % n
+    sched = ["scoreboard players add _tick bce_sys 1"]
     for n in (5, 10, 20):
-        sched += ["scoreboard players operation #m%d bce_sys = #tick bce_sys" % n, "scoreboard players operation #m%d bce_sys %%= #c%d bce_sys" % (n, n)]
+        sched += ["scoreboard players operation _m%d bce_sys = _tick bce_sys" % n, "scoreboard players operation _m%d bce_sys %%= _c%d bce_sys" % (n, n)]
     groups = {
         "bootstrap/01_install": ([("bootstrap/objectives", ""), ("bootstrap/gamerules", ""), ("bootstrap/constants", "")], []),
         "command_blocks/A_essential_loop": ([("player/new_players", ""), ("player/input", ""), ("player/timers", ""), ("player/stamina", M(5)), ("ui/hud", M(5))], sched),
@@ -136,7 +136,35 @@ def package():
     return sorted(os.listdir(final))
 
 
+def package_oneclick():
+    """dist/BCE_1.0_OneClick: the mcaddon/source/guide/report. The .mcworld/.mctemplate are added by tools/make_world.py (real BDS-built world)."""
+    out = os.path.join(ROOT, "dist", "BCE_1.0_OneClick")
+    os.makedirs(out, exist_ok=True)
+    for f in os.listdir(out):
+        if f.endswith((".mcaddon", ".md")) or f in ("BCE_1.0_AutoStart_Source.zip",):
+            os.remove(os.path.join(out, f))
+    with zipfile.ZipFile(os.path.join(out, "BCE_Enhanced_1.0_AutoStart.mcaddon"), "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+        zipdir(z, BP, "BCE_Behavior")
+        zipdir(z, RP, "BCE_Resources")
+    docs = ["COMMAND_ONLY_GUIDE.md", "COMPATIBILITY.md", "PROJECT_STATUS.md", "README.md", "INSTALL_GUIDE_1.0.md", "INSTALL_IPAD.md", "AUTOSTART_TEST_REPORT.md", "TEST_REPORT.md", "CHANGELOG.md", "GATES.md"]
+    with zipfile.ZipFile(os.path.join(out, "BCE_1.0_AutoStart_Source.zip"), "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+        for top in ("generators", "src", "reports", "tools"):
+            for root, dirs, fs in os.walk(os.path.join(ROOT, top)):
+                dirs[:] = [d for d in dirs if d != "__pycache__"]
+                for f in sorted(fs):
+                    full = os.path.join(root, f)
+                    z.write(full, "BCE_1.0_AutoStart_Source/" + os.path.relpath(full, ROOT).replace(os.sep, "/"))
+        for d in docs + ["build.sh"]:
+            if os.path.exists(os.path.join(ROOT, d)):
+                z.write(os.path.join(ROOT, d), "BCE_1.0_AutoStart_Source/" + d)
+    shutil.copy(os.path.join(ROOT, "INSTALL_IPAD.md"), os.path.join(out, "BCE_1.0_iPad_Install_Guide.md"))
+    shutil.copy(os.path.join(ROOT, "AUTOSTART_TEST_REPORT.md"), os.path.join(out, "BCE_1.0_AutoStart_Test_Report.md"))
+    return sorted(os.listdir(out))
+
+
 if __name__ == "__main__":
     manifests(); lang(); particle()
     pure_commands()
     print(package())
+    if os.path.exists(os.path.join(ROOT, 'INSTALL_IPAD.md')) and os.path.exists(os.path.join(ROOT, 'AUTOSTART_TEST_REPORT.md')):
+        print(package_oneclick())

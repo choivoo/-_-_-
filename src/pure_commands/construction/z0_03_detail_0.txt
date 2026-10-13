@@ -142,6 +142,17 @@ setblock 28 100 8 hay_block
 setblock 28 101 8 hay_block
 setblock 30 100 -12 fletching_table
 setblock 30 100 12 fletching_table
+fill 21 100 -11 23 100 -9 polished_andesite
+setblock 22 100 -10 gilded_blackstone
+setblock 22 101 -10 smithing_table
+fill 21 101 -11 21 102 -11 chiseled_stone_bricks
+setblock 21 103 -11 lantern
+fill 23 101 -11 23 102 -11 chiseled_stone_bricks
+setblock 23 103 -11 lantern
+fill 21 101 -9 21 102 -9 chiseled_stone_bricks
+setblock 21 103 -9 lantern
+fill 23 101 -9 23 102 -9 chiseled_stone_bricks
+setblock 23 103 -9 lantern
 fill 40 99 -2 59 99 2 polished_andesite
 fill 40 99 -3 59 99 -3 stone_bricks
 fill 40 99 3 59 99 3 stone_bricks

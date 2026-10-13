@@ -1,15 +1,56 @@
-# zone 4 probe
-scoreboard players set #bzone bce_sys 4
-scoreboard players set #bstage bce_sys 0
-scoreboard players set #bzstart bce_sys 119
-scoreboard players set #bsm bce_sys 2
-tellraw @a {"rawtext":[{"text":"§e[BCE] 구역 5/5 건설 시작: 검은별의 성채"}]}
-tickingarea add circle 400 100 0 4 bce_z4
-setblock 400 79 0 stone
-execute if block 400 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 400 79 0 stone run scoreboard players set #bwait bce_sys 0
-execute if block 400 79 0 stone run scoreboard players add #bstep bce_sys 1
-execute unless block 400 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+# zone 3 probe
+scoreboard players set _bzone bce_sys 3
+function build/ready_z3
+scoreboard players set _bstage bce_sys 0
+scoreboard players set _bzstart bce_sys 119
+scoreboard players set _bsm bce_sys 2
+tickingarea add 260 100 -44 360 100 44 bce_z3 true
+setblock 264 79 -40 stone
+setblock 264 79 -24 stone
+setblock 264 79 -8 stone
+setblock 264 79 8 stone
+setblock 264 79 24 stone
+setblock 264 79 40 stone
+setblock 280 79 -40 stone
+setblock 280 79 -24 stone
+setblock 280 79 -8 stone
+setblock 280 79 8 stone
+setblock 280 79 24 stone
+setblock 280 79 40 stone
+setblock 296 79 -40 stone
+setblock 296 79 -24 stone
+setblock 296 79 -8 stone
+setblock 296 79 8 stone
+setblock 296 79 24 stone
+setblock 296 79 40 stone
+setblock 312 79 -40 stone
+setblock 312 79 -24 stone
+setblock 312 79 -8 stone
+setblock 312 79 8 stone
+setblock 312 79 24 stone
+setblock 312 79 40 stone
+setblock 328 79 -40 stone
+setblock 328 79 -24 stone
+setblock 328 79 -8 stone
+setblock 328 79 8 stone
+setblock 328 79 24 stone
+setblock 328 79 40 stone
+setblock 344 79 -40 stone
+setblock 344 79 -24 stone
+setblock 344 79 -8 stone
+setblock 344 79 8 stone
+setblock 344 79 24 stone
+setblock 344 79 40 stone
+setblock 360 79 -40 stone
+setblock 360 79 -24 stone
+setblock 360 79 -8 stone
+setblock 360 79 8 stone
+setblock 360 79 24 stone
+setblock 360 79 40 stone
+function build/ready_z3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bwait bce_sys 0
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7

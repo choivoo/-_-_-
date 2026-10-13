@@ -1,39 +1,25 @@
-# zone 3 detail 7
-scoreboard players set #bzone bce_sys 3
-execute unless block 300 79 0 stone run scoreboard players set #bsm bce_sys 2
-execute unless block 300 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if block 300 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 300 79 0 stone run scoreboard players set #bstage bce_sys 3
-execute if block 300 79 0 stone run fill 328 100 32 332 100 32 mossy_cobblestone
-execute if block 300 79 0 stone run fill 329 100 33 331 100 33 mossy_cobblestone
-execute if block 300 79 0 stone run fill 329 101 28 331 101 28 mossy_cobblestone
-execute if block 300 79 0 stone run fill 328 101 29 332 101 29 mossy_cobblestone
-execute if block 300 79 0 stone run fill 328 101 30 332 101 30 mossy_cobblestone
-execute if block 300 79 0 stone run fill 328 101 31 332 101 31 mossy_cobblestone
-execute if block 300 79 0 stone run fill 329 101 32 331 101 32 mossy_cobblestone
-execute if block 300 79 0 stone run fill 329 102 29 331 102 29 mossy_cobblestone
-execute if block 300 79 0 stone run fill 329 102 30 331 102 30 mossy_cobblestone
-execute if block 300 79 0 stone run fill 329 102 31 331 102 31 mossy_cobblestone
-execute if block 300 79 0 stone run fill 276 100 -14 276 101 -6 oak_fence
-execute if block 300 79 0 stone run fill 276 100 -14 276 102 -14 spruce_log
-execute if block 300 79 0 stone run fill 276 100 -10 276 102 -10 spruce_log
-execute if block 300 79 0 stone run fill 276 100 -6 276 102 -6 spruce_log
-execute if block 300 79 0 stone run fill 276 100 6 276 101 14 oak_fence
-execute if block 300 79 0 stone run fill 276 100 6 276 102 6 spruce_log
-execute if block 300 79 0 stone run fill 276 100 10 276 102 10 spruce_log
-execute if block 300 79 0 stone run fill 276 100 14 276 102 14 spruce_log
-execute if block 300 79 0 stone run fill 288 100 -20 288 101 -12 oak_fence
-execute if block 300 79 0 stone run fill 288 100 -20 288 102 -20 spruce_log
-execute if block 300 79 0 stone run fill 288 100 -16 288 102 -16 spruce_log
-execute if block 300 79 0 stone run fill 288 100 -12 288 102 -12 spruce_log
-execute if block 300 79 0 stone run fill 288 100 12 288 101 20 oak_fence
-execute if block 300 79 0 stone run fill 288 100 12 288 102 12 spruce_log
-execute if block 300 79 0 stone run fill 288 100 16 288 102 16 spruce_log
-execute if block 300 79 0 stone run fill 288 100 20 288 102 20 spruce_log
-execute if block 300 79 0 stone run fill 322 100 -10 322 101 -10 stone_bricks
-execute if block 300 79 0 stone run setblock 322 102 -10 lantern
-execute if block 300 79 0 stone run fill 322 100 10 322 101 10 stone_bricks
-execute if block 300 79 0 stone run setblock 322 102 10 lantern
-execute if block 300 79 0 stone run scoreboard players add #bstep bce_sys 1
+# zone 2 light 0
+scoreboard players set _bzone bce_sys 2
+function build/ready_z2
+execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bstage bce_sys 4
+execute if score _bready bce_sys matches 1 run setblock 185 90 5 lantern
+execute if score _bready bce_sys matches 1 run setblock 190 90 5 lantern
+execute if score _bready bce_sys matches 1 run setblock 195 90 5 lantern
+execute if score _bready bce_sys matches 1 run setblock 200 90 5 lantern
+execute if score _bready bce_sys matches 1 run setblock 205 90 5 lantern
+execute if score _bready bce_sys matches 1 run setblock 210 90 10 lantern
+execute if score _bready bce_sys matches 1 run setblock 215 90 10 lantern
+execute if score _bready bce_sys matches 1 run setblock 220 90 10 lantern
+execute if score _bready bce_sys matches 1 run setblock 225 90 10 lantern
+execute if score _bready bce_sys matches 1 run setblock 188 94 0 sea_lantern
+execute if score _bready bce_sys matches 1 run setblock 224 95 0 sea_lantern
+execute if score _bready bce_sys matches 1 run fill 190 87 6 190 93 6 end_rod
+execute if score _bready bce_sys matches 1 run setblock 190 94 6 sea_lantern
+execute if score _bready bce_sys matches 1 run fill 236 100 4 236 112 4 end_rod
+execute if score _bready bce_sys matches 1 run setblock 236 113 4 sea_lantern
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1

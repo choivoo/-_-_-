@@ -90,7 +90,7 @@
       "bce:hit": {
         "queue_command": {
           "command": [
-            "scoreboard players remove #bhp bce_sys 6"
+            "scoreboard players remove _bhp bce_sys 6"
           ]
         }
       }

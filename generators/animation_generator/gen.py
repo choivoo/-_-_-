@@ -57,7 +57,7 @@ def render_controller(m):
 
 def server_entity(m):
     s = m["server"]
-    hit = {"queue_command": {"command": ["scoreboard players remove #bhp bce_sys 6"]}}
+    hit = {"queue_command": {"command": ["scoreboard players remove _bhp bce_sys 6"]}}
     return {"format_version": "1.20.10", "minecraft:entity": {
         "description": {"identifier": m["identifier"], "is_spawnable": True, "is_summonable": True, "is_experimental": False},
         "components": {

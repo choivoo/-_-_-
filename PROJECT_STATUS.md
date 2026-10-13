@@ -30,3 +30,7 @@
 | 고급 UI(HP바 등) | NOT_STARTED | 터치 UI 훼손 위험 |
 | 멀티플레이 | PARTIAL | 개인 상태 분리, 월드 플래그·보스는 공유 |
 | 실기기 20항목 | NOT_STARTED | |
+
+## One-Click Play Edition status
+Implemented + verified on real BDS 1.21.80.3 (headless client, `tools/e2e.py all` 14/14, `tools/e2e.py S` 5/5 on the shipped .mcworld).
+NOT RUN: real iPad / Bedrock client import and play (TEST 10); `.mctemplate` import. Gate G remains NOT RUN.

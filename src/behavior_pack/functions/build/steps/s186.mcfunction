@@ -1,9 +1,14 @@
-# tb zone 4 release
-scoreboard players set #bzone bce_sys 4
-execute unless block 400 79 0 stone run scoreboard players set #bsm bce_sys 2
-execute unless block 400 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if block 400 79 0 stone run tickingarea remove bce_z4
-execute if block 400 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 400 79 0 stone run scoreboard players add #bstep bce_sys 1
+# tb zone 1 load 0
+scoreboard players set _bzone bce_sys 1
+function build/ready_z1
+execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bstage bce_sys 1
+execute if score _bready bce_sys matches 1 run structure load bce:z1_q00_0 60 80 -40
+execute if score _bready bce_sys matches 1 run structure load bce:z1_q01_0 60 80 0
+execute if score _bready bce_sys matches 1 run structure load bce:z1_q10_0 100 80 -40
+execute if score _bready bce_sys matches 1 run structure load bce:z1_q11_0 100 80 0
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1

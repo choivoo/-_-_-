@@ -1,223 +1,281 @@
 # BCE pure-command export: cutscenes/E_cutscene_dispatch
 # 1st line = REPEATING command block (always active). all others = CHAIN blocks (always active, unconditional), placed in order.
-# One command per line. Total: 219
+# One command per line. Total: 277
 
 0001  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 0 run camera @s set minecraft:free pos 411 103 5 facing 419 103.5 0
 0002  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 0 run playsound mob.wither.death @s ~ ~ ~ 0.8 0.8
 0003  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 0 run particle minecraft:huge_explosion_emitter 419 102 0
 0004  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 30 run camera @s set minecraft:free ease 3 in_sine pos 409 104 3 facing 419 104 0
 0005  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 40 run titleraw @s actionbar {"rawtext":[{"text":"§f검은별의 힘이 무너져 내린다…"}]}
-0006  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 60 run particle minecraft:totem_particle 419 103 0
-0007  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 70 run titleraw @s actionbar {"rawtext":[{"text":"§f검은별의 힘이 무너져 내린다…"}]}
-0008  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 90 if score #shake bce_sys matches 1 run camerashake add @s 0.3 1 positional
-0009  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 100 run titleraw @s actionbar {"rawtext":[{"text":"§f검은별의 힘이 무너져 내린다…"}]}
-0010  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 130 run camera @s fade time 0.5 0.2 0.5 color 0 0 0
-0011  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 140 run kill @e[tag=bce_boss]
-0012  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 140 run fill 402 99 -17 436 99 17 polished_blackstone_bricks
-0013  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 140 run fill 412 99 -7 426 99 7 gilded_blackstone
-0014  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 140 run fill 413 99 -6 425 99 6 polished_blackstone
-0015  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s run scoreboard players add @s bce_cst 1
-0016  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run camera @s clear
-0017  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run inputpermission set @s movement enabled
-0018  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run inputpermission set @s camera enabled
-0019  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run tag @s remove bce_cs
-0020  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run scoreboard players set @s bce_cs 0
-0021  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run scoreboard players set @s bce_cst 0
-0022  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run clear @s paper
-0023  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run title @s clear
-0024  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score #bstate bce_sys matches 3 run scoreboard players set #bstate bce_sys 4
-0025  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score #bstate bce_sys matches 3 run scoreboard players set #bdead bce_sys 1
-0026  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score #bstate bce_sys matches 3 run kill @e[tag=bce_boss]
-0027  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score #bstate bce_sys matches 3 run fill 402 99 -17 436 99 17 polished_blackstone_bricks
-0028  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score #bstate bce_sys matches 3 run fill 412 99 -7 426 99 7 gilded_blackstone
-0029  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score #bstate bce_sys matches 3 run fill 413 99 -6 425 99 6 polished_blackstone
-0030  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score #bstate bce_sys matches 3 run scoreboard players set @a[scores={bce_q=7}] bce_q 8
-0031  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score #bstate bce_sys matches 3 run scoreboard players set #qflash bce_sys 60
-0032  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run scoreboard players set @s[scores={bce_q=7}] bce_q 8
-0033  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run give @s golden_apple 3
-0034  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run tag @s add bce_cs
-0035  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run scoreboard players set @s bce_cs 4
-0036  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run scoreboard players set @s bce_cst 0
-0037  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run inputpermission set @s movement disabled
-0038  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run inputpermission set @s camera disabled
-0039  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run clear @s paper
-0040  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run give @s paper 1
-0041  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run time set 23000
-0042  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 run camera @s fade time 0.4 0.2 0.5 color 0 0 0
-0043  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 run camera @s set minecraft:free pos 404 106 0 facing 419 103 0
-0044  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run scoreboard players set #bstate bce_sys 1
-0045  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run scoreboard players set #bhp bce_sys 1000
-0046  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run scoreboard players set #bphase bce_sys 1
-0047  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run scoreboard players set #btimer bce_sys 0
-0048  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run scoreboard players set #binv bce_sys 0
-0049  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run scoreboard players set #bfin bce_sys 0
-0050  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run scoreboard players set #bftimer bce_sys 0
-0051  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run scoreboard players set #bq bce_sys 0
-0052  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run scoreboard players set #btrack bce_sys 1
-0053  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run scoreboard players set #bempty bce_sys 0
-0054  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run scoreboard players set #bmiss bce_sys 0
-0055  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run kill @e[tag=bce_boss]
-0056  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 if score #mode bce_sys matches 0 run summon wither_skeleton 419 100 0 0 0 minecraft:entity_spawned "§c검은별의 수호자"
-0057  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 if score #mode bce_sys matches 1 run summon bce:citadel_guardian 419 100 0 0 0 minecraft:entity_spawned "§c검은별의 수호자"
-0058  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 positioned 419 100 0 run tag @e[type=wither_skeleton,r=4,tag=!bce_boss] add bce_boss
-0059  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 positioned 419 100 0 run tag @e[type=bce:citadel_guardian,r=4,tag=!bce_boss] add bce_boss
-0060  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run tag @e[tag=bce_boss] add bce_enemy
-0061  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 run effect @e[tag=bce_boss] slowness 100000 255 true
-0062  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score #bstate bce_sys matches 0 if score #mode bce_sys matches 1 run playanimation @e[tag=bce_boss] animation.bce_guardian.boss_intro
-0063  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 30 run playsound mob.wither.spawn @s ~ ~ ~ 0.8 0.7
-0064  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 40 run camera @s set minecraft:free ease 3.5 in_out_sine pos 412 103.5 7 facing 419 103.8 0
-0065  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 50 if score #shake bce_sys matches 1 run camerashake add @s 0.2 1.5 positional
-0066  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 100 run titleraw @s times 10 50 15
-0067  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 100 run titleraw @s subtitle {"rawtext":[{"text":"봉인된 기사"}]}
-0068  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 100 run titleraw @s title {"rawtext":[{"text":"§c검은별의 수호자"}]}
-0069  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 100 run playsound mob.enderdragon.growl @s ~ ~ ~ 0.6 0.6
-0070  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 150 run camera @s set minecraft:free ease 2.5 in_out_sine pos 407 104 -5 facing 419 103 0
-0071  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 205 run camera @s fade time 0.4 0 0.5 color 0 0 0
-0072  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 215 run playsound record.otherside @s ~ ~ ~ 0.8 1
-0073  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s run scoreboard players add @s bce_cst 1
-0074  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run camera @s clear
-0075  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run inputpermission set @s movement enabled
-0076  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run inputpermission set @s camera enabled
-0077  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run tag @s remove bce_cs
-0078  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run scoreboard players set @s bce_cs 0
-0079  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run scoreboard players set @s bce_cst 0
-0080  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run clear @s paper
-0081  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run title @s clear
-0082  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score #bstate bce_sys matches 1 run scoreboard players set #bstate bce_sys 2
-0083  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score #bstate bce_sys matches 1 run scoreboard players set #btimer bce_sys 0
-0084  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score #bstate bce_sys matches 1 run effect @e[tag=bce_boss] clear
-0085  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score #bstate bce_sys matches 1 if score #mode bce_sys matches 0 run effect @e[tag=bce_boss] weakness 100000 255 true
-0086  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score #bstate bce_sys matches 1 if score #mode bce_sys matches 0 run effect @e[tag=bce_boss] health_boost 100000 100 true
-0087  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score #bstate bce_sys matches 1 if score #mode bce_sys matches 0 run effect @e[tag=bce_boss] instant_health 1 20 true
-0088  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score #bstate bce_sys matches 1 if score #mode bce_sys matches 0 run effect @e[tag=bce_boss] resistance 100000 3 true
-0089  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score #bstate bce_sys matches 1 run tag @a[x=402,y=100,z=-17,dx=34,dy=25,dz=34] add bce_comb
-0090  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score #bstate bce_sys matches 1 run scoreboard players set @a[x=402,y=100,z=-17,dx=34,dy=25,dz=34] bce_ps 5
-0091  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score #bstate bce_sys matches 1 run tellraw @a[x=402,y=100,z=-17,dx=34,dy=25,dz=34] {"rawtext":[{"text":"§c[보스전] §f경고 표시를 보고 회피하세요!"}]}
-0092  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 0 run camera @s fade time 0 0.5 1.5 color 0 0 0
-0093  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 0 run camera @s set minecraft:free pos 400 112 -10 facing 419 104 0
-0094  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 0 run time set 23000
-0095  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 10 run camera @s set minecraft:free ease 8 in_out_sine pos 425 110 10 facing 419 104 0
-0096  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 20 run titleraw @s actionbar {"rawtext":[{"text":"§f검은별의 봉인이 다시 닫혔다."}]}
-0097  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 20 run playsound random.levelup @s ~ ~ ~ 0.6 0.9
-0098  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 50 run titleraw @s actionbar {"rawtext":[{"text":"§f검은별의 봉인이 다시 닫혔다."}]}
-0099  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 80 run titleraw @s actionbar {"rawtext":[{"text":"§f검은별의 봉인이 다시 닫혔다."}]}
-0100  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 180 run camera @s set minecraft:free ease 8 in_out_sine pos 419 125 0 facing 419 100 0
-0101  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 200 run titleraw @s actionbar {"rawtext":[{"text":"§f하늘 도시의 잔해 위로 새벽이 밝아온다."}]}
-0102  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 230 run titleraw @s actionbar {"rawtext":[{"text":"§f하늘 도시의 잔해 위로 새벽이 밝아온다."}]}
-0103  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 260 run titleraw @s actionbar {"rawtext":[{"text":"§f하늘 도시의 잔해 위로 새벽이 밝아온다."}]}
-0104  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 340 run titleraw @s times 20 60 20
-0105  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 340 run titleraw @s subtitle {"rawtext":[{"text":"검은별의 성채"}]}
-0106  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 340 run titleraw @s title {"rawtext":[{"text":"끝 — THE END"}]}
-0107  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 400 run camera @s fade time 0.5 0 0.5 color 0 0 0
-0108  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s run scoreboard players add @s bce_cst 1
-0109  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run camera @s clear
-0110  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run inputpermission set @s movement enabled
-0111  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run inputpermission set @s camera enabled
-0112  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run tag @s remove bce_cs
-0113  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run scoreboard players set @s bce_cs 0
-0114  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run scoreboard players set @s bce_cst 0
-0115  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run clear @s paper
-0116  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run title @s clear
-0117  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run scoreboard players set @s bce_ps 6
-0118  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. as @s run stopsound @s
-0119  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run tellraw @s {"rawtext":[{"text":"§6[완료] 검은별의 성채를 클리어했습니다. 플레이해 주셔서 감사합니다!"}]}
-0120  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run scoreboard players set #state bce_sys 12
-0121  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run time set 18000
-0122  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 0 run tp @s -7.5 100 0.5 facing 14 102 0
-0123  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 0 run camera @s fade time 0 2.5 1.5 color 0 0 0
-0124  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 0 run camera @s set minecraft:free pos -60 128 -75 facing 0 108 0
-0125  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 0 run playsound ambient.cave @s ~ ~ ~ 0.6 0.8
-0126  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 20 run titleraw @s actionbar {"rawtext":[{"text":"§f먼 폐허 너머로 바람이 분다…"}]}
-0127  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 50 run titleraw @s actionbar {"rawtext":[{"text":"§f먼 폐허 너머로 바람이 분다…"}]}
-0128  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 80 run playsound ambient.cave @s ~ ~ ~ 0.5 0.7
-0129  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 100 run camera @s set minecraft:free ease 8 in_out_sine pos -38 120 -48 facing 0 106 0
-0130  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 140 run titleraw @s actionbar {"rawtext":[{"text":"§f무너진 하늘 도시의 신전이 보인다."}]}
-0131  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 170 run titleraw @s actionbar {"rawtext":[{"text":"§f무너진 하늘 도시의 신전이 보인다."}]}
-0132  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 200 run titleraw @s actionbar {"rawtext":[{"text":"§f무너진 하늘 도시의 신전이 보인다."}]}
-0133  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 260 run camera @s fade time 0.5 0 0.75 color 0 0 0
-0134  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 270 run camera @s set minecraft:free pos -4 102.2 3.5 facing -8 100.3 0.5
-0135  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 290 run playsound random.orb @s ~ ~ ~ 0.5 0.6
-0136  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 300 run titleraw @s actionbar {"rawtext":[{"text":"§f…여기는… 어디지?"}]}
-0137  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 330 run titleraw @s actionbar {"rawtext":[{"text":"§f…여기는… 어디지?"}]}
-0138  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 360 run titleraw @s actionbar {"rawtext":[{"text":"§f…여기는… 어디지?"}]}
-0139  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 380 run fill 13 100 -2 15 106 2 air
-0140  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 380 run camera @s set minecraft:free ease 3 in_out_sine pos -2 103 0 facing 14 102 0
-0141  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 385 run playsound random.explode @s ~ ~ ~ 0.4 0.5
-0142  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 390 run particle minecraft:endrod 14 102 0
-0143  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 395 run particle minecraft:endrod 14 104 1
-0144  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 400 run particle minecraft:endrod 14 101 -1
-0145  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 420 run titleraw @s actionbar {"rawtext":[{"text":"§f신전 문 너머로 빛이 쏟아져 들어온다."}]}
-0146  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 450 run titleraw @s actionbar {"rawtext":[{"text":"§f신전 문 너머로 빛이 쏟아져 들어온다."}]}
-0147  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 480 run titleraw @s actionbar {"rawtext":[{"text":"§f신전 문 너머로 빛이 쏟아져 들어온다."}]}
-0148  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 500 run camera @s set minecraft:free ease 2 in_out_sine pos -7.5 101.62 0.5 facing 14 102 0
-0149  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 540 run camera @s fade time 0.5 0 0.75 color 0 0 0
-0150  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 560 run titleraw @s times 10 50 20
-0151  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 560 run titleraw @s subtitle {"rawtext":[{"text":"The Blackstar Citadel"}]}
-0152  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 560 run titleraw @s title {"rawtext":[{"text":"검은별의 성채"}]}
-0153  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 560 run playsound random.levelup @s ~ ~ ~ 0.5 0.7
-0154  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s run scoreboard players add @s bce_cst 1
-0155  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run camera @s clear
-0156  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run inputpermission set @s movement enabled
-0157  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run inputpermission set @s camera enabled
-0158  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run tag @s remove bce_cs
-0159  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run scoreboard players set @s bce_cs 0
-0160  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run scoreboard players set @s bce_cst 0
-0161  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run clear @s paper
-0162  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run title @s clear
-0163  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run scoreboard players set @s bce_ps 2
-0164  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run scoreboard players set @s bce_q 1
-0165  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run scoreboard players set @s bce_cp 0
-0166  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run spawnpoint @s -7 100 0
-0167  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run tellraw @s {"rawtext":[{"text":"§e[튜토리얼] §f앞으로 걸어가 보세요. 낮은 벽은 점프로 넘습니다."}]}
-0168  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 0 run camera @s fade time 0.3 0 0.4 color 0 0 0
-0169  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 4 run camera @s set minecraft:free pos 30 110 0 facing 62 106 0
-0170  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 8 run camera @s set minecraft:free ease 4.5 in_out_sine pos 44 112 0 facing 70 104 0
-0171  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 15 run titleraw @s actionbar {"rawtext":[{"text":"§f동쪽 다리 너머, 빛기둥 아래가 잿빛 마을이다."}]}
-0172  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 45 run titleraw @s actionbar {"rawtext":[{"text":"§f동쪽 다리 너머, 빛기둥 아래가 잿빛 마을이다."}]}
-0173  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 75 run titleraw @s actionbar {"rawtext":[{"text":"§f동쪽 다리 너머, 빛기둥 아래가 잿빛 마을이다."}]}
-0174  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 105 run titleraw @s actionbar {"rawtext":[{"text":"§f동쪽 다리 너머, 빛기둥 아래가 잿빛 마을이다."}]}
-0175  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 110 run camera @s fade time 0.3 0 0.4 color 0 0 0
-0176  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s run scoreboard players add @s bce_cst 1
-0177  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run camera @s clear
-0178  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run inputpermission set @s movement enabled
-0179  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run inputpermission set @s camera enabled
-0180  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run tag @s remove bce_cs
-0181  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run scoreboard players set @s bce_cs 0
-0182  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run scoreboard players set @s bce_cst 0
-0183  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run clear @s paper
-0184  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run title @s clear
-0185  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 0 run camera @s fade time 0.3 0 0.4 color 0 0 0
-0186  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 4 run camera @s set minecraft:free pos 236 108 0 facing 276 106 0
-0187  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 8 run camera @s set minecraft:free ease 4.5 in_out_sine pos 246 113 0 facing 286 112 0
-0188  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 15 run titleraw @s actionbar {"rawtext":[{"text":"§f다리 끝에 붕괴된 대성벽이 길을 막고 있다."}]}
-0189  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 45 run titleraw @s actionbar {"rawtext":[{"text":"§f다리 끝에 붕괴된 대성벽이 길을 막고 있다."}]}
-0190  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 75 run titleraw @s actionbar {"rawtext":[{"text":"§f다리 끝에 붕괴된 대성벽이 길을 막고 있다."}]}
-0191  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 105 run titleraw @s actionbar {"rawtext":[{"text":"§f다리 끝에 붕괴된 대성벽이 길을 막고 있다."}]}
-0192  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 110 run camera @s fade time 0.3 0 0.4 color 0 0 0
-0193  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s run scoreboard players add @s bce_cst 1
-0194  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run camera @s clear
-0195  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run inputpermission set @s movement enabled
-0196  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run inputpermission set @s camera enabled
-0197  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run tag @s remove bce_cs
-0198  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run scoreboard players set @s bce_cs 0
-0199  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run scoreboard players set @s bce_cst 0
-0200  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run clear @s paper
-0201  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run title @s clear
-0202  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 0 run camera @s fade time 0.3 0 0.4 color 0 0 0
-0203  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 4 run camera @s set minecraft:free pos 338 112 0 facing 389 118 0
-0204  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 8 run camera @s set minecraft:free ease 6 in_out_sine pos 346 118 0 facing 389 150 0
-0205  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 15 run titleraw @s actionbar {"rawtext":[{"text":"§f저 멀리, 검은별의 성채 첨탑이 하늘을 찌른다."}]}
-0206  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 30 run playsound mob.enderdragon.growl @s ~ ~ ~ 0.3 0.5
-0207  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 45 run titleraw @s actionbar {"rawtext":[{"text":"§f저 멀리, 검은별의 성채 첨탑이 하늘을 찌른다."}]}
-0208  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 75 run titleraw @s actionbar {"rawtext":[{"text":"§f저 멀리, 검은별의 성채 첨탑이 하늘을 찌른다."}]}
-0209  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 105 run titleraw @s actionbar {"rawtext":[{"text":"§f저 멀리, 검은별의 성채 첨탑이 하늘을 찌른다."}]}
-0210  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 150 run camera @s fade time 0.3 0 0.4 color 0 0 0
-0211  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s run scoreboard players add @s bce_cst 1
-0212  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run camera @s clear
-0213  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run inputpermission set @s movement enabled
-0214  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run inputpermission set @s camera enabled
-0215  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run tag @s remove bce_cs
-0216  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run scoreboard players set @s bce_cs 0
-0217  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run scoreboard players set @s bce_cst 0
-0218  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run clear @s paper
-0219  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run title @s clear
+0006  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 40 run inputpermission set @s movement disabled
+0007  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 40 run inputpermission set @s camera disabled
+0008  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 60 run particle minecraft:totem_particle 419 103 0
+0009  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 70 run titleraw @s actionbar {"rawtext":[{"text":"§f검은별의 힘이 무너져 내린다…"}]}
+0010  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 90 if score _shake bce_sys matches 1 run camerashake add @s 0.3 1 positional
+0011  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 100 run titleraw @s actionbar {"rawtext":[{"text":"§f검은별의 힘이 무너져 내린다…"}]}
+0012  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 100 run inputpermission set @s movement disabled
+0013  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 100 run inputpermission set @s camera disabled
+0014  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 130 run camera @s fade time 0.5 0.2 0.5 color 0 0 0
+0015  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 140 run kill @e[tag=bce_boss]
+0016  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 140 run fill 402 99 -17 436 99 17 polished_blackstone_bricks
+0017  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 140 run fill 412 99 -7 426 99 7 gilded_blackstone
+0018  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 140 run fill 413 99 -6 425 99 6 polished_blackstone
+0019  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s run scoreboard players add @s bce_cst 1
+0020  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run camera @s clear
+0021  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run inputpermission set @s movement enabled
+0022  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run inputpermission set @s camera enabled
+0023  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run tag @s remove bce_cs
+0024  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run scoreboard players set @s bce_cs 0
+0025  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run scoreboard players set @s bce_cst 0
+0026  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run clear @s paper
+0027  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run title @s clear
+0028  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score _bstate bce_sys matches 3 run scoreboard players set _bstate bce_sys 4
+0029  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score _bstate bce_sys matches 3 run scoreboard players set _bdead bce_sys 1
+0030  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score _bstate bce_sys matches 3 run kill @e[tag=bce_boss]
+0031  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score _bstate bce_sys matches 3 run fill 402 99 -17 436 99 17 polished_blackstone_bricks
+0032  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score _bstate bce_sys matches 3 run fill 412 99 -7 426 99 7 gilded_blackstone
+0033  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score _bstate bce_sys matches 3 run fill 413 99 -6 425 99 6 polished_blackstone
+0034  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score _bstate bce_sys matches 3 run scoreboard players set @a[scores={bce_q=7}] bce_q 8
+0035  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. if score _bstate bce_sys matches 3 run scoreboard players set _qflash bce_sys 60
+0036  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run scoreboard players set @s[scores={bce_q=7}] bce_q 8
+0037  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run give @s golden_apple 3
+0038  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run tag @s add bce_cs
+0039  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run scoreboard players set @s bce_cs 4
+0040  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run scoreboard players set @s bce_cst 0
+0041  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run inputpermission set @s movement disabled
+0042  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run inputpermission set @s camera disabled
+0043  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run clear @s paper
+0044  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run give @s paper 1
+0045  execute as @a[tag=bce_cs,scores={bce_cs=3}] at @s if score @s bce_cst matches 160.. run time set 23000
+0046  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 run camera @s fade time 0.4 0.2 0.5 color 0 0 0
+0047  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 run camera @s set minecraft:free pos 404 106 0 facing 419 103 0
+0048  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run scoreboard players set _bstate bce_sys 1
+0049  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run scoreboard players set _bhp bce_sys 1000
+0050  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run scoreboard players set _bphase bce_sys 1
+0051  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run scoreboard players set _btimer bce_sys 0
+0052  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run scoreboard players set _binv bce_sys 0
+0053  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run scoreboard players set _bfin bce_sys 0
+0054  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run scoreboard players set _bftimer bce_sys 0
+0055  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run scoreboard players set _bq bce_sys 0
+0056  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run scoreboard players set _btrack bce_sys 1
+0057  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run scoreboard players set _bempty bce_sys 0
+0058  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run scoreboard players set _bmiss bce_sys 0
+0059  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run kill @e[tag=bce_boss]
+0060  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 if score _mode bce_sys matches 0 run summon wither_skeleton 419 100 0 0 0 minecraft:entity_spawned "§c검은별의 수호자"
+0061  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 if score _mode bce_sys matches 1 run summon bce:citadel_guardian 419 100 0 0 0 minecraft:entity_spawned "§c검은별의 수호자"
+0062  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 positioned 419 100 0 run tag @e[type=wither_skeleton,r=4,tag=!bce_boss] add bce_boss
+0063  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 positioned 419 100 0 run tag @e[type=bce:citadel_guardian,r=4,tag=!bce_boss] add bce_boss
+0064  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run tag @e[tag=bce_boss] add bce_enemy
+0065  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 run effect @e[tag=bce_boss] slowness 100000 255 true
+0066  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 0 if score _bstate bce_sys matches 0 if score _mode bce_sys matches 1 run playanimation @e[tag=bce_boss] animation.bce_guardian.boss_intro
+0067  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 30 run playsound mob.wither.spawn @s ~ ~ ~ 0.8 0.7
+0068  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 40 run camera @s set minecraft:free ease 3.5 in_out_sine pos 412 103.5 7 facing 419 103.8 0
+0069  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 40 run inputpermission set @s movement disabled
+0070  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 40 run inputpermission set @s camera disabled
+0071  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 50 if score _shake bce_sys matches 1 run camerashake add @s 0.2 1.5 positional
+0072  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 100 run titleraw @s times 10 50 15
+0073  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 100 run titleraw @s subtitle {"rawtext":[{"text":"봉인된 기사"}]}
+0074  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 100 run titleraw @s title {"rawtext":[{"text":"§c검은별의 수호자"}]}
+0075  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 100 run playsound mob.enderdragon.growl @s ~ ~ ~ 0.6 0.6
+0076  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 100 run inputpermission set @s movement disabled
+0077  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 100 run inputpermission set @s camera disabled
+0078  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 150 run camera @s set minecraft:free ease 2.5 in_out_sine pos 407 104 -5 facing 419 103 0
+0079  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 160 run inputpermission set @s movement disabled
+0080  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 160 run inputpermission set @s camera disabled
+0081  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 205 run camera @s fade time 0.4 0 0.5 color 0 0 0
+0082  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 215 run playsound record.otherside @s ~ ~ ~ 0.8 1
+0083  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s run scoreboard players add @s bce_cst 1
+0084  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run camera @s clear
+0085  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run inputpermission set @s movement enabled
+0086  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run inputpermission set @s camera enabled
+0087  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run tag @s remove bce_cs
+0088  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run scoreboard players set @s bce_cs 0
+0089  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run scoreboard players set @s bce_cst 0
+0090  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run clear @s paper
+0091  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. run title @s clear
+0092  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score _bstate bce_sys matches 1 run scoreboard players set _bstate bce_sys 2
+0093  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score _bstate bce_sys matches 1 run scoreboard players set _btimer bce_sys 0
+0094  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score _bstate bce_sys matches 1 run effect @e[tag=bce_boss] clear
+0095  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score _bstate bce_sys matches 1 if score _mode bce_sys matches 0 run effect @e[tag=bce_boss] weakness 100000 255 true
+0096  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score _bstate bce_sys matches 1 if score _mode bce_sys matches 0 run effect @e[tag=bce_boss] health_boost 100000 100 true
+0097  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score _bstate bce_sys matches 1 if score _mode bce_sys matches 0 run effect @e[tag=bce_boss] instant_health 1 20 true
+0098  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score _bstate bce_sys matches 1 if score _mode bce_sys matches 0 run effect @e[tag=bce_boss] resistance 100000 3 true
+0099  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score _bstate bce_sys matches 1 run tag @a[x=402,y=100,z=-17,dx=34,dy=25,dz=34] add bce_comb
+0100  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score _bstate bce_sys matches 1 run scoreboard players set @a[x=402,y=100,z=-17,dx=34,dy=25,dz=34] bce_ps 5
+0101  execute as @a[tag=bce_cs,scores={bce_cs=2}] at @s if score @s bce_cst matches 240.. if score _bstate bce_sys matches 1 run tellraw @a[x=402,y=100,z=-17,dx=34,dy=25,dz=34] {"rawtext":[{"text":"§c[보스전] §f경고 표시를 보고 회피하세요!"}]}
+0102  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 0 run camera @s fade time 0 0.5 1.5 color 0 0 0
+0103  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 0 run camera @s set minecraft:free pos 400 112 -10 facing 419 104 0
+0104  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 0 run time set 23000
+0105  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 10 run camera @s set minecraft:free ease 8 in_out_sine pos 425 110 10 facing 419 104 0
+0106  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 20 run titleraw @s actionbar {"rawtext":[{"text":"§f검은별의 봉인이 다시 닫혔다."}]}
+0107  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 20 run playsound random.levelup @s ~ ~ ~ 0.6 0.9
+0108  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 40 run inputpermission set @s movement disabled
+0109  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 40 run inputpermission set @s camera disabled
+0110  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 50 run titleraw @s actionbar {"rawtext":[{"text":"§f검은별의 봉인이 다시 닫혔다."}]}
+0111  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 80 run titleraw @s actionbar {"rawtext":[{"text":"§f검은별의 봉인이 다시 닫혔다."}]}
+0112  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 100 run inputpermission set @s movement disabled
+0113  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 100 run inputpermission set @s camera disabled
+0114  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 160 run inputpermission set @s movement disabled
+0115  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 160 run inputpermission set @s camera disabled
+0116  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 180 run camera @s set minecraft:free ease 8 in_out_sine pos 419 125 0 facing 419 100 0
+0117  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 200 run titleraw @s actionbar {"rawtext":[{"text":"§f하늘 도시의 잔해 위로 새벽이 밝아온다."}]}
+0118  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 220 run inputpermission set @s movement disabled
+0119  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 220 run inputpermission set @s camera disabled
+0120  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 230 run titleraw @s actionbar {"rawtext":[{"text":"§f하늘 도시의 잔해 위로 새벽이 밝아온다."}]}
+0121  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 260 run titleraw @s actionbar {"rawtext":[{"text":"§f하늘 도시의 잔해 위로 새벽이 밝아온다."}]}
+0122  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 280 run inputpermission set @s movement disabled
+0123  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 280 run inputpermission set @s camera disabled
+0124  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 340 run titleraw @s times 20 60 20
+0125  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 340 run titleraw @s subtitle {"rawtext":[{"text":"검은별의 성채"}]}
+0126  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 340 run titleraw @s title {"rawtext":[{"text":"끝 — THE END"}]}
+0127  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 340 run inputpermission set @s movement disabled
+0128  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 340 run inputpermission set @s camera disabled
+0129  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 400 run camera @s fade time 0.5 0 0.5 color 0 0 0
+0130  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 400 run camera @s set minecraft:free pos 419 125 0 facing 419 100 0
+0131  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s run scoreboard players add @s bce_cst 1
+0132  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run camera @s clear
+0133  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run inputpermission set @s movement enabled
+0134  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run inputpermission set @s camera enabled
+0135  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run tag @s remove bce_cs
+0136  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run scoreboard players set @s bce_cs 0
+0137  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run scoreboard players set @s bce_cst 0
+0138  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run clear @s paper
+0139  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run title @s clear
+0140  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run scoreboard players set @s bce_ps 6
+0141  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. as @s run stopsound @s
+0142  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run tellraw @s {"rawtext":[{"text":"§6[완료] 검은별의 성채를 클리어했습니다. 플레이해 주셔서 감사합니다!"}]}
+0143  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run scoreboard players set _state bce_sys 12
+0144  execute as @a[tag=bce_cs,scores={bce_cs=4}] at @s if score @s bce_cst matches 420.. run time set 18000
+0145  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 0 run tp @s -7.5 100 0.5 facing 14 102 0
+0146  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 0 run camera @s fade time 0 2.5 1.5 color 0 0 0
+0147  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 0 run camera @s set minecraft:free pos -60 128 -75 facing 0 108 0
+0148  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 0 run playsound ambient.cave @s ~ ~ ~ 0.6 0.8
+0149  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 20 run titleraw @s actionbar {"rawtext":[{"text":"§f먼 폐허 너머로 바람이 분다…"}]}
+0150  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 40 run inputpermission set @s movement disabled
+0151  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 40 run inputpermission set @s camera disabled
+0152  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 50 run titleraw @s actionbar {"rawtext":[{"text":"§f먼 폐허 너머로 바람이 분다…"}]}
+0153  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 60 run camera @s set minecraft:free pos -60 128 -75 facing 0 108 0
+0154  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 80 run playsound ambient.cave @s ~ ~ ~ 0.5 0.7
+0155  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 100 run camera @s set minecraft:free ease 8 in_out_sine pos -38 120 -48 facing 0 106 0
+0156  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 100 run inputpermission set @s movement disabled
+0157  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 100 run inputpermission set @s camera disabled
+0158  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 140 run titleraw @s actionbar {"rawtext":[{"text":"§f무너진 하늘 도시의 신전이 보인다."}]}
+0159  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 160 run inputpermission set @s movement disabled
+0160  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 160 run inputpermission set @s camera disabled
+0161  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 170 run titleraw @s actionbar {"rawtext":[{"text":"§f무너진 하늘 도시의 신전이 보인다."}]}
+0162  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 200 run titleraw @s actionbar {"rawtext":[{"text":"§f무너진 하늘 도시의 신전이 보인다."}]}
+0163  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 220 run inputpermission set @s movement disabled
+0164  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 220 run inputpermission set @s camera disabled
+0165  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 260 run camera @s fade time 0.5 0 0.75 color 0 0 0
+0166  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 270 run camera @s set minecraft:free pos -4 102.2 3.5 facing -8 100.3 0.5
+0167  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 280 run inputpermission set @s movement disabled
+0168  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 280 run inputpermission set @s camera disabled
+0169  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 290 run playsound random.orb @s ~ ~ ~ 0.5 0.6
+0170  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 300 run titleraw @s actionbar {"rawtext":[{"text":"§f…여기는… 어디지?"}]}
+0171  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 330 run titleraw @s actionbar {"rawtext":[{"text":"§f…여기는… 어디지?"}]}
+0172  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 330 run camera @s set minecraft:free pos -4 102.2 3.5 facing -8 100.3 0.5
+0173  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 340 run inputpermission set @s movement disabled
+0174  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 340 run inputpermission set @s camera disabled
+0175  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 360 run titleraw @s actionbar {"rawtext":[{"text":"§f…여기는… 어디지?"}]}
+0176  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 380 run fill 13 100 -2 15 106 2 air
+0177  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 380 run camera @s set minecraft:free ease 3 in_out_sine pos -2 103 0 facing 14 102 0
+0178  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 385 run playsound random.explode @s ~ ~ ~ 0.4 0.5
+0179  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 390 run particle minecraft:endrod 14 102 0
+0180  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 395 run particle minecraft:endrod 14 104 1
+0181  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 400 run particle minecraft:endrod 14 101 -1
+0182  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 400 run inputpermission set @s movement disabled
+0183  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 400 run inputpermission set @s camera disabled
+0184  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 420 run titleraw @s actionbar {"rawtext":[{"text":"§f신전 문 너머로 빛이 쏟아져 들어온다."}]}
+0185  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 450 run titleraw @s actionbar {"rawtext":[{"text":"§f신전 문 너머로 빛이 쏟아져 들어온다."}]}
+0186  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 460 run inputpermission set @s movement disabled
+0187  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 460 run inputpermission set @s camera disabled
+0188  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 480 run titleraw @s actionbar {"rawtext":[{"text":"§f신전 문 너머로 빛이 쏟아져 들어온다."}]}
+0189  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 500 run camera @s set minecraft:free ease 2 in_out_sine pos -7.5 101.62 0.5 facing 14 102 0
+0190  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 520 run inputpermission set @s movement disabled
+0191  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 520 run inputpermission set @s camera disabled
+0192  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 540 run camera @s fade time 0.5 0 0.75 color 0 0 0
+0193  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 560 run titleraw @s times 10 50 20
+0194  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 560 run titleraw @s subtitle {"rawtext":[{"text":"The Blackstar Citadel"}]}
+0195  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 560 run titleraw @s title {"rawtext":[{"text":"검은별의 성채"}]}
+0196  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 560 run playsound random.levelup @s ~ ~ ~ 0.5 0.7
+0197  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s run scoreboard players add @s bce_cst 1
+0198  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run camera @s clear
+0199  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run inputpermission set @s movement enabled
+0200  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run inputpermission set @s camera enabled
+0201  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run tag @s remove bce_cs
+0202  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run scoreboard players set @s bce_cs 0
+0203  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run scoreboard players set @s bce_cst 0
+0204  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run clear @s paper
+0205  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run title @s clear
+0206  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run scoreboard players set @s bce_ps 2
+0207  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run scoreboard players set @s bce_q 1
+0208  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run scoreboard players set @s bce_cp 0
+0209  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run spawnpoint @s -7 100 0
+0210  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run titleraw @s times 10 50 15
+0211  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run titleraw @s subtitle {"rawtext":[{"text":"이동하여 신전 밖으로 나가세요"}]}
+0212  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run titleraw @s title {"rawtext":[{"text":"§e튜토리얼"}]}
+0213  execute as @a[tag=bce_cs,scores={bce_cs=1}] at @s if score @s bce_cst matches 600.. run tellraw @s {"rawtext":[{"text":"§e[튜토리얼] §f이동하여 신전 밖으로 나가세요. 동쪽 출구의 빛기둥이 목적지입니다. 낮은 벽은 점프로 넘으세요."}]}
+0214  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 0 run camera @s fade time 0.3 0 0.4 color 0 0 0
+0215  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 4 run camera @s set minecraft:free pos 30 110 0 facing 62 106 0
+0216  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 8 run camera @s set minecraft:free ease 4.5 in_out_sine pos 44 112 0 facing 70 104 0
+0217  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 15 run titleraw @s actionbar {"rawtext":[{"text":"§f동쪽 다리 너머, 빛기둥 아래가 잿빛 마을이다."}]}
+0218  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 40 run inputpermission set @s movement disabled
+0219  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 40 run inputpermission set @s camera disabled
+0220  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 45 run titleraw @s actionbar {"rawtext":[{"text":"§f동쪽 다리 너머, 빛기둥 아래가 잿빛 마을이다."}]}
+0221  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 75 run titleraw @s actionbar {"rawtext":[{"text":"§f동쪽 다리 너머, 빛기둥 아래가 잿빛 마을이다."}]}
+0222  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 100 run inputpermission set @s movement disabled
+0223  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 100 run inputpermission set @s camera disabled
+0224  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 105 run titleraw @s actionbar {"rawtext":[{"text":"§f동쪽 다리 너머, 빛기둥 아래가 잿빛 마을이다."}]}
+0225  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 110 run camera @s fade time 0.3 0 0.4 color 0 0 0
+0226  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s run scoreboard players add @s bce_cst 1
+0227  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run camera @s clear
+0228  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run inputpermission set @s movement enabled
+0229  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run inputpermission set @s camera enabled
+0230  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run tag @s remove bce_cs
+0231  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run scoreboard players set @s bce_cs 0
+0232  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run scoreboard players set @s bce_cst 0
+0233  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run clear @s paper
+0234  execute as @a[tag=bce_cs,scores={bce_cs=5}] at @s if score @s bce_cst matches 130.. run title @s clear
+0235  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 0 run camera @s fade time 0.3 0 0.4 color 0 0 0
+0236  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 4 run camera @s set minecraft:free pos 236 108 0 facing 276 106 0
+0237  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 8 run camera @s set minecraft:free ease 4.5 in_out_sine pos 246 113 0 facing 286 112 0
+0238  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 15 run titleraw @s actionbar {"rawtext":[{"text":"§f다리 끝에 붕괴된 대성벽이 길을 막고 있다."}]}
+0239  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 40 run inputpermission set @s movement disabled
+0240  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 40 run inputpermission set @s camera disabled
+0241  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 45 run titleraw @s actionbar {"rawtext":[{"text":"§f다리 끝에 붕괴된 대성벽이 길을 막고 있다."}]}
+0242  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 75 run titleraw @s actionbar {"rawtext":[{"text":"§f다리 끝에 붕괴된 대성벽이 길을 막고 있다."}]}
+0243  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 100 run inputpermission set @s movement disabled
+0244  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 100 run inputpermission set @s camera disabled
+0245  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 105 run titleraw @s actionbar {"rawtext":[{"text":"§f다리 끝에 붕괴된 대성벽이 길을 막고 있다."}]}
+0246  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 110 run camera @s fade time 0.3 0 0.4 color 0 0 0
+0247  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s run scoreboard players add @s bce_cst 1
+0248  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run camera @s clear
+0249  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run inputpermission set @s movement enabled
+0250  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run inputpermission set @s camera enabled
+0251  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run tag @s remove bce_cs
+0252  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run scoreboard players set @s bce_cs 0
+0253  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run scoreboard players set @s bce_cst 0
+0254  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run clear @s paper
+0255  execute as @a[tag=bce_cs,scores={bce_cs=6}] at @s if score @s bce_cst matches 130.. run title @s clear
+0256  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 0 run camera @s fade time 0.3 0 0.4 color 0 0 0
+0257  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 4 run camera @s set minecraft:free pos 338 112 0 facing 389 118 0
+0258  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 8 run camera @s set minecraft:free ease 6 in_out_sine pos 346 118 0 facing 389 150 0
+0259  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 15 run titleraw @s actionbar {"rawtext":[{"text":"§f저 멀리, 검은별의 성채 첨탑이 하늘을 찌른다."}]}
+0260  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 30 run playsound mob.enderdragon.growl @s ~ ~ ~ 0.3 0.5
+0261  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 40 run inputpermission set @s movement disabled
+0262  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 40 run inputpermission set @s camera disabled
+0263  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 45 run titleraw @s actionbar {"rawtext":[{"text":"§f저 멀리, 검은별의 성채 첨탑이 하늘을 찌른다."}]}
+0264  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 75 run titleraw @s actionbar {"rawtext":[{"text":"§f저 멀리, 검은별의 성채 첨탑이 하늘을 찌른다."}]}
+0265  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 100 run inputpermission set @s movement disabled
+0266  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 100 run inputpermission set @s camera disabled
+0267  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 105 run titleraw @s actionbar {"rawtext":[{"text":"§f저 멀리, 검은별의 성채 첨탑이 하늘을 찌른다."}]}
+0268  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 150 run camera @s fade time 0.3 0 0.4 color 0 0 0
+0269  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s run scoreboard players add @s bce_cst 1
+0270  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run camera @s clear
+0271  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run inputpermission set @s movement enabled
+0272  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run inputpermission set @s camera enabled
+0273  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run tag @s remove bce_cs
+0274  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run scoreboard players set @s bce_cs 0
+0275  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run scoreboard players set @s bce_cst 0
+0276  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run clear @s paper
+0277  execute as @a[tag=bce_cs,scores={bce_cs=7}] at @s if score @s bce_cst matches 170.. run title @s clear

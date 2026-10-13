@@ -1,6 +1,6 @@
 # Q3 첫 적을 처치하다 -> Q4
 scoreboard players set @s bce_q 4
-scoreboard players set #qflash bce_sys 40
+scoreboard players set _qflash bce_sys 40
 titleraw @s title {"rawtext":[{"text":"§a퀘스트 완료"}]}
 titleraw @s subtitle {"rawtext":[{"text":"첫 적을 처치하다"}]}
 playsound random.levelup @s ~ ~ ~ 0.8 1

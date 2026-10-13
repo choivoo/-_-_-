@@ -245,7 +245,7 @@ def lod4(b):
 
 def beacons(b, zi):
     """End-rod light pillars marking quest destinations (visible from afar)."""
-    spots = {1: [(L.CX[1] - 34, 4)], 2: [(L.CX[2] - 10, 6), (L.CX[2] + 36, 4)], 3: [(L.CX[3] + 33, 6)], 4: [(L.CX[4] - 6, 6)]}
+    spots = {0: [(17, 5), (24, -7)], 1: [(L.CX[1] - 34, 4)], 2: [(L.CX[2] - 10, 6), (L.CX[2] + 36, 4)], 3: [(L.CX[3] + 33, 6)], 4: [(L.CX[4] - 6, 6)]}
     b.stage = "light"
     for (x, z) in spots.get(zi, []):
         h = 6 if zi in (2,) and x < L.CX[2] + 20 else 12

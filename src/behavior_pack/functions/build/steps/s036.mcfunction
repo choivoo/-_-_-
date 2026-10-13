@@ -1,45 +1,46 @@
-# zone 1 ground 6
-scoreboard players set #bzone bce_sys 1
-execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
-execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 0
-execute if block 100 79 0 stone run fill 95 100 -36 96 100 -36 stone
-execute if block 100 79 0 stone run fill 95 101 -36 96 101 -36 coarse_dirt
-execute if block 100 79 0 stone run fill 97 100 -36 97 101 -36 stone
-execute if block 100 79 0 stone run fill 97 102 -36 97 102 -36 coarse_dirt
-execute if block 100 79 0 stone run fill 98 100 -36 98 100 -36 stone
-execute if block 100 79 0 stone run fill 98 101 -36 98 101 -36 coarse_dirt
-execute if block 100 79 0 stone run fill 99 100 -36 99 101 -36 stone
-execute if block 100 79 0 stone run fill 99 102 -36 99 102 -36 coarse_dirt
-execute if block 100 79 0 stone run fill 100 100 -36 100 100 -36 stone
-execute if block 100 79 0 stone run fill 100 101 -36 100 101 -36 coarse_dirt
-execute if block 100 79 0 stone run fill 101 100 -36 108 100 -36 coarse_dirt
-execute if block 100 79 0 stone run fill 109 100 -36 115 100 -36 stone
-execute if block 100 79 0 stone run fill 109 101 -36 115 101 -36 coarse_dirt
-execute if block 100 79 0 stone run fill 116 100 -36 132 100 -36 coarse_dirt
-execute if block 100 79 0 stone run fill 133 100 -36 133 100 -36 stone
-execute if block 100 79 0 stone run fill 133 101 -36 133 101 -36 coarse_dirt
-execute if block 100 79 0 stone run fill 134 100 -36 135 101 -36 stone
-execute if block 100 79 0 stone run fill 134 102 -36 135 102 -36 coarse_dirt
-execute if block 100 79 0 stone run fill 136 100 -36 139 100 -36 stone
-execute if block 100 79 0 stone run fill 136 101 -36 139 101 -36 coarse_dirt
-execute if block 100 79 0 stone run fill 64 100 -35 71 100 -35 coarse_dirt
-execute if block 100 79 0 stone run fill 72 100 -35 76 100 -35 stone
-execute if block 100 79 0 stone run fill 72 101 -35 76 101 -35 coarse_dirt
-execute if block 100 79 0 stone run fill 77 100 -35 79 100 -35 coarse_dirt
-execute if block 100 79 0 stone run fill 81 100 -35 84 100 -35 coarse_dirt
-execute if block 100 79 0 stone run fill 93 100 -35 95 100 -35 coarse_dirt
-execute if block 100 79 0 stone run fill 96 100 -35 99 100 -35 stone
-execute if block 100 79 0 stone run fill 96 101 -35 99 101 -35 coarse_dirt
-execute if block 100 79 0 stone run fill 100 100 -35 104 100 -35 coarse_dirt
-execute if block 100 79 0 stone run fill 106 100 -35 108 100 -35 coarse_dirt
-execute if block 100 79 0 stone run fill 109 100 -35 113 100 -35 stone
-execute if block 100 79 0 stone run fill 109 101 -35 113 101 -35 coarse_dirt
-execute if block 100 79 0 stone run fill 114 100 -35 121 100 -35 coarse_dirt
-execute if block 100 79 0 stone run fill 127 100 -35 132 100 -35 coarse_dirt
-execute if block 100 79 0 stone run fill 133 100 -35 139 100 -35 stone
-execute if block 100 79 0 stone run fill 133 101 -35 139 101 -35 coarse_dirt
-execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1
+# zone 0 interior 2
+scoreboard players set _bzone bce_sys 0
+function build/ready_z0
+execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bstage bce_sys 2
+execute if score _bready bce_sys matches 1 run setblock 8 100 15 stone_bricks
+execute if score _bready bce_sys matches 1 run setblock 3 100 12 gravel
+execute if score _bready bce_sys matches 1 run setblock 8 100 10 stone_bricks
+execute if score _bready bce_sys matches 1 run setblock 8 100 9 gravel
+execute if score _bready bce_sys matches 1 run setblock 3 100 12 stone_bricks
+execute if score _bready bce_sys matches 1 run setblock 5 100 10 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run setblock 5 100 11 stone_bricks
+execute if score _bready bce_sys matches 1 run fill -3 113 4 0 115 7 air
+execute if score _bready bce_sys matches 1 run setblock -1 100 4 stone_bricks
+execute if score _bready bce_sys matches 1 run setblock 0 100 5 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run setblock -2 100 7 stone_bricks
+execute if score _bready bce_sys matches 1 run setblock 0 100 6 cobblestone
+execute if score _bready bce_sys matches 1 run setblock 1 100 5 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run setblock -3 100 8 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run setblock -2 100 7 stone_bricks
+execute if score _bready bce_sys matches 1 run fill 6 100 -17 10 104 -17 air
+execute if score _bready bce_sys matches 1 run fill 6 100 -18 10 104 -18 air
+execute if score _bready bce_sys matches 1 run fill 5 100 -18 5 105 -17 chiseled_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 11 100 -18 11 105 -17 chiseled_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 6 105 -18 10 105 -17 chiseled_stone_bricks
+execute if score _bready bce_sys matches 1 run setblock 8 100 -17 lectern
+execute if score _bready bce_sys matches 1 run setblock 8 99 -17 sea_lantern
+execute if score _bready bce_sys matches 1 run fill -2 99 -7 2 99 -7 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -4 99 -6 4 99 -6 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -5 99 -5 5 99 -5 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -6 99 -4 6 99 -4 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -6 99 -3 6 99 -3 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -7 99 -2 7 99 -2 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -7 99 -1 7 99 -1 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -7 99 0 7 99 0 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -7 99 1 7 99 1 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -7 99 2 7 99 2 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -6 99 3 6 99 3 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -6 99 4 6 99 4 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -5 99 5 5 99 5 deepslate_tiles
+execute if score _bready bce_sys matches 1 run fill -4 99 6 4 99 6 deepslate_tiles
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1

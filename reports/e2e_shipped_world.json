@@ -1,0 +1,22 @@
+{
+ "S01 shipped world loads on BDS with persisted state (no build needed)": {
+  "pass": true,
+  "detail": "(4, 180, [1, 1, 1, 1, 1])"
+ },
+ "S02 first join: no build runs, straight to the opening": {
+  "pass": true,
+  "detail": "(1, 180)"
+ },
+ "S03 opening cutscene plays automatically": {
+  "pass": true,
+  "detail": "4"
+ },
+ "S04 opening ends, quest 1 active, input free": {
+  "pass": true,
+  "detail": "([6, 2, 0], 1)"
+ },
+ "S05 re-join the shipped world: nothing rebuilt, no second opening": {
+  "pass": true,
+  "detail": "((180, 5, 1, 2), (180, 5, 1, 2))"
+ }
+}

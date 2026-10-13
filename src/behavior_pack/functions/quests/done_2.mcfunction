@@ -1,6 +1,6 @@
 # Q2 검을 획득하다 -> Q3
 scoreboard players set @s bce_q 3
-scoreboard players set #qflash bce_sys 40
+scoreboard players set _qflash bce_sys 40
 titleraw @s title {"rawtext":[{"text":"§a퀘스트 완료"}]}
 titleraw @s subtitle {"rawtext":[{"text":"검을 획득하다"}]}
 playsound random.levelup @s ~ ~ ~ 0.8 1

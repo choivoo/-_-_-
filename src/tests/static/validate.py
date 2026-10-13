@@ -7,7 +7,7 @@ FUNCS = os.path.join(BP, "functions")
 
 COMMANDS = {"scoreboard", "tag", "tp", "teleport", "fill", "setblock", "summon", "kill", "damage", "effect", "particle", "playsound",
             "stopsound", "camera", "camerashake", "title", "titleraw", "tellraw", "give", "clear", "inputpermission", "function",
-            "execute", "gamerule", "difficulty", "time", "weather", "tickingarea", "setworldspawn", "spawnpoint", "replaceitem", "playanimation", "structure"}
+            "execute", "gamerule", "difficulty", "time", "weather", "tickingarea", "setworldspawn", "spawnpoint", "replaceitem", "playanimation", "structure", "gamemode"}
 JAVA_ONLY = [r"item_display", r"block_display", r"\bbossbar\b", r"\bposteffect\b", r"\bdata (merge|modify|get|remove)\b", r"\$\(", r"\bschedule function\b",
              r"\bexecute store\b", r"\bif data\b", r"\battribute\b", r"@e\[[^\]]*nbt=", r"\bforceload\b", r"^return\b", r"\bsetblock [^\n]*\{"]
 SOUNDS = {"ambient.cave", "random.orb", "random.levelup", "random.explode", "random.pop", "random.break", "random.click", "random.anvil_land",
@@ -19,7 +19,7 @@ BLOCKS = set("""air stone stone_bricks mossy_stone_bricks cracked_stone_bricks c
 chiseled_deepslate cobblestone mossy_cobblestone gravel coarse_dirt dirt podzol water lantern soul_lantern sea_lantern iron_bars glass_pane spruce_planks oak_planks spruce_log
 spruce_stairs oak_stairs oak_fence web bookshelf chest crafting_table furnace barrel lectern smithing_table fletching_table hay_block red_wool lever magma black_concrete
 gilded_blackstone blackstone polished_blackstone polished_blackstone_bricks cracked_polished_blackstone_bricks chiseled_polished_blackstone polished_blackstone_brick_stairs
-stone_brick_stairs obsidian crying_obsidian lava amethyst_block end_rod white_concrete purple_concrete oak_fence coarse_dirt""".split())
+stone_brick_stairs obsidian crying_obsidian lava amethyst_block end_rod white_concrete purple_concrete oak_fence coarse_dirt white_wool gold_block barrier""".split())
 OBJ_RE = re.compile(r"\b(bce_[a-z]+)\b")
 TAGS = {"bce_enemy", "bce_boss", "bce_wave", "bce_mid", "bce_init", "bce_ctl", "bce_admin", "bce_npc", "bce_comb", "bce_dbg", "bce_hitmark", "bce_patrol", "bce_e", "bce_guardian"}
 
@@ -159,7 +159,7 @@ def main():
     for n in list(files): 
         if n not in color: dfs(n, [])
     # orphans (not reachable from tick/entry points)
-    entries = {"core/tick", "bootstrap/install", "bootstrap/recover", "bootstrap/uninstall", "debug/status", "debug/tick_probe", "game/start", "checkpoints/return"}
+    entries = set(tick["values"]) | {"core/tick", "bootstrap/install", "bootstrap/recover", "bootstrap/uninstall", "debug/status", "debug/tick_probe", "game/start", "checkpoints/return"}
     entries |= {f for f in files if f.split("/")[0] in ("admin", "ui", "effects", "cutscenes") and f.count("/") >= 1}
     reach = set()
     def walk(n):
@@ -258,7 +258,7 @@ def main():
     # 11 build sequencer: marker guard on every step body line that touches the world
     for fn, lines in files.items():
         if fn.startswith("build/steps/"):
-            if not any("run scoreboard players add #bstep" in l for l in lines): err(fn + " never advances #bstep")
+            if not any("scoreboard players add _bstep" in l for l in lines): err(fn + " never advances _bstep")
     # 7 per-tick static upper bound (informational)
     sys.path.insert(0, os.path.join(ROOT, "generators"))
     from command_generator import pure

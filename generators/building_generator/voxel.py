@@ -2,8 +2,8 @@
 import math, collections
 from builder import STAGES, base
 
-X0, X1 = -48, 500      # world x range covered
-Y0, Y1 = 60, 190
+X0, X1 = -260, 500     # world x range covered (observatory at x=-200)
+Y0, Y1 = 60, 240
 Z0, Z1 = -44, 44
 SX, SY, SZ = X1 - X0 + 1, Y1 - Y0 + 1, Z1 - Z0 + 1
 

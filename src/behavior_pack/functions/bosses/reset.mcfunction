@@ -1,11 +1,11 @@
 # arena empty / admin: full, safe reset of the fight
 kill @e[tag=bce_boss]
-scoreboard players set #bstate bce_sys 0
-scoreboard players set #bhp bce_sys 1000
-scoreboard players set #bphase bce_sys 1
-scoreboard players set #bempty bce_sys 0
-scoreboard players set #bfin bce_sys 0
-scoreboard players set #binv bce_sys 0
+scoreboard players set _bstate bce_sys 0
+scoreboard players set _bhp bce_sys 1000
+scoreboard players set _bphase bce_sys 1
+scoreboard players set _bempty bce_sys 0
+scoreboard players set _bfin bce_sys 0
+scoreboard players set _binv bce_sys 0
 function bosses/cleanup
 stopsound @a
 scoreboard players set @a[scores={bce_ps=5}] bce_ps 3

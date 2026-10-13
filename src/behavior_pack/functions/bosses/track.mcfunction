@@ -1,1 +1,1 @@
-scoreboard players set #btrack bce_sys 1
+scoreboard players set _btrack bce_sys 1

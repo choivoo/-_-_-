@@ -1,6 +1,6 @@
 # Q4 잿빛 마을에 도착하다 -> Q5
 scoreboard players set @s bce_q 5
-scoreboard players set #qflash bce_sys 40
+scoreboard players set _qflash bce_sys 40
 titleraw @s title {"rawtext":[{"text":"§a퀘스트 완료"}]}
 titleraw @s subtitle {"rawtext":[{"text":"잿빛 마을에 도착하다"}]}
 playsound random.levelup @s ~ ~ ~ 0.8 1

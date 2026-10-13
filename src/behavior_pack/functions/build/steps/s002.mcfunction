@@ -1,45 +1,46 @@
-# zone 0 ground 1
-scoreboard players set #bzone bce_sys 0
-execute unless block 0 79 0 stone run scoreboard players set #bsm bce_sys 2
-execute unless block 0 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if block 0 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 0 79 0 stone run scoreboard players set #bstage bce_sys 0
-execute if block 0 79 0 stone run fill -23 101 -39 -16 101 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -15 100 -39 -14 100 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -8 100 -39 -8 100 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -7 100 -39 -1 100 -39 stone
-execute if block 0 79 0 stone run fill -7 101 -39 -1 101 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill 0 100 -39 0 100 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill 1 100 -39 6 100 -39 stone
-execute if block 0 79 0 stone run fill 1 101 -39 6 101 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill 7 100 -39 12 101 -39 stone
-execute if block 0 79 0 stone run fill 7 102 -39 12 102 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill 13 100 -39 15 100 -39 stone
-execute if block 0 79 0 stone run fill 13 101 -39 15 101 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill 16 100 -39 16 100 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill 22 100 -39 23 100 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill 24 100 -39 26 100 -39 stone
-execute if block 0 79 0 stone run fill 24 101 -39 26 101 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill 27 100 -39 29 100 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill 30 100 -39 35 100 -39 stone
-execute if block 0 79 0 stone run fill 30 101 -39 35 101 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill 36 100 -39 36 100 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill 37 100 -39 39 100 -39 stone
-execute if block 0 79 0 stone run fill 37 101 -39 39 101 -39 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -40 100 -38 -34 101 -38 stone
-execute if block 0 79 0 stone run fill -40 102 -38 -34 102 -38 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -33 100 -38 -30 100 -38 stone
-execute if block 0 79 0 stone run fill -33 101 -38 -30 101 -38 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -29 100 -38 -28 100 -38 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -24 100 -38 -24 100 -38 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -23 100 -38 -18 100 -38 stone
-execute if block 0 79 0 stone run fill -23 101 -38 -18 101 -38 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -17 100 -38 -15 100 -38 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -8 100 -38 -8 100 -38 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -7 100 -38 -3 100 -38 stone
-execute if block 0 79 0 stone run fill -7 101 -38 -3 101 -38 mossy_stone_bricks
-execute if block 0 79 0 stone run fill -2 100 -38 -2 101 -38 stone
-execute if block 0 79 0 stone run fill -2 102 -38 -2 102 -38 mossy_stone_bricks
-execute if block 0 79 0 stone run scoreboard players add #bstep bce_sys 1
+# observatory zone 5 ground 1
+scoreboard players set _bzone bce_sys 5
+function build/ready_z5
+execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bstage bce_sys 0
+execute if score _bready bce_sys matches 1 run fill -193 192 -14 -181 192 -14 white_wool
+execute if score _bready bce_sys matches 1 run fill -193 192 -13 -181 192 -13 white_wool
+execute if score _bready bce_sys matches 1 run fill -194 192 -12 -180 192 -12 white_wool
+execute if score _bready bce_sys matches 1 run fill -194 192 -11 -180 192 -11 white_wool
+execute if score _bready bce_sys matches 1 run fill -194 192 -10 -180 192 -10 white_wool
+execute if score _bready bce_sys matches 1 run fill -194 192 -9 -180 192 -9 white_wool
+execute if score _bready bce_sys matches 1 run fill -194 192 -8 -180 192 -8 white_wool
+execute if score _bready bce_sys matches 1 run fill -193 192 -7 -181 192 -7 white_wool
+execute if score _bready bce_sys matches 1 run fill -193 192 -6 -181 192 -6 white_wool
+execute if score _bready bce_sys matches 1 run fill -192 192 -5 -182 192 -5 white_wool
+execute if score _bready bce_sys matches 1 run fill -191 192 -4 -183 192 -4 white_wool
+execute if score _bready bce_sys matches 1 run fill -189 192 -3 -185 192 -3 white_wool
+execute if score _bready bce_sys matches 1 run fill -189 193 -16 -185 193 -16 white_wool
+execute if score _bready bce_sys matches 1 run fill -191 193 -15 -183 193 -15 white_wool
+execute if score _bready bce_sys matches 1 run fill -192 193 -14 -182 193 -14 white_wool
+execute if score _bready bce_sys matches 1 run fill -192 193 -13 -182 193 -13 white_wool
+execute if score _bready bce_sys matches 1 run fill -193 193 -12 -181 193 -12 white_wool
+execute if score _bready bce_sys matches 1 run fill -193 193 -11 -181 193 -11 white_wool
+execute if score _bready bce_sys matches 1 run fill -193 193 -10 -181 193 -10 white_wool
+execute if score _bready bce_sys matches 1 run fill -193 193 -9 -181 193 -9 white_wool
+execute if score _bready bce_sys matches 1 run fill -193 193 -8 -181 193 -8 white_wool
+execute if score _bready bce_sys matches 1 run fill -192 193 -7 -182 193 -7 white_wool
+execute if score _bready bce_sys matches 1 run fill -192 193 -6 -182 193 -6 white_wool
+execute if score _bready bce_sys matches 1 run fill -191 193 -5 -183 193 -5 white_wool
+execute if score _bready bce_sys matches 1 run fill -189 193 -4 -185 193 -4 white_wool
+execute if score _bready bce_sys matches 1 run fill -189 194 -15 -185 194 -15 white_wool
+execute if score _bready bce_sys matches 1 run fill -190 194 -14 -184 194 -14 white_wool
+execute if score _bready bce_sys matches 1 run fill -191 194 -13 -183 194 -13 white_wool
+execute if score _bready bce_sys matches 1 run fill -192 194 -12 -182 194 -12 white_wool
+execute if score _bready bce_sys matches 1 run fill -192 194 -11 -182 194 -11 white_wool
+execute if score _bready bce_sys matches 1 run fill -192 194 -10 -182 194 -10 white_wool
+execute if score _bready bce_sys matches 1 run fill -192 194 -9 -182 194 -9 white_wool
+execute if score _bready bce_sys matches 1 run fill -192 194 -8 -182 194 -8 white_wool
+execute if score _bready bce_sys matches 1 run fill -191 194 -7 -183 194 -7 white_wool
+execute if score _bready bce_sys matches 1 run fill -190 194 -6 -184 194 -6 white_wool
+execute if score _bready bce_sys matches 1 run fill -189 194 -5 -185 194 -5 white_wool
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1

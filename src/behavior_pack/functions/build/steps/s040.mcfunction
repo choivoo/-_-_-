@@ -1,45 +1,46 @@
-# zone 1 ground 10
-scoreboard players set #bzone bce_sys 1
-execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
-execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 0
-execute if block 100 79 0 stone run fill 86 100 38 88 102 38 stone
-execute if block 100 79 0 stone run fill 86 103 38 88 103 38 coarse_dirt
-execute if block 100 79 0 stone run fill 89 100 38 95 101 38 stone
-execute if block 100 79 0 stone run fill 89 102 38 95 102 38 coarse_dirt
-execute if block 100 79 0 stone run fill 96 100 38 96 100 38 stone
-execute if block 100 79 0 stone run fill 96 101 38 96 101 38 coarse_dirt
-execute if block 100 79 0 stone run fill 97 100 38 100 100 38 coarse_dirt
-execute if block 100 79 0 stone run fill 101 100 38 110 100 38 stone
-execute if block 100 79 0 stone run fill 101 101 38 110 101 38 coarse_dirt
-execute if block 100 79 0 stone run fill 111 100 38 114 101 38 stone
-execute if block 100 79 0 stone run fill 111 102 38 114 102 38 coarse_dirt
-execute if block 100 79 0 stone run fill 115 100 38 115 100 38 stone
-execute if block 100 79 0 stone run fill 115 101 38 115 101 38 coarse_dirt
-execute if block 100 79 0 stone run fill 116 100 38 118 100 38 coarse_dirt
-execute if block 100 79 0 stone run fill 127 100 38 127 100 38 coarse_dirt
-execute if block 100 79 0 stone run fill 128 100 38 133 100 38 stone
-execute if block 100 79 0 stone run fill 128 101 38 133 101 38 coarse_dirt
-execute if block 100 79 0 stone run fill 134 100 38 139 100 38 coarse_dirt
-execute if block 100 79 0 stone run fill 60 100 39 64 100 39 stone
-execute if block 100 79 0 stone run fill 60 101 39 64 101 39 coarse_dirt
-execute if block 100 79 0 stone run fill 65 100 39 67 100 39 coarse_dirt
-execute if block 100 79 0 stone run fill 72 100 39 75 100 39 coarse_dirt
-execute if block 100 79 0 stone run fill 79 100 39 79 100 39 coarse_dirt
-execute if block 100 79 0 stone run fill 80 100 39 84 100 39 stone
-execute if block 100 79 0 stone run fill 80 101 39 84 101 39 coarse_dirt
-execute if block 100 79 0 stone run fill 85 100 39 85 101 39 stone
-execute if block 100 79 0 stone run fill 85 102 39 85 102 39 coarse_dirt
-execute if block 100 79 0 stone run fill 86 100 39 88 102 39 stone
-execute if block 100 79 0 stone run fill 86 103 39 88 103 39 coarse_dirt
-execute if block 100 79 0 stone run fill 89 100 39 89 101 39 stone
-execute if block 100 79 0 stone run fill 89 102 39 89 102 39 coarse_dirt
-execute if block 100 79 0 stone run fill 90 100 39 93 100 39 stone
-execute if block 100 79 0 stone run fill 90 101 39 93 101 39 coarse_dirt
-execute if block 100 79 0 stone run fill 94 100 39 94 101 39 stone
-execute if block 100 79 0 stone run fill 94 102 39 94 102 39 coarse_dirt
-execute if block 100 79 0 stone run fill 95 100 39 95 100 39 stone
-execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1
+# zone 0 detail 2
+scoreboard players set _bzone bce_sys 0
+function build/ready_z0
+execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bstage bce_sys 3
+execute if score _bready bce_sys matches 1 run fill 8 99 5 8 99 7 cracked_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -5 99 15 -5 99 16 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 6 99 5 6 99 6 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 4 99 -5 6 99 -5 cracked_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 12 99 -4 12 99 -3 mossy_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 11 99 -4 11 99 -2 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -9 99 9 -7 99 10 mossy_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -11 99 11 -10 99 13 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -10 99 -8 -10 99 -8 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 1 99 -6 1 99 -5 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -9 99 13 -9 99 14 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 4 99 6 5 99 6 cracked_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 5 99 5 5 99 5 cracked_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 4 99 -16 5 99 -15 cracked_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -3 99 14 -1 99 14 cracked_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -6 99 -5 -6 99 -5 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 8 99 -3 10 99 -3 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 8 99 15 8 99 15 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 12 99 10 12 99 10 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 0 99 2 1 99 4 mossy_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -7 99 -3 -5 99 -1 mossy_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -5 99 -8 -4 99 -6 cracked_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 9 99 3 9 99 3 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -4 99 -12 -2 99 -11 mossy_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 8 99 15 10 99 16 cracked_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 12 99 12 12 99 12 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -3 99 11 -2 99 11 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 3 99 -14 3 99 -14 mossy_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 5 99 -11 5 99 -11 cracked_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -1 99 -3 -1 99 -2 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -9 99 -16 -7 99 -15 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -6 99 -5 -5 99 -4 cracked_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 5 99 -8 5 99 -7 mossy_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -1 99 5 0 99 6 mossy_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill 6 99 1 8 99 2 polished_andesite replace polished_diorite
+execute if score _bready bce_sys matches 1 run fill -11 99 11 -11 99 12 cracked_stone_bricks replace polished_diorite
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1

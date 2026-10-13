@@ -11,6 +11,6 @@ execute as @a[hasitem={item=ender_eye,location=slot.weapon.mainhand}] run scoreb
 execute as @a[hasitem={item=amethyst_shard,location=slot.weapon.mainhand}] run scoreboard players set @s bce_cur 10
 execute as @a[hasitem={item=totem_of_undying,location=slot.weapon.mainhand}] run scoreboard players set @s bce_cur 11
 execute as @a[hasitem={item=paper,location=slot.weapon.mainhand}] run scoreboard players set @s bce_cur 20
-execute as @a[tag=bce_cs] unless score @s bce_cur = @s bce_prev if score @s bce_cur matches 20 at @s run function cutscenes/skip
+execute as @a[tag=bce_cs,scores={bce_cst=20..}] unless score @s bce_cur = @s bce_prev if score @s bce_cur matches 20 at @s run function cutscenes/skip
 execute as @a[tag=bce_ctl,tag=!bce_cs,scores={bce_ps=2..}] unless score @s bce_cur = @s bce_prev if score @s bce_cur matches 1..19 at @s run function abilities/dispatch
 scoreboard players operation @a bce_prev = @a bce_cur

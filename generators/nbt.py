@@ -1,7 +1,7 @@
 """Minimal little-endian NBT (Bedrock) writer/reader. Types used by .mcstructure: byte,int,string,list,compound."""
 import struct
 
-END, BYTE, SHORT, INT, LONG, FLOAT, DOUBLE, BYTES, STRING, LIST, COMPOUND, INTS = range(12)
+END, BYTE, SHORT, INT, LONG, FLOAT, DOUBLE, BYTES, STRING, LIST, COMPOUND, INTS, LONGS = range(13)
 
 
 class T:
@@ -23,6 +23,9 @@ def _payload(t, v, out):
     elif t == FLOAT: out.append(struct.pack("<f", v))
     elif t == DOUBLE: out.append(struct.pack("<d", v))
     elif t == STRING: out.append(_str(v))
+    elif t == BYTES: out.append(struct.pack("<i", len(v)) + bytes(v))
+    elif t == INTS: out.append(struct.pack("<i", len(v)) + struct.pack("<%di" % len(v), *v))
+    elif t == LONGS: out.append(struct.pack("<i", len(v)) + struct.pack("<%dq" % len(v), *v))
     elif t == LIST:
         et, items = v
         out.append(struct.pack("<bi", et, len(items)))
@@ -66,6 +69,12 @@ def _read(r, t):
     if t == FLOAT: return r.u("<f")
     if t == DOUBLE: return r.u("<d")
     if t == STRING: return r.take(r.u("<H")).decode("utf-8")
+    if t == BYTES:
+        n = r.u("<i"); return list(r.take(n))
+    if t == INTS:
+        n = r.u("<i"); return list(struct.unpack("<%di" % n, r.take(4 * n))) if n else []
+    if t == LONGS:
+        n = r.u("<i"); return list(struct.unpack("<%dq" % n, r.take(8 * n))) if n else []
     if t == LIST:
         et = r.u("<b"); n = r.u("<i")
         if et == INT:
@@ -89,3 +98,30 @@ def loads(b):
     root = _read(r, COMPOUND)
     if r.i != len(b): raise ValueError("trailing bytes")
     return root
+
+
+# ---- typed round-trip (keeps byte/short/int/long distinctions) -----------------------------------------------
+def _read_typed(r, t):
+    if t in (BYTE, SHORT, INT, LONG, FLOAT, DOUBLE, STRING, BYTES, INTS, LONGS):
+        return T(t, _read(r, t))
+    if t == LIST:
+        et = r.u("<b"); n = r.u("<i")
+        items = [_read_typed(r, et) if et not in (COMPOUND,) else _read_typed(r, et) for _ in range(n)]
+        return T(LIST, (et, [i.v if isinstance(i, T) else i for i in items]))
+    if t == COMPOUND:
+        d = {}
+        while True:
+            tt = r.u("<b")
+            if tt == END: return d
+            k = r.take(r.u("<H")).decode("utf-8")
+            d[k] = _read_typed(r, tt)
+    raise ValueError("unsupported tag %d" % t)
+
+
+def loads_typed(b):
+    r = _R(b)
+    assert r.u("<b") == COMPOUND
+    name = r.take(r.u("<H")).decode("utf-8")
+    root = _read_typed(r, COMPOUND)
+    if r.i != len(b): raise ValueError("trailing bytes")
+    return root, name

@@ -1,6 +1,6 @@
 {
  "camera": {
-  "count": 41,
+  "count": 44,
   "syntax_source": "syntax compared with Microsoft Learn camera command page (set/ease/pos/rot/facing/clear/fade time/color)"
  },
  "camerashake": {
@@ -20,15 +20,19 @@
   "syntax_source": "author knowledge; not verified in game"
  },
  "effect": {
-  "count": 39,
+  "count": 45,
   "syntax_source": "author knowledge; not verified in game"
  },
  "fill": {
-  "count": 3851,
+  "count": 4288,
   "syntax_source": "author knowledge; not verified in game"
  },
  "function": {
-  "count": 460,
+  "count": 721,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "gamemode": {
+  "count": 1,
   "syntax_source": "author knowledge; not verified in game"
  },
  "gamerule": {
@@ -40,11 +44,11 @@
   "syntax_source": "author knowledge; not verified in game"
  },
  "inputpermission": {
-  "count": 32,
+  "count": 84,
   "syntax_source": "documented in the same page (camera/movement enabled|disabled); added 1.19.80 per community wiki"
  },
  "kill": {
-  "count": 15,
+  "count": 17,
   "syntax_source": "author knowledge; not verified in game"
  },
  "particle": {
@@ -56,7 +60,7 @@
   "syntax_source": "author knowledge; not verified in game"
  },
  "playsound": {
-  "count": 67,
+  "count": 68,
   "syntax_source": "author knowledge; not verified in game"
  },
  "replaceitem": {
@@ -64,19 +68,19 @@
   "syntax_source": "author knowledge; not verified in game"
  },
  "scoreboard": {
-  "count": 2076,
+  "count": 2602,
   "syntax_source": "author knowledge; not verified in game"
  },
  "setblock": {
-  "count": 880,
+  "count": 1399,
   "syntax_source": "author knowledge; not verified in game"
  },
  "setworldspawn": {
-  "count": 1,
+  "count": 3,
   "syntax_source": "author knowledge; not verified in game"
  },
  "spawnpoint": {
-  "count": 6,
+  "count": 8,
   "syntax_source": "author knowledge; not verified in game"
  },
  "stopsound": {
@@ -96,11 +100,11 @@
   "syntax_source": "author knowledge; not verified in game"
  },
  "tellraw": {
-  "count": 72,
+  "count": 63,
   "syntax_source": "author knowledge; not verified in game"
  },
  "tickingarea": {
-  "count": 22,
+  "count": 25,
   "syntax_source": "circle syntax NOT verified from an official page"
  },
  "time": {
@@ -108,15 +112,15 @@
   "syntax_source": "author knowledge; not verified in game"
  },
  "title": {
-  "count": 7,
+  "count": 9,
   "syntax_source": "author knowledge; not verified in game"
  },
  "titleraw": {
-  "count": 122,
+  "count": 141,
   "syntax_source": "author knowledge; not verified in game"
  },
  "tp": {
-  "count": 70,
+  "count": 72,
   "syntax_source": "author knowledge; not verified in game"
  },
  "weather": {

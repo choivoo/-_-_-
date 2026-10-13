@@ -12,3 +12,7 @@ setblock -10 101 10 lantern
 setblock 10 101 -10 lantern
 setblock 10 101 10 lantern
 setblock -8 103 0 soul_lantern
+fill 17 100 5 17 112 5 end_rod
+setblock 17 113 5 sea_lantern
+fill 24 100 -7 24 112 -7 end_rod
+setblock 24 113 -7 sea_lantern

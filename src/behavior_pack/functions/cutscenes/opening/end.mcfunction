@@ -11,4 +11,7 @@ scoreboard players set @s bce_ps 2
 scoreboard players set @s bce_q 1
 scoreboard players set @s bce_cp 0
 spawnpoint @s -7 100 0
-tellraw @s {"rawtext":[{"text":"§e[튜토리얼] §f앞으로 걸어가 보세요. 낮은 벽은 점프로 넘습니다."}]}
+titleraw @s times 10 50 15
+titleraw @s subtitle {"rawtext":[{"text":"이동하여 신전 밖으로 나가세요"}]}
+titleraw @s title {"rawtext":[{"text":"§e튜토리얼"}]}
+tellraw @s {"rawtext":[{"text":"§e[튜토리얼] §f이동하여 신전 밖으로 나가세요. 동쪽 출구의 빛기둥이 목적지입니다. 낮은 벽은 점프로 넘으세요."}]}

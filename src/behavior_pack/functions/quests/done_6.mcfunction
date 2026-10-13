@@ -1,6 +1,6 @@
 # Q6 성벽을 돌파하다 -> Q7
 scoreboard players set @s bce_q 7
-scoreboard players set #qflash bce_sys 40
+scoreboard players set _qflash bce_sys 40
 titleraw @s title {"rawtext":[{"text":"§a퀘스트 완료"}]}
 titleraw @s subtitle {"rawtext":[{"text":"성벽을 돌파하다"}]}
 playsound random.levelup @s ~ ~ ~ 0.8 1

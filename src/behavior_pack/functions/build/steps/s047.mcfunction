@@ -1,45 +1,25 @@
-# zone 1 shell 5
-scoreboard players set #bzone bce_sys 1
-execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
-execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 1
-execute if block 100 79 0 stone run fill 86 105 25 94 105 25 spruce_log ["pillar_axis"="x"]
-execute if block 100 79 0 stone run fill 86 105 17 86 105 25 spruce_log ["pillar_axis"="z"]
-execute if block 100 79 0 stone run fill 94 105 17 94 105 25 spruce_log ["pillar_axis"="z"]
-execute if block 100 79 0 stone run fill 86 109 17 94 109 17 spruce_log ["pillar_axis"="x"]
-execute if block 100 79 0 stone run fill 86 109 25 94 109 25 spruce_log ["pillar_axis"="x"]
-execute if block 100 79 0 stone run fill 86 109 17 86 109 25 spruce_log ["pillar_axis"="z"]
-execute if block 100 79 0 stone run fill 94 109 17 94 109 25 spruce_log ["pillar_axis"="z"]
-execute if block 100 79 0 stone run fill 85 110 17 95 110 17 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 85 110 25 95 110 25 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 86 110 18 86 110 24 spruce_planks
-execute if block 100 79 0 stone run fill 94 110 18 94 110 24 spruce_planks
-execute if block 100 79 0 stone run fill 85 111 18 95 111 18 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 85 111 24 95 111 24 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 86 111 19 86 111 23 spruce_planks
-execute if block 100 79 0 stone run fill 94 111 19 94 111 23 spruce_planks
-execute if block 100 79 0 stone run fill 85 112 19 95 112 19 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 85 112 23 95 112 23 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 86 112 20 86 112 22 spruce_planks
-execute if block 100 79 0 stone run fill 94 112 20 94 112 22 spruce_planks
-execute if block 100 79 0 stone run fill 85 113 20 95 113 20 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 85 113 22 95 113 22 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 86 113 21 86 113 21 spruce_planks
-execute if block 100 79 0 stone run fill 94 113 21 94 113 21 spruce_planks
-execute if block 100 79 0 stone run fill 85 114 21 95 114 21 spruce_planks
-execute if block 100 79 0 stone run fill 105 99 16 117 99 26 cobblestone
-execute if block 100 79 0 stone run fill 106 100 17 116 104 25 spruce_planks
-execute if block 100 79 0 stone run fill 106 100 17 106 104 17 spruce_log
-execute if block 100 79 0 stone run fill 106 100 25 106 104 25 spruce_log
-execute if block 100 79 0 stone run fill 116 100 17 116 104 17 spruce_log
-execute if block 100 79 0 stone run fill 116 100 25 116 104 25 spruce_log
-execute if block 100 79 0 stone run fill 106 104 17 116 104 17 spruce_log ["pillar_axis"="x"]
-execute if block 100 79 0 stone run fill 106 104 25 116 104 25 spruce_log ["pillar_axis"="x"]
-execute if block 100 79 0 stone run fill 106 104 17 106 104 25 spruce_log ["pillar_axis"="z"]
-execute if block 100 79 0 stone run fill 116 104 17 116 104 25 spruce_log ["pillar_axis"="z"]
-execute if block 100 79 0 stone run fill 105 105 17 117 105 17 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 105 105 25 117 105 25 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1
+# zone 0 verify
+scoreboard players set _bzone bce_sys 0
+function build/ready_z0
+execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 4
+execute if score _bready bce_sys matches 1 run scoreboard players set _bstage bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _berr bce_sys 0
+execute if score _bready bce_sys matches 1 run execute unless block 3 103 -19 stone_bricks run scoreboard players set _berr bce_sys 10
+execute if score _bready bce_sys matches 1 run execute unless block -31 99 26 stone_bricks run scoreboard players set _berr bce_sys 11
+execute if score _bready bce_sys matches 1 run execute unless block 15 99 -30 stone_bricks run scoreboard players set _berr bce_sys 12
+execute if score _bready bce_sys matches 1 run execute unless block -31 99 34 stone_bricks run scoreboard players set _berr bce_sys 13
+execute if score _bready bce_sys matches 1 run execute unless block -10 99 36 stone_bricks run scoreboard players set _berr bce_sys 14
+execute if score _bready bce_sys matches 1 run execute unless block -32 99 -10 stone_bricks run scoreboard players set _berr bce_sys 15
+execute if score _bready bce_sys matches 1 run execute unless block -12 102 0 gilded_blackstone run scoreboard players set _berr bce_sys 100
+execute if score _bready bce_sys matches 1 run execute unless block 22 101 -10 smithing_table run scoreboard players set _berr bce_sys 101
+execute if score _bready bce_sys matches 1 run execute unless block -8 100 0 air run scoreboard players set _berr bce_sys 102
+execute if score _bready bce_sys matches 1 run execute unless block -8 101 0 air run scoreboard players set _berr bce_sys 103
+execute if score _bready bce_sys matches 1 run execute unless block -8 99 0 deepslate_tiles run scoreboard players set _berr bce_sys 104
+execute if score _bready bce_sys matches 1 run execute unless block 0 99 0 gilded_blackstone run scoreboard players set _berr bce_sys 105
+execute if score _bready bce_sys matches 1 run execute if score _berr bce_sys matches 1.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run execute if score _berr bce_sys matches 0 run scoreboard players set _zok0 bce_sys 1
+execute if score _bready bce_sys matches 1 run execute if score _berr bce_sys matches 0 run scoreboard players add _bstep bce_sys 1

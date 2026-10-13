@@ -1,0 +1,10 @@
+execute if score _bcur bce_sys matches 190 run function build/steps/s190
+execute if score _bcur bce_sys matches 191 run function build/steps/s191
+execute if score _bcur bce_sys matches 192 run function build/steps/s192
+execute if score _bcur bce_sys matches 193 run function build/steps/s193
+execute if score _bcur bce_sys matches 194 run function build/steps/s194
+execute if score _bcur bce_sys matches 195 run function build/steps/s195
+execute if score _bcur bce_sys matches 196 run function build/steps/s196
+execute if score _bcur bce_sys matches 197 run function build/steps/s197
+execute if score _bcur bce_sys matches 198 run function build/steps/s198
+execute if score _bcur bce_sys matches 199 run function build/steps/s199

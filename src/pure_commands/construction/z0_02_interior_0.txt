@@ -93,7 +93,7 @@ fill 6 100 -18 10 104 -18 air
 fill 5 100 -18 5 105 -17 chiseled_stone_bricks
 fill 11 100 -18 11 105 -17 chiseled_stone_bricks
 fill 6 105 -18 10 105 -17 chiseled_stone_bricks
-setblock 8 100 -17 smithing_table
+setblock 8 100 -17 lectern
 setblock 8 99 -17 sea_lantern
 fill -2 99 -7 2 99 -7 deepslate_tiles
 fill -4 99 -6 4 99 -6 deepslate_tiles

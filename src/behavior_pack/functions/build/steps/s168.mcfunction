@@ -1,21 +1,46 @@
-# tb zone 1 func 0
-scoreboard players set #bzone bce_sys 1
-execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
-execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 5
-execute if block 100 79 0 stone run fill 109 100 26 111 102 28 spruce_planks
-execute if block 100 79 0 stone run fill 110 100 26 110 101 27 air
-execute if block 100 79 0 stone run fill 108 100 25 112 102 25 bookshelf
-execute if block 100 79 0 stone run fill 110 100 25 110 101 25 air
-execute if block 100 79 0 stone run setblock 110 100 27 chest
-execute if block 100 79 0 stone run replaceitem block 110 100 27 slot.container 0 golden_apple 3
-execute if block 100 79 0 stone run replaceitem block 110 100 27 slot.container 1 arrow 16
-execute if block 100 79 0 stone run kill @e[tag=bce_npc,x=60,y=95,z=-40,dx=80,dy=40,dz=80]
-execute if block 100 79 0 stone run summon villager 103 100 6 0 0 minecraft:entity_spawned "§e상인 마렌"
-execute if block 100 79 0 stone run summon villager 97 100 -6 0 0 minecraft:entity_spawned "§e늙은 파수꾼"
-execute if block 100 79 0 stone run execute positioned 100 100 0 run tag @e[type=villager,r=20,tag=!bce_npc] add bce_npc
-execute if block 100 79 0 stone run effect @e[tag=bce_npc,x=60,y=95,z=-40,dx=80,dy=40,dz=80] slowness 100000 4 true
-execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1
+# zone 4 interior 0
+scoreboard players set _bzone bce_sys 4
+function build/ready_z4
+execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bstage bce_sys 2
+execute if score _bready bce_sys matches 1 run fill 378 100 -4 379 112 4 air
+execute if score _bready bce_sys matches 1 run fill 379 100 -13 398 122 13 air
+execute if score _bready bce_sys matches 1 run fill 379 99 -13 398 99 13 polished_blackstone
+execute if score _bready bce_sys matches 1 run fill 379 99 -2 398 99 2 gilded_blackstone
+execute if score _bready bce_sys matches 1 run fill 382 100 -9 382 121 -9 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run setblock 382 100 -9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run setblock 382 121 -9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run fill 381 121 -10 383 121 -8 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run fill 382 100 9 382 121 9 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run setblock 382 100 9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run setblock 382 121 9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run fill 381 121 8 383 121 10 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run fill 387 100 -9 387 121 -9 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run setblock 387 100 -9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run setblock 387 121 -9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run fill 386 121 -10 388 121 -8 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run fill 387 100 9 387 121 9 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run setblock 387 100 9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run setblock 387 121 9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run fill 386 121 8 388 121 10 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run fill 392 100 -9 392 121 -9 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run setblock 392 100 -9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run setblock 392 121 -9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run fill 391 121 -10 393 121 -8 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run fill 392 100 9 392 121 9 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run setblock 392 100 9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run setblock 392 121 9 chiseled_polished_blackstone
+execute if score _bready bce_sys matches 1 run fill 391 121 8 393 121 10 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run fill 379 112 10 398 112 13 polished_blackstone_bricks
+execute if score _bready bce_sys matches 1 run fill 381 100 11 381 100 12 polished_blackstone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+execute if score _bready bce_sys matches 1 run fill 381 101 11 381 103 12 air
+execute if score _bready bce_sys matches 1 run fill 382 101 11 382 101 12 polished_blackstone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+execute if score _bready bce_sys matches 1 run fill 382 102 11 382 104 12 air
+execute if score _bready bce_sys matches 1 run fill 383 102 11 383 102 12 polished_blackstone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+execute if score _bready bce_sys matches 1 run fill 383 103 11 383 105 12 air
+execute if score _bready bce_sys matches 1 run fill 384 103 11 384 103 12 polished_blackstone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1

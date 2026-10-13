@@ -15,4 +15,10 @@ echo "== 10 static validation";      python3 src/tests/static/validate.py
 echo "== 11 simulator";              python3 src/tests/integration/sim_test.py
 echo "== 12 world QA + structure round-trip"; python3 src/tests/integration/world_qa_test.py
 echo "== 13 performance budget";     python3 src/tests/performance/budget.py
+echo "== 14 REAL Bedrock server load check (BDS 1.21.80.3)"
+if [ -x "${BDS_DIR:-/tmp/bds}/bedrock_server" ] || [ "${BCE_FETCH_BDS:-0}" = "1" ]; then
+  python3 tools/bds_check.py
+else
+  echo "WARNING: BDS not found - engine-side function parse check SKIPPED (set BCE_FETCH_BDS=1 to download, see tools/README.md)"
+fi
 echo "BUILD OK (static + simulator only; NOT a real-device test)"

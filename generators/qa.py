@@ -64,7 +64,7 @@ def run():
     stages = []
     reach0 = w.reach(start)
     stages.append(("all gates closed", reach0))
-    must_closed_reach = [("CP1", L.CHECKPOINTS[1][1]), ("YARD", L.YARD_SPAWN), ("village", (cx[1] - 34, Y, 0)), ("ruins entrance", (cx[2] - 36, Y, 0)), ("ruins hall A", (cx[2] - 12, 87, 3)), ("lever 1", L.LEVERS[0]), ("lever 2", L.LEVERS[1]), ("lever 3", L.LEVERS[2]), ("village secret chest", (110, Y, 27)), ("weapon rack", (8, Y, -16)), ("altar", (-11, Y + 2, 0))]
+    must_closed_reach = [("CP1", L.CHECKPOINTS[1][1]), ("YARD", L.YARD_SPAWN), ("village", (cx[1] - 34, Y, 0)), ("ruins entrance", (cx[2] - 36, Y, 0)), ("ruins hall A", (cx[2] - 12, 87, 3)), ("lever 1", L.LEVERS[0]), ("lever 2", L.LEVERS[1]), ("lever 3", L.LEVERS[2]), ("village secret chest", (110, Y, 27)), ("weapon stand", L.WEAPON_STAND), ("altar", (-11, Y + 2, 0))]
     must_closed_block = [("ruins corridor beyond gate", (cx[2] + 10, 87, 0)), ("hidden room", (cx[2] + 22, 87, 15)), ("ruins exit", (cx[2] + 36, Y, 0)),
                          ("wall zone", (cx[3] - 20, Y, 0)), ("citadel hall", (cx[4] - 12, Y, 0)), ("boss arena", L.ARENA_C)]
     for lab, p in must_closed_reach:

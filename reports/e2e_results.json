@@ -1,0 +1,58 @@
+{
+ "T00 fresh world has no BCE state before the first player": {
+  "pass": true,
+  "detail": "0"
+ },
+ "T01 first join -> auto initialise (no command typed)": {
+  "pass": true,
+  "detail": "[(1, 0, None), (6, 2, 30), (10, 2, 91), (15, 2, 152), (19, 5, 180)]"
+ },
+ "T02 automatic build ran (160+ steps) without commands": {
+  "pass": true,
+  "detail": "[(10, 2, 91), (15, 2, 152), (19, 5, 180)]"
+ },
+ "T03 build complete + verification (5 zones OK) -> INTRO_READY/PLAYING": {
+  "pass": true,
+  "detail": "([1, 1, 1, 1, 1], 5)"
+ },
+ "T03b loading UI: title/subtitle/actionbar with percent": {
+  "pass": true,
+  "detail": "['', '{\"rawtext\":[{\"text\":\"§f세계를 복원하고 있습니다…\"}]} ', '{\"rawtext\":[{\"text\":\"§e검은별의 성채\"}]} ']"
+ },
+ "T04 opening cutscene starts automatically (camera instructions + input locks)": {
+  "pass": true,
+  "detail": "(11, [(15.1, 4), (15.1, 6), (45.1, 2), (45.1, 0)])"
+ },
+ "T04b the opening really plays for its full length (>= 25 s between lock and release; 30 s scripted)": {
+  "pass": true,
+  "detail": "(15.1, 45.1)"
+ },
+ "T05 tutorial starts after the cutscene (quest 1 active, tutorial title)": {
+  "pass": true,
+  "detail": "(1, ['{\"rawtext\":[{\"text\":\"§e회피 \"},{\"text\":\"0\"},{\"text\":\" §b돌진 \"},{\"text\":\"0\"},{\"text\":\" §d참격 \"},{\"text\":\"0\"},{\"text\":\" §6심판 \"},{\"text\":\"0\"}]} ', '{\"rawtext\":[{\"text\":\"§e회피 \"},{\"text\":\"0\"},{\"text\":\" §b돌진 \"},{\"text\":\"0\"},{\"text\":\" §d참격 \"},{\"text\":\"0\"},{\"text\":\" §6심판 \"},{\"text\":\"0\"}]} '])"
+ },
+ "T05b camera restored + input locks released after the cutscene": {
+  "pass": true,
+  "detail": "([4, 6, 2, 0], 1)"
+ },
+ "T09 no command typed by the player (client sends none)": {
+  "pass": true,
+  "detail": "client.js has no chat/command path"
+ },
+ "T05c leaving the temple completes quest 1 and activates quest 2 (sword)": {
+  "pass": true,
+  "detail": "2"
+ },
+ "T06 re-join: no rebuild, quest/state preserved, no second opening": {
+  "pass": true,
+  "detail": "((180, 5, 2, 2), (180, 5, 2, 2), 0)"
+ },
+ "T07 re-join during the cutscene: camera re-asserted, cutscene ends, camera + input restored": {
+  "pass": true,
+  "detail": "(True, 1, True, 5, [4, 6, 2, 0])"
+ },
+ "T08 world closed mid-build: progress kept, build resumes and completes": {
+  "pass": true,
+  "detail": "(66, 119, [1, 1, 1, 1, 1])"
+ }
+}

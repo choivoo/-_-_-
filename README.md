@@ -29,11 +29,15 @@ Java 데이터팩/NBT/모드/Script API는 사용하지 않습니다.
 배포물: `dist/BCE_1.0_FINAL/` (`BCE_Behavior_1.0.mcpack`, `BCE_Resources_1.0.mcpack`, `BCE_Enhanced_1.0.mcaddon`, `BCE_Command_Only_1.0.zip`, `BCE_1.0_Source.zip`, 설치 가이드, 테스트 보고서, `RELEASE_STATUS.txt`).
 이전 RC1 산출물은 `dist/BCE_1.0_RC1/` 에 보존했습니다. (`.mcworld`는 의도적으로 없음: 실제 월드 세이브를 만들 수 없음.)
 
-## 게임 시작 (플레이어)
-1. 새 월드(치트 켜짐)에 `BCE_Enhanced_1.0.mcaddon` 적용 (행동 팩 + 리소스 팩). → [`INSTALL_GUIDE_1.0.md`](INSTALL_GUIDE_1.0.md)
-2. 채팅에서 **`/function bootstrap/install`** (멱등, 호출자에게 `bce_admin` 태그 부여) → 맵 **자동 건축**(160단계, 틱당 1단계, 청크 로드 확인 후 진행, 액션바 진행도, 일시정지/복구 지원).
-3. “건축 완료” 후 신전 제단 앞 시작 패드에 서면 오프닝 컷신 (`/function game/start` 도 가능).
-4. 튜토리얼 → 퀘스트 7개 → 보스 → 엔딩.
+## 게임 시작 (플레이어) — 원클릭 플레이
+**명령어를 한 줄도 입력하지 않습니다.** → [`INSTALL_IPAD.md`](INSTALL_IPAD.md)
+1. iPad에서 `BCE_1.0_One_Click_Play.mcworld` 를 Minecraft로 연다 (파일 앱 → 공유 → Minecraft).
+2. 월드 목록의 **검은별의 성채 | BCE 1.0** → **플레이** (행동/리소스 팩은 월드에 포함되어 자동 적용).
+3. 자동으로: 시스템 초기화 확인 → (이미 지어진 월드) → 신전 제단 앞에 배치 → 오프닝 컷신 → 튜토리얼 “이동하여 신전 밖으로 나가세요” → 검 획득 퀘스트.
+4. 애드온만 설치한 새 월드라면 첫 입장 시 **자동으로** 하늘의 ‘별의 관측소’로 이동해 “세계를 복원하고 있습니다… N%” 를 보여 주고 160+단계 건축을 마친 뒤 같은 흐름으로 시작합니다 (팩을 월드에 적용해야 함).
+
+`tick.json` 은 `auto/tick` 하나만 호출합니다. 상태(`_astate`: 0 NOT_INITIALIZED · 1 INITIALIZING · 2 BUILDING · 3 WORLD_READY · 4 INTRO_READY · 5 PLAYING · 6 ERROR)는 스코어보드에 저장되어 월드와 함께 영속됩니다 → 재접속해도 재초기화/재건축/오프닝 재생이 없습니다.
+관리자용 수동 진입점(`bootstrap/install`, `game/start` 등)은 그대로 있지만 **일반 플레이에는 필요 없습니다.**
 
 ### 건축 방식
 | 방식 | 사용 | 진입점 |
@@ -42,7 +46,7 @@ Java 데이터팩/NBT/모드/Script API는 사용하지 않습니다.
 | TYPE B (구조물) | `.mcstructure` 26개 타일(`structures/bce/`) + `structure load` | `admin/build_structures` (실게임 미검증) |
 | 수동 | `src/pure_commands/construction/` 32개 단계 파일 + INDEX.md | 채팅/커맨드 블록 (`COMMAND_ONLY_GUIDE.md`) |
 
-건축 시퀀서 상태(`#bsm`): READY, PREPARING, WAITING_FOR_CHUNK, BUILDING, VERIFYING, COMPLETED, PAUSED, FAILED, RECOVERING. 청크 대기 2분 초과 → FAILED(무한 대기 방지), 구역 끝마다 샘플 블록 검증.
+건축 시퀀서 상태(`_bsm`): READY, PREPARING, WAITING_FOR_CHUNK, BUILDING, VERIFYING, COMPLETED, PAUSED, FAILED, RECOVERING. 청크 대기 2분 초과 → FAILED(무한 대기 방지), 구역 끝마다 샘플 블록 검증.
 
 ### 조작 (모바일 터치)
 기본 공격(칼)은 베드락 원래 터치 조작입니다. 추가 스킬은 **핫바에서 아이템을 새로 선택할 때 1회 발동**합니다 (같은 아이템을 계속 들고 있어도 반복 발동하지 않음. 칼로 돌아갔다가 다시 선택).
@@ -96,7 +100,7 @@ src/pure_commands  (생성됨) 커맨드 블록용 평탄화 명령 목록
 src/tests/    static/validate.py, integration/sim_test.py, performance/budget.py
 dist/ reports/
 ```
-수치(스태미나 비용, 피해, 쿨타임, 적 경고시간)는 `src/data/skills/skills.json`, `src/data/enemies/enemies.json` 에서 조정 후 `./build.sh`. 스태미나는 게임 중에도 `scoreboard players set #cost_dodge bce_sys 15` 처럼 실시간 조정 가능.
+수치(스태미나 비용, 피해, 쿨타임, 적 경고시간)는 `src/data/skills/skills.json`, `src/data/enemies/enemies.json` 에서 조정 후 `./build.sh`. 스태미나는 게임 중에도 `scoreboard players set _cost_dodge bce_sys 15` 처럼 실시간 조정 가능.
 
 ## 리소스팩 사용 여부
 MODE A는 불필요. MODE B(커스텀 보스 모델/애니메이션)에만 필요. 고급 UI(HP바 등 HUD 개조)는 **터치 버튼을 가릴 위험 때문에 구현하지 않았습니다**.

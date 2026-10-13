@@ -1,8 +1,8 @@
 {
-  "steps_command_mode": 160,
-  "steps_total": 187,
-  "build_commands": 4703,
-  "approx_blocks": 2240255,
+  "steps_command_mode": 180,
+  "steps_total": 207,
+  "build_commands": 4718,
+  "approx_blocks": 2240306,
   "buildings_registered": 22,
   "by_zone": {
     "0": 2,
@@ -21,7 +21,7 @@
     "붕괴하는 아레나"
   ],
   "structure_files": 26,
-  "structure_bytes": 10861096,
+  "structure_bytes": 10861304,
   "qa_fail": 0,
   "qa_ok": 94,
   "lod_counts": {

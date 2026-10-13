@@ -1,9 +1,10 @@
-# PREPARING / WORLD_BUILDING (command mode = TYPE A)
-scoreboard players set #bstart bce_sys 0
-scoreboard players set #bstep bce_sys 0
-scoreboard players set #bstop bce_sys 160
-scoreboard players set #bsm bce_sys 1
-scoreboard players set #berr bce_sys 0
-scoreboard players set #bwait bce_sys 0
-scoreboard players set #bmode bce_sys 0
-scoreboard players set #state bce_sys 3
+# PREPARING / WORLD_BUILDING (command mode = TYPE A); observatory first
+scoreboard players set _bstart bce_sys 0
+scoreboard players set _bstep bce_sys 0
+scoreboard players set _bstop bce_sys 180
+scoreboard players set _bsm bce_sys 1
+scoreboard players set _berr bce_sys 0
+scoreboard players set _bwait bce_sys 0
+scoreboard players set _bshow bce_sys 1
+scoreboard players set _bmode bce_sys 0
+scoreboard players set _state bce_sys 3

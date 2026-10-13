@@ -3,8 +3,8 @@
  "warnings": [],
  "info": {
   "json_files": 25,
-  "functions": 447,
-  "commands": 8321,
+  "functions": 492,
+  "commands": 10150,
   "longest_function": [
    "bosses/final_tick",
    103
@@ -14,15 +14,15 @@
   "structure_files": 26,
   "static_command_lines": {
    "per_tick": {
-    "player/input": 291,
+    "player/input": 294,
     "player/timers": 50,
     "enemies/tick": 116,
-    "cutscenes/dispatch": 219,
+    "cutscenes/dispatch": 277,
     "bosses/tick": 580
    },
    "slots": {
     "core/every5": 40,
-    "core/every10": 269,
+    "core/every10": 270,
     "core/every20": 59
    }
   }

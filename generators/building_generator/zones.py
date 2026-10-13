@@ -118,7 +118,7 @@ def zone0(b):
     b.fill(5, Y, -18, 5, Y + 5, -17, "chiseled_stone_bricks")
     b.fill(11, Y, -18, 11, Y + 5, -17, "chiseled_stone_bricks")
     b.fill(6, Y + 5, -18, 10, Y + 5, -17, "chiseled_stone_bricks")
-    b.set(8, Y, -17, "smithing_table")
+    b.set(8, Y, -17, "lectern")
     b.set(8, Y - 1, -17, "sea_lantern")
     # detail: steles & moss
     b.stage = "detail"
@@ -142,6 +142,14 @@ def zone0(b):
         b.set(28, Y + 1, z, "hay_block")
     b.set(30, Y, -12, "fletching_table")
     b.set(30, Y, 12, "fletching_table")
+    # weapon stand just outside the doorway (tutorial: leave the temple -> take the sword)
+    b.stage = "detail"
+    b.fill(21, Y, -11, 23, Y, -9, "polished_andesite")
+    b.set(22, Y, -10, "gilded_blackstone")
+    b.set(22, Y + 1, -10, "smithing_table")
+    for (px, pz) in [(21, -11), (23, -11), (21, -9), (23, -9)]:
+        b.fill(px, Y + 1, pz, px, Y + 2, pz, "chiseled_stone_bricks")
+        b.set(px, Y + 3, pz, "lantern")
     b.stage = "light"
     for x in range(-10, 11, 10):
         b.cmd("setblock %d %d -16 lantern" % (x, Y + 9))

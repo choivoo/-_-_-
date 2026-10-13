@@ -40,7 +40,7 @@ def event_cmds(ev):
         out.append("titleraw @s title " + jraw(ev["title"]))
         return out
     if t == "shake":
-        return ["execute if score #shake bce_sys matches 1 run camerashake add @s %s %s positional" % (_num(ev["intensity"]), _num(ev["seconds"]))]
+        return ["execute if score _shake bce_sys matches 1 run camerashake add @s %s %s positional" % (_num(ev["intensity"]), _num(ev["seconds"]))]
     if t == "cmd":
         return [ev["run"]]
     if t == "actionbar":
@@ -77,6 +77,22 @@ def expand(scene):
             continue
         for c in event_cmds(ev):
             out.append((ev["t"], c, bool(ev.get("critical")) and ev["type"] == "cmd"))
+    # camera re-assertion: if a player re-joins mid-cutscene the client has lost its camera (Microsoft Learn: camera state is not
+    # persisted across sessions). Re-send the last static camera every 3 s; identical position => invisible when nothing was lost.
+    cams = sorted([e for e in scene["events"] if e["type"] == "cam"], key=lambda e: e["t"])
+    for i, ev in enumerate(cams):
+        end = cams[i + 1]["t"] if i + 1 < len(cams) else scene["duration"]
+        T = ev["t"] + (ev["ease"][0] if "ease" in ev else 0) + 60
+        stat = dict(ev); stat.pop("ease", None)
+        while T < end - 10:
+            out.append((T, event_cmds(stat)[0], False))
+            T += 60
+    # same for the input locks (re-join mid-cutscene must not leave the player free to walk out of the shot)
+    T = 40
+    while T < scene["duration"] - 20:
+        out.append((T, "inputpermission set @s movement disabled", False))
+        out.append((T, "inputpermission set @s camera disabled", False))
+        T += 60
     out.sort(key=lambda x: x[0])
     return out
 

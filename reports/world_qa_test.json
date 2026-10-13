@@ -28,7 +28,7 @@
    "closed: reachable lever 2",
    "closed: reachable lever 3",
    "closed: reachable village secret chest",
-   "closed: reachable weapon rack",
+   "closed: reachable weapon stand",
    "closed: reachable altar",
    "closed: blocked ruins corridor beyond gate",
    "closed: blocked hidden room",
@@ -99,10 +99,10 @@
   ],
   "stats": {
    "reach_nodes": {
-    "all gates closed": 15573,
-    "after ruins_puzzle": 25758,
-    "after wall_gate": 30770,
-    "after citadel_door": 32004
+    "all gates closed": 15569,
+    "after ruins_puzzle": 25754,
+    "after wall_gate": 30766,
+    "after citadel_door": 32000
    },
    "registered_structures": 22,
    "by_lod": {

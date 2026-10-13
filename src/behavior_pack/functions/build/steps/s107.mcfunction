@@ -1,41 +1,46 @@
-# zone 3 interior 0
-scoreboard players set #bzone bce_sys 3
-execute unless block 300 79 0 stone run scoreboard players set #bsm bce_sys 2
-execute unless block 300 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if block 300 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 300 79 0 stone run scoreboard players set #bstage bce_sys 2
-execute if block 300 79 0 stone run fill 321 99 -20 337 99 20 polished_andesite
-execute if block 300 79 0 stone run fill 323 99 -18 335 99 18 stone_bricks
-execute if block 300 79 0 stone run fill 321 100 -21 337 105 -21 stone_bricks
-execute if block 300 79 0 stone run fill 321 100 21 337 105 21 stone_bricks
-execute if block 300 79 0 stone run fill 324 100 -14 324 108 -14 stone_bricks
-execute if block 300 79 0 stone run setblock 324 100 -14 chiseled_stone_bricks
-execute if block 300 79 0 stone run setblock 324 108 -14 chiseled_stone_bricks
-execute if block 300 79 0 stone run fill 324 100 14 324 108 14 stone_bricks
-execute if block 300 79 0 stone run setblock 324 100 14 chiseled_stone_bricks
-execute if block 300 79 0 stone run setblock 324 108 14 chiseled_stone_bricks
-execute if block 300 79 0 stone run fill 328 100 -14 328 108 -14 stone_bricks
-execute if block 300 79 0 stone run setblock 328 100 -14 chiseled_stone_bricks
-execute if block 300 79 0 stone run setblock 328 108 -14 chiseled_stone_bricks
-execute if block 300 79 0 stone run fill 328 100 14 328 108 14 stone_bricks
-execute if block 300 79 0 stone run setblock 328 100 14 chiseled_stone_bricks
-execute if block 300 79 0 stone run setblock 328 108 14 chiseled_stone_bricks
-execute if block 300 79 0 stone run fill 332 100 -14 332 108 -14 stone_bricks
-execute if block 300 79 0 stone run setblock 332 100 -14 chiseled_stone_bricks
-execute if block 300 79 0 stone run setblock 332 108 -14 chiseled_stone_bricks
-execute if block 300 79 0 stone run fill 332 100 14 332 108 14 stone_bricks
-execute if block 300 79 0 stone run setblock 332 100 14 chiseled_stone_bricks
-execute if block 300 79 0 stone run setblock 332 108 14 chiseled_stone_bricks
-execute if block 300 79 0 stone run fill 336 100 -14 336 108 -14 stone_bricks
-execute if block 300 79 0 stone run setblock 336 100 -14 chiseled_stone_bricks
-execute if block 300 79 0 stone run setblock 336 108 -14 chiseled_stone_bricks
-execute if block 300 79 0 stone run fill 336 100 14 336 108 14 stone_bricks
-execute if block 300 79 0 stone run setblock 336 100 14 chiseled_stone_bricks
-execute if block 300 79 0 stone run setblock 336 108 14 chiseled_stone_bricks
-execute if block 300 79 0 stone run fill 336 100 -6 339 110 6 stone_bricks
-execute if block 300 79 0 stone run fill 336 100 -3 339 106 3 air
-execute if block 300 79 0 stone run fill 337 100 -3 338 106 3 iron_bars
-execute if block 300 79 0 stone run fill 336 107 -4 339 107 4 chiseled_stone_bricks
-execute if block 300 79 0 stone run scoreboard players add #bstep bce_sys 1
+# zone 2 detail 0
+scoreboard players set _bzone bce_sys 2
+function build/ready_z2
+execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bstage bce_sys 3
+execute if score _bready bce_sys matches 1 run fill 178 99 1 178 99 2 stone replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 180 99 18 181 99 18 cracked_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 231 99 -11 233 99 -11 stone replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 216 99 15 217 99 17 stone replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 211 99 -10 213 99 -9 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 191 99 4 193 99 5 cracked_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 179 99 -29 181 99 -28 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 177 99 -28 179 99 -26 mossy_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 230 99 24 230 99 25 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 189 99 -1 191 99 -1 mossy_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 187 99 -19 188 99 -17 cracked_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 202 99 34 204 99 36 cracked_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 180 99 2 180 99 2 cracked_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 232 99 -35 234 99 -33 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 170 99 -13 172 99 -11 cracked_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 178 99 -1 178 99 1 mossy_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 178 99 -1 180 99 0 stone replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 180 99 -38 180 99 -36 mossy_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 181 99 16 181 99 17 stone replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 181 99 -24 183 99 -22 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 224 99 15 225 99 17 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 177 99 -30 179 99 -30 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 166 99 -18 168 99 -17 cracked_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 172 99 13 172 99 13 mossy_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 186 99 -28 187 99 -26 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 213 99 -5 215 99 -5 cracked_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 194 99 9 195 99 11 stone replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 186 99 25 188 99 27 cracked_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 189 99 3 191 99 3 stone replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 169 99 4 169 99 5 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 177 99 -16 177 99 -16 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 204 99 -23 204 99 -22 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 202 99 30 203 99 32 cracked_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 213 99 -29 213 99 -29 stone replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 204 99 19 206 99 20 cracked_stone_bricks replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run fill 163 99 -4 164 99 -3 gravel replace mossy_stone_bricks
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1

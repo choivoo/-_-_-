@@ -1,6 +1,6 @@
 # Q5 유적의 장치를 작동하다 -> Q6
 scoreboard players set @s bce_q 6
-scoreboard players set #qflash bce_sys 40
+scoreboard players set _qflash bce_sys 40
 titleraw @s title {"rawtext":[{"text":"§a퀘스트 완료"}]}
 titleraw @s subtitle {"rawtext":[{"text":"유적의 장치를 작동하다"}]}
 playsound random.levelup @s ~ ~ ~ 0.8 1

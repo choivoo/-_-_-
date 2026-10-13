@@ -1,0 +1,1 @@
+execute if entity @s[tag=bce_admin] run execute if entity @s[tag=bce_admin] run tellraw @s {"rawtext":[{"text":"§e[자동] 상태 "},{"score":{"name":"_astate","objective":"bce_sys"}},{"text":" (0 미초기화 1 초기화 2 건축 3 준비 4 오프닝대기 5 플레이 6 오류) 건축 "},{"score":{"name":"_bstep","objective":"bce_sys"}},{"text":"/"},{"score":{"name":"_bstop","objective":"bce_sys"}}]}

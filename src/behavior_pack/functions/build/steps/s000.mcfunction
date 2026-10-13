@@ -1,15 +1,44 @@
-# zone 0 probe
-scoreboard players set #bzone bce_sys 0
-scoreboard players set #bstage bce_sys 0
-scoreboard players set #bzstart bce_sys 0
-scoreboard players set #bsm bce_sys 2
-tellraw @a {"rawtext":[{"text":"§e[BCE] 구역 1/5 건설 시작: 깨어남의 신전"}]}
-tickingarea add circle 0 100 0 4 bce_z0
-setblock 0 79 0 stone
-execute if block 0 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 0 79 0 stone run scoreboard players set #bwait bce_sys 0
-execute if block 0 79 0 stone run scoreboard players add #bstep bce_sys 1
-execute unless block 0 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+# observatory zone 5 probe
+scoreboard players set _bzone bce_sys 5
+function build/ready_z5
+scoreboard players set _bstage bce_sys 0
+scoreboard players set _bzstart bce_sys 0
+scoreboard players set _bsm bce_sys 2
+tickingarea add -234 100 -38 -166 100 38 bce_z5 true
+setblock -232 160 -40 stone
+setblock -232 160 -24 stone
+setblock -232 160 -8 stone
+setblock -232 160 8 stone
+setblock -232 160 24 stone
+setblock -232 160 40 stone
+setblock -216 160 -40 stone
+setblock -216 160 -24 stone
+setblock -216 160 -8 stone
+setblock -216 160 8 stone
+setblock -216 160 24 stone
+setblock -216 160 40 stone
+setblock -200 160 -40 stone
+setblock -200 160 -24 stone
+setblock -200 160 -8 stone
+setblock -200 160 8 stone
+setblock -200 160 24 stone
+setblock -200 160 40 stone
+setblock -184 160 -40 stone
+setblock -184 160 -24 stone
+setblock -184 160 -8 stone
+setblock -184 160 8 stone
+setblock -184 160 24 stone
+setblock -184 160 40 stone
+setblock -168 160 -40 stone
+setblock -168 160 -24 stone
+setblock -168 160 -8 stone
+setblock -168 160 8 stone
+setblock -168 160 24 stone
+setblock -168 160 40 stone
+function build/ready_z5
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bwait bce_sys 0
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7

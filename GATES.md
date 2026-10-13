@@ -10,3 +10,6 @@
 | E 게임 진행 | PASS(시뮬레이터)/미검증(게임) | 오프닝~엔딩 컷신 체인, 퀘스트 1–7 체인, 체크포인트, 보스 사망 체인 |
 | F 배포 | PASS | 팩 manifest v2, UUID 고유, mcaddon/mcpack 내부 구조 검사, 설치 가이드·테스트 보고서 포함 |
 | G 실기기 | **NOT RUN** | Android/iOS 설치·실행·성능 확인 없음 |
+
+## Update (One-Click edition)
+Real-server verification added (BDS 1.21.80.3, headless client; not an iPad). Gate G (real device) is still NOT RUN.

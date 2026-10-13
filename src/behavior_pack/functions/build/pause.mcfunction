@@ -1,2 +1,2 @@
 # PAUSED (progress is kept in scores)
-scoreboard players set #bsm bce_sys 6
+scoreboard players set _bsm bce_sys 6

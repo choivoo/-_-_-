@@ -8,7 +8,7 @@ import layout as L
 import qa, structure
 from building_generator.builder import STAGES, base
 from building_generator import voxel
-from command_generator import engine
+from command_generator import engine, auto
 from cutscene_generator import gen as cgen
 
 CHUNK = 36
@@ -19,8 +19,38 @@ SOLID_OK = {"stone_bricks", "polished_andesite", "polished_blackstone_bricks", "
 WAIT_LIMIT = 2400            # ticks (2 min) of waiting for a chunk before FAILED
 
 
-def marker(cx):
-    return "execute if block %d 79 0 stone run " % cx
+OBS = 5      # zone id of the sky observatory (built FIRST, players wait there)
+
+
+def area(zi):
+    """tick-area rectangle (x1,x2,z1,z2) and marker height for a zone id."""
+    if zi == OBS:
+        ox, oy, oz = L.OBS
+        return (ox - 34, ox + 34, oz - 34, oz + 34, oy - 40)
+    cx = L.CX[zi]
+    return (cx - 40, cx + 60, -40, 40, 79)
+
+
+def marker_pts(zi):
+    """One marker block (under the platform) in EVERY chunk of the tick-area. ALL must exist = every chunk really loaded.
+    (Found by the real-server E2E test: 5 markers were not enough - interior chunks can load later than the corner ones.)"""
+    x1, x2, z1, z2, my = area(zi)
+    pts = []
+    for cxk in range(x1 // 16, x2 // 16 + 1):
+        for czk in range((z1 - 4) // 16, (z2 + 4) // 16 + 1):
+            pts.append((cxk * 16 + 8, my, czk * 16 + 8))
+    return pts
+
+
+def ready_lines(zi):
+    pts = marker_pts(zi)
+    return ["function build/ready_z%d" % zi]
+
+
+def ready_function(zi):
+    pts = marker_pts(zi)
+    return (["scoreboard players set _bcnt bce_sys 0"] + ["execute if block %d %d %d stone run scoreboard players add _bcnt bce_sys 1" % p for p in pts] +
+            ["scoreboard players set _bready bce_sys 0", "execute if score _bcnt bce_sys matches %d run scoreboard players set _bready bce_sys 1" % len(pts)])
 
 
 def pick_samples(w, zi, rng, n=6):
@@ -94,20 +124,53 @@ def main():
     write_json(os.path.join(ROOT, "reports", "world_qa.json"), res)
 
     # ------------------------------------------------------------------ steps (command mode)
+    import observatory
+    ob = observatory.build()
+    w.apply(ob)
+    ZN = L.ZNAME + ["별의 관측소"]
+    ox, oy, oz = L.OBS
+    # objects every zone MUST contain before the world counts as PLAY_READY (taken from the replica and asserted against it)
+    hx = L.CX[4] - 11
+    REQ = {
+        0: [(-12, 102, 0, "gilded_blackstone"), (22, 101, -10, "smithing_table"), (-8, 100, 0, "air"), (-8, 101, 0, "air"), (-8, 99, 0, None), (0, 99, 0, "gilded_blackstone")],
+        1: [(100, 101, 0, "chiseled_stone_bricks"), (100, 105, 0, "sea_lantern"), (110, 100, 27, "chest")],
+        2: [(L.LEVERS[0][0], L.LEVERS[0][1], L.LEVERS[0][2], "lever"), (L.LEVERS[2][0], L.LEVERS[2][1], L.LEVERS[2][2], "lever"), (L.GATE_RUINS[0], 88, 0, "iron_bars")],
+        3: [(L.WALL_GATE_FILL[0], 101, 0, "iron_bars"), (L.CX[3] + 1, 105, 20, "stone_bricks")],
+        4: [(hx, Y + 89, 0, "amethyst_block"), (int(L.ARENA_C[0]), 99, 0, "crying_obsidian"), (L.CIT_DOOR[0], 101, 0, "obsidian"), (int(L.ARENA_C[0]), 100, 0, "air")],
+        OBS: [(ox, oy, oz, "gold_block"), (ox, oy + 1, oz, "sea_lantern")],
+    }
+    for zk in REQ:       # drop placeholders and verify against the replica
+        REQ[zk] = [(x, y, z, bl if bl else w.name(x, y, z)) for (x, y, z, bl) in REQ[zk] if not (bl is None and w.name(x, y, z) == "air")]
+        for (x, y, z, bl) in REQ[zk]:
+            assert w.name(x, y, z) == bl, ("replica mismatch", zk, (x, y, z), bl, w.name(x, y, z))
     steps = []           # dicts: doc, lines, kind, zone, stage
     zone_range = []
     rng = random.Random(7)
-    samples = [pick_samples(w, zi, rng) for zi in range(5)]
-    for zi, b in enumerate(bs):
-        start = len(steps); cx = L.CX[zi]
-        steps.append(dict(doc="zone %d probe" % zi, lines=[], kind="probe", zone=zi, stage=0))
+    samples = {zi: pick_samples(w, zi, rng) for zi in range(5)}
+    samples[OBS] = []
+
+    def add_zone(zi, b, tag=""):
+        start = len(steps)
+        steps.append(dict(doc="%szone %d probe" % (tag, zi), lines=[], kind="probe", zone=zi, stage=0))
         for st in STAGES:
             ls = b.cmds[st]
             for k in range(0, len(ls), CHUNK):
-                steps.append(dict(doc="zone %d %s %d" % (zi, st, k // CHUNK), lines=ls[k:k + CHUNK], kind="plain", zone=zi, stage=STAGE_CODE[st]))
-        steps.append(dict(doc="zone %d verify" % zi, lines=[], kind="verify", zone=zi, stage=7))
-        steps.append(dict(doc="zone %d release" % zi, lines=[], kind="release", zone=zi, stage=7))
-        zone_range.append((start, len(steps)))
+                steps.append(dict(doc="%szone %d %s %d" % (tag, zi, st, k // CHUNK), lines=ls[k:k + CHUNK], kind="plain", zone=zi, stage=STAGE_CODE[st]))
+        steps.append(dict(doc="%szone %d verify" % (tag, zi), lines=[], kind="verify", zone=zi, stage=7))
+        steps.append(dict(doc="%szone %d release" % (tag, zi), lines=[], kind="release", zone=zi, stage=7))
+        return start
+
+    obs_start = add_zone(OBS, ob, "observatory ")
+    spx, spy, spz = observatory.spawn_point()
+    steps.append(dict(doc="observatory arrival", kind="plain", zone=OBS, stage=7, lines=[
+        "tp @a[tag=!bce_cs] %s %s %s facing %d %d %d" % (spx, spy, spz, ox, oy + 2, oz),
+        "setworldspawn %d %d %d" % (spx, spy, spz), "spawnpoint @a %d %d %d" % (spx, spy, spz),
+        "effect @a resistance 1000000 255 true", "effect @a saturation 1000000 10 true",
+        "playsound random.levelup @a %s %s %s 0.6 0.7" % (spx, spy, spz)]))
+    obs_end = len(steps)
+    for zi, b in enumerate(bs):
+        zone_range.append((add_zone(zi, b), None))
+    zone_range = [(a, (zone_range[i + 1][0] if i + 1 < len(zone_range) else len(steps))) for i, (a, _) in enumerate(zone_range)]
     n_cmd = len(steps)
 
     # ------------------------------------------------------------------ steps (structure mode, TYPE B)
@@ -126,90 +189,99 @@ def main():
         steps.append(dict(doc="tb zone %d release" % zi, lines=[], kind="release", zone=zi, stage=7))
         tb_range.append((start, len(steps)))
     total = len(steps)
-    info = {"total": n_cmd, "zones": zone_range, "tb": (n_cmd, total), "tb_zones": tb_range}
+    info = {"total": n_cmd, "zones": zone_range, "tb": (n_cmd, total), "tb_zones": tb_range, "obs": (obs_start, obs_end)}
 
     F = FnSet()
+    for zk in list(range(5)) + [OBS]:
+        F.emit("build/ready_z%d" % zk, ready_function(zk), doc="chunk readiness of zone %d: one marker per chunk, all must exist" % zk)
     for i, st in enumerate(steps):
-        zi, cx = st["zone"], L.CX[st["zone"]]
-        g = marker(cx)
-        head = ["scoreboard players set #bzone bce_sys %d" % zi]
-        wait = [("execute unless block %d 79 0 stone run scoreboard players set #bsm bce_sys 2" % cx),
-                ("execute unless block %d 79 0 stone run scoreboard players add #bwait bce_sys 1" % cx),
-                "execute if score #bwait bce_sys matches %d.. run scoreboard players set #berr bce_sys 1" % WAIT_LIMIT,
-                "execute if score #bwait bce_sys matches %d.. run scoreboard players set #bsm bce_sys 7" % WAIT_LIMIT]
+        zi = st["zone"]
+        ax1, ax2, az1, az2, amy = area(zi)
+        g = "execute if score _bready bce_sys matches 1 run "
+        head = ["scoreboard players set _bzone bce_sys %d" % zi] + ready_lines(zi)
+        wait = [("execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2"),
+                ("execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1"),
+                "execute if score _bwait bce_sys matches %d.. run scoreboard players set _berr bce_sys 1" % WAIT_LIMIT,
+                "execute if score _bwait bce_sys matches %d.. run scoreboard players set _bsm bce_sys 7" % WAIT_LIMIT]
         if st["kind"] == "probe":
-            body = head + ["scoreboard players set #bstage bce_sys 0", "scoreboard players set #bzstart bce_sys %d" % i,
-                           "scoreboard players set #bsm bce_sys 2",
-                           "tellraw @a %s" % jraw("§e[BCE] 구역 %d/5 건설 시작: %s" % (zi + 1, L.ZNAME[zi])),
-                           "tickingarea add circle %d 100 0 4 bce_z%d" % (cx, zi), "setblock %d 79 0 stone" % cx,
-                           g + "scoreboard players set #bsm bce_sys 3", g + "scoreboard players set #bwait bce_sys 0",
-                           g + "scoreboard players add #bstep bce_sys 1"]
+            body = head + ["scoreboard players set _bstage bce_sys 0", "scoreboard players set _bzstart bce_sys %d" % i,
+                           "scoreboard players set _bsm bce_sys 2",
+                           "tickingarea add %d 100 %d %d 100 %d bce_z%d true" % (ax1, az1 - 4, ax2, az2 + 4, zi)] + ["setblock %d %d %d stone" % p for p in marker_pts(zi)] + ready_lines(zi) + [
+                           g + "scoreboard players set _bsm bce_sys 3", g + "scoreboard players set _bwait bce_sys 0",
+                           g + "scoreboard players add _bstep bce_sys 1"]
             body += wait[1:]
-            body += ["execute if score #bwait bce_sys matches %d.. run scoreboard players set #bsm bce_sys 7" % WAIT_LIMIT]
         elif st["kind"] == "verify":
             smp = samples[zi]
-            body = head + wait + [g + "scoreboard players set #bsm bce_sys 4", g + "scoreboard players set #bstage bce_sys 7", g + "scoreboard players set #berr bce_sys 0"]
+            body = head + wait + [g + "scoreboard players set _bsm bce_sys 4", g + "scoreboard players set _bstage bce_sys 7", g + "scoreboard players set _berr bce_sys 0"]
             for k, (x, y, z, nm) in enumerate(smp):
-                body.append(g + "execute unless block %d %d %d %s run scoreboard players set #berr bce_sys %d" % (x, y, z, nm, 10 * (zi + 1) + k))
-            body += [g + "execute if score #berr bce_sys matches 1.. run scoreboard players set #bsm bce_sys 7",
-                     g + "execute if score #berr bce_sys matches 0 run scoreboard players add #bstep bce_sys 1"]
+                body.append(g + "execute unless block %d %d %d %s run scoreboard players set _berr bce_sys %d" % (x, y, z, nm, 10 * (zi + 1) + k))
+            for k, (x, y, z, nm) in enumerate(REQ.get(zi, [])):     # required quest/landmark objects
+                body.append(g + "execute unless block %d %d %d %s run scoreboard players set _berr bce_sys %d" % (x, y, z, nm, 100 + 10 * zi + k))
+            body += [g + "execute if score _berr bce_sys matches 1.. run scoreboard players set _bsm bce_sys 7",
+                     g + "execute if score _berr bce_sys matches 0 run scoreboard players set _zok%d bce_sys 1" % zi,
+                     g + "execute if score _berr bce_sys matches 0 run scoreboard players add _bstep bce_sys 1"]
         elif st["kind"] == "release":
-            body = head + wait + [g + "tickingarea remove bce_z%d" % zi, g + "scoreboard players set #bsm bce_sys 3", g + "scoreboard players add #bstep bce_sys 1"]
+            body = head + wait + [g + "tickingarea remove bce_z%d" % zi, g + "scoreboard players set _bsm bce_sys 3", g + "scoreboard players add _bstep bce_sys 1"]
+        elif "arrival" in st["doc"]:
+            body = st["lines"] + ["scoreboard players add _bstep bce_sys 1"]
         else:
-            body = head + wait + [g + "scoreboard players set #bsm bce_sys 3", g + "scoreboard players set #bstage bce_sys %d" % st["stage"]]
+            body = head + wait + [g + "scoreboard players set _bsm bce_sys 3", g + "scoreboard players set _bstage bce_sys %d" % st["stage"]]
             body += [g + c for c in st["lines"]]
-            body += [g + "scoreboard players add #bstep bce_sys 1"]
+            body += [g + "scoreboard players add _bstep bce_sys 1"]
         F.emit("build/steps/s%03d" % i, body, doc=st["doc"])
     nb = (total + 9) // 10
     for k in range(nb):
-        F.emit("build/d%02d" % k, ["execute if score #bcur bce_sys matches %d run function build/steps/s%03d" % (i, i) for i in range(k * 10, min(total, k * 10 + 10))])
-    F.emit("build/dispatch", ["scoreboard players operation #bcur bce_sys = #bstep bce_sys"] + ["execute if score #bcur bce_sys matches %d..%d run function build/d%02d" % (k * 10, k * 10 + 9, k) for k in range(nb)],
-           doc="2-level dispatch on a SNAPSHOT (#bcur) so exactly one step runs per tick")
+        F.emit("build/d%02d" % k, ["execute if score _bcur bce_sys matches %d run function build/steps/s%03d" % (i, i) for i in range(k * 10, min(total, k * 10 + 10))])
+    F.emit("build/dispatch", ["scoreboard players operation _bcur bce_sys = _bstep bce_sys"] + ["execute if score _bcur bce_sys matches %d..%d run function build/d%02d" % (k * 10, k * 10 + 9, k) for k in range(nb)],
+           doc="2-level dispatch on a SNAPSHOT (_bcur) so exactly one step runs per tick")
     F.emit("build/step", [
-        "scoreboard players operation #m10b bce_sys = #tick bce_sys", "scoreboard players operation #m10b bce_sys %= #c10 bce_sys",
-        "execute if score #m10b bce_sys matches 0 run function build/progress_ui",
-        "execute unless score #bsm bce_sys matches 5..7 if score #bstep bce_sys = #bstop bce_sys run function build/finish",
-        "execute unless score #bsm bce_sys matches 5..7 unless score #bstep bce_sys = #bstop bce_sys run function build/dispatch",
-        "execute if score #bsm bce_sys matches 7 run function build/fail_ui"],
-        doc="BUILD SEQUENCER 2.0 states #bsm: 0 READY 1 PREPARING 2 WAITING_FOR_CHUNK 3 BUILDING 4 VERIFYING 5 COMPLETED 6 PAUSED 7 FAILED 8 RECOVERING")
-    zn = L.ZNAME
-    ui = ["scoreboard players operation #bpctb bce_sys = #bstep bce_sys", "scoreboard players operation #bpctb bce_sys -= #bstart bce_sys",
-          "scoreboard players operation #bpctb bce_sys *= #c100 bce_sys", "scoreboard players operation #bden bce_sys = #bstop bce_sys",
-          "scoreboard players operation #bden bce_sys -= #bstart bce_sys", "execute if score #bden bce_sys matches 1.. run scoreboard players operation #bpctb bce_sys /= #bden bce_sys"]
-    norm = "unless score #bsm bce_sys matches 2 unless score #bsm bce_sys matches 5..7"
-    for z in range(5):
+        "scoreboard players operation _m10b bce_sys = _tick bce_sys", "scoreboard players operation _m10b bce_sys %= _c10 bce_sys",
+        "execute if score _m10b bce_sys matches 0 run function build/progress_ui",
+        "execute unless score _bsm bce_sys matches 5..7 if score _bstep bce_sys = _bstop bce_sys run function build/finish",
+        "execute unless score _bsm bce_sys matches 5..7 unless score _bstep bce_sys = _bstop bce_sys run function build/dispatch",
+        "execute if score _bsm bce_sys matches 7 run function build/fail_ui"],
+        doc="BUILD SEQUENCER 2.0 states _bsm: 0 READY 1 PREPARING 2 WAITING_FOR_CHUNK 3 BUILDING 4 VERIFYING 5 COMPLETED 6 PAUSED 7 FAILED 8 RECOVERING")
+    ui = ["scoreboard players operation _bpctb bce_sys = _bstep bce_sys", "scoreboard players operation _bpctb bce_sys -= _bstart bce_sys",
+          "scoreboard players operation _bpctb bce_sys *= _c100 bce_sys", "scoreboard players operation _bden bce_sys = _bstop bce_sys",
+          "scoreboard players operation _bden bce_sys -= _bstart bce_sys", "execute if score _bden bce_sys matches 1.. run scoreboard players operation _bpctb bce_sys /= _bden bce_sys",
+          "execute if score _bshow bce_sys matches 1 run titleraw @a times 0 25 0",
+          "execute if score _bshow bce_sys matches 1 run titleraw @a subtitle " + jraw("§f세계를 복원하고 있습니다… ", ("_bpctb", "bce_sys"), "%"),
+          "execute if score _bshow bce_sys matches 1 run titleraw @a title " + jraw("§e검은별의 성채")]
+    norm = "unless score _bsm bce_sys matches 2 unless score _bsm bce_sys matches 5..7"
+    for z in range(6):
         for sc, nm in enumerate(STAGE_NAMES):
-            ui.append("execute %s if score #bzone bce_sys matches %d if score #bstage bce_sys matches %d run titleraw @a actionbar %s" % (
-                norm, z, sc, jraw("§e검은별의 성채 건축 중… §f", ("#bpctb", "bce_sys"), "%% §7| %s · %s" % (zn[z], nm))))
-    ui.append("execute if score #bsm bce_sys matches 2 run titleraw @a actionbar %s" % jraw("§6청크 로딩 대기 중 §f", ("#bpctb", "bce_sys"), "% §7— 건축 구역 근처로 이동하세요"))
-    ui.append("execute if score #bsm bce_sys matches 6 run titleraw @a actionbar %s" % jraw("§7건축 일시정지 (", ("#bpctb", "bce_sys"), "%)"))
-    F.emit("build/progress_ui", ui, doc="actionbar progress every 10 ticks (no chat spam)")
-    F.emit("build/fail_ui", ["execute if score #bsm bce_sys matches 7 if score #m10b bce_sys matches 0 run titleraw @a actionbar %s" % jraw("§c건축 실패 코드 ", ("#berr", "bce_sys"), " §7— /function admin/build_recover")])
+            ui.append("execute %s if score _bzone bce_sys matches %d if score _bstage bce_sys matches %d run titleraw @a actionbar %s" % (
+                norm, z, sc, jraw("§7현재 작업: %s · %s" % (ZN[z], nm))))
+    ui.append("execute if score _bsm bce_sys matches 2 run titleraw @a actionbar " + jraw("§6청크 로딩 대기 중… 잠시만 기다려 주세요"))
+    ui.append("execute if score _bsm bce_sys matches 6 run titleraw @a actionbar " + jraw("§7건축 일시정지 (관리자)"))
+    F.emit("build/progress_ui", ui, doc="title/subtitle/actionbar progress every 10 ticks (no chat spam); _bshow=1 shows the big title")
+    F.emit("build/fail_ui", ["execute if score _bsm bce_sys matches 7 if score _m10b bce_sys matches 0 run titleraw @a actionbar %s" % jraw("§c복원 지연 — 자동 복구를 시도합니다 (코드 ", ("_berr", "bce_sys"), ")")])
     F.emit("build/start", [
-        "scoreboard players set #bstart bce_sys 0", "scoreboard players set #bstep bce_sys 0", "scoreboard players set #bstop bce_sys %d" % n_cmd,
-        "scoreboard players set #bsm bce_sys 1", "scoreboard players set #berr bce_sys 0", "scoreboard players set #bwait bce_sys 0",
-        "scoreboard players set #bmode bce_sys 0", "scoreboard players set #state bce_sys 3"], doc="PREPARING / WORLD_BUILDING (command mode = TYPE A)")
+        "scoreboard players set _bstart bce_sys 0", "scoreboard players set _bstep bce_sys 0", "scoreboard players set _bstop bce_sys %d" % n_cmd,
+        "scoreboard players set _bsm bce_sys 1", "scoreboard players set _berr bce_sys 0", "scoreboard players set _bwait bce_sys 0", "scoreboard players set _bshow bce_sys 1",
+        "scoreboard players set _bmode bce_sys 0", "scoreboard players set _state bce_sys 3"], doc="PREPARING / WORLD_BUILDING (command mode = TYPE A); observatory first")
     F.emit("build/start_structures", [
-        "scoreboard players set #bstart bce_sys %d" % n_cmd, "scoreboard players set #bstep bce_sys %d" % n_cmd, "scoreboard players set #bstop bce_sys %d" % total,
-        "scoreboard players set #bsm bce_sys 1", "scoreboard players set #berr bce_sys 0", "scoreboard players set #bwait bce_sys 0",
-        "scoreboard players set #bmode bce_sys 1", "scoreboard players set #state bce_sys 3"], doc="TYPE B: structure load tiles (needs the .mcstructure files of this pack)")
+        "scoreboard players set _bstart bce_sys %d" % n_cmd, "scoreboard players set _bstep bce_sys %d" % n_cmd, "scoreboard players set _bstop bce_sys %d" % total,
+        "scoreboard players set _bsm bce_sys 1", "scoreboard players set _berr bce_sys 0", "scoreboard players set _bwait bce_sys 0", "scoreboard players set _bshow bce_sys 1",
+        "scoreboard players set _bmode bce_sys 1", "scoreboard players set _state bce_sys 3"], doc="TYPE B: structure load tiles (needs the .mcstructure files of this pack)")
     F.emit("build/finish", [
-        "setworldspawn %d %d %d" % (L.START[0], L.START[1], L.START[2]), "scoreboard players set #built bce_sys 1", "scoreboard players set #bsm bce_sys 5",
-        "execute if score #started bce_sys matches 0 run scoreboard players set #state bce_sys 4",
-        "execute if score #started bce_sys matches 1.. run scoreboard players set #state bce_sys 7",
-        "tickingarea remove_all", "tellraw @a %s" % jraw("§a[BCE] 건축 완료! 신전 시작 패드(제단 앞)에 서면 오프닝이 시작됩니다.")], doc="COMPLETED")
-    st_lines = ["tellraw @s " + jraw("§e[건축] 단계 ", ("#bstep", "bce_sys"), "/", ("#bstop", "bce_sys"), " 구역 ", ("#bzone", "bce_sys"), " 오류코드 ", ("#berr", "bce_sys"))]
+        "setworldspawn %d %d %d" % (L.START[0], L.START[1], L.START[2]), "scoreboard players set _built bce_sys 1", "scoreboard players set _bsm bce_sys 5",
+        "execute if score _started bce_sys matches 0 run scoreboard players set _state bce_sys 4",
+        "execute if score _started bce_sys matches 1.. run scoreboard players set _state bce_sys 7",
+        "tickingarea remove_all", "scoreboard players set _bshow bce_sys 0", "title @a clear", "tellraw @a %s" % jraw("§a[BCE] 세계 복원 완료!")], doc="COMPLETED")
+    st_lines = ["tellraw @s " + jraw("§e[건축] 단계 ", ("_bstep", "bce_sys"), "/", ("_bstop", "bce_sys"), " 구역 ", ("_bzone", "bce_sys"), " 오류코드 ", ("_berr", "bce_sys"))]
     for i, nm in enumerate(["READY", "PREPARING", "WAITING_FOR_CHUNK", "BUILDING", "VERIFYING", "COMPLETED", "PAUSED", "FAILED", "RECOVERING"]):
-        st_lines.append("execute if score #bsm bce_sys matches %d run tellraw @s %s" % (i, jraw("§e[건축] 상태: " + nm)))
+        st_lines.append("execute if score _bsm bce_sys matches %d run tellraw @s %s" % (i, jraw("§e[건축] 상태: " + nm)))
     F.emit("build/status", st_lines)
-    F.emit("build/pause", ["scoreboard players set #bsm bce_sys 6"], doc="PAUSED (progress is kept in scores)")
-    F.emit("build/resume", ["execute if score #bsm bce_sys matches 6 run scoreboard players set #bsm bce_sys 1"])
-    F.emit("build/recover", ["scoreboard players set #bsm bce_sys 8", "scoreboard players set #berr bce_sys 0", "scoreboard players set #bwait bce_sys 0",
-                             "scoreboard players operation #bstep bce_sys = #bzstart bce_sys", "scoreboard players set #bsm bce_sys 1", "scoreboard players set #state bce_sys 3",
-                             "tellraw @a %s" % jraw("§e[BCE] 건축 복구: 실패한 구역을 처음부터 다시 건축합니다.")],
+    F.emit("build/pause", ["scoreboard players set _bsm bce_sys 6"], doc="PAUSED (progress is kept in scores)")
+    F.emit("build/resume", ["execute if score _bsm bce_sys matches 6 run scoreboard players set _bsm bce_sys 1"])
+    F.emit("build/recover", ["scoreboard players set _bsm bce_sys 8", "scoreboard players set _berr bce_sys 0", "scoreboard players set _bwait bce_sys 0",
+                             "scoreboard players operation _bstep bce_sys = _bzstart bce_sys", "scoreboard players set _bsm bce_sys 1", "scoreboard players set _state bce_sys 3",
+                             "tellraw @a %s" % jraw("§e[BCE] 복원 복구: 실패한 구역을 처음부터 다시 건축합니다.")],
            doc="RECOVERING: restart at the beginning of the failed zone (completed zones are not repeated)")
 
     engine.build_engine(F, info)
+    auto.build_auto(F, info)
     scenes = cgen.load_scenes(os.path.join(DATA, "scenes"))
     cgen.generate_all(scenes, F)
     # admin separation: every admin/* line is guarded by the bce_admin tag
@@ -219,7 +291,7 @@ def main():
     if os.path.isdir(FUNCS):
         shutil.rmtree(FUNCS)
     F.write()
-    write_json(os.path.join(FUNCS, "tick.json"), {"values": ["core/tick"]})
+    write_json(os.path.join(FUNCS, "tick.json"), {"values": ["auto/tick"]})
 
     # ------------------------------------------------------------------ registry, stats, TYPE A construction lists
     reg = [dict(zone=zi, **r) for zi, b in enumerate(bs) for r in b.registry]

@@ -1,0 +1,46 @@
+# chunk readiness of zone 4: one marker per chunk, all must exist
+scoreboard players set _bcnt bce_sys 0
+execute if block 360 79 -40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 360 79 -24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 360 79 -8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 360 79 8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 360 79 24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 360 79 40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 376 79 -40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 376 79 -24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 376 79 -8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 376 79 8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 376 79 24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 376 79 40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 392 79 -40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 392 79 -24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 392 79 -8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 392 79 8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 392 79 24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 392 79 40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 408 79 -40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 408 79 -24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 408 79 -8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 408 79 8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 408 79 24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 408 79 40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 424 79 -40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 424 79 -24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 424 79 -8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 424 79 8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 424 79 24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 424 79 40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 440 79 -40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 440 79 -24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 440 79 -8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 440 79 8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 440 79 24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 440 79 40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 456 79 -40 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 456 79 -24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 456 79 -8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 456 79 8 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 456 79 24 stone run scoreboard players add _bcnt bce_sys 1
+execute if block 456 79 40 stone run scoreboard players add _bcnt bce_sys 1
+scoreboard players set _bready bce_sys 0
+execute if score _bcnt bce_sys matches 42 run scoreboard players set _bready bce_sys 1

@@ -1,4 +1,4 @@
-scoreboard players set #wall bce_sys 2
+scoreboard players set _wall bce_sys 2
 execute positioned 280 100 -10 run function enemies/spawn_e2
 execute positioned 280 100 -10 run tag @e[tag=bce_e2,r=3,tag=!bce_patrol] add bce_patrol
 execute positioned 280 100 10 run function enemies/spawn_e2

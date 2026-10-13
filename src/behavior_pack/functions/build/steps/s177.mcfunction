@@ -1,15 +1,20 @@
-# tb zone 3 probe
-scoreboard players set #bzone bce_sys 3
-scoreboard players set #bstage bce_sys 0
-scoreboard players set #bzstart bce_sys 177
-scoreboard players set #bsm bce_sys 2
-tellraw @a {"rawtext":[{"text":"§e[BCE] 구역 4/5 건설 시작: 붕괴된 성벽"}]}
-tickingarea add circle 300 100 0 4 bce_z3
-setblock 300 79 0 stone
-execute if block 300 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 300 79 0 stone run scoreboard players set #bwait bce_sys 0
-execute if block 300 79 0 stone run scoreboard players add #bstep bce_sys 1
-execute unless block 300 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+# zone 4 light 0
+scoreboard players set _bzone bce_sys 4
+function build/ready_z4
+execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bstage bce_sys 4
+execute if score _bready bce_sys matches 1 run setblock 367 101 -6 soul_lantern
+execute if score _bready bce_sys matches 1 run setblock 367 101 6 soul_lantern
+execute if score _bready bce_sys matches 1 run setblock 370 101 -6 soul_lantern
+execute if score _bready bce_sys matches 1 run setblock 370 101 6 soul_lantern
+execute if score _bready bce_sys matches 1 run setblock 381 99 0 sea_lantern
+execute if score _bready bce_sys matches 1 run setblock 386 99 0 sea_lantern
+execute if score _bready bce_sys matches 1 run setblock 391 99 0 sea_lantern
+execute if score _bready bce_sys matches 1 run setblock 396 99 0 sea_lantern
+execute if score _bready bce_sys matches 1 run fill 394 100 6 394 112 6 end_rod
+execute if score _bready bce_sys matches 1 run setblock 394 113 6 sea_lantern
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1

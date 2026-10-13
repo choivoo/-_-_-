@@ -1,45 +1,24 @@
-# zone 1 shell 3
-scoreboard players set #bzone bce_sys 1
-execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
-execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
-execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
-execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
-execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 1
-execute if block 100 79 0 stone run fill 105 106 -24 115 106 -24 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 105 106 -19 115 106 -19 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 106 106 -23 106 106 -20 spruce_planks
-execute if block 100 79 0 stone run fill 114 106 -23 114 106 -20 spruce_planks
-execute if block 100 79 0 stone run fill 105 107 -23 115 107 -23 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 105 107 -20 115 107 -20 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 106 107 -22 106 107 -21 spruce_planks
-execute if block 100 79 0 stone run fill 114 107 -22 114 107 -21 spruce_planks
-execute if block 100 79 0 stone run fill 105 108 -22 115 108 -22 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 105 108 -21 115 108 -21 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 117 99 -28 131 99 -17 cobblestone
-execute if block 100 79 0 stone run fill 118 100 -27 130 104 -18 spruce_planks
-execute if block 100 79 0 stone run fill 118 100 -27 118 104 -27 spruce_log
-execute if block 100 79 0 stone run fill 118 100 -18 118 104 -18 spruce_log
-execute if block 100 79 0 stone run fill 130 100 -27 130 104 -27 spruce_log
-execute if block 100 79 0 stone run fill 130 100 -18 130 104 -18 spruce_log
-execute if block 100 79 0 stone run fill 118 104 -27 130 104 -27 spruce_log ["pillar_axis"="x"]
-execute if block 100 79 0 stone run fill 118 104 -18 130 104 -18 spruce_log ["pillar_axis"="x"]
-execute if block 100 79 0 stone run fill 118 104 -27 118 104 -18 spruce_log ["pillar_axis"="z"]
-execute if block 100 79 0 stone run fill 130 104 -27 130 104 -18 spruce_log ["pillar_axis"="z"]
-execute if block 100 79 0 stone run fill 117 105 -27 131 105 -27 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 117 105 -18 131 105 -18 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 118 105 -26 118 105 -19 spruce_planks
-execute if block 100 79 0 stone run fill 130 105 -26 130 105 -19 spruce_planks
-execute if block 100 79 0 stone run fill 117 106 -26 131 106 -26 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 117 106 -19 131 106 -19 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 118 106 -25 118 106 -20 spruce_planks
-execute if block 100 79 0 stone run fill 130 106 -25 130 106 -20 spruce_planks
-execute if block 100 79 0 stone run fill 117 107 -25 131 107 -25 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 117 107 -20 131 107 -20 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 118 107 -24 118 107 -21 spruce_planks
-execute if block 100 79 0 stone run fill 130 107 -24 130 107 -21 spruce_planks
-execute if block 100 79 0 stone run fill 117 108 -24 131 108 -24 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 117 108 -21 131 108 -21 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-execute if block 100 79 0 stone run fill 118 108 -23 118 108 -22 spruce_planks
-execute if block 100 79 0 stone run fill 130 108 -23 130 108 -22 spruce_planks
-execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1
+# zone 0 detail 7
+scoreboard players set _bzone bce_sys 0
+function build/ready_z0
+execute unless score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 2
+execute unless score _bready bce_sys matches 1 run scoreboard players add _bwait bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _berr bce_sys 1
+execute if score _bwait bce_sys matches 2400.. run scoreboard players set _bsm bce_sys 7
+execute if score _bready bce_sys matches 1 run scoreboard players set _bsm bce_sys 3
+execute if score _bready bce_sys matches 1 run scoreboard players set _bstage bce_sys 3
+execute if score _bready bce_sys matches 1 run fill 18 104 38 19 104 38 spruce_log ["pillar_axis"="x"]
+execute if score _bready bce_sys matches 1 run fill 20 105 36 20 105 37 spruce_log ["pillar_axis"="z"]
+execute if score _bready bce_sys matches 1 run fill 37 103 39 37 111 39 spruce_log
+execute if score _bready bce_sys matches 1 run fill 35 108 39 36 108 39 spruce_log ["pillar_axis"="x"]
+execute if score _bready bce_sys matches 1 run fill 35 110 39 36 110 39 spruce_log ["pillar_axis"="x"]
+execute if score _bready bce_sys matches 1 run fill 30 103 39 30 110 39 spruce_log
+execute if score _bready bce_sys matches 1 run fill 30 109 37 30 109 38 spruce_log ["pillar_axis"="z"]
+execute if score _bready bce_sys matches 1 run fill 30 109 40 30 109 41 spruce_log ["pillar_axis"="z"]
+execute if score _bready bce_sys matches 1 run fill 31 107 39 32 107 39 spruce_log ["pillar_axis"="x"]
+execute if score _bready bce_sys matches 1 run fill 15 102 35 16 103 35 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill -10 100 33 -9 101 33 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 37 103 39 38 104 39 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 23 100 31 24 101 31 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run fill 28 101 36 29 102 36 mossy_cobblestone
+execute if score _bready bce_sys matches 1 run scoreboard players add _bstep bce_sys 1
