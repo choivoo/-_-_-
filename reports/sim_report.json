@@ -1,0 +1,44 @@
+{
+ "fails": [],
+ "report": {
+  "cutscene_boss_death": {
+   "ended_tick": 160
+  },
+  "cutscene_opening": {
+   "ended_tick": 600
+  },
+  "cutscene_boss_intro": {
+   "ended_tick": 240
+  },
+  "cutscene_ending": {
+   "ended_tick": 420
+  },
+  "boss": {
+   "events": [
+    [
+     "bosses/to_phase2",
+     1047
+    ],
+    [
+     "bosses/to_phase3",
+     2097
+    ],
+    [
+     "bosses/final_start",
+     2697
+    ],
+    [
+     "bosses/death",
+     2997
+    ]
+   ],
+   "min_warn_to_hit_ticks": 12,
+   "samples": 79
+  },
+  "build_sequencer": {
+   "steps": 72,
+   "final_bstep": 72,
+   "state": 4
+  }
+ }
+}

@@ -1,0 +1,16 @@
+# sets defaults only when a value does not exist (admin tuning survives re-install)
+execute unless score #c2 bce_sys matches -2147483648..2147483647 run scoreboard players set #c2 bce_sys 2
+execute unless score #c5 bce_sys matches -2147483648..2147483647 run scoreboard players set #c5 bce_sys 5
+execute unless score #c10 bce_sys matches -2147483648..2147483647 run scoreboard players set #c10 bce_sys 10
+execute unless score #c20 bce_sys matches -2147483648..2147483647 run scoreboard players set #c20 bce_sys 20
+execute unless score #regen bce_sys matches -2147483648..2147483647 run scoreboard players set #regen bce_sys 2
+execute unless score #regen_c bce_sys matches -2147483648..2147483647 run scoreboard players set #regen_c bce_sys 1
+execute unless score #cost_dodge bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_dodge bce_sys 25
+execute unless score #cost_heavy bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_heavy bce_sys 20
+execute unless score #cost_ult bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_ult bce_sys 30
+execute unless score #quality bce_sys matches -2147483648..2147483647 run scoreboard players set #quality bce_sys 1
+execute unless score #shake bce_sys matches -2147483648..2147483647 run scoreboard players set #shake bce_sys 1
+execute unless score #mode bce_sys matches -2147483648..2147483647 run scoreboard players set #mode bce_sys 0
+execute unless score #bhp bce_sys matches -2147483648..2147483647 run scoreboard players set #bhp bce_sys 1000
+execute unless score #bstate bce_sys matches -2147483648..2147483647 run scoreboard players set #bstate bce_sys 0
+execute unless score #started bce_sys matches -2147483648..2147483647 run scoreboard players set #started bce_sys 0

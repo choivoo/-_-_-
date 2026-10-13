@@ -1,0 +1,18 @@
+{
+  "style": "ashen_timber",
+  "palette": {
+    "wall": "spruce_planks", "frame": "spruce_log", "found": "cobblestone",
+    "roof": "spruce_stairs", "ridge": "spruce_planks", "gable": "spruce_planks",
+    "floor": "oak_planks", "glass": "glass_pane"
+  },
+  "buildings": [
+    {"id": "house_a", "name": "북서 가옥", "x": 72, "z": -26, "w": 11, "l": 9, "floors": 1, "door": "s", "interior": ["crafting_table", "barrel", "bookshelf"]},
+    {"id": "house_b", "name": "북 가옥", "x": 86, "z": -25, "w": 9, "l": 8, "floors": 2, "door": "s", "interior": ["furnace", "chest", "bookshelf"]},
+    {"id": "house_c", "name": "북동 가옥", "x": 106, "z": -25, "w": 9, "l": 8, "floors": 1, "door": "s", "interior": ["crafting_table", "barrel"]},
+    {"id": "shop", "name": "상점", "x": 118, "z": -27, "w": 13, "l": 10, "floors": 1, "door": "s", "shop": true, "interior": ["barrel", "barrel", "lectern", "chest"]},
+    {"id": "house_e", "name": "남서 가옥", "x": 72, "z": 17, "w": 11, "l": 9, "floors": 1, "door": "n", "interior": ["furnace", "bookshelf"]},
+    {"id": "house_f", "name": "남 가옥", "x": 86, "z": 17, "w": 9, "l": 9, "floors": 2, "door": "n", "interior": ["crafting_table", "chest"]},
+    {"id": "ruin_house", "name": "폐가", "x": 106, "z": 17, "w": 11, "l": 9, "floors": 1, "door": "n", "ruined": true, "secret": true, "interior": ["web"]},
+    {"id": "house_h", "name": "남동 가옥", "x": 120, "z": 17, "w": 9, "l": 8, "floors": 1, "door": "n", "interior": ["barrel", "furnace"]}
+  ]
+}

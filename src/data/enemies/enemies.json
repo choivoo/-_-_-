@@ -1,0 +1,6 @@
+{
+  "e1": {"name": "§7잿빛 망자", "entity": "zombie", "event": "minecraft:as_adult", "dmg": 3, "warn": 14, "recover": 24, "fx": ["slowness 100000 0"], "hp_boost": 0},
+  "e2": {"name": "§8그림자 추적자", "entity": "husk", "event": "minecraft:as_adult", "dmg": 2, "warn": 8, "recover": 14, "fx": ["speed 100000 1"], "hp_boost": 0},
+  "e3": {"name": "§b유적 감시자", "entity": "skeleton", "event": "minecraft:entity_spawned", "dmg": 0, "warn": 0, "recover": 0, "fx": [], "hp_boost": 0},
+  "e4": {"name": "§6성채 수호병", "entity": "vindicator", "event": "minecraft:entity_spawned", "dmg": 6, "warn": 26, "recover": 40, "fx": ["resistance 100000 1", "slowness 100000 0"], "hp_boost": 2}
+}

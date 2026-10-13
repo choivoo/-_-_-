@@ -1,0 +1,86 @@
+{
+ "id": "boss_death",
+ "numeric_id": 3,
+ "duration": 160,
+ "description": "보스 처치 연출",
+ "start_cmds": [],
+ "end_cmds": [
+  "function bosses/victory"
+ ],
+ "events": [
+  {
+   "t": 0,
+   "type": "cam",
+   "pos": [
+    411,
+    103,
+    5
+   ],
+   "facing": [
+    419,
+    103.5,
+    0
+   ]
+  },
+  {
+   "t": 0,
+   "type": "sound",
+   "name": "mob.wither.death",
+   "vol": 0.8,
+   "pitch": 0.8
+  },
+  {
+   "t": 0,
+   "type": "cmd",
+   "run": "particle minecraft:huge_explosion_emitter 419 102 0"
+  },
+  {
+   "t": 30,
+   "type": "cam",
+   "pos": [
+    409,
+    104,
+    3
+   ],
+   "facing": [
+    419,
+    104,
+    0
+   ],
+   "ease": [
+    60,
+    "in_sine"
+   ]
+  },
+  {
+   "t": 40,
+   "type": "subtitle",
+   "text": "검은별의 힘이 무너져 내린다…",
+   "dur": 80
+  },
+  {
+   "t": 60,
+   "type": "cmd",
+   "run": "particle minecraft:totem_particle 419 103 0"
+  },
+  {
+   "t": 90,
+   "type": "shake",
+   "intensity": 0.3,
+   "seconds": 1.0
+  },
+  {
+   "t": 130,
+   "type": "fade",
+   "in": 10,
+   "hold": 4,
+   "out": 10
+  },
+  {
+   "t": 140,
+   "type": "cmd",
+   "run": "function bosses/cleanup",
+   "critical": true
+  }
+ ]
+}

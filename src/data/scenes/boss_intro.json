@@ -1,0 +1,118 @@
+{
+ "id": "boss_intro",
+ "numeric_id": 2,
+ "duration": 240,
+ "description": "보스 등장",
+ "start_cmds": [
+  "execute if score #bstate bce_sys matches 0 run function bosses/summon"
+ ],
+ "end_cmds": [
+  "execute if score #bstate bce_sys matches 1 run function bosses/begin"
+ ],
+ "events": [
+  {
+   "t": 0,
+   "type": "fade",
+   "in": 8,
+   "hold": 4,
+   "out": 10
+  },
+  {
+   "t": 0,
+   "type": "cam",
+   "pos": [
+    404,
+    106,
+    0
+   ],
+   "facing": [
+    419,
+    103,
+    0
+   ]
+  },
+  {
+   "t": 0,
+   "type": "cmd",
+   "run": "execute if score #bstate bce_sys matches 0 run function bosses/summon",
+   "critical": true
+  },
+  {
+   "t": 30,
+   "type": "sound",
+   "name": "mob.wither.spawn",
+   "vol": 0.8,
+   "pitch": 0.7
+  },
+  {
+   "t": 40,
+   "type": "cam",
+   "pos": [
+    412,
+    103.5,
+    7
+   ],
+   "facing": [
+    419,
+    103.8,
+    0
+   ],
+   "ease": [
+    70,
+    "in_out_sine"
+   ]
+  },
+  {
+   "t": 50,
+   "type": "shake",
+   "intensity": 0.2,
+   "seconds": 1.5
+  },
+  {
+   "t": 100,
+   "type": "title",
+   "title": "§c검은별의 수호자",
+   "subtitle": "봉인된 기사",
+   "fadein": 10,
+   "stay": 50,
+   "fadeout": 15
+  },
+  {
+   "t": 100,
+   "type": "sound",
+   "name": "mob.enderdragon.growl",
+   "vol": 0.6,
+   "pitch": 0.6
+  },
+  {
+   "t": 150,
+   "type": "cam",
+   "pos": [
+    407,
+    104,
+    -5
+   ],
+   "facing": [
+    419,
+    103,
+    0
+   ],
+   "ease": [
+    50,
+    "in_out_sine"
+   ]
+  },
+  {
+   "t": 205,
+   "type": "fade",
+   "in": 8,
+   "hold": 0,
+   "out": 10
+  },
+  {
+   "t": 215,
+   "type": "cmd",
+   "run": "playsound record.otherside @s ~ ~ ~ 0.8 1"
+  }
+ ]
+}

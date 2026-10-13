@@ -1,0 +1,19 @@
+# idempotent: re-adding an objective only prints an error
+scoreboard objectives add bce_sys dummy
+scoreboard objectives add bce_stam dummy
+scoreboard objectives add bce_cdslash dummy
+scoreboard objectives add bce_cddodge dummy
+scoreboard objectives add bce_cdult dummy
+scoreboard objectives add bce_cdheal dummy
+scoreboard objectives add bce_combo dummy
+scoreboard objectives add bce_cwin dummy
+scoreboard objectives add bce_iframe dummy
+scoreboard objectives add bce_cur dummy
+scoreboard objectives add bce_prev dummy
+scoreboard objectives add bce_q dummy
+scoreboard objectives add bce_cp dummy
+scoreboard objectives add bce_ps dummy
+scoreboard objectives add bce_cs dummy
+scoreboard objectives add bce_cst dummy
+scoreboard objectives add bce_ai dummy
+scoreboard objectives add bce_aitm dummy

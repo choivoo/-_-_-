@@ -1,0 +1,217 @@
+{
+ "id": "opening",
+ "numeric_id": 1,
+ "duration": 600,
+ "description": "오프닝 컷신 (장면 1~5)",
+ "start_cmds": [
+  "tp @s -7.5 100 0.5 facing 14 102 0",
+  "execute if score #started bce_sys matches 0 run scoreboard players set #started bce_sys 1"
+ ],
+ "end_cmds": [
+  "scoreboard players set @s bce_ps 2",
+  "scoreboard players set @s bce_q 1",
+  "scoreboard players set @s bce_cp 0",
+  "spawnpoint @s -7 100 0",
+  "tellraw @s {\"rawtext\":[{\"text\":\"§e[튜토리얼] §f앞으로 걸어가 보세요. 낮은 벽은 점프로 넘습니다.\"}]}"
+ ],
+ "events": [
+  {
+   "t": 0,
+   "type": "cmd",
+   "run": "tp @s -7.5 100 0.5 facing 14 102 0",
+   "critical": true
+  },
+  {
+   "t": 0,
+   "type": "fade",
+   "in": 0,
+   "hold": 50,
+   "out": 30
+  },
+  {
+   "t": 0,
+   "type": "cam",
+   "pos": [
+    -60,
+    128,
+    -75
+   ],
+   "facing": [
+    0,
+    108,
+    0
+   ]
+  },
+  {
+   "t": 0,
+   "type": "sound",
+   "name": "ambient.cave",
+   "vol": 0.6,
+   "pitch": 0.8
+  },
+  {
+   "t": 20,
+   "type": "subtitle",
+   "text": "먼 폐허 너머로 바람이 분다…",
+   "dur": 60
+  },
+  {
+   "t": 80,
+   "type": "sound",
+   "name": "ambient.cave",
+   "vol": 0.5,
+   "pitch": 0.7
+  },
+  {
+   "t": 100,
+   "type": "cam",
+   "pos": [
+    -38,
+    120,
+    -48
+   ],
+   "facing": [
+    0,
+    106,
+    0
+   ],
+   "ease": [
+    160,
+    "in_out_sine"
+   ]
+  },
+  {
+   "t": 140,
+   "type": "subtitle",
+   "text": "무너진 하늘 도시의 신전이 보인다.",
+   "dur": 90
+  },
+  {
+   "t": 260,
+   "type": "fade",
+   "in": 10,
+   "hold": 0,
+   "out": 15
+  },
+  {
+   "t": 270,
+   "type": "cam",
+   "pos": [
+    -4,
+    102.2,
+    3.5
+   ],
+   "facing": [
+    -8,
+    100.3,
+    0.5
+   ]
+  },
+  {
+   "t": 290,
+   "type": "sound",
+   "name": "random.orb",
+   "vol": 0.5,
+   "pitch": 0.6
+  },
+  {
+   "t": 300,
+   "type": "subtitle",
+   "text": "…여기는… 어디지?",
+   "dur": 70
+  },
+  {
+   "t": 380,
+   "type": "cmd",
+   "run": "fill 13 100 -2 15 106 2 air",
+   "critical": true
+  },
+  {
+   "t": 380,
+   "type": "cam",
+   "pos": [
+    -2,
+    103,
+    0
+   ],
+   "facing": [
+    14,
+    102,
+    0
+   ],
+   "ease": [
+    60,
+    "in_out_sine"
+   ]
+  },
+  {
+   "t": 385,
+   "type": "sound",
+   "name": "random.explode",
+   "vol": 0.4,
+   "pitch": 0.5
+  },
+  {
+   "t": 390,
+   "type": "cmd",
+   "run": "particle minecraft:endrod 14 102 0"
+  },
+  {
+   "t": 395,
+   "type": "cmd",
+   "run": "particle minecraft:endrod 14 104 1"
+  },
+  {
+   "t": 400,
+   "type": "cmd",
+   "run": "particle minecraft:endrod 14 101 -1"
+  },
+  {
+   "t": 420,
+   "type": "subtitle",
+   "text": "신전 문 너머로 빛이 쏟아져 들어온다.",
+   "dur": 80
+  },
+  {
+   "t": 500,
+   "type": "cam",
+   "pos": [
+    -7.5,
+    101.62,
+    0.5
+   ],
+   "facing": [
+    14,
+    102,
+    0
+   ],
+   "ease": [
+    40,
+    "in_out_sine"
+   ]
+  },
+  {
+   "t": 540,
+   "type": "fade",
+   "in": 10,
+   "hold": 0,
+   "out": 15
+  },
+  {
+   "t": 560,
+   "type": "title",
+   "title": "검은별의 성채",
+   "subtitle": "The Blackstar Citadel",
+   "fadein": 10,
+   "stay": 50,
+   "fadeout": 20
+  },
+  {
+   "t": 560,
+   "type": "sound",
+   "name": "random.levelup",
+   "vol": 0.5,
+   "pitch": 0.7
+  }
+ ]
+}

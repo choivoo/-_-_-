@@ -1,0 +1,113 @@
+{
+ "id": "ending",
+ "numeric_id": 4,
+ "duration": 420,
+ "description": "엔딩",
+ "start_cmds": [
+  "time set 23000"
+ ],
+ "end_cmds": [
+  "scoreboard players set @s bce_ps 6",
+  "function bosses/finish_game"
+ ],
+ "events": [
+  {
+   "t": 0,
+   "type": "fade",
+   "in": 0,
+   "hold": 10,
+   "out": 30
+  },
+  {
+   "t": 0,
+   "type": "cam",
+   "pos": [
+    400,
+    112,
+    -10
+   ],
+   "facing": [
+    419,
+    104,
+    0
+   ]
+  },
+  {
+   "t": 0,
+   "type": "cmd",
+   "run": "time set 23000",
+   "critical": true
+  },
+  {
+   "t": 10,
+   "type": "cam",
+   "pos": [
+    425,
+    110,
+    10
+   ],
+   "facing": [
+    419,
+    104,
+    0
+   ],
+   "ease": [
+    160,
+    "in_out_sine"
+   ]
+  },
+  {
+   "t": 20,
+   "type": "subtitle",
+   "text": "검은별의 봉인이 다시 닫혔다.",
+   "dur": 90
+  },
+  {
+   "t": 20,
+   "type": "sound",
+   "name": "random.levelup",
+   "vol": 0.6,
+   "pitch": 0.9
+  },
+  {
+   "t": 180,
+   "type": "cam",
+   "pos": [
+    419,
+    125,
+    0
+   ],
+   "facing": [
+    419,
+    100,
+    0
+   ],
+   "ease": [
+    160,
+    "in_out_sine"
+   ]
+  },
+  {
+   "t": 200,
+   "type": "subtitle",
+   "text": "하늘 도시의 잔해 위로 새벽이 밝아온다.",
+   "dur": 90
+  },
+  {
+   "t": 340,
+   "type": "title",
+   "title": "끝 — THE END",
+   "subtitle": "검은별의 성채",
+   "fadein": 20,
+   "stay": 60,
+   "fadeout": 20
+  },
+  {
+   "t": 400,
+   "type": "fade",
+   "in": 10,
+   "hold": 0,
+   "out": 10
+  }
+ ]
+}

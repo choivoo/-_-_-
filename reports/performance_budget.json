@@ -1,0 +1,12 @@
+{
+ "idle_lines_per_tick": 46,
+ "slot_lines": {
+  "every5": 15,
+  "every10": 27,
+  "every20": 47
+ },
+ "avg_lines_per_tick_idle": 54.1,
+ "ai_lines_per_active_enemy_per_2_ticks": 12,
+ "boss_fight_extra_lines_per_tick": 56,
+ "note": "static upper bound of evaluated lines; real cost depends on selectors/entities. NOT a measured FPS."
+}

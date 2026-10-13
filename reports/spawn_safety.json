@@ -1,0 +1,158 @@
+{
+  "fail": [],
+  "ok": [
+    {
+      "label": "START",
+      "pos": [
+        -7.5,
+        100,
+        0.5
+      ],
+      "problems": []
+    },
+    {
+      "label": "CP1",
+      "pos": [
+        16.5,
+        100,
+        0.5
+      ],
+      "problems": []
+    },
+    {
+      "label": "CP2",
+      "pos": [
+        66.5,
+        100,
+        0.5
+      ],
+      "problems": []
+    },
+    {
+      "label": "CP3",
+      "pos": [
+        164.5,
+        100,
+        0.5
+      ],
+      "problems": []
+    },
+    {
+      "label": "CP4",
+      "pos": [
+        263.5,
+        100,
+        0.5
+      ],
+      "problems": []
+    },
+    {
+      "label": "CP5",
+      "pos": [
+        388.5,
+        100,
+        0.5
+      ],
+      "problems": []
+    },
+    {
+      "label": "YARD_SPAWN",
+      "pos": [
+        28,
+        100,
+        0
+      ],
+      "problems": []
+    },
+    {
+      "label": "MIDBOSS",
+      "pos": [
+        330,
+        100,
+        0
+      ],
+      "problems": []
+    },
+    {
+      "label": "ARENA_C",
+      "pos": [
+        419,
+        100,
+        0
+      ],
+      "problems": []
+    },
+    {
+      "label": "WAVE1_e1",
+      "pos": [
+        278,
+        100,
+        -8
+      ],
+      "problems": []
+    },
+    {
+      "label": "WAVE1_e1",
+      "pos": [
+        278,
+        100,
+        8
+      ],
+      "problems": []
+    },
+    {
+      "label": "WAVE1_e1",
+      "pos": [
+        286,
+        100,
+        0
+      ],
+      "problems": []
+    },
+    {
+      "label": "WAVE1_e3",
+      "pos": [
+        294,
+        100,
+        14
+      ],
+      "problems": []
+    },
+    {
+      "label": "WAVE2_e2",
+      "pos": [
+        280,
+        100,
+        -10
+      ],
+      "problems": []
+    },
+    {
+      "label": "WAVE2_e2",
+      "pos": [
+        280,
+        100,
+        10
+      ],
+      "problems": []
+    },
+    {
+      "label": "WAVE2_e4",
+      "pos": [
+        290,
+        100,
+        -6
+      ],
+      "problems": []
+    },
+    {
+      "label": "WAVE2_e4",
+      "pos": [
+        290,
+        100,
+        6
+      ],
+      "problems": []
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "BCE Behavior — 검은별의 성채 v1.0",
+    "description": "Bedrock Command Engine: 함수 기반 액션 어드벤처 엔진",
+    "uuid": "405e3826-8109-5664-a7ae-31655ae9dd85",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      20,
+      80
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "description": "BCE functions + entities",
+      "uuid": "0f952311-ebee-5a4d-9755-5640832a3024",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}

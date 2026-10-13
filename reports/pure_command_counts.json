@@ -1,0 +1,8 @@
+{
+  "bootstrap/01_install": 50,
+  "command_blocks/A_essential_loop": 256,
+  "combat/B_enemy_ai": 98,
+  "gameplay/C_quests_checkpoints_world": 237,
+  "combat/D_boss": 600,
+  "cutscenes/E_cutscene_dispatch": 162
+}

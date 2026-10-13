@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "bce:citadel_guardian",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/bce_guardian"
+      },
+      "geometry": {
+        "default": "geometry.bce_guardian"
+      },
+      "animations": {
+        "idle": "animation.bce_guardian.idle",
+        "walk": "animation.bce_guardian.walk",
+        "run": "animation.bce_guardian.run",
+        "attack1": "animation.bce_guardian.attack1",
+        "attack2": "animation.bce_guardian.attack2",
+        "attack3": "animation.bce_guardian.attack3",
+        "hit": "animation.bce_guardian.hit",
+        "stunned": "animation.bce_guardian.stunned",
+        "death": "animation.bce_guardian.death",
+        "boss_intro": "animation.bce_guardian.boss_intro",
+        "boss_attack": "animation.bce_guardian.boss_attack",
+        "phase_transition": "animation.bce_guardian.phase_transition",
+        "move": "controller.animation.bce_guardian.move"
+      },
+      "scripts": {
+        "animate": [
+          "move"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.bce_guardian"
+      ],
+      "spawn_egg": {
+        "base_color": "#101018",
+        "overlay_color": "#7a2cff"
+      }
+    }
+  }
+}
