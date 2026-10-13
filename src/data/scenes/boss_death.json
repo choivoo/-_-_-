@@ -31,8 +31,13 @@
   },
   {
    "t": 0,
-   "type": "cmd",
-   "run": "particle minecraft:huge_explosion_emitter 419 102 0"
+   "type": "particle",
+   "name": "minecraft:huge_explosion_emitter",
+   "pos": [
+    419.0,
+    102.0,
+    0.0
+   ]
   },
   {
    "t": 30,
@@ -60,8 +65,13 @@
   },
   {
    "t": 60,
-   "type": "cmd",
-   "run": "particle minecraft:totem_particle 419 103 0"
+   "type": "particle",
+   "name": "minecraft:totem_particle",
+   "pos": [
+    419.0,
+    103.0,
+    0.0
+   ]
   },
   {
    "t": 90,

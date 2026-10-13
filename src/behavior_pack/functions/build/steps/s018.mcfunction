@@ -1,42 +1,45 @@
-# zone 1 shell 0
-fill 96 100 -4 104 101 4 stone_bricks
-fill 97 101 -3 103 101 3 water
-fill 97 100 -3 103 100 3 stone
-fill 100 100 0 100 104 0 chiseled_stone_bricks
-setblock 100 105 0 sea_lantern
-fill 96 102 -4 96 103 -4 stone_bricks
-setblock 96 104 -4 lantern
-fill 104 102 -4 104 103 -4 stone_bricks
-setblock 104 104 -4 lantern
-fill 96 102 4 96 103 4 stone_bricks
-setblock 96 104 4 lantern
-fill 104 102 4 104 103 4 stone_bricks
-setblock 104 104 4 lantern
-fill 71 99 -27 83 99 -17 cobblestone
-fill 72 100 -26 82 104 -18 spruce_planks
-fill 72 100 -26 72 104 -26 spruce_log
-fill 72 100 -18 72 104 -18 spruce_log
-fill 82 100 -26 82 104 -26 spruce_log
-fill 82 100 -18 82 104 -18 spruce_log
-fill 72 104 -26 82 104 -26 spruce_log ["pillar_axis"="x"]
-fill 72 104 -18 82 104 -18 spruce_log ["pillar_axis"="x"]
-fill 72 104 -26 72 104 -18 spruce_log ["pillar_axis"="z"]
-fill 82 104 -26 82 104 -18 spruce_log ["pillar_axis"="z"]
-fill 71 105 -26 83 105 -26 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 71 105 -18 83 105 -18 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-fill 72 105 -25 72 105 -19 spruce_planks
-fill 82 105 -25 82 105 -19 spruce_planks
-fill 71 106 -25 83 106 -25 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 71 106 -19 83 106 -19 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-fill 72 106 -24 72 106 -20 spruce_planks
-fill 82 106 -24 82 106 -20 spruce_planks
-fill 71 107 -24 83 107 -24 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 71 107 -20 83 107 -20 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-fill 72 107 -23 72 107 -21 spruce_planks
-fill 82 107 -23 82 107 -21 spruce_planks
-fill 71 108 -23 83 108 -23 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 71 108 -21 83 108 -21 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-fill 72 108 -22 72 108 -22 spruce_planks
-fill 82 108 -22 82 108 -22 spruce_planks
-fill 71 109 -22 83 109 -22 spruce_planks
-scoreboard players add #bstep bce_sys 1
+# zone 0 detail 0
+scoreboard players set #bzone bce_sys 0
+execute unless block 0 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 0 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 0 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 0 79 0 stone run scoreboard players set #bstage bce_sys 3
+execute if block 0 79 0 stone run fill 16 99 -26 17 99 -25 mossy_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 21 99 -17 23 99 -16 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill -10 99 -8 -9 99 -6 gravel replace stone_bricks
+execute if block 0 79 0 stone run fill -13 99 8 -13 99 9 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill -33 99 24 -33 99 25 gravel replace stone_bricks
+execute if block 0 79 0 stone run fill -13 99 -36 -11 99 -35 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 31 99 -16 33 99 -14 mossy_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill -6 99 -18 -5 99 -18 mossy_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 2 99 -36 4 99 -35 stone replace stone_bricks
+execute if block 0 79 0 stone run fill 28 99 32 28 99 32 stone replace stone_bricks
+execute if block 0 79 0 stone run fill 10 99 2 12 99 2 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 7 99 24 7 99 25 gravel replace stone_bricks
+execute if block 0 79 0 stone run fill 20 99 8 21 99 10 stone replace stone_bricks
+execute if block 0 79 0 stone run fill 22 99 4 22 99 4 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 19 99 -29 19 99 -28 mossy_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 9 99 -22 9 99 -22 stone replace stone_bricks
+execute if block 0 79 0 stone run fill 6 99 5 7 99 7 gravel replace stone_bricks
+execute if block 0 79 0 stone run fill -13 99 13 -13 99 13 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 0 99 0 1 99 1 mossy_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 33 99 37 35 99 37 mossy_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 24 99 14 26 99 15 gravel replace stone_bricks
+execute if block 0 79 0 stone run fill 12 99 28 12 99 29 mossy_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill -33 99 -13 -33 99 -13 stone replace stone_bricks
+execute if block 0 79 0 stone run fill -13 99 -20 -13 99 -20 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 32 99 -4 32 99 -2 stone replace stone_bricks
+execute if block 0 79 0 stone run fill -25 99 -12 -23 99 -12 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill -19 99 8 -17 99 8 mossy_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 24 99 -3 26 99 -3 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill -4 99 -36 -2 99 -36 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill -20 99 29 -18 99 30 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 23 99 -17 24 99 -15 gravel replace stone_bricks
+execute if block 0 79 0 stone run fill -38 99 -34 -37 99 -32 mossy_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill 11 99 -30 13 99 -29 stone replace stone_bricks
+execute if block 0 79 0 stone run fill -11 99 -35 -10 99 -35 stone replace stone_bricks
+execute if block 0 79 0 stone run fill -11 99 4 -11 99 5 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run fill -37 99 -10 -35 99 -8 cracked_stone_bricks replace stone_bricks
+execute if block 0 79 0 stone run scoreboard players add #bstep bce_sys 1

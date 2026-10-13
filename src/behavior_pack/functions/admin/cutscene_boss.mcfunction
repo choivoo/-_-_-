@@ -1,2 +1,2 @@
 # test (as player)
-function cutscenes/boss_intro/start
+execute if entity @s[tag=bce_admin] run function cutscenes/boss_intro/start

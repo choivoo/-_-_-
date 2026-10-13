@@ -1,158 +1,22 @@
 {
   "fail": [],
   "ok": [
-    {
-      "label": "START",
-      "pos": [
-        -7.5,
-        100,
-        0.5
-      ],
-      "problems": []
-    },
-    {
-      "label": "CP1",
-      "pos": [
-        16.5,
-        100,
-        0.5
-      ],
-      "problems": []
-    },
-    {
-      "label": "CP2",
-      "pos": [
-        66.5,
-        100,
-        0.5
-      ],
-      "problems": []
-    },
-    {
-      "label": "CP3",
-      "pos": [
-        164.5,
-        100,
-        0.5
-      ],
-      "problems": []
-    },
-    {
-      "label": "CP4",
-      "pos": [
-        263.5,
-        100,
-        0.5
-      ],
-      "problems": []
-    },
-    {
-      "label": "CP5",
-      "pos": [
-        388.5,
-        100,
-        0.5
-      ],
-      "problems": []
-    },
-    {
-      "label": "YARD_SPAWN",
-      "pos": [
-        28,
-        100,
-        0
-      ],
-      "problems": []
-    },
-    {
-      "label": "MIDBOSS",
-      "pos": [
-        330,
-        100,
-        0
-      ],
-      "problems": []
-    },
-    {
-      "label": "ARENA_C",
-      "pos": [
-        419,
-        100,
-        0
-      ],
-      "problems": []
-    },
-    {
-      "label": "WAVE1_e1",
-      "pos": [
-        278,
-        100,
-        -8
-      ],
-      "problems": []
-    },
-    {
-      "label": "WAVE1_e1",
-      "pos": [
-        278,
-        100,
-        8
-      ],
-      "problems": []
-    },
-    {
-      "label": "WAVE1_e1",
-      "pos": [
-        286,
-        100,
-        0
-      ],
-      "problems": []
-    },
-    {
-      "label": "WAVE1_e3",
-      "pos": [
-        294,
-        100,
-        14
-      ],
-      "problems": []
-    },
-    {
-      "label": "WAVE2_e2",
-      "pos": [
-        280,
-        100,
-        -10
-      ],
-      "problems": []
-    },
-    {
-      "label": "WAVE2_e2",
-      "pos": [
-        280,
-        100,
-        10
-      ],
-      "problems": []
-    },
-    {
-      "label": "WAVE2_e4",
-      "pos": [
-        290,
-        100,
-        -6
-      ],
-      "problems": []
-    },
-    {
-      "label": "WAVE2_e4",
-      "pos": [
-        290,
-        100,
-        6
-      ],
-      "problems": []
-    }
+    "spawn START",
+    "spawn CP1",
+    "spawn CP2",
+    "spawn CP3",
+    "spawn CP4",
+    "spawn CP5",
+    "spawn YARD_SPAWN",
+    "spawn MIDBOSS",
+    "spawn ARENA_C",
+    "spawn WAVE1_e1@278,-8",
+    "spawn WAVE1_e1@278,8",
+    "spawn WAVE1_e1@286,0",
+    "spawn WAVE1_e3@294,14",
+    "spawn WAVE2_e2@280,-10",
+    "spawn WAVE2_e2@280,10",
+    "spawn WAVE2_e4@290,-6",
+    "spawn WAVE2_e4@290,6"
   ]
 }

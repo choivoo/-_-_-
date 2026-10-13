@@ -1,0 +1,18 @@
+# 구역 2 가라앉은 유적 — 단계 light (1/1). 중심 x=200 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 200 100 0 4 bce_z2)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 160 100 -40 239 140 39 air (여러 번에 나눠서)
+
+setblock 185 90 5 lantern
+setblock 190 90 5 lantern
+setblock 195 90 5 lantern
+setblock 200 90 5 lantern
+setblock 205 90 5 lantern
+setblock 210 90 10 lantern
+setblock 215 90 10 lantern
+setblock 220 90 10 lantern
+setblock 225 90 10 lantern
+setblock 188 94 0 sea_lantern
+setblock 224 95 0 sea_lantern
+fill 190 87 6 190 93 6 end_rod
+setblock 190 94 6 sea_lantern
+fill 236 100 4 236 112 4 end_rod
+setblock 236 113 4 sea_lantern

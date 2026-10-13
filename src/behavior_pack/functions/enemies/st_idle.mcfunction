@@ -1,1 +1,2 @@
 execute if entity @a[r=14,tag=bce_ctl] run function enemies/to_detect
+execute if entity @s[tag=bce_patrol] unless entity @a[r=14,tag=bce_ctl] if score @s bce_aitm matches 60.. run function enemies/to_patrol

@@ -1,0 +1,10 @@
+# 구역 1 잿빛 마을 — 단계 func (1/1). 중심 x=100 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 100 100 0 4 bce_z1)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 60 100 -40 139 140 39 air (여러 번에 나눠서)
+
+fill 109 100 26 111 102 28 spruce_planks
+fill 110 100 26 110 101 27 air
+fill 108 100 25 112 102 25 bookshelf
+fill 110 100 25 110 101 25 air
+setblock 110 100 27 chest
+replaceitem block 110 100 27 slot.container 0 golden_apple 3
+replaceitem block 110 100 27 slot.container 1 arrow 16

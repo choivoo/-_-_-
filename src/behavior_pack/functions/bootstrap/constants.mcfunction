@@ -8,6 +8,12 @@ execute unless score #regen_c bce_sys matches -2147483648..2147483647 run scoreb
 execute unless score #cost_dodge bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_dodge bce_sys 25
 execute unless score #cost_heavy bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_heavy bce_sys 20
 execute unless score #cost_ult bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_ult bce_sys 30
+execute unless score #cost_dash bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_dash bce_sys 15
+execute unless score #cost_bslash bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_bslash bce_sys 25
+execute unless score #cost_judge bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_judge bce_sys 50
+execute unless score #c19 bce_sys matches -2147483648..2147483647 run scoreboard players set #c19 bce_sys 19
+execute unless score #c100 bce_sys matches -2147483648..2147483647 run scoreboard players set #c100 bce_sys 100
+execute unless score #c4 bce_sys matches -2147483648..2147483647 run scoreboard players set #c4 bce_sys 4
 execute unless score #quality bce_sys matches -2147483648..2147483647 run scoreboard players set #quality bce_sys 1
 execute unless score #shake bce_sys matches -2147483648..2147483647 run scoreboard players set #shake bce_sys 1
 execute unless score #mode bce_sys matches -2147483648..2147483647 run scoreboard players set #mode bce_sys 0

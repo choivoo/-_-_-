@@ -60,7 +60,8 @@ def pure_commands():
                 rel = os.path.relpath(os.path.join(root, f), FUNCS)[:-len(".mcfunction")].replace(os.sep, "/")
                 files[rel] = open(os.path.join(root, f), encoding="utf-8").read().splitlines()
     out_dir = os.path.join(SRC, "pure_commands")
-    shutil.rmtree(out_dir, ignore_errors=True)
+    for sub in ('bootstrap', 'command_blocks', 'combat', 'gameplay', 'cutscenes'):
+        shutil.rmtree(os.path.join(out_dir, sub), ignore_errors=True)
     M = lambda n: "execute if score #m%d bce_sys matches 0 run " % n
     sched = ["scoreboard players add #tick bce_sys 1"]
     for n in (5, 10, 20):
@@ -102,26 +103,40 @@ def zipdir(zf, src, arc_root=""):
 
 
 def package():
-    dist = os.path.join(ROOT, "dist")
-    shutil.rmtree(dist, ignore_errors=True)
-    os.makedirs(dist)
-    with zipfile.ZipFile(os.path.join(dist, "BCE_Behavior.mcpack"), "w", zipfile.ZIP_DEFLATED) as z:
+    final = os.path.join(ROOT, "dist", "BCE_1.0_FINAL")
+    shutil.rmtree(final, ignore_errors=True)
+    os.makedirs(final)
+    docs = ["COMMAND_ONLY_GUIDE.md", "COMPATIBILITY.md", "PROJECT_STATUS.md", "README.md", "INSTALL_ANDROID.md", "INSTALL_IOS.md", "TEST_REPORT.md", "CHANGELOG.md"]
+    with zipfile.ZipFile(os.path.join(final, "BCE_Behavior_1.0.mcpack"), "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         zipdir(z, BP)
-    with zipfile.ZipFile(os.path.join(dist, "BCE_Resources.mcpack"), "w", zipfile.ZIP_DEFLATED) as z:
+    with zipfile.ZipFile(os.path.join(final, "BCE_Resources_1.0.mcpack"), "w", zipfile.ZIP_DEFLATED) as z:
         zipdir(z, RP)
-    with zipfile.ZipFile(os.path.join(dist, "BCE_Enhanced.mcaddon"), "w", zipfile.ZIP_DEFLATED) as z:
+    with zipfile.ZipFile(os.path.join(final, "BCE_Enhanced_1.0.mcaddon"), "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         zipdir(z, BP, "BCE_Behavior")
         zipdir(z, RP, "BCE_Resources")
-    with zipfile.ZipFile(os.path.join(dist, "BCE_Command_Only.zip"), "w", zipfile.ZIP_DEFLATED) as z:
+    with zipfile.ZipFile(os.path.join(final, "BCE_Command_Only_1.0.zip"), "w", zipfile.ZIP_DEFLATED) as z:
         zipdir(z, os.path.join(SRC, "pure_commands"), "BCE_Command_Only")
         for d in ("COMMAND_ONLY_GUIDE.md", "COMPATIBILITY.md"):
-            if os.path.exists(os.path.join(ROOT, d)):
-                z.write(os.path.join(ROOT, d), "BCE_Command_Only/" + d)
-    # NOTE: BCE_1.0.mcworld is intentionally NOT produced: no real world save exists (needs Minecraft to generate).
-    return sorted(os.listdir(dist))
+            z.write(os.path.join(ROOT, d), "BCE_Command_Only/" + d)
+    with zipfile.ZipFile(os.path.join(final, "BCE_1.0_Source.zip"), "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+        for top in ("generators", "src", "reports"):
+            for root, dirs, fs in os.walk(os.path.join(ROOT, top)):
+                dirs[:] = [d for d in dirs if d != "__pycache__"]
+                for f in sorted(fs):
+                    full = os.path.join(root, f)
+                    z.write(full, "BCE_1.0_Source/" + os.path.relpath(full, ROOT).replace(os.sep, "/"))
+        for d in docs + ["build.sh"]:
+            z.write(os.path.join(ROOT, d), "BCE_1.0_Source/" + d)
+    shutil.copy(os.path.join(ROOT, "INSTALL_GUIDE_1.0.md"), os.path.join(final, "BCE_1.0_Install_Guide.md"))
+    shutil.copy(os.path.join(ROOT, "TEST_REPORT.md"), os.path.join(final, "BCE_1.0_Test_Report.md"))
+    open(os.path.join(final, "RELEASE_STATUS.txt"), "w", encoding="utf-8").write(
+        "STATUS: RELEASE_CANDIDATE (not 'FINAL VERIFIED')\nGATE G (real-device Android/iOS Bedrock test) has NOT been executed.\n"
+        "No .mcworld is included: no real Bedrock world save could be generated in this environment.\n"
+        "Folder name follows the project spec; see BCE_1.0_Test_Report.md for what was and was not verified.\n")
+    return sorted(os.listdir(final))
 
 
 if __name__ == "__main__":
     manifests(); lang(); particle()
-    print(pure_commands())
+    pure_commands()
     print(package())

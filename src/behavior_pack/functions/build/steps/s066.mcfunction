@@ -1,42 +1,14 @@
-# zone 4 interior 0
-fill 378 100 -4 379 112 4 air
-fill 379 100 -13 398 122 13 air
-fill 379 99 -13 398 99 13 polished_blackstone
-fill 379 99 -2 398 99 2 gilded_blackstone
-fill 382 100 -9 382 121 -9 polished_blackstone_bricks
-setblock 382 100 -9 chiseled_polished_blackstone
-setblock 382 121 -9 chiseled_polished_blackstone
-fill 381 121 -10 383 121 -8 polished_blackstone_bricks
-fill 382 100 9 382 121 9 polished_blackstone_bricks
-setblock 382 100 9 chiseled_polished_blackstone
-setblock 382 121 9 chiseled_polished_blackstone
-fill 381 121 8 383 121 10 polished_blackstone_bricks
-fill 387 100 -9 387 121 -9 polished_blackstone_bricks
-setblock 387 100 -9 chiseled_polished_blackstone
-setblock 387 121 -9 chiseled_polished_blackstone
-fill 386 121 -10 388 121 -8 polished_blackstone_bricks
-fill 387 100 9 387 121 9 polished_blackstone_bricks
-setblock 387 100 9 chiseled_polished_blackstone
-setblock 387 121 9 chiseled_polished_blackstone
-fill 386 121 8 388 121 10 polished_blackstone_bricks
-fill 392 100 -9 392 121 -9 polished_blackstone_bricks
-setblock 392 100 -9 chiseled_polished_blackstone
-setblock 392 121 -9 chiseled_polished_blackstone
-fill 391 121 -10 393 121 -8 polished_blackstone_bricks
-fill 392 100 9 392 121 9 polished_blackstone_bricks
-setblock 392 100 9 chiseled_polished_blackstone
-setblock 392 121 9 chiseled_polished_blackstone
-fill 391 121 8 393 121 10 polished_blackstone_bricks
-fill 379 112 10 398 112 13 polished_blackstone_bricks
-fill 396 100 10 396 112 10 chiseled_polished_blackstone
-setblock 394 100 9 polished_blackstone_bricks
-fill 394 101 9 394 103 9 air
-setblock 394 101 8 polished_blackstone_bricks
-fill 394 102 8 394 104 8 air
-setblock 395 102 8 polished_blackstone_bricks
-fill 395 103 8 395 105 8 air
-setblock 396 103 8 polished_blackstone_bricks
-fill 396 104 8 396 106 8 air
-setblock 397 104 8 polished_blackstone_bricks
-fill 397 105 8 397 107 8 air
-scoreboard players add #bstep bce_sys 1
+# zone 1 entity 0
+scoreboard players set #bzone bce_sys 1
+execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 6
+execute if block 100 79 0 stone run kill @e[tag=bce_npc,x=60,y=95,z=-40,dx=80,dy=40,dz=80]
+execute if block 100 79 0 stone run summon villager 103 100 6 0 0 minecraft:entity_spawned "§e상인 마렌"
+execute if block 100 79 0 stone run summon villager 97 100 -6 0 0 minecraft:entity_spawned "§e늙은 파수꾼"
+execute if block 100 79 0 stone run execute positioned 100 100 0 run tag @e[type=villager,r=20,tag=!bce_npc] add bce_npc
+execute if block 100 79 0 stone run effect @e[tag=bce_npc,x=60,y=95,z=-40,dx=80,dy=40,dz=80] slowness 100000 4 true
+execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1

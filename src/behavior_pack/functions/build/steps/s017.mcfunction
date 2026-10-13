@@ -1,10 +1,42 @@
-# zone 1 ground 2
-fill 126 99 -38 127 99 -35 podzol replace coarse_dirt
-fill 131 99 2 134 99 5 dirt replace coarse_dirt
-fill 101 99 12 104 99 12 stone replace coarse_dirt
-fill 80 99 -7 82 99 -4 dirt replace coarse_dirt
-fill 118 99 -18 120 99 -15 podzol replace coarse_dirt
-fill 124 99 26 127 99 27 stone replace coarse_dirt
-fill 129 99 8 130 99 11 dirt replace coarse_dirt
-fill 89 99 23 90 99 26 dirt replace coarse_dirt
-scoreboard players add #bstep bce_sys 1
+# zone 0 interior 3
+scoreboard players set #bzone bce_sys 0
+execute unless block 0 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 0 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 0 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 0 79 0 stone run scoreboard players set #bstage bce_sys 2
+execute if block 0 79 0 stone run fill -2 99 7 2 99 7 deepslate_tiles
+execute if block 0 79 0 stone run fill -2 99 -6 2 99 -6 polished_diorite
+execute if block 0 79 0 stone run fill -4 99 -5 4 99 -5 polished_diorite
+execute if block 0 79 0 stone run fill -5 99 -4 5 99 -4 polished_diorite
+execute if block 0 79 0 stone run fill -5 99 -3 5 99 -3 polished_diorite
+execute if block 0 79 0 stone run fill -6 99 -2 6 99 -2 polished_diorite
+execute if block 0 79 0 stone run fill -6 99 -1 6 99 -1 polished_diorite
+execute if block 0 79 0 stone run fill -6 99 0 6 99 0 polished_diorite
+execute if block 0 79 0 stone run fill -6 99 1 6 99 1 polished_diorite
+execute if block 0 79 0 stone run fill -6 99 2 6 99 2 polished_diorite
+execute if block 0 79 0 stone run fill -5 99 3 5 99 3 polished_diorite
+execute if block 0 79 0 stone run fill -5 99 4 5 99 4 polished_diorite
+execute if block 0 79 0 stone run fill -4 99 5 4 99 5 polished_diorite
+execute if block 0 79 0 stone run fill -2 99 6 2 99 6 polished_diorite
+execute if block 0 79 0 stone run fill -2 99 -4 2 99 -4 deepslate_tiles
+execute if block 0 79 0 stone run fill -3 99 -3 3 99 -3 deepslate_tiles
+execute if block 0 79 0 stone run fill -4 99 -2 4 99 -2 deepslate_tiles
+execute if block 0 79 0 stone run fill -4 99 -1 4 99 -1 deepslate_tiles
+execute if block 0 79 0 stone run fill -4 99 0 4 99 0 deepslate_tiles
+execute if block 0 79 0 stone run fill -4 99 1 4 99 1 deepslate_tiles
+execute if block 0 79 0 stone run fill -4 99 2 4 99 2 deepslate_tiles
+execute if block 0 79 0 stone run fill -3 99 3 3 99 3 deepslate_tiles
+execute if block 0 79 0 stone run fill -2 99 4 2 99 4 deepslate_tiles
+execute if block 0 79 0 stone run fill -1 99 -3 1 99 -3 chiseled_stone_bricks
+execute if block 0 79 0 stone run fill -2 99 -2 2 99 -2 chiseled_stone_bricks
+execute if block 0 79 0 stone run fill -3 99 -1 3 99 -1 chiseled_stone_bricks
+execute if block 0 79 0 stone run fill -3 99 0 3 99 0 chiseled_stone_bricks
+execute if block 0 79 0 stone run fill -3 99 1 3 99 1 chiseled_stone_bricks
+execute if block 0 79 0 stone run fill -2 99 2 2 99 2 chiseled_stone_bricks
+execute if block 0 79 0 stone run fill -1 99 3 1 99 3 chiseled_stone_bricks
+execute if block 0 79 0 stone run fill -1 99 -1 1 99 -1 gilded_blackstone
+execute if block 0 79 0 stone run fill -1 99 0 1 99 0 gilded_blackstone
+execute if block 0 79 0 stone run fill -1 99 1 1 99 1 gilded_blackstone
+execute if block 0 79 0 stone run scoreboard players add #bstep bce_sys 1

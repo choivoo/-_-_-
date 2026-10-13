@@ -7,3 +7,4 @@ playsound random.levelup @s ~ ~ ~ 0.8 1
 particle minecraft:totem_particle ~ ~1 ~
 effect @s regeneration 3 1 true
 tellraw @s {"rawtext":[{"text":"§e[다음 임무] §f검을 획득하다"}]}
+tellraw @s {"rawtext":[{"text":"§e[목적지] §f제단 옆 벽감(무기 선반)으로 가세요."}]}

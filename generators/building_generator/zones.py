@@ -175,17 +175,30 @@ def house(b, spec, pal, rng):
         b.fill(x2, yy, z1, x2, yy, z2, pal["frame"] + ' ["pillar_axis"="z"]')
     # roof
     ruined = spec.get("ruined", False)
-    b.gable_roof(x1, z1, x2, z2, Y + H, pal["roof"], pal["ridge"], pal["gable"])
+    roof = spec.get("roof", "gable")
+    if roof == "hip":
+        b.hip_roof(x1, z1, x2, z2, Y + H, pal["roof"], pal["ridge"])
+    elif roof == "steep":
+        b.steep_gable(x1, z1, x2, z2, Y + H, pal["roof"], pal["ridge"], pal["gable"])
+    else:
+        b.gable_roof(x1, z1, x2, z2, Y + H, pal["roof"], pal["ridge"], pal["gable"])
+    b.register(spec["id"], spec["name"], (x1, Y, z1, x2, Y + H + 6, z2), 3 if spec.get("secret") or fl > 1 else 2, "ashen_timber",
+               entrance=[(x1 + x2) // 2, Y, (z2 + 1) if spec["door"] == "s" else (z1 - 1)], interior=[[(x1 + x2) // 2, Y, (z1 + z2) // 2]], floors=fl, roof=roof)
     b.stage = "interior"
     b.fill(x1 + 1, Y, z1 + 1, x2 - 1, Y + H - 1, z2 - 1, "air")
     b.fill(x1 + 1, Y - 1, z1 + 1, x2 - 1, Y - 1, z2 - 1, pal["floor"])
-    if fl == 2:
-        b.fill(x1 + 1, Y + 4, z1 + 1, x2 - 1, Y + 4, z2 - 1, pal["floor"])
-        # stair along west inner wall, rising toward +z
+    for f in range(1, fl):
+        ys = Y + 5 * f - 1
+        b.fill(x1 + 1, ys, z1 + 1, x2 - 1, ys, z2 - 1, pal["floor"])
         for i in range(4):
-            b.set(x1 + 1, Y + i, z1 + 1 + i, stairs("oak_stairs", 2))
-            b.fill(x1 + 1, Y + 4, z1 + 1 + i, x1 + 1, Y + 4, z1 + 1 + i, "air")
-        b.fill(x1 + 1, Y + 4, z1 + 1, x1 + 1, Y + 4, z1 + 4, "air")
+            if f % 2 == 1:      # west wall, rising toward +z
+                b.set(x1 + 1, ys - 4 + i, z1 + 1 + i, stairs("oak_stairs", 2))
+            else:               # east wall, rising toward -z
+                b.set(x2 - 1, ys - 4 + i, z2 - 1 - i, stairs("oak_stairs", 3))
+        if f % 2 == 1:
+            b.fill(x1 + 1, ys, z1 + 1, x1 + 1, ys, z1 + 4, "air")
+        else:
+            b.fill(x2 - 1, ys, z2 - 4, x2 - 1, ys, z2 - 1, "air")
     # door + windows
     dx = (x1 + x2) // 2
     dz = (z1 + z2) // 2
@@ -244,15 +257,15 @@ def zone1(b):
     b.fill(cx - 8, Y - 1, -8, cx + 8, Y - 1, 8, "stone_bricks")
     b.fill(cx - 6, Y - 1, -6, cx + 6, Y - 1, 6, "polished_andesite")
     b.patches(rng, cx - 38, -38, cx + 37, 37, Y - 1, "coarse_dirt", ["podzol", "dirt", "gravel", "stone"], 70, 3)
-    # fountain
+    # fountain (circular basin, r=5) + centre column and four lamp posts
     b.stage = "shell"
-    b.fill(cx - 4, Y, -4, cx + 4, Y + 1, 4, "stone_bricks")
-    b.fill(cx - 3, Y + 1, -3, cx + 3, Y + 1, 3, "water")
-    b.fill(cx - 3, Y, -3, cx + 3, Y, 3, "stone")
+    b.disc(cx, 0, 5, Y, Y + 1, "stone_bricks")
+    b.disc(cx, 0, 4, Y + 1, Y + 1, "water")
+    b.disc(cx, 0, 4, Y, Y, "stone")
     b.fill(cx, Y, 0, cx, Y + 4, 0, "chiseled_stone_bricks")
     b.set(cx, Y + 5, 0, "sea_lantern")
-    for ox, oz in [(-4, -4), (4, -4), (-4, 4), (4, 4)]:
-        b.fill(cx + ox, Y + 2, oz, cx + ox, Y + 3, oz, "stone_bricks")
+    for ox, oz in [(-6, 0), (6, 0), (0, -6), (0, 6)]:
+        b.fill(cx + ox, Y, oz, cx + ox, Y + 3, oz, "stone_bricks")
         b.set(cx + ox, Y + 4, oz, "lantern")
     for bd in spec["buildings"]:
         house(b, bd, pal, rng)
@@ -308,6 +321,14 @@ def zone2(b):
         for z in (-14, 14, -26, 26):
             h = rng.randint(2, 7)
             b.pillar(x, z, Y, Y + h, "mossy_stone_bricks", "chiseled_stone_bricks", None)
+    # collapsed-masonry cliff across the full width of the platform: the only way east is the underground route
+    b.stage = "shell"
+    b.fill(cx - 3, Y, -40, cx + 3, Y + 22, 39, "mossy_stone_bricks")
+    for k in range(18):
+        yy = Y + 3 + k
+        b.fill(cx - 3, yy, -40, cx - 3, yy, 39, "cracked_stone_bricks", "replace mossy_stone_bricks") if k % 3 == 0 else None
+    b.fill(cx - 4, Y, -40, cx - 4, Y + 5, 39, "mossy_cobblestone")
+    b.fill(cx + 4, Y, -40, cx + 4, Y + 4, 39, "mossy_cobblestone")
     # --- underground complex
     CH, WK = Y - 14, Y - 13       # chamber floor block y=86, walking y=87
     b.stage = "interior"
@@ -393,15 +414,15 @@ def zone3(b):
         b.fill(cx + 6 + i, Y - 10 + i, 37, cx + 6 + i, Y - 10 + i, 38, stairs("stone_brick_stairs", 0))
     # broken wall line x = cx-1 .. cx+4 with gate
     b.stage = "shell"
-    b.fill(cx - 1, Y, -39, cx + 4, Y + 13, 38, "stone_bricks")
+    b.fill(cx - 1, Y, -39, cx + 4, Y + 17, 38, "stone_bricks")
     b.fill(cx - 1, Y, -4, cx + 4, Y + 9, 4, "air")
     b.fill(cx - 1, Y + 10, -5, cx + 4, Y + 10, 5, "chiseled_stone_bricks")
     for z in range(-39, 39):
         if rng.random() < 0.28 and abs(z) > 8:       # broken sections
             h = rng.randint(3, 9)
-            b.fill(cx - 1, Y + 14 - h, z, cx + 4, Y + 13, z, "air")
+            b.fill(cx - 1, Y + 18 - h, z, cx + 4, Y + 17, z, "air")
     b.fill(cx + 4, Y + 13, -39, cx + 4, Y + 13, 38, "stone_bricks") if False else None
-    b.battlement(cx - 1, -39, cx - 1, 38, Y + 14, "stone_bricks")
+    b.battlement(cx - 1, -39, cx - 1, 38, Y + 18, "stone_bricks")
     # wall-walk stairs (collapsed) north side
     for i in range(10):
         b.set(cx - 5, Y + i, -34 + i if i < 7 else -28, stairs("stone_brick_stairs", 2) if i < 7 else "air")
@@ -459,11 +480,8 @@ def zone4(b):
     b.fill(cx - 39, Y - 1, -2, cx - 27, Y - 1, 2, "gilded_blackstone") if False else None
     b.patches(rng, cx - 38, -38, cx + 37, 37, Y - 1, "polished_blackstone_bricks", ["cracked_polished_blackstone_bricks", "blackstone", "deepslate_bricks"], 70, 3)
     road(b, cx - 40, cx - 28, 0, 2, "polished_blackstone")
-    # plaza + grand stairs up to the facade
+    # forecourt
     b.stage = "shell"
-    for i in range(5):
-        b.fill(cx - 30 + i, Y + i, -9, cx - 30 + i, Y + i, 9, stairs("polished_blackstone_brick_stairs", 0))
-        b.fill(cx - 30 + i, Y, -9, cx - 30 + i, Y + i - 1, 9, "polished_blackstone_bricks") if i > 0 else None
     # facade wall (x = cx-26 .. cx-22), 26 high, big gate
     b.fill(cx - 26, Y, -20, cx - 22, Y + 26, 20, "polished_blackstone_bricks")
     b.fill(cx - 26, Y, -4, cx - 22, Y + 12, 4, "air")
@@ -485,18 +503,19 @@ def zone4(b):
         for z in (-9, 9):
             b.pillar(x, z, Y, Y + 21, "polished_blackstone_bricks", "chiseled_polished_blackstone", "chiseled_polished_blackstone")
             b.fill(x - 1, Y + 21, z - 1, x + 1, Y + 21, z + 1, "polished_blackstone_bricks")
-    # balcony level + spiral stair (NE corner of hall)
+    # balcony level, grand stair (12 steps along the north side) + spiral stair (NE corner of hall)
     b.fill(cx - 21, Y + 12, 10, cx - 2, Y + 12, 13, "polished_blackstone_bricks")
+    for i in range(12):
+        b.fill(cx - 19 + i, Y + i, 11, cx - 19 + i, Y + i, 12, stairs("polished_blackstone_brick_stairs", 0))
+        b.fill(cx - 19 + i, Y + i + 1, 11, cx - 19 + i, Y + i + 3, 12, "air") if i < 11 else None
+    b.fill(cx - 19, Y + 12, 11, cx - 8, Y + 12, 12, "air")
     b.spiral(cx - 4, 10, 2, Y, 12, "polished_blackstone_bricks", "chiseled_polished_blackstone")
-    # sealed door to arena
+    # sealed door to arena: hall wall (cx-1) + gap (cx) + arena wall (cx+1); opened by world/open_cit_door
     dx1, dy1, dz1, dx2, dy2, dz2 = L.CIT_DOOR
-    b.fill(cx - 2, Y, -4, cx + 1, Y + 11, 4, "polished_blackstone_bricks")
-    b.fill(dx1, dy1, dz1, dx2, dy2, dz2, "air")
-    b.fill(cx - 2, Y, -3, cx - 2, Y + 8, 3, "air") if False else None
     b.fill(dx1, dy1, dz1, dx2, dy2, dz2, "obsidian")
-    b.fill(cx - 4 + 1, Y + 7, -1, cx - 4 + 1, Y + 7, 1, "crying_obsidian") if False else None
-    b.set(cx - 3, Y + 5, 0, "crying_obsidian")
-    b.set(cx - 4, Y + 5, 0, "crying_obsidian")
+    b.fill(cx - 1, Y + 9, -4, cx + 1, Y + 9, 4, "chiseled_polished_blackstone")
+    b.set(cx - 2, Y + 5, 0, "crying_obsidian")
+    b.set(cx - 2, Y + 6, 0, "crying_obsidian")
     # roof of hall with skylight
     b.fill(cx - 21, Y + 23, -14, cx - 1, Y + 24, 14, "deepslate_tiles")
     b.fill(cx - 14, Y + 23, -3, cx - 8, Y + 24, 3, "air")
@@ -531,4 +550,14 @@ def zone4(b):
     b.cmd("setblock %d %d 0 sea_lantern" % (ac, Y + 12)) if False else None
 
 
-ZONES = [zone0, zone1, zone2, zone3, zone4]
+def _wrap(i, zf):
+    def run(b):
+        import lod
+        zf(b)
+        for p in lod.PASSES[i]:
+            p(b)
+        lod.beacons(b, i)
+    return run
+
+
+ZONES = [_wrap(i, f) for i, f in enumerate([zone0, zone1, zone2, zone3, zone4])]

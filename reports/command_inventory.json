@@ -1,0 +1,126 @@
+{
+ "camera": {
+  "count": 41,
+  "syntax_source": "syntax compared with Microsoft Learn camera command page (set/ease/pos/rot/facing/clear/fade time/color)"
+ },
+ "camerashake": {
+  "count": 20,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "clear": {
+  "count": 24,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "damage": {
+  "count": 47,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "difficulty": {
+  "count": 1,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "effect": {
+  "count": 39,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "fill": {
+  "count": 3851,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "function": {
+  "count": 460,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "gamerule": {
+  "count": 14,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "give": {
+  "count": 19,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "inputpermission": {
+  "count": 32,
+  "syntax_source": "documented in the same page (camera/movement enabled|disabled); added 1.19.80 per community wiki"
+ },
+ "kill": {
+  "count": 15,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "particle": {
+  "count": 292,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "playanimation": {
+  "count": 8,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "playsound": {
+  "count": 67,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "replaceitem": {
+  "count": 8,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "scoreboard": {
+  "count": 2076,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "setblock": {
+  "count": 880,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "setworldspawn": {
+  "count": 1,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "spawnpoint": {
+  "count": 6,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "stopsound": {
+  "count": 5,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "structure": {
+  "count": 26,
+  "syntax_source": "syntax NOT verified in game"
+ },
+ "summon": {
+  "count": 10,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "tag": {
+  "count": 80,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "tellraw": {
+  "count": 72,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "tickingarea": {
+  "count": 22,
+  "syntax_source": "circle syntax NOT verified from an official page"
+ },
+ "time": {
+  "count": 5,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "title": {
+  "count": 7,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "titleraw": {
+  "count": 122,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "tp": {
+  "count": 70,
+  "syntax_source": "author knowledge; not verified in game"
+ },
+ "weather": {
+  "count": 1,
+  "syntax_source": "author knowledge; not verified in game"
+ }
+}

@@ -1,42 +1,40 @@
-# zone 4 shell 0
-fill 370 100 -9 370 100 9 polished_blackstone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 371 101 -9 371 101 9 polished_blackstone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 371 100 -9 371 100 9 polished_blackstone_bricks
-fill 372 102 -9 372 102 9 polished_blackstone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 372 100 -9 372 101 9 polished_blackstone_bricks
-fill 373 103 -9 373 103 9 polished_blackstone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 373 100 -9 373 102 9 polished_blackstone_bricks
-fill 374 104 -9 374 104 9 polished_blackstone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 374 100 -9 374 103 9 polished_blackstone_bricks
-fill 374 100 -20 378 126 20 polished_blackstone_bricks
-fill 374 100 -4 378 112 4 air
-fill 374 113 -5 378 113 5 chiseled_polished_blackstone
-fill 373 100 -12 373 122 -12 blackstone
-setblock 373 123 -12 chiseled_polished_blackstone
-setblock 372 105 -12 soul_lantern
-fill 373 100 -8 373 122 -8 blackstone
-setblock 373 123 -8 chiseled_polished_blackstone
-setblock 372 105 -8 soul_lantern
-fill 373 100 8 373 122 8 blackstone
-setblock 373 123 8 chiseled_polished_blackstone
-setblock 372 105 8 soul_lantern
-fill 373 100 12 373 122 12 blackstone
-setblock 373 123 12 chiseled_polished_blackstone
-setblock 372 105 12 soul_lantern
-setblock 374 127 -20 polished_blackstone_bricks
-setblock 374 127 -18 polished_blackstone_bricks
-setblock 374 127 -16 polished_blackstone_bricks
-setblock 374 127 -14 polished_blackstone_bricks
-setblock 374 127 -12 polished_blackstone_bricks
-setblock 374 127 -10 polished_blackstone_bricks
-setblock 374 127 -8 polished_blackstone_bricks
-setblock 374 127 -6 polished_blackstone_bricks
-setblock 374 127 -4 polished_blackstone_bricks
-setblock 374 127 -2 polished_blackstone_bricks
-setblock 374 127 0 polished_blackstone_bricks
-setblock 374 127 2 polished_blackstone_bricks
-setblock 374 127 4 polished_blackstone_bricks
-setblock 374 127 6 polished_blackstone_bricks
-setblock 374 127 8 polished_blackstone_bricks
-setblock 374 127 10 polished_blackstone_bricks
-scoreboard players add #bstep bce_sys 1
+# zone 1 light 1
+scoreboard players set #bzone bce_sys 1
+execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 4
+execute if block 100 79 0 stone run fill 82 100 -5 82 102 -5 oak_fence
+execute if block 100 79 0 stone run setblock 82 103 -5 lantern
+execute if block 100 79 0 stone run fill 82 100 5 82 102 5 oak_fence
+execute if block 100 79 0 stone run setblock 82 103 5 lantern
+execute if block 100 79 0 stone run fill 91 100 -5 91 102 -5 oak_fence
+execute if block 100 79 0 stone run setblock 91 103 -5 lantern
+execute if block 100 79 0 stone run fill 91 100 5 91 102 5 oak_fence
+execute if block 100 79 0 stone run setblock 91 103 5 lantern
+execute if block 100 79 0 stone run fill 100 100 -5 100 102 -5 oak_fence
+execute if block 100 79 0 stone run setblock 100 103 -5 lantern
+execute if block 100 79 0 stone run fill 100 100 5 100 102 5 oak_fence
+execute if block 100 79 0 stone run setblock 100 103 5 lantern
+execute if block 100 79 0 stone run fill 109 100 -5 109 102 -5 oak_fence
+execute if block 100 79 0 stone run setblock 109 103 -5 lantern
+execute if block 100 79 0 stone run fill 109 100 5 109 102 5 oak_fence
+execute if block 100 79 0 stone run setblock 109 103 5 lantern
+execute if block 100 79 0 stone run fill 118 100 -5 118 102 -5 oak_fence
+execute if block 100 79 0 stone run setblock 118 103 -5 lantern
+execute if block 100 79 0 stone run fill 118 100 5 118 102 5 oak_fence
+execute if block 100 79 0 stone run setblock 118 103 5 lantern
+execute if block 100 79 0 stone run fill 127 100 -5 127 102 -5 oak_fence
+execute if block 100 79 0 stone run setblock 127 103 -5 lantern
+execute if block 100 79 0 stone run fill 127 100 5 127 102 5 oak_fence
+execute if block 100 79 0 stone run setblock 127 103 5 lantern
+execute if block 100 79 0 stone run fill 136 100 -5 136 102 -5 oak_fence
+execute if block 100 79 0 stone run setblock 136 103 -5 lantern
+execute if block 100 79 0 stone run fill 136 100 5 136 102 5 oak_fence
+execute if block 100 79 0 stone run setblock 136 103 5 lantern
+execute if block 100 79 0 stone run setblock 116 101 -6 lantern
+execute if block 100 79 0 stone run fill 66 100 4 66 112 4 end_rod
+execute if block 100 79 0 stone run setblock 66 113 4 sea_lantern
+execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1

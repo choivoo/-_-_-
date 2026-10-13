@@ -1,13 +1,90 @@
 {
-  "stamina": {"max": 100, "regen_per_5_ticks": 2, "cost_dodge": 25, "cost_heavy": 20, "cost_ult": 30},
-  "slash": [
-    {"stage": 1, "damage": 4, "reach": 1.5, "radius": 2.0, "cooldown": 6, "boss_ledger": 5},
-    {"stage": 2, "damage": 6, "reach": 1.7, "radius": 2.6, "cooldown": 8, "boss_ledger": 8},
-    {"stage": 3, "damage": 9, "reach": 1.9, "radius": 3.2, "cooldown": 20, "boss_ledger": 14, "stun": true}
-  ],
-  "combo_window_ticks": 30,
-  "dodge": {"cooldown": 24, "iframes": 10, "steps": 5},
-  "ult": {"damage": 10, "radius": 6, "cooldown": 200, "boss_ledger": 25},
-  "heal": {"cooldown": 1200},
-  "items": {"1": "blaze_rod", "2": "feather", "3": "rabbit_foot", "4": "flint", "5": "brick", "6": "nether_star", "7": "apple", "9": "paper"}
+ "stamina": {
+  "max": 100,
+  "regen_per_5_ticks": 2,
+  "cost_dodge": 25,
+  "cost_heavy": 20,
+  "cost_ult": 30,
+  "cost_dash": 15,
+  "cost_bslash": 25,
+  "cost_judge": 50
+ },
+ "slash": [
+  {
+   "stage": 1,
+   "damage": 4,
+   "reach": 1.5,
+   "radius": 2.0,
+   "cooldown": 6,
+   "boss_ledger": 5
+  },
+  {
+   "stage": 2,
+   "damage": 6,
+   "reach": 1.7,
+   "radius": 2.6,
+   "cooldown": 8,
+   "boss_ledger": 8
+  },
+  {
+   "stage": 3,
+   "damage": 9,
+   "reach": 1.9,
+   "radius": 3.2,
+   "cooldown": 20,
+   "boss_ledger": 14,
+   "stun": true
+  }
+ ],
+ "combo_window_ticks": 30,
+ "dodge": {
+  "cooldown": 24,
+  "iframes": 10,
+  "steps": 5
+ },
+ "ult": {
+  "damage": 10,
+  "radius": 6,
+  "cooldown": 200,
+  "boss_ledger": 25
+ },
+ "heal": {
+  "cooldown": 1200
+ },
+ "items": {
+  "1": "blaze_rod",
+  "2": "feather",
+  "3": "rabbit_foot",
+  "4": "flint",
+  "5": "brick",
+  "6": "nether_star",
+  "7": "apple",
+  "8": "ender_eye",
+  "10": "amethyst_shard",
+  "11": "totem_of_undying",
+  "20": "paper"
+ },
+ "dash": {
+  "cooldown": 60,
+  "iframes": 8,
+  "steps": 6,
+  "damage": 7,
+  "radius": 3,
+  "boss_ledger": 10
+ },
+ "black_slash": {
+  "cooldown": 80,
+  "damage": 10,
+  "length": 10,
+  "boss_ledger": 18
+ },
+ "judgment": {
+  "cooldown": 600,
+  "damage_inner": 14,
+  "radius_inner": 9,
+  "damage_outer": 6,
+  "radius_outer": 13,
+  "boss_ledger": 60,
+  "iframes": 50
+ }
 }

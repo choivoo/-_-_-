@@ -153,18 +153,33 @@
   },
   {
    "t": 390,
-   "type": "cmd",
-   "run": "particle minecraft:endrod 14 102 0"
+   "type": "particle",
+   "name": "minecraft:endrod",
+   "pos": [
+    14.0,
+    102.0,
+    0.0
+   ]
   },
   {
    "t": 395,
-   "type": "cmd",
-   "run": "particle minecraft:endrod 14 104 1"
+   "type": "particle",
+   "name": "minecraft:endrod",
+   "pos": [
+    14.0,
+    104.0,
+    1.0
+   ]
   },
   {
    "t": 400,
-   "type": "cmd",
-   "run": "particle minecraft:endrod 14 101 -1"
+   "type": "particle",
+   "name": "minecraft:endrod",
+   "pos": [
+    14.0,
+    101.0,
+    -1.0
+   ]
   },
   {
    "t": 420,

@@ -1,0 +1,62 @@
+{
+ "id": "q6_intro",
+ "numeric_id": 6,
+ "duration": 130,
+ "description": "퀘스트 6 시작: 성벽 방향 안내",
+ "start_cmds": [],
+ "end_cmds": [],
+ "events": [
+  {
+   "t": 0,
+   "type": "fade",
+   "in": 6,
+   "hold": 0,
+   "out": 8
+  },
+  {
+   "t": 4,
+   "type": "cam",
+   "pos": [
+    236,
+    108,
+    0
+   ],
+   "facing": [
+    276,
+    106,
+    0
+   ]
+  },
+  {
+   "t": 8,
+   "type": "cam",
+   "pos": [
+    246,
+    113,
+    0
+   ],
+   "facing": [
+    286,
+    112,
+    0
+   ],
+   "ease": [
+    90,
+    "in_out_sine"
+   ]
+  },
+  {
+   "t": 15,
+   "type": "subtitle",
+   "text": "다리 끝에 붕괴된 대성벽이 길을 막고 있다.",
+   "dur": 100
+  },
+  {
+   "t": 110,
+   "type": "fade",
+   "in": 6,
+   "hold": 0,
+   "out": 8
+  }
+ ]
+}

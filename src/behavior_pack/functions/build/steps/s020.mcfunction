@@ -1,42 +1,45 @@
-# zone 1 shell 2
-fill 106 105 -24 106 105 -19 spruce_planks
-fill 114 105 -24 114 105 -19 spruce_planks
-fill 105 106 -24 115 106 -24 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 105 106 -19 115 106 -19 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-fill 106 106 -23 106 106 -20 spruce_planks
-fill 114 106 -23 114 106 -20 spruce_planks
-fill 105 107 -23 115 107 -23 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 105 107 -20 115 107 -20 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-fill 106 107 -22 106 107 -21 spruce_planks
-fill 114 107 -22 114 107 -21 spruce_planks
-fill 105 108 -22 115 108 -22 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 105 108 -21 115 108 -21 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-fill 117 99 -28 131 99 -17 cobblestone
-fill 118 100 -27 130 104 -18 spruce_planks
-fill 118 100 -27 118 104 -27 spruce_log
-fill 118 100 -18 118 104 -18 spruce_log
-fill 130 100 -27 130 104 -27 spruce_log
-fill 130 100 -18 130 104 -18 spruce_log
-fill 118 104 -27 130 104 -27 spruce_log ["pillar_axis"="x"]
-fill 118 104 -18 130 104 -18 spruce_log ["pillar_axis"="x"]
-fill 118 104 -27 118 104 -18 spruce_log ["pillar_axis"="z"]
-fill 130 104 -27 130 104 -18 spruce_log ["pillar_axis"="z"]
-fill 117 105 -27 131 105 -27 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 117 105 -18 131 105 -18 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-fill 118 105 -26 118 105 -19 spruce_planks
-fill 130 105 -26 130 105 -19 spruce_planks
-fill 117 106 -26 131 106 -26 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 117 106 -19 131 106 -19 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-fill 118 106 -25 118 106 -20 spruce_planks
-fill 130 106 -25 130 106 -20 spruce_planks
-fill 117 107 -25 131 107 -25 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 117 107 -20 131 107 -20 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-fill 118 107 -24 118 107 -21 spruce_planks
-fill 130 107 -24 130 107 -21 spruce_planks
-fill 117 108 -24 131 108 -24 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 117 108 -21 131 108 -21 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-fill 118 108 -23 118 108 -22 spruce_planks
-fill 130 108 -23 130 108 -22 spruce_planks
-fill 117 109 -23 131 109 -23 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-fill 117 109 -22 131 109 -22 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
-scoreboard players add #bstep bce_sys 1
+# zone 0 detail 2
+scoreboard players set #bzone bce_sys 0
+execute unless block 0 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 0 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 0 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 0 79 0 stone run scoreboard players set #bstage bce_sys 3
+execute if block 0 79 0 stone run fill 8 99 5 8 99 7 cracked_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill -5 99 15 -5 99 16 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill 6 99 5 6 99 6 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill 4 99 -5 6 99 -5 cracked_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill 12 99 -4 12 99 -3 mossy_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill 11 99 -4 11 99 -2 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill -9 99 9 -7 99 10 mossy_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill -11 99 11 -10 99 13 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill -10 99 -8 -10 99 -8 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill 1 99 -6 1 99 -5 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill -9 99 13 -9 99 14 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill 4 99 6 5 99 6 cracked_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill 5 99 5 5 99 5 cracked_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill 4 99 -16 5 99 -15 cracked_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill -3 99 14 -1 99 14 cracked_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill -6 99 -5 -6 99 -5 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill 8 99 -3 10 99 -3 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill 8 99 15 8 99 15 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill 12 99 10 12 99 10 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill 0 99 2 1 99 4 mossy_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill -7 99 -3 -5 99 -1 mossy_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill -5 99 -8 -4 99 -6 cracked_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill 9 99 3 9 99 3 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill -4 99 -12 -2 99 -11 mossy_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill 8 99 15 10 99 16 cracked_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill 12 99 12 12 99 12 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill -3 99 11 -2 99 11 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill 3 99 -14 3 99 -14 mossy_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill 5 99 -11 5 99 -11 cracked_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill -1 99 -3 -1 99 -2 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill -9 99 -16 -7 99 -15 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill -6 99 -5 -5 99 -4 cracked_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill 5 99 -8 5 99 -7 mossy_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill -1 99 5 0 99 6 mossy_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run fill 6 99 1 8 99 2 polished_andesite replace polished_diorite
+execute if block 0 79 0 stone run fill -11 99 11 -11 99 12 cracked_stone_bricks replace polished_diorite
+execute if block 0 79 0 stone run scoreboard players add #bstep bce_sys 1

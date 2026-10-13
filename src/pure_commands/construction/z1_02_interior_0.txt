@@ -1,0 +1,156 @@
+# 구역 1 잿빛 마을 — 단계 interior (1/1). 중심 x=100 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 100 100 0 4 bce_z1)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 60 100 -40 139 140 39 air (여러 번에 나눠서)
+
+fill 73 100 -25 81 104 -19 air
+fill 73 99 -25 81 99 -19 oak_planks
+fill 77 100 -18 77 101 -18 air
+fill 74 102 -26 74 103 -26 glass_pane
+fill 74 102 -18 74 103 -18 glass_pane
+fill 80 102 -26 80 103 -26 glass_pane
+fill 80 102 -18 80 103 -18 glass_pane
+fill 72 102 -24 72 103 -24 glass_pane
+fill 82 102 -24 82 103 -24 glass_pane
+fill 72 102 -21 72 103 -21 glass_pane
+fill 82 102 -21 82 103 -21 glass_pane
+fill 87 100 -24 93 109 -19 air
+fill 87 99 -24 93 99 -19 oak_planks
+fill 87 104 -24 93 104 -19 oak_planks
+setblock 87 100 -24 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 87 101 -23 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 87 102 -22 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 87 103 -21 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+fill 87 104 -24 87 104 -21 air
+fill 90 100 -18 90 101 -18 air
+fill 88 102 -25 88 103 -25 glass_pane
+fill 88 102 -18 88 103 -18 glass_pane
+fill 86 102 -23 86 103 -23 glass_pane
+fill 94 102 -23 94 103 -23 glass_pane
+fill 86 102 -20 86 103 -20 glass_pane
+fill 94 102 -20 94 103 -20 glass_pane
+fill 88 107 -25 88 108 -25 glass_pane
+fill 88 107 -18 88 108 -18 glass_pane
+fill 91 107 -25 91 108 -25 glass_pane
+fill 91 107 -18 91 108 -18 glass_pane
+fill 86 107 -23 86 108 -23 glass_pane
+fill 94 107 -23 94 108 -23 glass_pane
+fill 86 107 -20 86 108 -20 glass_pane
+fill 94 107 -20 94 108 -20 glass_pane
+fill 107 100 -24 113 104 -19 air
+fill 107 99 -24 113 99 -19 oak_planks
+fill 110 100 -18 110 101 -18 air
+fill 108 102 -25 108 103 -25 glass_pane
+fill 108 102 -18 108 103 -18 glass_pane
+fill 106 102 -23 106 103 -23 glass_pane
+fill 114 102 -23 114 103 -23 glass_pane
+fill 106 102 -20 106 103 -20 glass_pane
+fill 114 102 -20 114 103 -20 glass_pane
+fill 119 100 -26 129 104 -19 air
+fill 119 99 -26 129 99 -19 oak_planks
+fill 124 100 -18 124 101 -18 air
+fill 120 102 -27 120 103 -27 glass_pane
+fill 120 102 -18 120 103 -18 glass_pane
+fill 126 102 -27 126 103 -27 glass_pane
+fill 126 102 -18 126 103 -18 glass_pane
+fill 118 102 -25 118 103 -25 glass_pane
+fill 130 102 -25 130 103 -25 glass_pane
+fill 118 102 -22 118 103 -22 glass_pane
+fill 130 102 -22 130 103 -22 glass_pane
+fill 73 100 18 81 104 24 air
+fill 73 99 18 81 99 24 oak_planks
+fill 77 100 17 77 101 17 air
+fill 74 102 17 74 103 17 glass_pane
+fill 74 102 25 74 103 25 glass_pane
+fill 80 102 17 80 103 17 glass_pane
+fill 80 102 25 80 103 25 glass_pane
+fill 72 102 19 72 103 19 glass_pane
+fill 82 102 19 82 103 19 glass_pane
+fill 72 102 22 72 103 22 glass_pane
+fill 82 102 22 82 103 22 glass_pane
+fill 87 100 18 93 109 24 air
+fill 87 99 18 93 99 24 oak_planks
+fill 87 104 18 93 104 24 oak_planks
+setblock 87 100 18 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 87 101 19 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 87 102 20 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 87 103 21 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+fill 87 104 18 87 104 21 air
+fill 90 100 17 90 101 17 air
+fill 88 102 17 88 103 17 glass_pane
+fill 88 102 25 88 103 25 glass_pane
+fill 86 102 19 86 103 19 glass_pane
+fill 94 102 19 94 103 19 glass_pane
+fill 86 102 22 86 103 22 glass_pane
+fill 94 102 22 94 103 22 glass_pane
+fill 88 107 17 88 108 17 glass_pane
+fill 88 107 25 88 108 25 glass_pane
+fill 91 107 17 91 108 17 glass_pane
+fill 91 107 25 91 108 25 glass_pane
+fill 86 107 19 86 108 19 glass_pane
+fill 94 107 19 94 108 19 glass_pane
+fill 86 107 22 86 108 22 glass_pane
+fill 94 107 22 94 108 22 glass_pane
+fill 107 100 18 115 104 24 air
+fill 107 99 18 115 99 24 oak_planks
+fill 111 100 17 111 101 17 air
+fill 108 102 17 108 103 17 glass_pane
+fill 108 102 25 108 103 25 glass_pane
+fill 114 102 17 114 103 17 glass_pane
+fill 114 102 25 114 103 25 glass_pane
+fill 106 102 19 106 103 19 glass_pane
+fill 116 102 19 116 103 19 glass_pane
+fill 106 102 22 106 103 22 glass_pane
+fill 116 102 22 116 103 22 glass_pane
+fill 121 100 18 127 104 23 air
+fill 121 99 18 127 99 23 oak_planks
+fill 124 100 17 124 101 17 air
+fill 122 102 17 122 103 17 glass_pane
+fill 122 102 24 122 103 24 glass_pane
+fill 120 102 19 120 103 19 glass_pane
+fill 128 102 19 128 103 19 glass_pane
+fill 120 102 22 120 103 22 glass_pane
+fill 128 102 22 128 103 22 glass_pane
+fill 114 100 -12 118 121 -8 air
+fill 116 100 -7 116 101 -7 air
+fill 116 100 -7 116 101 -7 air
+fill 116 100 -10 116 120 -10 spruce_log
+setblock 115 100 -11 spruce_planks
+fill 115 101 -11 115 103 -11 air
+setblock 116 101 -11 spruce_planks
+fill 116 102 -11 116 104 -11 air
+setblock 117 102 -11 spruce_planks
+fill 117 103 -11 117 105 -11 air
+setblock 117 103 -10 spruce_planks
+fill 117 104 -10 117 106 -10 air
+setblock 117 104 -9 spruce_planks
+fill 117 105 -9 117 107 -9 air
+setblock 116 105 -9 spruce_planks
+fill 116 106 -9 116 108 -9 air
+setblock 115 106 -9 spruce_planks
+fill 115 107 -9 115 109 -9 air
+setblock 115 107 -10 spruce_planks
+fill 115 108 -10 115 110 -10 air
+setblock 115 108 -11 spruce_planks
+fill 115 109 -11 115 111 -11 air
+setblock 116 109 -11 spruce_planks
+fill 116 110 -11 116 112 -11 air
+setblock 117 110 -11 spruce_planks
+fill 117 111 -11 117 113 -11 air
+setblock 117 111 -10 spruce_planks
+fill 117 112 -10 117 114 -10 air
+setblock 117 112 -9 spruce_planks
+fill 117 113 -9 117 115 -9 air
+setblock 116 113 -9 spruce_planks
+fill 116 114 -9 116 116 -9 air
+setblock 115 114 -9 spruce_planks
+fill 115 115 -9 115 117 -9 air
+setblock 115 115 -10 spruce_planks
+fill 115 116 -10 115 118 -10 air
+setblock 115 116 -11 spruce_planks
+fill 115 117 -11 115 119 -11 air
+setblock 116 117 -11 spruce_planks
+fill 116 118 -11 116 120 -11 air
+setblock 117 118 -11 spruce_planks
+fill 117 119 -11 117 121 -11 air
+setblock 117 119 -10 spruce_planks
+fill 117 120 -10 117 122 -10 air
+fill 114 121 -12 118 121 -8 air

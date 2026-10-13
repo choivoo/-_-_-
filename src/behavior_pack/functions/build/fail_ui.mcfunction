@@ -1,0 +1,1 @@
+execute if score #bsm bce_sys matches 7 if score #m10b bce_sys matches 0 run titleraw @a actionbar {"rawtext":[{"text":"§c건축 실패 코드 "},{"score":{"name":"#berr","objective":"bce_sys"}},{"text":" §7— /function admin/build_recover"}]}

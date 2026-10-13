@@ -7,3 +7,5 @@ playsound random.levelup @s ~ ~ ~ 0.8 1
 particle minecraft:totem_particle ~ ~1 ~
 give @s golden_apple 2
 tellraw @s {"rawtext":[{"text":"§e[다음 임무] §f성벽을 돌파하다"}]}
+tellraw @s {"rawtext":[{"text":"§e[목적지] §f붕괴된 성벽(x≈260~340)의 적을 모두 처치하고 성문을 통과하세요."}]}
+function cutscenes/q6_intro/start

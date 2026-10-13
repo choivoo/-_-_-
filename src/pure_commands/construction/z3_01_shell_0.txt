@@ -1,0 +1,196 @@
+# 구역 3 붕괴된 성벽 — 단계 shell (1/1). 중심 x=300 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 300 100 0 4 bce_z3)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 260 100 -40 339 140 39 air (여러 번에 나눠서)
+
+fill 299 100 -39 304 117 38 stone_bricks
+fill 299 100 -4 304 109 4 air
+fill 299 110 -5 304 110 5 chiseled_stone_bricks
+fill 299 112 -37 304 117 -37 air
+fill 299 109 -35 304 117 -35 air
+fill 299 110 -34 304 117 -34 air
+fill 299 112 -33 304 117 -33 air
+fill 299 113 -32 304 117 -32 air
+fill 299 114 -31 304 117 -31 air
+fill 299 112 -28 304 117 -28 air
+fill 299 109 -27 304 117 -27 air
+fill 299 113 -26 304 117 -26 air
+fill 299 110 -23 304 117 -23 air
+fill 299 110 -21 304 117 -21 air
+fill 299 115 -20 304 117 -20 air
+fill 299 110 -18 304 117 -18 air
+fill 299 114 -13 304 117 -13 air
+fill 299 113 13 304 117 13 air
+fill 299 109 15 304 117 15 air
+fill 299 112 19 304 117 19 air
+fill 299 115 20 304 117 20 air
+fill 299 110 21 304 117 21 air
+fill 299 111 32 304 117 32 air
+fill 299 112 33 304 117 33 air
+fill 299 109 36 304 117 36 air
+fill 299 118 -39 299 118 38 stone_bricks
+setblock 299 119 -39 stone_bricks
+setblock 299 119 -37 stone_bricks
+setblock 299 119 -35 stone_bricks
+setblock 299 119 -33 stone_bricks
+setblock 299 119 -31 stone_bricks
+setblock 299 119 -29 stone_bricks
+setblock 299 119 -27 stone_bricks
+setblock 299 119 -25 stone_bricks
+setblock 299 119 -23 stone_bricks
+setblock 299 119 -21 stone_bricks
+setblock 299 119 -19 stone_bricks
+setblock 299 119 -17 stone_bricks
+setblock 299 119 -15 stone_bricks
+setblock 299 119 -13 stone_bricks
+setblock 299 119 -11 stone_bricks
+setblock 299 119 -9 stone_bricks
+setblock 299 119 -7 stone_bricks
+setblock 299 119 -5 stone_bricks
+setblock 299 119 -3 stone_bricks
+setblock 299 119 -1 stone_bricks
+setblock 299 119 1 stone_bricks
+setblock 299 119 3 stone_bricks
+setblock 299 119 5 stone_bricks
+setblock 299 119 7 stone_bricks
+setblock 299 119 9 stone_bricks
+setblock 299 119 11 stone_bricks
+setblock 299 119 13 stone_bricks
+setblock 299 119 15 stone_bricks
+setblock 299 119 17 stone_bricks
+setblock 299 119 19 stone_bricks
+setblock 299 119 21 stone_bricks
+setblock 299 119 23 stone_bricks
+setblock 299 119 25 stone_bricks
+setblock 299 119 27 stone_bricks
+setblock 299 119 29 stone_bricks
+setblock 299 119 31 stone_bricks
+setblock 299 119 33 stone_bricks
+setblock 299 119 35 stone_bricks
+setblock 299 119 37 stone_bricks
+setblock 295 100 -34 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 295 101 -33 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 295 102 -32 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 295 103 -31 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 295 104 -30 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 295 105 -29 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 295 106 -28 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+setblock 295 107 -28 air
+setblock 295 108 -28 air
+setblock 295 109 -28 air
+fill 294 100 -34 302 122 -26 stone_bricks
+fill 295 100 -33 301 121 -27 air
+fill 293 120 -35 303 120 -25 deepslate_bricks
+fill 295 120 -33 301 120 -27 spruce_planks
+setblock 293 121 -35 deepslate_bricks
+setblock 293 121 -25 deepslate_bricks
+setblock 295 121 -35 deepslate_bricks
+setblock 295 121 -25 deepslate_bricks
+setblock 297 121 -35 deepslate_bricks
+setblock 297 121 -25 deepslate_bricks
+setblock 299 121 -35 deepslate_bricks
+setblock 299 121 -25 deepslate_bricks
+setblock 301 121 -35 deepslate_bricks
+setblock 301 121 -25 deepslate_bricks
+setblock 303 121 -35 deepslate_bricks
+setblock 303 121 -25 deepslate_bricks
+fill 297 104 -34 297 106 -34 air
+fill 297 112 -26 297 114 -26 air
+fill 297 100 -34 299 101 -34 air
+fill 298 100 -30 298 119 -30 polished_andesite
+setblock 296 100 -31 stone_bricks
+fill 296 101 -31 296 103 -31 air
+setblock 296 101 -32 stone_bricks
+fill 296 102 -32 296 104 -32 air
+setblock 297 102 -32 stone_bricks
+fill 297 103 -32 297 105 -32 air
+setblock 298 103 -32 stone_bricks
+fill 298 104 -32 298 106 -32 air
+setblock 299 104 -32 stone_bricks
+fill 299 105 -32 299 107 -32 air
+setblock 300 105 -32 stone_bricks
+fill 300 106 -32 300 108 -32 air
+setblock 300 106 -31 stone_bricks
+fill 300 107 -31 300 109 -31 air
+setblock 300 107 -30 stone_bricks
+fill 300 108 -30 300 110 -30 air
+setblock 300 108 -29 stone_bricks
+fill 300 109 -29 300 111 -29 air
+setblock 300 109 -28 stone_bricks
+fill 300 110 -28 300 112 -28 air
+setblock 299 110 -28 stone_bricks
+fill 299 111 -28 299 113 -28 air
+setblock 298 111 -28 stone_bricks
+fill 298 112 -28 298 114 -28 air
+setblock 297 112 -28 stone_bricks
+fill 297 113 -28 297 115 -28 air
+setblock 296 113 -28 stone_bricks
+fill 296 114 -28 296 116 -28 air
+setblock 296 114 -29 stone_bricks
+fill 296 115 -29 296 117 -29 air
+setblock 296 115 -30 stone_bricks
+fill 296 116 -30 296 118 -30 air
+setblock 296 116 -31 stone_bricks
+fill 296 117 -31 296 119 -31 air
+setblock 296 117 -32 stone_bricks
+fill 296 118 -32 296 120 -32 air
+setblock 297 118 -32 stone_bricks
+fill 297 119 -32 297 121 -32 air
+setblock 298 119 -30 lantern
+fill 294 100 26 302 122 34 stone_bricks
+fill 295 100 27 301 121 33 air
+fill 293 120 25 303 120 35 deepslate_bricks
+fill 295 120 27 301 120 33 spruce_planks
+setblock 293 121 25 deepslate_bricks
+setblock 293 121 35 deepslate_bricks
+setblock 295 121 25 deepslate_bricks
+setblock 295 121 35 deepslate_bricks
+setblock 297 121 25 deepslate_bricks
+setblock 297 121 35 deepslate_bricks
+setblock 299 121 25 deepslate_bricks
+setblock 299 121 35 deepslate_bricks
+setblock 301 121 25 deepslate_bricks
+setblock 301 121 35 deepslate_bricks
+setblock 303 121 25 deepslate_bricks
+setblock 303 121 35 deepslate_bricks
+fill 297 104 26 297 106 26 air
+fill 297 112 34 297 114 34 air
+fill 297 100 26 299 101 26 air
+fill 298 100 30 298 119 30 polished_andesite
+setblock 296 100 29 stone_bricks
+fill 296 101 29 296 103 29 air
+setblock 296 101 28 stone_bricks
+fill 296 102 28 296 104 28 air
+setblock 297 102 28 stone_bricks
+fill 297 103 28 297 105 28 air
+setblock 298 103 28 stone_bricks
+fill 298 104 28 298 106 28 air
+setblock 299 104 28 stone_bricks
+fill 299 105 28 299 107 28 air
+setblock 300 105 28 stone_bricks
+fill 300 106 28 300 108 28 air
+setblock 300 106 29 stone_bricks
+fill 300 107 29 300 109 29 air
+setblock 300 107 30 stone_bricks
+fill 300 108 30 300 110 30 air
+setblock 300 108 31 stone_bricks
+fill 300 109 31 300 111 31 air
+setblock 300 109 32 stone_bricks
+fill 300 110 32 300 112 32 air
+setblock 299 110 32 stone_bricks
+fill 299 111 32 299 113 32 air
+setblock 298 111 32 stone_bricks
+fill 298 112 32 298 114 32 air
+setblock 297 112 32 stone_bricks
+fill 297 113 32 297 115 32 air
+setblock 296 113 32 stone_bricks
+fill 296 114 32 296 116 32 air
+setblock 296 114 31 stone_bricks
+fill 296 115 31 296 117 31 air
+setblock 296 115 30 stone_bricks
+fill 296 116 30 296 118 30 air
+setblock 296 116 29 stone_bricks
+fill 296 117 29 296 119 29 air
+setblock 296 117 28 stone_bricks
+fill 296 118 28 296 120 28 air
+setblock 297 118 28 stone_bricks
+fill 297 119 28 297 121 28 air
+setblock 298 119 30 lantern

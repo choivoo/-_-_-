@@ -15,5 +15,10 @@ scoreboard objectives add bce_cp dummy
 scoreboard objectives add bce_ps dummy
 scoreboard objectives add bce_cs dummy
 scoreboard objectives add bce_cst dummy
+scoreboard objectives add bce_cddash dummy
+scoreboard objectives add bce_cdbslash dummy
+scoreboard objectives add bce_cdjudge dummy
+scoreboard objectives add bce_ultt dummy
+scoreboard objectives add bce_tmp dummy
 scoreboard objectives add bce_ai dummy
 scoreboard objectives add bce_aitm dummy

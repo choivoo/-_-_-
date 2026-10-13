@@ -1,0 +1,13 @@
+# 구역 4 검은별의 성채 — 단계 light (1/1). 중심 x=400 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 400 100 0 4 bce_z4)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 360 100 -40 439 140 39 air (여러 번에 나눠서)
+
+setblock 367 101 -6 soul_lantern
+setblock 367 101 6 soul_lantern
+setblock 370 101 -6 soul_lantern
+setblock 370 101 6 soul_lantern
+setblock 381 99 0 sea_lantern
+setblock 386 99 0 sea_lantern
+setblock 391 99 0 sea_lantern
+setblock 396 99 0 sea_lantern
+fill 394 100 6 394 112 6 end_rod
+setblock 394 113 6 sea_lantern

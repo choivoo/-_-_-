@@ -1,9 +1,45 @@
-# zone 4 ground 2
-fill 386 99 -22 386 99 -22 deepslate_bricks replace polished_blackstone_bricks
-fill 377 99 21 377 99 23 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 414 99 -6 416 99 -3 blackstone replace polished_blackstone_bricks
-fill 390 99 -32 391 99 -30 blackstone replace polished_blackstone_bricks
-fill 360 99 -2 372 99 2 polished_blackstone
-fill 360 99 -3 372 99 -3 stone_bricks
-fill 360 99 3 372 99 3 stone_bricks
-scoreboard players add #bstep bce_sys 1
+# zone 1 light 0
+scoreboard players set #bzone bce_sys 1
+execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 4
+execute if block 100 79 0 stone run setblock 77 103 -22 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 77 104 -22 spruce_planks
+execute if block 100 79 0 stone run setblock 77 103 -22 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 77 101 -17 lantern
+execute if block 100 79 0 stone run setblock 90 103 -22 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 90 101 -17 lantern
+execute if block 100 79 0 stone run setblock 110 103 -22 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 110 104 -22 spruce_planks
+execute if block 100 79 0 stone run setblock 110 103 -22 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 110 101 -17 lantern
+execute if block 100 79 0 stone run setblock 124 103 -23 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 124 104 -23 spruce_planks
+execute if block 100 79 0 stone run setblock 124 103 -23 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 124 101 -17 lantern
+execute if block 100 79 0 stone run setblock 77 103 21 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 77 104 21 spruce_planks
+execute if block 100 79 0 stone run setblock 77 103 21 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 77 101 16 lantern
+execute if block 100 79 0 stone run setblock 90 103 21 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 90 101 16 lantern
+execute if block 100 79 0 stone run setblock 111 103 21 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 111 104 21 spruce_planks
+execute if block 100 79 0 stone run setblock 111 103 21 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 111 101 16 lantern
+execute if block 100 79 0 stone run setblock 124 103 20 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 124 104 20 spruce_planks
+execute if block 100 79 0 stone run setblock 124 103 20 lantern ["hanging"=true]
+execute if block 100 79 0 stone run setblock 124 101 16 lantern
+execute if block 100 79 0 stone run fill 64 100 -5 64 102 -5 oak_fence
+execute if block 100 79 0 stone run setblock 64 103 -5 lantern
+execute if block 100 79 0 stone run fill 64 100 5 64 102 5 oak_fence
+execute if block 100 79 0 stone run setblock 64 103 5 lantern
+execute if block 100 79 0 stone run fill 73 100 -5 73 102 -5 oak_fence
+execute if block 100 79 0 stone run setblock 73 103 -5 lantern
+execute if block 100 79 0 stone run fill 73 100 5 73 102 5 oak_fence
+execute if block 100 79 0 stone run setblock 73 103 5 lantern
+execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1

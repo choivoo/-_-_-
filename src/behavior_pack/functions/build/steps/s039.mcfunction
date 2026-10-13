@@ -1,42 +1,45 @@
-# zone 2 detail 0
-fill 178 99 1 178 99 2 stone replace mossy_stone_bricks
-fill 180 99 18 181 99 18 cracked_stone_bricks replace mossy_stone_bricks
-fill 231 99 -11 233 99 -11 stone replace mossy_stone_bricks
-fill 216 99 15 217 99 17 stone replace mossy_stone_bricks
-fill 211 99 -10 213 99 -9 gravel replace mossy_stone_bricks
-fill 191 99 4 193 99 5 cracked_stone_bricks replace mossy_stone_bricks
-fill 179 99 -29 181 99 -28 gravel replace mossy_stone_bricks
-fill 177 99 -28 179 99 -26 mossy_stone_bricks replace mossy_stone_bricks
-fill 230 99 24 230 99 25 gravel replace mossy_stone_bricks
-fill 189 99 -1 191 99 -1 mossy_stone_bricks replace mossy_stone_bricks
-fill 187 99 -19 188 99 -17 cracked_stone_bricks replace mossy_stone_bricks
-fill 202 99 34 204 99 36 cracked_stone_bricks replace mossy_stone_bricks
-fill 180 99 2 180 99 2 cracked_stone_bricks replace mossy_stone_bricks
-fill 232 99 -35 234 99 -33 gravel replace mossy_stone_bricks
-fill 170 99 -13 172 99 -11 cracked_stone_bricks replace mossy_stone_bricks
-fill 178 99 -1 178 99 1 mossy_stone_bricks replace mossy_stone_bricks
-fill 178 99 -1 180 99 0 stone replace mossy_stone_bricks
-fill 180 99 -38 180 99 -36 mossy_stone_bricks replace mossy_stone_bricks
-fill 181 99 16 181 99 17 stone replace mossy_stone_bricks
-fill 181 99 -24 183 99 -22 gravel replace mossy_stone_bricks
-fill 224 99 15 225 99 17 gravel replace mossy_stone_bricks
-fill 177 99 -30 179 99 -30 gravel replace mossy_stone_bricks
-fill 166 99 -18 168 99 -17 cracked_stone_bricks replace mossy_stone_bricks
-fill 172 99 13 172 99 13 mossy_stone_bricks replace mossy_stone_bricks
-fill 186 99 -28 187 99 -26 gravel replace mossy_stone_bricks
-fill 213 99 -5 215 99 -5 cracked_stone_bricks replace mossy_stone_bricks
-fill 194 99 9 195 99 11 stone replace mossy_stone_bricks
-fill 186 99 25 188 99 27 cracked_stone_bricks replace mossy_stone_bricks
-fill 189 99 3 191 99 3 stone replace mossy_stone_bricks
-fill 169 99 4 169 99 5 gravel replace mossy_stone_bricks
-fill 177 99 -16 177 99 -16 gravel replace mossy_stone_bricks
-fill 204 99 -23 204 99 -22 gravel replace mossy_stone_bricks
-fill 202 99 30 203 99 32 cracked_stone_bricks replace mossy_stone_bricks
-fill 213 99 -29 213 99 -29 stone replace mossy_stone_bricks
-fill 204 99 19 206 99 20 cracked_stone_bricks replace mossy_stone_bricks
-fill 163 99 -4 164 99 -3 gravel replace mossy_stone_bricks
-fill 176 99 30 177 99 31 stone replace mossy_stone_bricks
-fill 200 99 12 202 99 13 stone replace mossy_stone_bricks
-fill 181 99 36 181 99 37 gravel replace mossy_stone_bricks
-fill 236 99 21 237 99 23 stone replace mossy_stone_bricks
-scoreboard players add #bstep bce_sys 1
+# zone 1 ground 9
+scoreboard players set #bzone bce_sys 1
+execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 0
+execute if block 100 79 0 stone run fill 61 100 37 62 100 37 stone
+execute if block 100 79 0 stone run fill 61 101 37 62 101 37 coarse_dirt
+execute if block 100 79 0 stone run fill 63 100 37 67 100 37 coarse_dirt
+execute if block 100 79 0 stone run fill 73 100 37 79 100 37 coarse_dirt
+execute if block 100 79 0 stone run fill 80 100 37 85 100 37 stone
+execute if block 100 79 0 stone run fill 80 101 37 85 101 37 coarse_dirt
+execute if block 100 79 0 stone run fill 86 100 37 88 101 37 stone
+execute if block 100 79 0 stone run fill 86 102 37 88 102 37 coarse_dirt
+execute if block 100 79 0 stone run fill 89 100 37 93 100 37 stone
+execute if block 100 79 0 stone run fill 89 101 37 93 101 37 coarse_dirt
+execute if block 100 79 0 stone run fill 94 100 37 95 101 37 stone
+execute if block 100 79 0 stone run fill 94 102 37 95 102 37 coarse_dirt
+execute if block 100 79 0 stone run fill 96 100 37 99 100 37 stone
+execute if block 100 79 0 stone run fill 96 101 37 99 101 37 coarse_dirt
+execute if block 100 79 0 stone run fill 100 100 37 104 100 37 coarse_dirt
+execute if block 100 79 0 stone run fill 105 100 37 107 100 37 stone
+execute if block 100 79 0 stone run fill 105 101 37 107 101 37 coarse_dirt
+execute if block 100 79 0 stone run fill 108 100 37 108 100 37 coarse_dirt
+execute if block 100 79 0 stone run fill 109 100 37 117 100 37 stone
+execute if block 100 79 0 stone run fill 109 101 37 117 101 37 coarse_dirt
+execute if block 100 79 0 stone run fill 118 100 37 118 100 37 coarse_dirt
+execute if block 100 79 0 stone run fill 120 100 37 120 100 37 coarse_dirt
+execute if block 100 79 0 stone run fill 128 100 37 133 100 37 stone
+execute if block 100 79 0 stone run fill 128 101 37 133 101 37 coarse_dirt
+execute if block 100 79 0 stone run fill 134 100 37 138 100 37 coarse_dirt
+execute if block 100 79 0 stone run fill 139 100 37 139 100 37 stone
+execute if block 100 79 0 stone run fill 139 101 37 139 101 37 coarse_dirt
+execute if block 100 79 0 stone run fill 60 100 38 66 100 38 stone
+execute if block 100 79 0 stone run fill 60 101 38 66 101 38 coarse_dirt
+execute if block 100 79 0 stone run fill 67 100 38 67 100 38 coarse_dirt
+execute if block 100 79 0 stone run fill 73 100 38 77 100 38 coarse_dirt
+execute if block 100 79 0 stone run fill 79 100 38 79 100 38 coarse_dirt
+execute if block 100 79 0 stone run fill 80 100 38 84 100 38 stone
+execute if block 100 79 0 stone run fill 80 101 38 84 101 38 coarse_dirt
+execute if block 100 79 0 stone run fill 85 100 38 85 101 38 stone
+execute if block 100 79 0 stone run fill 85 102 38 85 102 38 coarse_dirt
+execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1

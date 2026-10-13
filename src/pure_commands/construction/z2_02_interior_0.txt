@@ -1,0 +1,74 @@
+# 구역 2 가라앉은 유적 — 단계 interior (1/1). 중심 x=200 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 200 100 0 4 bce_z2)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 160 100 -40 239 140 39 air (여러 번에 나눠서)
+
+fill 170 100 -1 170 102 1 air
+fill 170 99 -1 170 99 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 171 99 -1 171 101 1 air
+fill 171 98 -1 171 98 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 172 98 -1 172 100 1 air
+fill 172 97 -1 172 97 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 173 97 -1 173 99 1 air
+fill 173 96 -1 173 96 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 174 96 -1 174 98 1 air
+fill 174 95 -1 174 95 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 175 95 -1 175 97 1 air
+fill 175 94 -1 175 94 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 176 94 -1 176 96 1 air
+fill 176 93 -1 176 93 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 177 93 -1 177 95 1 air
+fill 177 92 -1 177 92 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 178 92 -1 178 94 1 air
+fill 178 91 -1 178 91 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 179 91 -1 179 93 1 air
+fill 179 90 -1 179 90 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 180 90 -1 180 92 1 air
+fill 180 89 -1 180 89 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 181 89 -1 181 91 1 air
+fill 181 88 -1 181 88 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 182 88 -1 182 90 1 air
+fill 182 87 -1 182 87 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 183 87 -1 183 89 1 air
+fill 183 86 -1 183 86 1 stone_brick_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+fill 184 87 -6 192 94 6 air
+fill 184 86 -6 192 86 6 stone_bricks
+fill 192 87 -2 203 93 2 air
+fill 192 86 -2 203 86 2 mossy_stone_bricks
+fill 192 87 -2 203 88 2 water
+fill 204 87 -2 205 93 2 iron_bars
+fill 206 87 -6 230 95 6 air
+fill 206 86 -6 208 86 6 stone_bricks
+fill 209 81 -6 216 86 6 water
+fill 217 86 -6 230 86 6 stone_bricks
+fill 217 87 -12 230 95 12 air
+fill 217 86 -12 230 86 12 mossy_stone_bricks
+fill 226 87 -1 226 90 1 air
+fill 226 86 -1 226 86 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 227 88 -1 227 91 1 air
+fill 227 87 -1 227 87 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 228 89 -1 228 92 1 air
+fill 228 88 -1 228 88 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 229 90 -1 229 93 1 air
+fill 229 89 -1 229 89 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 230 91 -1 230 94 1 air
+fill 230 90 -1 230 90 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 231 92 -1 231 95 1 air
+fill 231 91 -1 231 91 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 232 93 -1 232 96 1 air
+fill 232 92 -1 232 92 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 233 94 -1 233 97 1 air
+fill 233 93 -1 233 93 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 234 95 -1 234 98 1 air
+fill 234 94 -1 234 94 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 235 96 -1 235 99 1 air
+fill 235 95 -1 235 95 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 236 97 -1 236 100 1 air
+fill 236 96 -1 236 96 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 237 98 -1 237 101 1 air
+fill 237 97 -1 237 97 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 238 99 -1 238 102 1 air
+fill 238 98 -1 238 98 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 239 100 -1 239 103 1 air
+fill 239 99 -1 239 99 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 218 87 13 225 91 19 air
+fill 218 86 13 225 86 19 polished_andesite
+fill 220 87 12 220 89 12 cracked_stone_bricks

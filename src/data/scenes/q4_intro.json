@@ -1,0 +1,62 @@
+{
+ "id": "q4_intro",
+ "numeric_id": 5,
+ "duration": 130,
+ "description": "퀘스트 4 시작: 마을 방향 안내",
+ "start_cmds": [],
+ "end_cmds": [],
+ "events": [
+  {
+   "t": 0,
+   "type": "fade",
+   "in": 6,
+   "hold": 0,
+   "out": 8
+  },
+  {
+   "t": 4,
+   "type": "cam",
+   "pos": [
+    30,
+    110,
+    0
+   ],
+   "facing": [
+    62,
+    106,
+    0
+   ]
+  },
+  {
+   "t": 8,
+   "type": "cam",
+   "pos": [
+    44,
+    112,
+    0
+   ],
+   "facing": [
+    70,
+    104,
+    0
+   ],
+   "ease": [
+    90,
+    "in_out_sine"
+   ]
+  },
+  {
+   "t": 15,
+   "type": "subtitle",
+   "text": "동쪽 다리 너머, 빛기둥 아래가 잿빛 마을이다.",
+   "dur": 100
+  },
+  {
+   "t": 110,
+   "type": "fade",
+   "in": 6,
+   "hold": 0,
+   "out": 8
+  }
+ ]
+}

@@ -43,6 +43,25 @@ def event_cmds(ev):
         return ["execute if score #shake bce_sys matches 1 run camerashake add @s %s %s positional" % (_num(ev["intensity"]), _num(ev["seconds"]))]
     if t == "cmd":
         return [ev["run"]]
+    if t == "actionbar":
+        return ["titleraw @s actionbar " + jraw(ev["text"])]
+    if t == "particle":
+        return ["particle %s %s" % (ev["name"], _xyz(ev["pos"]))]
+    if t == "summon":
+        return ["summon %s %s 0 0 minecraft:entity_spawned%s" % (ev["entity"], _xyz(ev["pos"]), (' "%s"' % ev["name"]) if ev.get("name") else "")]
+    if t == "teleport":
+        c = "tp @s " + _xyz(ev["pos"])
+        return [c + (" facing " + _xyz(ev["facing"]) if "facing" in ev else "")]
+    if t == "animation":
+        return ["playanimation %s %s" % (ev.get("target", "@e[tag=bce_boss]"), ev["anim"])]
+    if t == "quest":
+        return ["scoreboard players set @s bce_q %d" % ev["set"]]
+    if t == "checkpoint":
+        return ["function checkpoints/set_%d" % ev["n"]]
+    if t == "wait":
+        return []        # pure timeline spacing: events carry absolute ticks
+    if t == "scene_end":
+        return ["scoreboard players set @s bce_cst 99999"]     # forces the end function on the next timeline check
     raise ValueError("unknown event type " + t)
 
 
@@ -73,6 +92,7 @@ def generate(scene, fns):
         "scoreboard players set @s bce_cs %d" % num,
         "scoreboard players set @s bce_cst 0",
         "inputpermission set @s movement disabled",
+        "inputpermission set @s camera disabled",
         "clear @s paper",
         "give @s paper 1 0 {\"item_lock\":{\"mode\":\"lock_in_inventory\"},\"display\":{}}" if False else "give @s paper 1",
     ] + scene.get("start_cmds", []), doc="cutscene %s: start (run as the player)" % sid)
@@ -83,6 +103,7 @@ def generate(scene, fns):
     fns.emit(base + "/end", [
         "camera @s clear",
         "inputpermission set @s movement enabled",
+        "inputpermission set @s camera enabled",
         "tag @s remove bce_cs",
         "scoreboard players set @s bce_cs 0",
         "scoreboard players set @s bce_cst 0",
@@ -105,7 +126,7 @@ def generate_all(scenes, fns):
     fns.emit("cutscenes/dispatch", disp, doc="runs every tick: advance all active cutscenes")
     fns.emit("cutscenes/skip", skip, doc="run as the player: skip the active cutscene")
     fns.emit("cutscenes/force_end", [
-        "camera @s clear", "inputpermission set @s movement enabled", "tag @s remove bce_cs",
+        "camera @s clear", "inputpermission set @s movement enabled", "inputpermission set @s camera enabled", "tag @s remove bce_cs",
         "scoreboard players set @s bce_cs 0", "scoreboard players set @s bce_cst 0", "clear @s paper"],
         doc="recovery: run as a player stuck in a cutscene")
     return scenes

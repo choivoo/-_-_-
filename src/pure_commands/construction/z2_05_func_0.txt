@@ -1,0 +1,6 @@
+# 구역 2 가라앉은 유적 — 단계 func (1/1). 중심 x=200 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 200 100 0 4 bce_z2)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 160 100 -40 239 140 39 air (여러 번에 나눠서)
+
+setblock 222 87 16 chest
+replaceitem block 222 87 16 slot.container 0 diamond 2
+replaceitem block 222 87 16 slot.container 1 golden_apple 2

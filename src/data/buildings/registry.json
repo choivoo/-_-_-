@@ -1,0 +1,1143 @@
+{
+  "buildings": [
+    {
+      "zone": 0,
+      "id": "temple_hall",
+      "name": "깨어남의 신전 본당",
+      "bounds": [
+        -16,
+        99,
+        -20,
+        16,
+        115,
+        20
+      ],
+      "lod": 4,
+      "style": "ancient_temple",
+      "entrance": [
+        16,
+        100,
+        0
+      ],
+      "interior": [
+        [
+          -7,
+          100,
+          0
+        ],
+        [
+          0,
+          100,
+          0
+        ],
+        [
+          8,
+          100,
+          -15
+        ],
+        [
+          -11,
+          102,
+          0
+        ]
+      ],
+      "landmark": "중앙 제단/원형 문양",
+      "markers": {
+        "start": [
+          -7.5,
+          100.0,
+          0.5
+        ]
+      }
+    },
+    {
+      "zone": 0,
+      "id": "training_yard",
+      "name": "기본 공격 훈련장",
+      "bounds": [
+        19,
+        99,
+        -13,
+        38,
+        105,
+        13
+      ],
+      "lod": 2,
+      "style": "ancient_temple",
+      "entrance": [
+        19,
+        100,
+        0
+      ],
+      "interior": [
+        [
+          28,
+          100,
+          0
+        ]
+      ]
+    },
+    {
+      "zone": 1,
+      "id": "house_a",
+      "name": "북서 가옥",
+      "bounds": [
+        72,
+        100,
+        -26,
+        82,
+        111,
+        -18
+      ],
+      "lod": 2,
+      "style": "ashen_timber",
+      "entrance": [
+        77,
+        100,
+        -17
+      ],
+      "interior": [
+        [
+          77,
+          100,
+          -22
+        ]
+      ],
+      "floors": 1,
+      "roof": "gable"
+    },
+    {
+      "zone": 1,
+      "id": "house_b",
+      "name": "북 가옥",
+      "bounds": [
+        86,
+        100,
+        -25,
+        94,
+        116,
+        -18
+      ],
+      "lod": 3,
+      "style": "ashen_timber",
+      "entrance": [
+        90,
+        100,
+        -17
+      ],
+      "interior": [
+        [
+          90,
+          100,
+          -22
+        ]
+      ],
+      "floors": 2,
+      "roof": "gable"
+    },
+    {
+      "zone": 1,
+      "id": "house_c",
+      "name": "북동 가옥",
+      "bounds": [
+        106,
+        100,
+        -25,
+        114,
+        111,
+        -18
+      ],
+      "lod": 2,
+      "style": "ashen_timber",
+      "entrance": [
+        110,
+        100,
+        -17
+      ],
+      "interior": [
+        [
+          110,
+          100,
+          -22
+        ]
+      ],
+      "floors": 1,
+      "roof": "gable"
+    },
+    {
+      "zone": 1,
+      "id": "shop",
+      "name": "상점",
+      "bounds": [
+        118,
+        100,
+        -27,
+        130,
+        111,
+        -18
+      ],
+      "lod": 2,
+      "style": "ashen_timber",
+      "entrance": [
+        124,
+        100,
+        -17
+      ],
+      "interior": [
+        [
+          124,
+          100,
+          -23
+        ]
+      ],
+      "floors": 1,
+      "roof": "gable"
+    },
+    {
+      "zone": 1,
+      "id": "house_e",
+      "name": "남서 가옥",
+      "bounds": [
+        72,
+        100,
+        17,
+        82,
+        111,
+        25
+      ],
+      "lod": 2,
+      "style": "ashen_timber",
+      "entrance": [
+        77,
+        100,
+        16
+      ],
+      "interior": [
+        [
+          77,
+          100,
+          21
+        ]
+      ],
+      "floors": 1,
+      "roof": "gable"
+    },
+    {
+      "zone": 1,
+      "id": "house_f",
+      "name": "남 가옥",
+      "bounds": [
+        86,
+        100,
+        17,
+        94,
+        116,
+        25
+      ],
+      "lod": 3,
+      "style": "ashen_timber",
+      "entrance": [
+        90,
+        100,
+        16
+      ],
+      "interior": [
+        [
+          90,
+          100,
+          21
+        ]
+      ],
+      "floors": 2,
+      "roof": "gable"
+    },
+    {
+      "zone": 1,
+      "id": "ruin_house",
+      "name": "폐가",
+      "bounds": [
+        106,
+        100,
+        17,
+        116,
+        111,
+        25
+      ],
+      "lod": 3,
+      "style": "ashen_timber",
+      "entrance": [
+        111,
+        100,
+        16
+      ],
+      "interior": [
+        [
+          111,
+          100,
+          21
+        ]
+      ],
+      "floors": 1,
+      "roof": "gable"
+    },
+    {
+      "zone": 1,
+      "id": "house_h",
+      "name": "남동 가옥",
+      "bounds": [
+        120,
+        100,
+        17,
+        128,
+        111,
+        24
+      ],
+      "lod": 2,
+      "style": "ashen_timber",
+      "entrance": [
+        124,
+        100,
+        16
+      ],
+      "interior": [
+        [
+          124,
+          100,
+          20
+        ]
+      ],
+      "floors": 1,
+      "roof": "gable"
+    },
+    {
+      "zone": 1,
+      "id": "clock_tower",
+      "name": "시계탑",
+      "bounds": [
+        112,
+        99,
+        -14,
+        120,
+        131,
+        -6
+      ],
+      "lod": 4,
+      "style": "ashen_timber",
+      "entrance": [
+        116,
+        100,
+        -6
+      ],
+      "interior": [
+        [
+          116,
+          100,
+          -9
+        ]
+      ],
+      "landmark": "마을 시계탑",
+      "walk_notes": "spiral to belfry"
+    },
+    {
+      "zone": 1,
+      "id": "fountain",
+      "name": "분수대",
+      "bounds": [
+        94,
+        100,
+        -6,
+        106,
+        105,
+        6
+      ],
+      "lod": 3,
+      "style": "ashen_timber",
+      "entrance": [
+        100,
+        100,
+        7
+      ],
+      "interior": [
+        [
+          106,
+          100,
+          0
+        ]
+      ],
+      "landmark": "마을 분수대"
+    },
+    {
+      "zone": 2,
+      "id": "ruins_hall",
+      "name": "가라앉은 유적 지하 홀",
+      "bounds": [
+        183,
+        82,
+        -7,
+        231,
+        95,
+        7
+      ],
+      "lod": 4,
+      "style": "sunken_ruins",
+      "entrance": [
+        170,
+        100,
+        0
+      ],
+      "interior": [
+        [
+          188,
+          87,
+          3
+        ],
+        [
+          224,
+          87,
+          0
+        ]
+      ],
+      "landmark": "거대한 지하 문",
+      "markers": {
+        "levers": [
+          [
+            188,
+            87,
+            -5
+          ],
+          [
+            188,
+            87,
+            0
+          ],
+          [
+            188,
+            87,
+            5
+          ]
+        ],
+        "gate": [
+          204,
+          87,
+          -2,
+          205,
+          93,
+          2
+        ]
+      }
+    },
+    {
+      "zone": 2,
+      "id": "hidden_room",
+      "name": "숨겨진 방",
+      "bounds": [
+        218,
+        87,
+        13,
+        225,
+        91,
+        19
+      ],
+      "lod": 3,
+      "style": "sunken_ruins",
+      "entrance": [
+        220,
+        87,
+        12
+      ],
+      "interior": [
+        [
+          222,
+          87,
+          15
+        ]
+      ],
+      "secret": true
+    },
+    {
+      "zone": 3,
+      "id": "great_wall",
+      "name": "붕괴된 대성벽",
+      "bounds": [
+        299,
+        99,
+        -39,
+        304,
+        119,
+        38
+      ],
+      "lod": 4,
+      "style": "ruined_fortress",
+      "entrance": [
+        298,
+        100,
+        0
+      ],
+      "interior": [
+        [
+          301,
+          100,
+          0
+        ]
+      ],
+      "landmark": "부서진 대형 성문"
+    },
+    {
+      "zone": 3,
+      "id": "watchtower_n",
+      "name": "북쪽 감시탑",
+      "bounds": [
+        293,
+        100,
+        -35,
+        303,
+        122,
+        -25
+      ],
+      "lod": 3,
+      "style": "ruined_fortress",
+      "entrance": [
+        298,
+        100,
+        -26
+      ],
+      "interior": [
+        [
+          298,
+          101,
+          -30
+        ]
+      ],
+      "walk_notes": "spiral stair"
+    },
+    {
+      "zone": 3,
+      "id": "watchtower_s",
+      "name": "남쪽 감시탑",
+      "bounds": [
+        293,
+        100,
+        25,
+        303,
+        122,
+        35
+      ],
+      "lod": 3,
+      "style": "ruined_fortress",
+      "entrance": [
+        298,
+        100,
+        34
+      ],
+      "interior": [
+        [
+          298,
+          101,
+          30
+        ]
+      ],
+      "walk_notes": "spiral stair"
+    },
+    {
+      "zone": 3,
+      "id": "battle_court",
+      "name": "성벽 전투 광장",
+      "bounds": [
+        321,
+        99,
+        -21,
+        337,
+        109,
+        21
+      ],
+      "lod": 2,
+      "style": "ruined_fortress",
+      "entrance": [
+        321,
+        100,
+        0
+      ],
+      "interior": [
+        [
+          330,
+          100,
+          0
+        ]
+      ]
+    },
+    {
+      "zone": 4,
+      "id": "citadel_hall",
+      "name": "검은별의 성채 중앙 홀",
+      "bounds": [
+        373,
+        99,
+        -21,
+        399,
+        190,
+        21
+      ],
+      "lod": 4,
+      "style": "gothic_citadel",
+      "entrance": [
+        370,
+        100,
+        0
+      ],
+      "interior": [
+        [
+          380,
+          100,
+          0
+        ],
+        [
+          388,
+          100,
+          0
+        ],
+        [
+          394,
+          100,
+          0
+        ]
+      ],
+      "landmark": "중앙 첨탑",
+      "markers": {
+        "door": [
+          399,
+          100,
+          -3,
+          401,
+          108,
+          3
+        ]
+      }
+    },
+    {
+      "zone": 4,
+      "id": "flank_tower_n",
+      "name": "북쪽 대탑",
+      "bounds": [
+        372,
+        100,
+        -28,
+        380,
+        140,
+        -20
+      ],
+      "lod": 3,
+      "style": "gothic_citadel",
+      "entrance": [
+        381,
+        100,
+        -24
+      ],
+      "interior": [
+        [
+          376,
+          101,
+          -20
+        ]
+      ]
+    },
+    {
+      "zone": 4,
+      "id": "flank_tower_s",
+      "name": "남쪽 대탑",
+      "bounds": [
+        372,
+        100,
+        20,
+        380,
+        140,
+        28
+      ],
+      "lod": 3,
+      "style": "gothic_citadel",
+      "entrance": [
+        381,
+        100,
+        24
+      ],
+      "interior": [
+        [
+          376,
+          101,
+          20
+        ]
+      ]
+    },
+    {
+      "zone": 4,
+      "id": "boss_arena",
+      "name": "보스 아레나",
+      "bounds": [
+        401,
+        99,
+        -18,
+        437,
+        115,
+        18
+      ],
+      "lod": 4,
+      "style": "gothic_citadel",
+      "entrance": [
+        399,
+        100,
+        0
+      ],
+      "interior": [
+        [
+          419,
+          100,
+          0
+        ]
+      ],
+      "landmark": "붕괴하는 아레나"
+    }
+  ],
+  "structure_tiles": [
+    {
+      "name": "bce:z0_q00_0",
+      "file": "z0_q00_0.mcstructure",
+      "zone": 0,
+      "origin": [
+        -40,
+        80,
+        -40
+      ],
+      "size": [
+        40,
+        36,
+        40
+      ],
+      "bytes": 462166,
+      "palette": 19
+    },
+    {
+      "name": "bce:z0_q01_0",
+      "file": "z0_q01_0.mcstructure",
+      "zone": 0,
+      "origin": [
+        -40,
+        80,
+        0
+      ],
+      "size": [
+        40,
+        36,
+        40
+      ],
+      "bytes": 462096,
+      "palette": 18
+    },
+    {
+      "name": "bce:z0_q10_0",
+      "file": "z0_q10_0.mcstructure",
+      "zone": 0,
+      "origin": [
+        0,
+        80,
+        -40
+      ],
+      "size": [
+        40,
+        36,
+        40
+      ],
+      "bytes": 462417,
+      "palette": 24
+    },
+    {
+      "name": "bce:z0_q11_0",
+      "file": "z0_q11_0.mcstructure",
+      "zone": 0,
+      "origin": [
+        0,
+        80,
+        0
+      ],
+      "size": [
+        40,
+        36,
+        40
+      ],
+      "bytes": 462351,
+      "palette": 23
+    },
+    {
+      "name": "bce:z0_link_0",
+      "file": "z0_link_0.mcstructure",
+      "zone": 0,
+      "origin": [
+        40,
+        88,
+        -3
+      ],
+      "size": [
+        20,
+        16,
+        7
+      ],
+      "bytes": 18405,
+      "palette": 5
+    },
+    {
+      "name": "bce:z1_q00_0",
+      "file": "z1_q00_0.mcstructure",
+      "zone": 1,
+      "origin": [
+        60,
+        80,
+        -40
+      ],
+      "size": [
+        40,
+        34,
+        40
+      ],
+      "bytes": 437019,
+      "palette": 27
+    },
+    {
+      "name": "bce:z1_q01_0",
+      "file": "z1_q01_0.mcstructure",
+      "zone": 1,
+      "origin": [
+        60,
+        80,
+        0
+      ],
+      "size": [
+        40,
+        35,
+        40
+      ],
+      "bytes": 449875,
+      "palette": 28
+    },
+    {
+      "name": "bce:z1_q10_0",
+      "file": "z1_q10_0.mcstructure",
+      "zone": 1,
+      "origin": [
+        100,
+        80,
+        -40
+      ],
+      "size": [
+        40,
+        52,
+        40
+      ],
+      "bytes": 667802,
+      "palette": 33
+    },
+    {
+      "name": "bce:z1_q11_0",
+      "file": "z1_q11_0.mcstructure",
+      "zone": 1,
+      "origin": [
+        100,
+        80,
+        0
+      ],
+      "size": [
+        40,
+        30,
+        40
+      ],
+      "bytes": 385832,
+      "palette": 28
+    },
+    {
+      "name": "bce:z1_link_0",
+      "file": "z1_link_0.mcstructure",
+      "zone": 1,
+      "origin": [
+        140,
+        88,
+        -3
+      ],
+      "size": [
+        20,
+        16,
+        7
+      ],
+      "bytes": 18405,
+      "palette": 5
+    },
+    {
+      "name": "bce:z2_q00_0",
+      "file": "z2_q00_0.mcstructure",
+      "zone": 2,
+      "origin": [
+        160,
+        80,
+        -40
+      ],
+      "size": [
+        40,
+        43,
+        40
+      ],
+      "bytes": 551631,
+      "palette": 16
+    },
+    {
+      "name": "bce:z2_q01_0",
+      "file": "z2_q01_0.mcstructure",
+      "zone": 2,
+      "origin": [
+        160,
+        80,
+        0
+      ],
+      "size": [
+        40,
+        43,
+        40
+      ],
+      "bytes": 551789,
+      "palette": 19
+    },
+    {
+      "name": "bce:z2_q10_0",
+      "file": "z2_q10_0.mcstructure",
+      "zone": 2,
+      "origin": [
+        200,
+        80,
+        -40
+      ],
+      "size": [
+        40,
+        43,
+        40
+      ],
+      "bytes": 551700,
+      "palette": 18
+    },
+    {
+      "name": "bce:z2_q11_0",
+      "file": "z2_q11_0.mcstructure",
+      "zone": 2,
+      "origin": [
+        200,
+        80,
+        0
+      ],
+      "size": [
+        40,
+        43,
+        40
+      ],
+      "bytes": 551817,
+      "palette": 20
+    },
+    {
+      "name": "bce:z2_link_0",
+      "file": "z2_link_0.mcstructure",
+      "zone": 2,
+      "origin": [
+        240,
+        88,
+        -3
+      ],
+      "size": [
+        20,
+        16,
+        7
+      ],
+      "bytes": 18405,
+      "palette": 5
+    },
+    {
+      "name": "bce:z3_q00_0",
+      "file": "z3_q00_0.mcstructure",
+      "zone": 3,
+      "origin": [
+        260,
+        80,
+        -40
+      ],
+      "size": [
+        40,
+        43,
+        40
+      ],
+      "bytes": 551462,
+      "palette": 15
+    },
+    {
+      "name": "bce:z3_q01_0",
+      "file": "z3_q01_0.mcstructure",
+      "zone": 3,
+      "origin": [
+        260,
+        80,
+        0
+      ],
+      "size": [
+        40,
+        43,
+        40
+      ],
+      "bytes": 551462,
+      "palette": 15
+    },
+    {
+      "name": "bce:z3_q10_0",
+      "file": "z3_q10_0.mcstructure",
+      "zone": 3,
+      "origin": [
+        300,
+        80,
+        -40
+      ],
+      "size": [
+        40,
+        43,
+        40
+      ],
+      "bytes": 551347,
+      "palette": 13
+    },
+    {
+      "name": "bce:z3_q11_0",
+      "file": "z3_q11_0.mcstructure",
+      "zone": 3,
+      "origin": [
+        300,
+        80,
+        0
+      ],
+      "size": [
+        40,
+        43,
+        40
+      ],
+      "bytes": 551563,
+      "palette": 16
+    },
+    {
+      "name": "bce:z3_link_0",
+      "file": "z3_link_0.mcstructure",
+      "zone": 3,
+      "origin": [
+        340,
+        88,
+        -3
+      ],
+      "size": [
+        20,
+        16,
+        7
+      ],
+      "bytes": 18405,
+      "palette": 5
+    },
+    {
+      "name": "bce:z4_q00_0",
+      "file": "z4_q00_0.mcstructure",
+      "zone": 4,
+      "origin": [
+        360,
+        80,
+        -40
+      ],
+      "size": [
+        40,
+        64,
+        40
+      ],
+      "bytes": 820362,
+      "palette": 16
+    },
+    {
+      "name": "bce:z4_q00_1",
+      "file": "z4_q00_1.mcstructure",
+      "zone": 4,
+      "origin": [
+        383,
+        144,
+        -6
+      ],
+      "size": [
+        13,
+        19,
+        6
+      ],
+      "bytes": 12249,
+      "palette": 3
+    },
+    {
+      "name": "bce:z4_q01_0",
+      "file": "z4_q01_0.mcstructure",
+      "zone": 4,
+      "origin": [
+        360,
+        80,
+        0
+      ],
+      "size": [
+        40,
+        64,
+        40
+      ],
+      "bytes": 820594,
+      "palette": 19
+    },
+    {
+      "name": "bce:z4_q01_1",
+      "file": "z4_q01_1.mcstructure",
+      "zone": 4,
+      "origin": [
+        383,
+        144,
+        0
+      ],
+      "size": [
+        13,
+        46,
+        7
+      ],
+      "bytes": 33990,
+      "palette": 5
+    },
+    {
+      "name": "bce:z4_q10_0",
+      "file": "z4_q10_0.mcstructure",
+      "zone": 4,
+      "origin": [
+        400,
+        80,
+        -40
+      ],
+      "size": [
+        40,
+        35,
+        40
+      ],
+      "bytes": 448938,
+      "palette": 12
+    },
+    {
+      "name": "bce:z4_q11_0",
+      "file": "z4_q11_0.mcstructure",
+      "zone": 4,
+      "origin": [
+        400,
+        80,
+        0
+      ],
+      "size": [
+        40,
+        35,
+        40
+      ],
+      "bytes": 449014,
+      "palette": 13
+    }
+  ]
+}

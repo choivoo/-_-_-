@@ -1,42 +1,45 @@
-# zone 3 shell 3
-fill 297 113 -28 297 115 -28 air
-setblock 296 113 -28 stone_bricks
-fill 296 114 -28 296 116 -28 air
-setblock 296 114 -29 stone_bricks
-fill 296 115 -29 296 117 -29 air
-setblock 296 115 -30 stone_bricks
-fill 296 116 -30 296 118 -30 air
-setblock 296 116 -31 stone_bricks
-fill 296 117 -31 296 119 -31 air
-setblock 296 117 -32 stone_bricks
-fill 296 118 -32 296 120 -32 air
-setblock 297 118 -32 stone_bricks
-fill 297 119 -32 297 121 -32 air
-setblock 298 119 -30 lantern
-fill 294 100 26 302 122 34 stone_bricks
-fill 295 100 27 301 121 33 air
-fill 293 120 25 303 120 35 deepslate_bricks
-fill 295 120 27 301 120 33 spruce_planks
-setblock 293 121 25 deepslate_bricks
-setblock 293 121 35 deepslate_bricks
-setblock 295 121 25 deepslate_bricks
-setblock 295 121 35 deepslate_bricks
-setblock 297 121 25 deepslate_bricks
-setblock 297 121 35 deepslate_bricks
-setblock 299 121 25 deepslate_bricks
-setblock 299 121 35 deepslate_bricks
-setblock 301 121 25 deepslate_bricks
-setblock 301 121 35 deepslate_bricks
-setblock 303 121 25 deepslate_bricks
-setblock 303 121 35 deepslate_bricks
-fill 297 104 26 297 106 26 air
-fill 297 112 34 297 114 34 air
-fill 297 100 26 299 101 26 air
-fill 298 100 30 298 119 30 polished_andesite
-setblock 296 100 29 stone_bricks
-fill 296 101 29 296 103 29 air
-setblock 296 101 28 stone_bricks
-fill 296 102 28 296 104 28 air
-setblock 297 102 28 stone_bricks
-fill 297 103 28 297 105 28 air
-scoreboard players add #bstep bce_sys 1
+# zone 1 interior 0
+scoreboard players set #bzone bce_sys 1
+execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 2
+execute if block 100 79 0 stone run fill 73 100 -25 81 104 -19 air
+execute if block 100 79 0 stone run fill 73 99 -25 81 99 -19 oak_planks
+execute if block 100 79 0 stone run fill 77 100 -18 77 101 -18 air
+execute if block 100 79 0 stone run fill 74 102 -26 74 103 -26 glass_pane
+execute if block 100 79 0 stone run fill 74 102 -18 74 103 -18 glass_pane
+execute if block 100 79 0 stone run fill 80 102 -26 80 103 -26 glass_pane
+execute if block 100 79 0 stone run fill 80 102 -18 80 103 -18 glass_pane
+execute if block 100 79 0 stone run fill 72 102 -24 72 103 -24 glass_pane
+execute if block 100 79 0 stone run fill 82 102 -24 82 103 -24 glass_pane
+execute if block 100 79 0 stone run fill 72 102 -21 72 103 -21 glass_pane
+execute if block 100 79 0 stone run fill 82 102 -21 82 103 -21 glass_pane
+execute if block 100 79 0 stone run fill 87 100 -24 93 109 -19 air
+execute if block 100 79 0 stone run fill 87 99 -24 93 99 -19 oak_planks
+execute if block 100 79 0 stone run fill 87 104 -24 93 104 -19 oak_planks
+execute if block 100 79 0 stone run setblock 87 100 -24 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+execute if block 100 79 0 stone run setblock 87 101 -23 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+execute if block 100 79 0 stone run setblock 87 102 -22 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+execute if block 100 79 0 stone run setblock 87 103 -21 oak_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 87 104 -24 87 104 -21 air
+execute if block 100 79 0 stone run fill 90 100 -18 90 101 -18 air
+execute if block 100 79 0 stone run fill 88 102 -25 88 103 -25 glass_pane
+execute if block 100 79 0 stone run fill 88 102 -18 88 103 -18 glass_pane
+execute if block 100 79 0 stone run fill 86 102 -23 86 103 -23 glass_pane
+execute if block 100 79 0 stone run fill 94 102 -23 94 103 -23 glass_pane
+execute if block 100 79 0 stone run fill 86 102 -20 86 103 -20 glass_pane
+execute if block 100 79 0 stone run fill 94 102 -20 94 103 -20 glass_pane
+execute if block 100 79 0 stone run fill 88 107 -25 88 108 -25 glass_pane
+execute if block 100 79 0 stone run fill 88 107 -18 88 108 -18 glass_pane
+execute if block 100 79 0 stone run fill 91 107 -25 91 108 -25 glass_pane
+execute if block 100 79 0 stone run fill 91 107 -18 91 108 -18 glass_pane
+execute if block 100 79 0 stone run fill 86 107 -23 86 108 -23 glass_pane
+execute if block 100 79 0 stone run fill 94 107 -23 94 108 -23 glass_pane
+execute if block 100 79 0 stone run fill 86 107 -20 86 108 -20 glass_pane
+execute if block 100 79 0 stone run fill 94 107 -20 94 108 -20 glass_pane
+execute if block 100 79 0 stone run fill 107 100 -24 113 104 -19 air
+execute if block 100 79 0 stone run fill 107 99 -24 113 99 -19 oak_planks
+execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1

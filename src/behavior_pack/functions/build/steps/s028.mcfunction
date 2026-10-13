@@ -1,22 +1,9 @@
-# zone 1 detail 1
-fill 140 100 -3 159 100 -3 iron_bars
-fill 140 100 3 159 100 3 iron_bars
-fill 142 88 -3 142 98 -3 stone_bricks
-fill 142 88 3 142 98 3 stone_bricks
-fill 142 101 -3 142 102 -3 stone_bricks
-fill 142 101 3 142 102 3 stone_bricks
-setblock 142 103 -3 lantern
-setblock 142 103 3 lantern
-fill 148 88 -3 148 98 -3 stone_bricks
-fill 148 88 3 148 98 3 stone_bricks
-fill 148 101 -3 148 102 -3 stone_bricks
-fill 148 101 3 148 102 3 stone_bricks
-setblock 148 103 -3 lantern
-setblock 148 103 3 lantern
-fill 154 88 -3 154 98 -3 stone_bricks
-fill 154 88 3 154 98 3 stone_bricks
-fill 154 101 -3 154 102 -3 stone_bricks
-fill 154 101 3 154 102 3 stone_bricks
-setblock 154 103 -3 lantern
-setblock 154 103 3 lantern
-scoreboard players add #bstep bce_sys 1
+# zone 0 release
+scoreboard players set #bzone bce_sys 0
+execute unless block 0 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 0 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 0 79 0 stone run tickingarea remove bce_z0
+execute if block 0 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 0 79 0 stone run scoreboard players add #bstep bce_sys 1

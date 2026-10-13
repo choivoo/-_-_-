@@ -1,0 +1,285 @@
+# 구역 3 붕괴된 성벽 — 단계 detail (1/1). 중심 x=300 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 300 100 0 4 bce_z3)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 260 100 -40 339 140 39 air (여러 번에 나눠서)
+
+fill 314 99 15 315 99 17 cracked_stone_bricks replace stone_bricks
+fill 326 99 20 327 99 21 mossy_stone_bricks replace stone_bricks
+fill 308 99 6 309 99 6 stone replace stone_bricks
+fill 272 99 -23 273 99 -21 stone replace stone_bricks
+fill 285 99 -29 285 99 -28 stone replace stone_bricks
+fill 318 99 3 320 99 5 mossy_stone_bricks replace stone_bricks
+fill 305 99 -29 306 99 -28 stone replace stone_bricks
+fill 279 99 -9 280 99 -8 stone replace stone_bricks
+fill 308 99 -3 310 99 -1 gravel replace stone_bricks
+fill 298 99 15 298 99 15 cracked_stone_bricks replace stone_bricks
+fill 334 99 36 335 99 37 gravel replace stone_bricks
+fill 278 99 15 279 99 16 cracked_stone_bricks replace stone_bricks
+fill 331 99 -5 333 99 -5 gravel replace stone_bricks
+fill 281 99 2 282 99 2 mossy_stone_bricks replace stone_bricks
+fill 327 99 33 328 99 34 mossy_stone_bricks replace stone_bricks
+fill 271 99 -14 271 99 -13 mossy_stone_bricks replace stone_bricks
+fill 297 99 36 299 99 36 mossy_stone_bricks replace stone_bricks
+fill 278 99 -16 280 99 -14 mossy_stone_bricks replace stone_bricks
+fill 267 99 -9 267 99 -8 stone replace stone_bricks
+fill 283 99 25 285 99 26 stone replace stone_bricks
+fill 291 99 28 291 99 28 cracked_stone_bricks replace stone_bricks
+fill 303 99 -12 305 99 -10 gravel replace stone_bricks
+fill 281 99 -8 283 99 -6 stone replace stone_bricks
+fill 304 99 -13 304 99 -11 stone replace stone_bricks
+fill 303 99 -32 303 99 -32 stone replace stone_bricks
+fill 268 99 1 270 99 1 stone replace stone_bricks
+fill 312 99 -19 312 99 -19 gravel replace stone_bricks
+fill 263 99 15 264 99 17 stone replace stone_bricks
+fill 319 99 -21 319 99 -21 stone replace stone_bricks
+fill 276 99 37 276 99 37 stone replace stone_bricks
+fill 332 99 -5 334 99 -4 gravel replace stone_bricks
+fill 295 99 -18 295 99 -16 gravel replace stone_bricks
+fill 262 99 -36 263 99 -34 cracked_stone_bricks replace stone_bricks
+fill 266 99 4 268 99 4 mossy_stone_bricks replace stone_bricks
+fill 295 99 3 295 99 3 stone replace stone_bricks
+fill 336 99 22 336 99 22 stone replace stone_bricks
+fill 335 99 -16 336 99 -15 cracked_stone_bricks replace stone_bricks
+fill 270 99 31 271 99 33 stone replace stone_bricks
+fill 320 99 7 322 99 7 stone replace stone_bricks
+fill 267 99 -20 268 99 -19 gravel replace stone_bricks
+fill 281 99 -37 281 99 -37 gravel replace stone_bricks
+fill 325 99 -17 325 99 -16 mossy_stone_bricks replace stone_bricks
+fill 266 99 -12 266 99 -11 mossy_stone_bricks replace stone_bricks
+fill 293 99 26 294 99 27 stone replace stone_bricks
+fill 318 99 -15 318 99 -13 mossy_stone_bricks replace stone_bricks
+fill 313 99 -19 313 99 -17 gravel replace stone_bricks
+fill 285 99 7 287 99 8 cracked_stone_bricks replace stone_bricks
+fill 279 99 29 280 99 31 gravel replace stone_bricks
+fill 317 99 24 319 99 25 mossy_stone_bricks replace stone_bricks
+fill 299 99 -23 300 99 -23 stone replace stone_bricks
+fill 278 99 -17 280 99 -15 cracked_stone_bricks replace stone_bricks
+fill 294 99 35 295 99 35 mossy_stone_bricks replace stone_bricks
+fill 320 99 14 322 99 14 cracked_stone_bricks replace stone_bricks
+fill 325 99 -5 326 99 -3 mossy_stone_bricks replace stone_bricks
+fill 273 99 -28 274 99 -27 cracked_stone_bricks replace stone_bricks
+fill 309 99 -6 309 99 -6 gravel replace stone_bricks
+fill 275 99 -25 276 99 -24 cracked_stone_bricks replace stone_bricks
+fill 314 99 -29 314 99 -28 gravel replace stone_bricks
+fill 278 99 35 278 99 35 stone replace stone_bricks
+fill 263 99 20 265 99 20 gravel replace stone_bricks
+fill 305 99 -39 320 99 38 air
+fill 305 90 -39 320 90 38 stone
+fill 305 91 -39 320 98 38 air
+fill 305 99 -1 320 99 1 stone_bricks
+setblock 306 99 0 cracked_stone_bricks
+setblock 310 99 0 cracked_stone_bricks
+setblock 314 99 0 cracked_stone_bricks
+setblock 318 99 0 cracked_stone_bricks
+fill 306 90 37 306 90 38 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 307 91 37 307 91 38 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 308 92 37 308 92 38 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 309 93 37 309 93 38 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 310 94 37 310 94 38 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 311 95 37 311 95 38 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 312 96 37 312 96 38 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 313 97 37 313 97 38 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+fill 314 98 37 314 98 38 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+setblock 294 100 36 gravel
+setblock 282 100 12 cobblestone
+setblock 294 100 -26 stone_bricks
+setblock 283 100 -7 mossy_cobblestone
+setblock 277 100 10 cobblestone
+setblock 276 100 18 mossy_cobblestone
+setblock 296 100 -37 cobblestone
+setblock 282 100 21 mossy_cobblestone
+setblock 263 100 -36 mossy_cobblestone
+setblock 274 100 -17 cobblestone
+setblock 272 100 -26 mossy_cobblestone
+setblock 280 100 14 gravel
+setblock 273 100 -29 gravel
+setblock 267 100 -35 gravel
+setblock 271 100 -17 cobblestone
+setblock 277 100 -22 mossy_cobblestone
+setblock 285 100 12 gravel
+setblock 272 100 32 mossy_cobblestone
+setblock 297 100 8 stone_bricks
+setblock 294 100 19 cobblestone
+setblock 267 100 8 stone_bricks
+setblock 275 100 -24 gravel
+setblock 262 100 10 gravel
+setblock 278 100 -15 cobblestone
+setblock 274 100 26 gravel
+setblock 263 100 6 stone_bricks
+setblock 266 100 31 gravel
+setblock 275 100 -13 stone_bricks
+setblock 262 100 30 mossy_cobblestone
+setblock 285 100 26 stone_bricks
+setblock 264 100 32 mossy_cobblestone
+setblock 293 100 -37 gravel
+setblock 283 100 -16 mossy_cobblestone
+setblock 266 100 -19 mossy_cobblestone
+setblock 268 100 -9 mossy_cobblestone
+setblock 297 100 25 cobblestone
+setblock 286 100 31 stone_bricks
+fill 340 99 -2 359 99 2 polished_andesite
+fill 340 99 -3 359 99 -3 stone_bricks
+fill 340 99 3 359 99 3 stone_bricks
+fill 340 100 -3 359 100 -3 iron_bars
+fill 340 100 3 359 100 3 iron_bars
+fill 342 88 -3 342 98 -3 stone_bricks
+fill 342 88 3 342 98 3 stone_bricks
+fill 342 101 -3 342 102 -3 stone_bricks
+fill 342 101 3 342 102 3 stone_bricks
+setblock 342 103 -3 lantern
+setblock 342 103 3 lantern
+fill 348 88 -3 348 98 -3 stone_bricks
+fill 348 88 3 348 98 3 stone_bricks
+fill 348 101 -3 348 102 -3 stone_bricks
+fill 348 101 3 348 102 3 stone_bricks
+setblock 348 103 -3 lantern
+setblock 348 103 3 lantern
+fill 354 88 -3 354 98 -3 stone_bricks
+fill 354 88 3 354 98 3 stone_bricks
+fill 354 101 -3 354 102 -3 stone_bricks
+fill 354 101 3 354 102 3 stone_bricks
+setblock 354 103 -3 lantern
+setblock 354 103 3 lantern
+fill 299 100 -6 299 108 -6 chiseled_stone_bricks
+fill 299 100 -5 299 110 -5 chiseled_stone_bricks
+fill 299 109 -4 299 111 -4 chiseled_stone_bricks
+fill 299 110 -3 299 111 -3 chiseled_stone_bricks
+fill 299 111 -2 299 112 -2 chiseled_stone_bricks
+fill 299 111 -1 299 112 -1 chiseled_stone_bricks
+fill 299 111 0 299 112 0 chiseled_stone_bricks
+fill 299 111 1 299 112 1 chiseled_stone_bricks
+fill 299 111 2 299 112 2 chiseled_stone_bricks
+fill 299 110 3 299 111 3 chiseled_stone_bricks
+fill 299 109 4 299 111 4 chiseled_stone_bricks
+fill 299 100 5 299 110 5 chiseled_stone_bricks
+fill 299 100 6 299 108 6 chiseled_stone_bricks
+fill 304 100 -6 304 108 -6 chiseled_stone_bricks
+fill 304 100 -5 304 110 -5 chiseled_stone_bricks
+fill 304 109 -4 304 111 -4 chiseled_stone_bricks
+fill 304 110 -3 304 111 -3 chiseled_stone_bricks
+fill 304 111 -2 304 112 -2 chiseled_stone_bricks
+fill 304 111 -1 304 112 -1 chiseled_stone_bricks
+fill 304 111 0 304 112 0 chiseled_stone_bricks
+fill 304 111 1 304 112 1 chiseled_stone_bricks
+fill 304 111 2 304 112 2 chiseled_stone_bricks
+fill 304 110 3 304 111 3 chiseled_stone_bricks
+fill 304 109 4 304 111 4 chiseled_stone_bricks
+fill 304 100 5 304 110 5 chiseled_stone_bricks
+fill 304 100 6 304 108 6 chiseled_stone_bricks
+fill 287 100 -33 289 100 -33 mossy_cobblestone
+fill 286 100 -32 290 100 -32 mossy_cobblestone
+fill 285 100 -31 291 100 -31 mossy_cobblestone
+fill 285 100 -30 291 100 -30 mossy_cobblestone
+fill 285 100 -29 291 100 -29 mossy_cobblestone
+fill 286 100 -28 290 100 -28 mossy_cobblestone
+fill 287 100 -27 289 100 -27 mossy_cobblestone
+fill 287 101 -32 289 101 -32 mossy_cobblestone
+fill 286 101 -31 290 101 -31 mossy_cobblestone
+fill 286 101 -30 290 101 -30 mossy_cobblestone
+fill 286 101 -29 290 101 -29 mossy_cobblestone
+fill 287 101 -28 289 101 -28 mossy_cobblestone
+fill 287 102 -31 289 102 -31 mossy_cobblestone
+fill 287 102 -30 289 102 -30 mossy_cobblestone
+fill 287 102 -29 289 102 -29 mossy_cobblestone
+fill 282 100 27 286 100 27 cobblestone
+fill 281 100 28 287 100 28 cobblestone
+fill 280 100 29 288 100 29 cobblestone
+fill 280 100 30 288 100 30 cobblestone
+fill 280 100 31 288 100 31 cobblestone
+fill 280 100 32 288 100 32 cobblestone
+fill 280 100 33 288 100 33 cobblestone
+fill 281 100 34 287 100 34 cobblestone
+fill 282 100 35 286 100 35 cobblestone
+fill 283 101 28 285 101 28 cobblestone
+fill 282 101 29 286 101 29 cobblestone
+fill 281 101 30 287 101 30 cobblestone
+fill 281 101 31 287 101 31 cobblestone
+fill 281 101 32 287 101 32 cobblestone
+fill 282 101 33 286 101 33 cobblestone
+fill 283 101 34 285 101 34 cobblestone
+fill 283 102 29 285 102 29 cobblestone
+fill 282 102 30 286 102 30 cobblestone
+fill 282 102 31 286 102 31 cobblestone
+fill 282 102 32 286 102 32 cobblestone
+fill 283 102 33 285 102 33 cobblestone
+fill 283 103 30 285 103 30 cobblestone
+fill 283 103 31 285 103 31 cobblestone
+fill 283 103 32 285 103 32 cobblestone
+fill 269 100 -23 271 100 -23 mossy_cobblestone
+fill 268 100 -22 272 100 -22 mossy_cobblestone
+fill 267 100 -21 273 100 -21 mossy_cobblestone
+fill 267 100 -20 273 100 -20 mossy_cobblestone
+fill 267 100 -19 273 100 -19 mossy_cobblestone
+fill 268 100 -18 272 100 -18 mossy_cobblestone
+fill 269 100 -17 271 100 -17 mossy_cobblestone
+fill 269 101 -22 271 101 -22 mossy_cobblestone
+fill 268 101 -21 272 101 -21 mossy_cobblestone
+fill 268 101 -20 272 101 -20 mossy_cobblestone
+fill 268 101 -19 272 101 -19 mossy_cobblestone
+fill 269 101 -18 271 101 -18 mossy_cobblestone
+fill 269 102 -21 271 102 -21 mossy_cobblestone
+fill 269 102 -20 271 102 -20 mossy_cobblestone
+fill 269 102 -19 271 102 -19 mossy_cobblestone
+fill 271 100 21 273 100 21 mossy_cobblestone
+fill 270 100 22 274 100 22 mossy_cobblestone
+fill 269 100 23 275 100 23 mossy_cobblestone
+fill 269 100 24 275 100 24 mossy_cobblestone
+fill 269 100 25 275 100 25 mossy_cobblestone
+fill 270 100 26 274 100 26 mossy_cobblestone
+fill 271 100 27 273 100 27 mossy_cobblestone
+fill 271 101 22 273 101 22 mossy_cobblestone
+fill 270 101 23 274 101 23 mossy_cobblestone
+fill 270 101 24 274 101 24 mossy_cobblestone
+fill 270 101 25 274 101 25 mossy_cobblestone
+fill 271 101 26 273 101 26 mossy_cobblestone
+fill 271 102 23 273 102 23 mossy_cobblestone
+fill 271 102 24 273 102 24 mossy_cobblestone
+fill 271 102 25 273 102 25 mossy_cobblestone
+fill 327 100 -33 329 100 -33 cobblestone
+fill 326 100 -32 330 100 -32 cobblestone
+fill 325 100 -31 331 100 -31 cobblestone
+fill 325 100 -30 331 100 -30 cobblestone
+fill 325 100 -29 331 100 -29 cobblestone
+fill 326 100 -28 330 100 -28 cobblestone
+fill 327 100 -27 329 100 -27 cobblestone
+fill 327 101 -32 329 101 -32 cobblestone
+fill 326 101 -31 330 101 -31 cobblestone
+fill 326 101 -30 330 101 -30 cobblestone
+fill 326 101 -29 330 101 -29 cobblestone
+fill 327 101 -28 329 101 -28 cobblestone
+fill 327 102 -31 329 102 -31 cobblestone
+fill 327 102 -30 329 102 -30 cobblestone
+fill 327 102 -29 329 102 -29 cobblestone
+fill 329 100 27 331 100 27 mossy_cobblestone
+fill 328 100 28 332 100 28 mossy_cobblestone
+fill 327 100 29 333 100 29 mossy_cobblestone
+fill 327 100 30 333 100 30 mossy_cobblestone
+fill 327 100 31 333 100 31 mossy_cobblestone
+fill 328 100 32 332 100 32 mossy_cobblestone
+fill 329 100 33 331 100 33 mossy_cobblestone
+fill 329 101 28 331 101 28 mossy_cobblestone
+fill 328 101 29 332 101 29 mossy_cobblestone
+fill 328 101 30 332 101 30 mossy_cobblestone
+fill 328 101 31 332 101 31 mossy_cobblestone
+fill 329 101 32 331 101 32 mossy_cobblestone
+fill 329 102 29 331 102 29 mossy_cobblestone
+fill 329 102 30 331 102 30 mossy_cobblestone
+fill 329 102 31 331 102 31 mossy_cobblestone
+fill 276 100 -14 276 101 -6 oak_fence
+fill 276 100 -14 276 102 -14 spruce_log
+fill 276 100 -10 276 102 -10 spruce_log
+fill 276 100 -6 276 102 -6 spruce_log
+fill 276 100 6 276 101 14 oak_fence
+fill 276 100 6 276 102 6 spruce_log
+fill 276 100 10 276 102 10 spruce_log
+fill 276 100 14 276 102 14 spruce_log
+fill 288 100 -20 288 101 -12 oak_fence
+fill 288 100 -20 288 102 -20 spruce_log
+fill 288 100 -16 288 102 -16 spruce_log
+fill 288 100 -12 288 102 -12 spruce_log
+fill 288 100 12 288 101 20 oak_fence
+fill 288 100 12 288 102 12 spruce_log
+fill 288 100 16 288 102 16 spruce_log
+fill 288 100 20 288 102 20 spruce_log
+fill 322 100 -10 322 101 -10 stone_bricks
+setblock 322 102 -10 lantern
+fill 322 100 10 322 101 10 stone_bricks
+setblock 322 102 10 lantern

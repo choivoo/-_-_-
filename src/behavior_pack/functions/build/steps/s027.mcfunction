@@ -1,42 +1,17 @@
-# zone 1 detail 0
-setblock 81 100 -25 crafting_table
-setblock 73 100 -19 barrel
-setblock 81 100 -19 bookshelf
-setblock 93 100 -24 furnace
-setblock 87 100 -19 chest
-setblock 93 100 -19 bookshelf
-setblock 113 100 -24 crafting_table
-setblock 107 100 -19 barrel
-setblock 129 100 -26 barrel
-setblock 119 100 -19 barrel
-setblock 129 100 -19 lectern
-setblock 129 100 -23 chest
-fill 120 103 -17 128 103 -16 red_wool
-fill 120 100 -16 128 100 -16 barrel
-setblock 81 100 18 furnace
-setblock 73 100 24 bookshelf
-setblock 93 100 18 crafting_table
-setblock 87 100 24 chest
-setblock 115 100 18 web
-fill 108 105 19 112 108 23 air
-fill 116 101 19 116 104 21 air
-setblock 109 100 19 cobblestone
-setblock 114 100 22 cobblestone
-setblock 113 100 22 web
-setblock 113 100 24 gravel
-setblock 112 100 23 spruce_planks
-setblock 115 100 20 gravel
-setblock 113 100 18 gravel
-setblock 113 100 19 web
-setblock 108 100 20 spruce_planks
-setblock 107 100 20 gravel
-setblock 108 100 21 spruce_planks
-setblock 115 100 19 gravel
-setblock 109 100 21 web
-setblock 108 100 20 cobblestone
-setblock 127 100 18 barrel
-setblock 121 100 23 furnace
-fill 140 99 -2 159 99 2 polished_andesite
-fill 140 99 -3 159 99 -3 stone_bricks
-fill 140 99 3 159 99 3 stone_bricks
-scoreboard players add #bstep bce_sys 1
+# zone 0 verify
+scoreboard players set #bzone bce_sys 0
+execute unless block 0 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 0 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 0 79 0 stone run scoreboard players set #bsm bce_sys 4
+execute if block 0 79 0 stone run scoreboard players set #bstage bce_sys 7
+execute if block 0 79 0 stone run scoreboard players set #berr bce_sys 0
+execute if block 0 79 0 stone run execute unless block 3 103 -19 stone_bricks run scoreboard players set #berr bce_sys 10
+execute if block 0 79 0 stone run execute unless block -31 99 26 stone_bricks run scoreboard players set #berr bce_sys 11
+execute if block 0 79 0 stone run execute unless block 15 99 -30 stone_bricks run scoreboard players set #berr bce_sys 12
+execute if block 0 79 0 stone run execute unless block -31 99 34 stone_bricks run scoreboard players set #berr bce_sys 13
+execute if block 0 79 0 stone run execute unless block -10 99 36 stone_bricks run scoreboard players set #berr bce_sys 14
+execute if block 0 79 0 stone run execute unless block -32 99 -10 stone_bricks run scoreboard players set #berr bce_sys 15
+execute if block 0 79 0 stone run execute if score #berr bce_sys matches 1.. run scoreboard players set #bsm bce_sys 7
+execute if block 0 79 0 stone run execute if score #berr bce_sys matches 0 run scoreboard players add #bstep bce_sys 1

@@ -1,32 +1,29 @@
 {
  "errors": [],
- "warnings": [
-  "function never referenced: build/progress"
- ],
+ "warnings": [],
  "info": {
-  "json_files": 21,
-  "functions": 276,
-  "commands": 3339,
+  "json_files": 25,
+  "functions": 447,
+  "commands": 8321,
   "longest_function": [
    "bosses/final_tick",
    103
   ],
-  "orphan_functions": [
-   "build/progress"
-  ],
+  "orphan_functions": [],
   "spawn_points_checked": 17,
+  "structure_files": 26,
   "static_command_lines": {
    "per_tick": {
-    "player/input": 211,
-    "player/timers": 8,
-    "enemies/tick": 98,
-    "cutscenes/dispatch": 162,
-    "bosses/tick": 575
+    "player/input": 291,
+    "player/timers": 50,
+    "enemies/tick": 116,
+    "cutscenes/dispatch": 219,
+    "bosses/tick": 580
    },
    "slots": {
-    "core/every5": 21,
-    "core/every10": 235,
-    "core/every20": 56
+    "core/every5": 40,
+    "core/every10": 269,
+    "core/every20": 59
    }
   }
  }

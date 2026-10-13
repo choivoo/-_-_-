@@ -1,42 +1,40 @@
-# zone 4 ground 1
-fill 419 99 11 421 99 14 deepslate_bricks replace polished_blackstone_bricks
-fill 402 99 -14 402 99 -12 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 393 99 0 395 99 0 deepslate_bricks replace polished_blackstone_bricks
-fill 430 99 -36 431 99 -33 blackstone replace polished_blackstone_bricks
-fill 384 99 -15 385 99 -13 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 405 99 -6 406 99 -5 blackstone replace polished_blackstone_bricks
-fill 389 99 22 392 99 25 deepslate_bricks replace polished_blackstone_bricks
-fill 406 99 -20 408 99 -17 blackstone replace polished_blackstone_bricks
-fill 402 99 -23 403 99 -21 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 425 99 16 427 99 19 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 401 99 2 402 99 3 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 380 99 -29 382 99 -27 blackstone replace polished_blackstone_bricks
-fill 398 99 21 398 99 23 deepslate_bricks replace polished_blackstone_bricks
-fill 409 99 14 410 99 15 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 374 99 36 377 99 36 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 418 99 6 420 99 7 deepslate_bricks replace polished_blackstone_bricks
-fill 417 99 37 418 99 37 deepslate_bricks replace polished_blackstone_bricks
-fill 429 99 8 429 99 11 blackstone replace polished_blackstone_bricks
-fill 365 99 -30 368 99 -30 deepslate_bricks replace polished_blackstone_bricks
-fill 428 99 2 428 99 3 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 402 99 0 404 99 2 deepslate_bricks replace polished_blackstone_bricks
-fill 397 99 -30 397 99 -28 deepslate_bricks replace polished_blackstone_bricks
-fill 432 99 -1 433 99 0 deepslate_bricks replace polished_blackstone_bricks
-fill 417 99 -21 419 99 -20 deepslate_bricks replace polished_blackstone_bricks
-fill 399 99 -26 399 99 -23 deepslate_bricks replace polished_blackstone_bricks
-fill 388 99 7 391 99 8 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 377 99 -16 379 99 -14 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 415 99 21 416 99 24 blackstone replace polished_blackstone_bricks
-fill 391 99 16 391 99 18 deepslate_bricks replace polished_blackstone_bricks
-fill 365 99 -30 368 99 -30 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 384 99 24 387 99 27 deepslate_bricks replace polished_blackstone_bricks
-fill 414 99 -1 414 99 1 deepslate_bricks replace polished_blackstone_bricks
-fill 413 99 2 413 99 4 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 434 99 16 434 99 18 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 376 99 6 378 99 8 deepslate_bricks replace polished_blackstone_bricks
-fill 435 99 -26 437 99 -23 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 425 99 -5 427 99 -5 blackstone replace polished_blackstone_bricks
-fill 372 99 26 374 99 26 deepslate_bricks replace polished_blackstone_bricks
-fill 380 99 8 382 99 11 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-fill 424 99 -21 424 99 -19 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
-scoreboard players add #bstep bce_sys 1
+# zone 1 detail 6
+scoreboard players set #bzone bce_sys 1
+execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 3
+execute if block 100 79 0 stone run fill 125 101 -36 126 102 -36 cobblestone
+execute if block 100 79 0 stone run fill 130 101 -36 131 102 -36 cobblestone
+execute if block 100 79 0 stone run fill 104 102 -38 105 103 -38 cobblestone
+execute if block 100 79 0 stone run fill 124 103 -39 125 104 -39 cobblestone
+execute if block 100 79 0 stone run fill 105 101 -33 106 102 -33 cobblestone
+execute if block 100 79 0 stone run fill 134 101 35 134 108 35 spruce_log
+execute if block 100 79 0 stone run fill 134 105 36 134 105 37 spruce_log ["pillar_axis"="z"]
+execute if block 100 79 0 stone run fill 134 105 36 134 105 37 spruce_log ["pillar_axis"="z"]
+execute if block 100 79 0 stone run fill 77 101 36 77 106 36 spruce_log
+execute if block 100 79 0 stone run fill 75 103 36 76 103 36 spruce_log ["pillar_axis"="x"]
+execute if block 100 79 0 stone run fill 77 104 34 77 104 35 spruce_log ["pillar_axis"="z"]
+execute if block 100 79 0 stone run fill 97 101 33 97 108 33 spruce_log
+execute if block 100 79 0 stone run fill 98 107 33 99 107 33 spruce_log ["pillar_axis"="x"]
+execute if block 100 79 0 stone run fill 95 107 33 96 107 33 spruce_log ["pillar_axis"="x"]
+execute if block 100 79 0 stone run fill 95 107 33 96 107 33 spruce_log ["pillar_axis"="x"]
+execute if block 100 79 0 stone run fill 132 102 37 132 108 37 spruce_log
+execute if block 100 79 0 stone run fill 132 105 38 132 105 39 spruce_log ["pillar_axis"="z"]
+execute if block 100 79 0 stone run fill 132 105 35 132 105 36 spruce_log ["pillar_axis"="z"]
+execute if block 100 79 0 stone run fill 132 106 38 132 106 39 spruce_log ["pillar_axis"="z"]
+execute if block 100 79 0 stone run fill 132 101 35 132 106 35 spruce_log
+execute if block 100 79 0 stone run fill 132 105 36 132 105 37 spruce_log ["pillar_axis"="z"]
+execute if block 100 79 0 stone run fill 132 103 33 132 103 34 spruce_log ["pillar_axis"="z"]
+execute if block 100 79 0 stone run fill 102 101 34 102 106 34 spruce_log
+execute if block 100 79 0 stone run fill 100 104 34 101 104 34 spruce_log ["pillar_axis"="x"]
+execute if block 100 79 0 stone run fill 102 104 32 102 104 33 spruce_log ["pillar_axis"="z"]
+execute if block 100 79 0 stone run fill 100 105 34 101 105 34 spruce_log ["pillar_axis"="x"]
+execute if block 100 79 0 stone run fill 118 100 36 119 101 36 cobblestone
+execute if block 100 79 0 stone run fill 137 101 35 138 102 35 cobblestone
+execute if block 100 79 0 stone run fill 84 100 33 85 101 33 cobblestone
+execute if block 100 79 0 stone run fill 66 100 35 67 101 35 cobblestone
+execute if block 100 79 0 stone run fill 96 103 36 97 104 36 cobblestone
+execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1

@@ -1,44 +1,27 @@
 {
  "fails": [],
  "report": {
-  "cutscene_boss_death": {
-   "ended_tick": 160
-  },
-  "cutscene_opening": {
-   "ended_tick": 600
-  },
-  "cutscene_boss_intro": {
-   "ended_tick": 240
-  },
-  "cutscene_ending": {
-   "ended_tick": 420
-  },
+  "cutscene_boss_death": 160,
+  "cutscene_opening": 600,
+  "cutscene_boss_intro": 240,
+  "cutscene_q6_intro": 130,
+  "cutscene_ending": 420,
+  "cutscene_q4_intro": 130,
+  "cutscene_q7_intro": 170,
   "boss": {
-   "events": [
-    [
-     "bosses/to_phase2",
-     1047
-    ],
-    [
-     "bosses/to_phase3",
-     2097
-    ],
-    [
-     "bosses/final_start",
-     2697
-    ],
-    [
-     "bosses/death",
-     2997
-    ]
+   "order": [
+    "bosses/to_phase2",
+    "bosses/to_phase3",
+    "bosses/final_start",
+    "bosses/death",
+    "bosses/death_go"
    ],
-   "min_warn_to_hit_ticks": 12,
-   "samples": 79
+   "min_gap": 12
   },
-  "build_sequencer": {
-   "steps": 72,
-   "final_bstep": 72,
-   "state": 4
-  }
+  "judgment_damage_ticks": [
+   19,
+   25
+  ],
+  "build_ticks": 160
  }
 }

@@ -1,4 +1,15 @@
 # COMPATIBILITY
+## 이번 RC에서 출처로 대조한 항목
+| 항목 | 출처 | 결과 |
+|---|---|---|
+| `/camera <players> set <preset> [ease t type] [pos x y z] [rot x y \| facing …]`, `clear`, `fade [time in hold out] [color r g b]` | Microsoft Learn “Camera System Introduction” | 생성 구문과 일치(색은 0–255 정수, 페이드 각 ≤10초, 총 ≥0.5초, 동시 페이드는 합성). 자유 카메라 중에도 플레이어 입력이 살아 있으므로 문서 권장대로 `inputpermission camera/movement` 모두 잠금 |
+| 카메라가 플레이어에서 너무 멀면 렌더링 불안정 | 같은 문서 | 오프닝 장면 1은 플레이어에서 약 95칸 — **위험으로 기록**, 이상 시 `cutscenes/opening` JSON의 좌표를 가깝게 조정 |
+| `.mcstructure` 루트 `format_version(int=1)`, `size`, `structure.{block_indices[2 layers], entities, palette.default.{block_palette, block_position_data}}`, `structure_world_origin`, 인덱스 순서(z 가장 빠름), 팔레트 `{name, states, version}`, 블록 버전 18168865 | wiki.bedrock.dev/nbt/mcstructure | 작성기와 일치 |
+| 엔티티 이벤트 `queue_command` (`"command"` 필드) | bedrock.dev Entity Events | 형식 일치(베타 문서 기준; 안정판 표기는 확인 못 함) |
+| `inputpermission` 도입 1.19.80 | 커뮤니티 위키(비공식) | 참고 |
+**확인하지 못한 것**: `tickingarea add circle`, `structure load` 실제 수용, `replaceitem` 존속 여부(공식 폐기 근거를 찾지 못함), 블록 상태 이름, 파티클/사운드 ID.
+`min_engine_version [1,20,80]` 유지: 사용 기능 중 가장 새로운 것은 이 문서에서 확인된 `camera facing`/`inputpermission`(≥1.19.80) 계열이며 구조물 폴더 자동 등록은 미검증이므로, 문제가 있으면 상향하세요.
+
 버전은 **추정**입니다 (작업 환경에서 게임 버전을 확인할 수 없었음). 아래 “위험” 항목에서 실패하면 해당 함수만 수정하면 됩니다.
 
 | 기능 | 사용처 | 도입(추정) | 위험/대응 |

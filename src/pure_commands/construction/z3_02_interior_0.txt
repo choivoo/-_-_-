@@ -1,0 +1,35 @@
+# 구역 3 붕괴된 성벽 — 단계 interior (1/1). 중심 x=300 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 300 100 0 4 bce_z3)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 260 100 -40 339 140 39 air (여러 번에 나눠서)
+
+fill 321 99 -20 337 99 20 polished_andesite
+fill 323 99 -18 335 99 18 stone_bricks
+fill 321 100 -21 337 105 -21 stone_bricks
+fill 321 100 21 337 105 21 stone_bricks
+fill 324 100 -14 324 108 -14 stone_bricks
+setblock 324 100 -14 chiseled_stone_bricks
+setblock 324 108 -14 chiseled_stone_bricks
+fill 324 100 14 324 108 14 stone_bricks
+setblock 324 100 14 chiseled_stone_bricks
+setblock 324 108 14 chiseled_stone_bricks
+fill 328 100 -14 328 108 -14 stone_bricks
+setblock 328 100 -14 chiseled_stone_bricks
+setblock 328 108 -14 chiseled_stone_bricks
+fill 328 100 14 328 108 14 stone_bricks
+setblock 328 100 14 chiseled_stone_bricks
+setblock 328 108 14 chiseled_stone_bricks
+fill 332 100 -14 332 108 -14 stone_bricks
+setblock 332 100 -14 chiseled_stone_bricks
+setblock 332 108 -14 chiseled_stone_bricks
+fill 332 100 14 332 108 14 stone_bricks
+setblock 332 100 14 chiseled_stone_bricks
+setblock 332 108 14 chiseled_stone_bricks
+fill 336 100 -14 336 108 -14 stone_bricks
+setblock 336 100 -14 chiseled_stone_bricks
+setblock 336 108 -14 chiseled_stone_bricks
+fill 336 100 14 336 108 14 stone_bricks
+setblock 336 100 14 chiseled_stone_bricks
+setblock 336 108 14 chiseled_stone_bricks
+fill 336 100 -6 339 110 6 stone_bricks
+fill 336 100 -3 339 106 3 air
+fill 337 100 -3 338 106 3 iron_bars
+fill 336 107 -4 339 107 4 chiseled_stone_bricks

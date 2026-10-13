@@ -1,0 +1,14 @@
+# 구역 0 깨어남의 신전 — 단계 light (1/1). 중심 x=0 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 0 100 0 4 bce_z0)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill -40 100 -40 39 140 39 air (여러 번에 나눠서)
+
+setblock -10 109 -16 lantern
+setblock -10 109 16 lantern
+setblock 0 109 -16 lantern
+setblock 0 109 16 lantern
+setblock 10 109 -16 lantern
+setblock 10 109 16 lantern
+setblock -10 101 -10 lantern
+setblock -10 101 10 lantern
+setblock 10 101 -10 lantern
+setblock 10 101 10 lantern
+setblock -8 103 0 soul_lantern

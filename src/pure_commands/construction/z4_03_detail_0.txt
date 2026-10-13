@@ -1,0 +1,94 @@
+# 구역 4 검은별의 성채 — 단계 detail (1/1). 중심 x=400 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 400 100 0 4 bce_z4)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 360 100 -40 439 140 39 air (여러 번에 나눠서)
+
+fill 404 100 -17 404 113 -17 blackstone
+setblock 404 100 -17 chiseled_polished_blackstone
+setblock 404 113 -17 chiseled_polished_blackstone
+setblock 404 103 -16 soul_lantern
+fill 404 100 17 404 113 17 blackstone
+setblock 404 100 17 chiseled_polished_blackstone
+setblock 404 113 17 chiseled_polished_blackstone
+setblock 404 103 16 soul_lantern
+fill 412 100 -17 412 113 -17 blackstone
+setblock 412 100 -17 chiseled_polished_blackstone
+setblock 412 113 -17 chiseled_polished_blackstone
+setblock 412 103 -16 soul_lantern
+fill 412 100 17 412 113 17 blackstone
+setblock 412 100 17 chiseled_polished_blackstone
+setblock 412 113 17 chiseled_polished_blackstone
+setblock 412 103 16 soul_lantern
+fill 420 100 -17 420 113 -17 blackstone
+setblock 420 100 -17 chiseled_polished_blackstone
+setblock 420 113 -17 chiseled_polished_blackstone
+setblock 420 103 -16 soul_lantern
+fill 420 100 17 420 113 17 blackstone
+setblock 420 100 17 chiseled_polished_blackstone
+setblock 420 113 17 chiseled_polished_blackstone
+setblock 420 103 16 soul_lantern
+fill 428 100 -17 428 113 -17 blackstone
+setblock 428 100 -17 chiseled_polished_blackstone
+setblock 428 113 -17 chiseled_polished_blackstone
+setblock 428 103 -16 soul_lantern
+fill 428 100 17 428 113 17 blackstone
+setblock 428 100 17 chiseled_polished_blackstone
+setblock 428 113 17 chiseled_polished_blackstone
+setblock 428 103 16 soul_lantern
+fill 436 100 -15 436 113 -15 blackstone
+setblock 436 100 -15 chiseled_polished_blackstone
+setblock 436 113 -15 chiseled_polished_blackstone
+fill 436 100 -7 436 113 -7 blackstone
+setblock 436 100 -7 chiseled_polished_blackstone
+setblock 436 113 -7 chiseled_polished_blackstone
+fill 436 100 1 436 113 1 blackstone
+setblock 436 100 1 chiseled_polished_blackstone
+setblock 436 113 1 chiseled_polished_blackstone
+fill 436 100 9 436 113 9 blackstone
+setblock 436 100 9 chiseled_polished_blackstone
+setblock 436 113 9 chiseled_polished_blackstone
+fill 433 100 -3 435 100 3 gilded_blackstone
+setblock 435 101 0 polished_blackstone_brick_stairs
+fill 375 129 -27 377 129 -27 polished_blackstone
+fill 374 129 -26 378 129 -26 polished_blackstone
+fill 373 129 -25 379 129 -25 polished_blackstone
+fill 373 129 -24 379 129 -24 polished_blackstone
+fill 373 129 -23 379 129 -23 polished_blackstone
+fill 374 129 -22 378 129 -22 polished_blackstone
+fill 375 129 -21 377 129 -21 polished_blackstone
+fill 380 131 -24 380 132 -24 air
+fill 375 129 21 377 129 21 polished_blackstone
+fill 374 129 22 378 129 22 polished_blackstone
+fill 373 129 23 379 129 23 polished_blackstone
+fill 373 129 24 379 129 24 polished_blackstone
+fill 373 129 25 379 129 25 polished_blackstone
+fill 374 129 26 378 129 26 polished_blackstone
+fill 375 129 27 377 129 27 polished_blackstone
+fill 380 131 24 380 132 24 air
+fill 373 100 -6 373 111 -6 chiseled_polished_blackstone
+fill 373 100 -5 373 113 -5 chiseled_polished_blackstone
+fill 373 112 -4 373 114 -4 chiseled_polished_blackstone
+fill 373 113 -3 373 114 -3 chiseled_polished_blackstone
+fill 373 114 -2 373 115 -2 chiseled_polished_blackstone
+fill 373 114 -1 373 115 -1 chiseled_polished_blackstone
+fill 373 114 0 373 115 0 chiseled_polished_blackstone
+fill 373 114 1 373 115 1 chiseled_polished_blackstone
+fill 373 114 2 373 115 2 chiseled_polished_blackstone
+fill 373 113 3 373 114 3 chiseled_polished_blackstone
+fill 373 112 4 373 114 4 chiseled_polished_blackstone
+fill 373 100 5 373 113 5 chiseled_polished_blackstone
+fill 373 100 6 373 111 6 chiseled_polished_blackstone
+setblock 380 114 -12 amethyst_block
+setblock 380 115 -12 purple_concrete
+setblock 380 114 12 amethyst_block
+setblock 380 115 12 purple_concrete
+setblock 385 114 -12 amethyst_block
+setblock 385 115 -12 purple_concrete
+setblock 385 114 12 amethyst_block
+setblock 385 115 12 purple_concrete
+setblock 390 114 -12 amethyst_block
+setblock 390 115 -12 purple_concrete
+setblock 390 114 12 amethyst_block
+setblock 390 115 12 purple_concrete
+setblock 395 114 -12 amethyst_block
+setblock 395 115 -12 purple_concrete
+setblock 395 114 12 amethyst_block
+setblock 395 115 12 purple_concrete

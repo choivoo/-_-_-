@@ -1,0 +1,52 @@
+# 구역 0 깨어남의 신전 — 단계 shell (1/1). 중심 x=0 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 0 100 0 4 bce_z0)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill -40 100 -40 39 140 39 air (여러 번에 나눠서)
+
+fill -15 100 -19 15 115 19 stone_bricks
+fill -16 99 -20 16 99 20 polished_andesite
+fill -16 101 -18 -16 113 -18 stone_bricks
+setblock -16 114 -18 chiseled_stone_bricks
+fill 16 101 -18 16 113 -18 stone_bricks
+setblock 16 114 -18 chiseled_stone_bricks
+fill -16 101 -12 -16 113 -12 stone_bricks
+setblock -16 114 -12 chiseled_stone_bricks
+fill 16 101 -12 16 113 -12 stone_bricks
+setblock 16 114 -12 chiseled_stone_bricks
+fill -16 101 -6 -16 113 -6 stone_bricks
+setblock -16 114 -6 chiseled_stone_bricks
+fill 16 101 -6 16 113 -6 stone_bricks
+setblock 16 114 -6 chiseled_stone_bricks
+fill -16 101 0 -16 113 0 stone_bricks
+setblock -16 114 0 chiseled_stone_bricks
+fill -16 101 6 -16 113 6 stone_bricks
+setblock -16 114 6 chiseled_stone_bricks
+fill 16 101 6 16 113 6 stone_bricks
+setblock 16 114 6 chiseled_stone_bricks
+fill -16 101 12 -16 113 12 stone_bricks
+setblock -16 114 12 chiseled_stone_bricks
+fill 16 101 12 16 113 12 stone_bricks
+setblock 16 114 12 chiseled_stone_bricks
+fill -16 101 18 -16 113 18 stone_bricks
+setblock -16 114 18 chiseled_stone_bricks
+fill 16 101 18 16 113 18 stone_bricks
+setblock 16 114 18 chiseled_stone_bricks
+fill -12 101 -20 -12 113 -20 stone_bricks
+setblock -12 114 -20 chiseled_stone_bricks
+fill -12 101 20 -12 113 20 stone_bricks
+setblock -12 114 20 chiseled_stone_bricks
+fill -6 101 -20 -6 113 -20 stone_bricks
+setblock -6 114 -20 chiseled_stone_bricks
+fill -6 101 20 -6 113 20 stone_bricks
+setblock -6 114 20 chiseled_stone_bricks
+fill 0 101 -20 0 113 -20 stone_bricks
+setblock 0 114 -20 chiseled_stone_bricks
+fill 0 101 20 0 113 20 stone_bricks
+setblock 0 114 20 chiseled_stone_bricks
+fill 6 101 -20 6 113 -20 stone_bricks
+setblock 6 114 -20 chiseled_stone_bricks
+fill 6 101 20 6 113 20 stone_bricks
+setblock 6 114 20 chiseled_stone_bricks
+fill 12 101 -20 12 113 -20 stone_bricks
+setblock 12 114 -20 chiseled_stone_bricks
+fill 12 101 20 12 113 20 stone_bricks
+setblock 12 114 20 chiseled_stone_bricks
+fill -15 115 -19 15 115 19 deepslate_bricks

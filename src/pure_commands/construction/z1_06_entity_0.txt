@@ -1,0 +1,8 @@
+# 구역 1 잿빛 마을 — 단계 entity (1/1). 중심 x=100 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 100 100 0 4 bce_z1)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 60 100 -40 139 140 39 air (여러 번에 나눠서)
+
+kill @e[tag=bce_npc,x=60,y=95,z=-40,dx=80,dy=40,dz=80]
+summon villager 103 100 6 0 0 minecraft:entity_spawned "§e상인 마렌"
+summon villager 97 100 -6 0 0 minecraft:entity_spawned "§e늙은 파수꾼"
+execute positioned 100 100 0 run tag @e[type=villager,r=20,tag=!bce_npc] add bce_npc
+effect @e[tag=bce_npc,x=60,y=95,z=-40,dx=80,dy=40,dz=80] slowness 100000 4 true

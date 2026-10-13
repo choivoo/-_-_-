@@ -1,0 +1,403 @@
+# 구역 4 검은별의 성채 — 단계 ground (1/2). 중심 x=400 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 400 100 0 4 bce_z4)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 360 100 -40 439 140 39 air (여러 번에 나눠서)
+
+fill 360 80 -40 399 98 -1 stone
+fill 360 80 0 399 98 39 stone
+fill 400 80 -40 439 98 -1 stone
+fill 400 80 0 439 98 39 stone
+fill 360 99 -40 439 99 39 polished_blackstone_bricks
+fill 360 100 -40 439 104 39 air
+fill 360 105 -40 439 109 39 air
+fill 360 110 -40 439 114 39 air
+fill 360 115 -40 439 119 39 air
+fill 360 120 -40 439 124 39 air
+fill 360 125 -40 439 129 39 air
+fill 360 130 -40 439 134 39 air
+fill 360 135 -40 439 139 39 air
+fill 361 99 -4 373 99 4 polished_blackstone
+fill 391 99 8 394 99 11 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 426 99 13 426 99 15 blackstone replace polished_blackstone_bricks
+fill 428 99 -6 428 99 -6 blackstone replace polished_blackstone_bricks
+fill 413 99 36 413 99 37 deepslate_bricks replace polished_blackstone_bricks
+fill 400 99 6 403 99 7 deepslate_bricks replace polished_blackstone_bricks
+fill 370 99 -34 371 99 -32 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 390 99 -19 390 99 -16 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 374 99 6 375 99 8 deepslate_bricks replace polished_blackstone_bricks
+fill 425 99 25 428 99 25 blackstone replace polished_blackstone_bricks
+fill 393 99 5 394 99 8 deepslate_bricks replace polished_blackstone_bricks
+fill 377 99 -1 377 99 1 blackstone replace polished_blackstone_bricks
+fill 373 99 27 376 99 30 deepslate_bricks replace polished_blackstone_bricks
+fill 430 99 -6 432 99 -5 blackstone replace polished_blackstone_bricks
+fill 379 99 -17 382 99 -14 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 397 99 -38 399 99 -36 deepslate_bricks replace polished_blackstone_bricks
+fill 426 99 -14 427 99 -11 blackstone replace polished_blackstone_bricks
+fill 368 99 -2 368 99 -2 blackstone replace polished_blackstone_bricks
+fill 371 99 -13 372 99 -12 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 403 99 -9 405 99 -8 blackstone replace polished_blackstone_bricks
+fill 392 99 13 393 99 14 blackstone replace polished_blackstone_bricks
+fill 397 99 13 400 99 13 blackstone replace polished_blackstone_bricks
+fill 429 99 37 431 99 37 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 379 99 -28 379 99 -25 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 416 99 10 416 99 12 blackstone replace polished_blackstone_bricks
+fill 427 99 5 429 99 5 blackstone replace polished_blackstone_bricks
+fill 431 99 31 432 99 33 blackstone replace polished_blackstone_bricks
+fill 419 99 11 421 99 14 deepslate_bricks replace polished_blackstone_bricks
+fill 402 99 -14 402 99 -12 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 393 99 0 395 99 0 deepslate_bricks replace polished_blackstone_bricks
+fill 430 99 -36 431 99 -33 blackstone replace polished_blackstone_bricks
+fill 384 99 -15 385 99 -13 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 405 99 -6 406 99 -5 blackstone replace polished_blackstone_bricks
+fill 389 99 22 392 99 25 deepslate_bricks replace polished_blackstone_bricks
+fill 406 99 -20 408 99 -17 blackstone replace polished_blackstone_bricks
+fill 402 99 -23 403 99 -21 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 425 99 16 427 99 19 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 401 99 2 402 99 3 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 380 99 -29 382 99 -27 blackstone replace polished_blackstone_bricks
+fill 398 99 21 398 99 23 deepslate_bricks replace polished_blackstone_bricks
+fill 409 99 14 410 99 15 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 374 99 36 377 99 36 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 418 99 6 420 99 7 deepslate_bricks replace polished_blackstone_bricks
+fill 417 99 37 418 99 37 deepslate_bricks replace polished_blackstone_bricks
+fill 429 99 8 429 99 11 blackstone replace polished_blackstone_bricks
+fill 365 99 -30 368 99 -30 deepslate_bricks replace polished_blackstone_bricks
+fill 428 99 2 428 99 3 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 402 99 0 404 99 2 deepslate_bricks replace polished_blackstone_bricks
+fill 397 99 -30 397 99 -28 deepslate_bricks replace polished_blackstone_bricks
+fill 432 99 -1 433 99 0 deepslate_bricks replace polished_blackstone_bricks
+fill 417 99 -21 419 99 -20 deepslate_bricks replace polished_blackstone_bricks
+fill 399 99 -26 399 99 -23 deepslate_bricks replace polished_blackstone_bricks
+fill 388 99 7 391 99 8 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 377 99 -16 379 99 -14 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 415 99 21 416 99 24 blackstone replace polished_blackstone_bricks
+fill 391 99 16 391 99 18 deepslate_bricks replace polished_blackstone_bricks
+fill 365 99 -30 368 99 -30 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 384 99 24 387 99 27 deepslate_bricks replace polished_blackstone_bricks
+fill 414 99 -1 414 99 1 deepslate_bricks replace polished_blackstone_bricks
+fill 413 99 2 413 99 4 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 434 99 16 434 99 18 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 376 99 6 378 99 8 deepslate_bricks replace polished_blackstone_bricks
+fill 435 99 -26 437 99 -23 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 425 99 -5 427 99 -5 blackstone replace polished_blackstone_bricks
+fill 372 99 26 374 99 26 deepslate_bricks replace polished_blackstone_bricks
+fill 380 99 8 382 99 11 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 424 99 -21 424 99 -19 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 386 99 -22 386 99 -22 deepslate_bricks replace polished_blackstone_bricks
+fill 377 99 21 377 99 23 cracked_polished_blackstone_bricks replace polished_blackstone_bricks
+fill 414 99 -6 416 99 -3 blackstone replace polished_blackstone_bricks
+fill 390 99 -32 391 99 -30 blackstone replace polished_blackstone_bricks
+fill 360 99 -2 372 99 2 polished_blackstone
+fill 360 99 -3 372 99 -3 stone_bricks
+fill 360 99 3 372 99 3 stone_bricks
+fill 360 100 -39 360 100 -39 blackstone
+fill 360 101 -39 360 101 -39 polished_blackstone_bricks
+fill 361 100 -39 364 100 -39 polished_blackstone_bricks
+fill 365 100 -39 366 100 -39 blackstone
+fill 365 101 -39 366 101 -39 polished_blackstone_bricks
+fill 367 100 -39 368 100 -39 polished_blackstone_bricks
+fill 369 100 -39 371 100 -39 blackstone
+fill 369 101 -39 371 101 -39 polished_blackstone_bricks
+fill 372 100 -39 373 100 -39 polished_blackstone_bricks
+fill 378 100 -39 379 100 -39 polished_blackstone_bricks
+fill 380 100 -39 382 100 -39 blackstone
+fill 380 101 -39 382 101 -39 polished_blackstone_bricks
+fill 383 100 -39 383 100 -39 polished_blackstone_bricks
+fill 384 100 -39 387 100 -39 blackstone
+fill 384 101 -39 387 101 -39 polished_blackstone_bricks
+fill 388 100 -39 389 100 -39 polished_blackstone_bricks
+fill 391 100 -39 392 100 -39 polished_blackstone_bricks
+fill 393 100 -39 395 100 -39 blackstone
+fill 393 101 -39 395 101 -39 polished_blackstone_bricks
+fill 396 100 -39 399 101 -39 blackstone
+fill 396 102 -39 399 102 -39 polished_blackstone_bricks
+fill 400 100 -39 401 102 -39 blackstone
+fill 400 103 -39 401 103 -39 polished_blackstone_bricks
+fill 402 100 -39 402 101 -39 blackstone
+fill 402 102 -39 402 102 -39 polished_blackstone_bricks
+fill 403 100 -39 404 100 -39 blackstone
+fill 403 101 -39 404 101 -39 polished_blackstone_bricks
+fill 405 100 -39 407 100 -39 polished_blackstone_bricks
+fill 408 100 -39 408 100 -39 blackstone
+fill 408 101 -39 408 101 -39 polished_blackstone_bricks
+fill 409 100 -39 409 100 -39 polished_blackstone_bricks
+fill 410 100 -39 411 100 -39 blackstone
+fill 410 101 -39 411 101 -39 polished_blackstone_bricks
+fill 412 100 -39 413 100 -39 polished_blackstone_bricks
+fill 414 100 -39 416 100 -39 blackstone
+fill 414 101 -39 416 101 -39 polished_blackstone_bricks
+fill 417 100 -39 417 100 -39 polished_blackstone_bricks
+fill 422 100 -39 423 100 -39 polished_blackstone_bricks
+fill 424 100 -39 427 100 -39 blackstone
+fill 424 101 -39 427 101 -39 polished_blackstone_bricks
+fill 428 100 -39 429 100 -39 polished_blackstone_bricks
+fill 430 100 -39 432 100 -39 blackstone
+fill 430 101 -39 432 101 -39 polished_blackstone_bricks
+fill 433 100 -39 436 100 -39 polished_blackstone_bricks
+fill 437 100 -39 438 100 -39 blackstone
+fill 437 101 -39 438 101 -39 polished_blackstone_bricks
+fill 439 100 -39 439 101 -39 blackstone
+fill 439 102 -39 439 102 -39 polished_blackstone_bricks
+fill 360 100 -38 360 101 -38 blackstone
+fill 360 102 -38 360 102 -38 polished_blackstone_bricks
+fill 361 100 -38 372 100 -38 blackstone
+fill 361 101 -38 372 101 -38 polished_blackstone_bricks
+fill 373 100 -38 374 100 -38 polished_blackstone_bricks
+fill 378 100 -38 379 100 -38 polished_blackstone_bricks
+fill 380 100 -38 388 100 -38 blackstone
+fill 380 101 -38 388 101 -38 polished_blackstone_bricks
+fill 389 100 -38 389 100 -38 polished_blackstone_bricks
+fill 391 100 -38 392 100 -38 polished_blackstone_bricks
+fill 393 100 -38 394 100 -38 blackstone
+fill 393 101 -38 394 101 -38 polished_blackstone_bricks
+fill 395 100 -38 399 101 -38 blackstone
+fill 395 102 -38 399 102 -38 polished_blackstone_bricks
+fill 400 100 -38 400 102 -38 blackstone
+fill 400 103 -38 400 103 -38 polished_blackstone_bricks
+fill 401 100 -38 403 101 -38 blackstone
+fill 401 102 -38 403 102 -38 polished_blackstone_bricks
+fill 404 100 -38 410 100 -38 blackstone
+fill 404 101 -38 410 101 -38 polished_blackstone_bricks
+fill 411 100 -38 413 100 -38 polished_blackstone_bricks
+fill 414 100 -38 416 100 -38 blackstone
+fill 414 101 -38 416 101 -38 polished_blackstone_bricks
+fill 417 100 -38 417 100 -38 polished_blackstone_bricks
+fill 423 100 -38 427 100 -38 polished_blackstone_bricks
+fill 429 100 -38 430 100 -38 polished_blackstone_bricks
+fill 431 100 -38 431 100 -38 blackstone
+fill 431 101 -38 431 101 -38 polished_blackstone_bricks
+fill 432 100 -38 435 100 -38 polished_blackstone_bricks
+fill 437 100 -38 438 100 -38 polished_blackstone_bricks
+fill 439 100 -38 439 100 -38 blackstone
+fill 439 101 -38 439 101 -38 polished_blackstone_bricks
+fill 360 100 -37 372 100 -37 blackstone
+fill 360 101 -37 372 101 -37 polished_blackstone_bricks
+fill 373 100 -37 374 100 -37 polished_blackstone_bricks
+fill 377 100 -37 380 100 -37 polished_blackstone_bricks
+fill 381 100 -37 381 100 -37 blackstone
+fill 381 101 -37 381 101 -37 polished_blackstone_bricks
+fill 382 100 -37 382 100 -37 polished_blackstone_bricks
+fill 383 100 -37 388 100 -37 blackstone
+fill 383 101 -37 388 101 -37 polished_blackstone_bricks
+fill 389 100 -37 389 100 -37 polished_blackstone_bricks
+fill 391 100 -37 392 100 -37 polished_blackstone_bricks
+fill 393 100 -37 398 100 -37 blackstone
+fill 393 101 -37 398 101 -37 polished_blackstone_bricks
+fill 399 100 -37 402 101 -37 blackstone
+fill 399 102 -37 402 102 -37 polished_blackstone_bricks
+fill 403 100 -37 412 100 -37 blackstone
+fill 403 101 -37 412 101 -37 polished_blackstone_bricks
+fill 413 100 -37 413 100 -37 polished_blackstone_bricks
+fill 414 100 -37 417 100 -37 blackstone
+fill 414 101 -37 417 101 -37 polished_blackstone_bricks
+fill 418 100 -37 418 100 -37 polished_blackstone_bricks
+fill 424 100 -37 429 100 -37 polished_blackstone_bricks
+fill 430 100 -37 430 100 -37 blackstone
+fill 430 101 -37 430 101 -37 polished_blackstone_bricks
+fill 431 100 -37 434 100 -37 polished_blackstone_bricks
+fill 437 100 -37 438 100 -37 polished_blackstone_bricks
+fill 439 100 -37 439 100 -37 blackstone
+fill 439 101 -37 439 101 -37 polished_blackstone_bricks
+fill 360 100 -36 360 101 -36 blackstone
+fill 360 102 -36 360 102 -36 polished_blackstone_bricks
+fill 361 100 -36 364 100 -36 blackstone
+fill 361 101 -36 364 101 -36 polished_blackstone_bricks
+fill 365 100 -36 367 100 -36 polished_blackstone_bricks
+fill 368 100 -36 370 100 -36 blackstone
+fill 368 101 -36 370 101 -36 polished_blackstone_bricks
+fill 371 100 -36 373 100 -36 polished_blackstone_bricks
+fill 378 100 -36 393 100 -36 polished_blackstone_bricks
+fill 394 100 -36 395 100 -36 blackstone
+fill 394 101 -36 395 101 -36 polished_blackstone_bricks
+fill 396 100 -36 402 101 -36 blackstone
+fill 396 102 -36 402 102 -36 polished_blackstone_bricks
+fill 403 100 -36 406 100 -36 blackstone
+fill 403 101 -36 406 101 -36 polished_blackstone_bricks
+fill 407 100 -36 408 100 -36 polished_blackstone_bricks
+fill 409 100 -36 409 100 -36 blackstone
+fill 409 101 -36 409 101 -36 polished_blackstone_bricks
+fill 410 100 -36 418 100 -36 polished_blackstone_bricks
+fill 422 100 -36 434 100 -36 polished_blackstone_bricks
+fill 437 100 -36 439 100 -36 polished_blackstone_bricks
+fill 360 100 -35 364 100 -35 blackstone
+fill 360 101 -35 364 101 -35 polished_blackstone_bricks
+fill 365 100 -35 367 100 -35 polished_blackstone_bricks
+fill 368 100 -35 372 100 -35 blackstone
+fill 368 101 -35 372 101 -35 polished_blackstone_bricks
+fill 373 100 -35 373 100 -35 polished_blackstone_bricks
+fill 381 100 -35 389 100 -35 polished_blackstone_bricks
+fill 391 100 -35 393 100 -35 polished_blackstone_bricks
+fill 394 100 -35 402 100 -35 blackstone
+fill 394 101 -35 402 101 -35 polished_blackstone_bricks
+fill 403 100 -35 407 100 -35 polished_blackstone_bricks
+fill 408 100 -35 411 100 -35 blackstone
+fill 408 101 -35 411 101 -35 polished_blackstone_bricks
+fill 412 100 -35 418 100 -35 polished_blackstone_bricks
+fill 423 100 -35 439 100 -35 polished_blackstone_bricks
+fill 360 100 -34 361 100 -34 polished_blackstone_bricks
+fill 362 100 -34 362 100 -34 blackstone
+fill 362 101 -34 362 101 -34 polished_blackstone_bricks
+fill 363 100 -34 371 100 -34 polished_blackstone_bricks
+fill 384 100 -34 386 100 -34 polished_blackstone_bricks
+fill 393 100 -34 395 100 -34 polished_blackstone_bricks
+fill 396 100 -34 397 100 -34 blackstone
+fill 396 101 -34 397 101 -34 polished_blackstone_bricks
+fill 398 100 -34 417 100 -34 polished_blackstone_bricks
+fill 426 100 -34 436 100 -34 polished_blackstone_bricks
+fill 438 100 -34 439 100 -34 polished_blackstone_bricks
+fill 360 100 -33 369 100 -33 polished_blackstone_bricks
+fill 375 100 -33 386 100 -33 polished_blackstone_bricks
+fill 395 100 -33 402 100 -33 polished_blackstone_bricks
+fill 407 100 -33 411 100 -33 polished_blackstone_bricks
+fill 415 100 -33 416 100 -33 polished_blackstone_bricks
+fill 427 100 -33 439 100 -33 polished_blackstone_bricks
+fill 360 100 -32 367 100 -32 polished_blackstone_bricks
+fill 376 100 -32 381 100 -32 polished_blackstone_bricks
+fill 383 100 -32 385 100 -32 polished_blackstone_bricks
+fill 428 100 -32 429 100 -32 polished_blackstone_bricks
+fill 431 100 -32 433 100 -32 polished_blackstone_bricks
+fill 439 100 -32 439 100 -32 polished_blackstone_bricks
+fill 373 100 32 375 100 32 polished_blackstone_bricks
+fill 384 100 32 389 100 32 polished_blackstone_bricks
+fill 395 100 32 398 100 32 polished_blackstone_bricks
+fill 414 100 32 418 100 32 polished_blackstone_bricks
+fill 429 100 32 436 100 32 polished_blackstone_bricks
+fill 371 100 33 399 100 33 polished_blackstone_bricks
+fill 407 100 33 419 100 33 polished_blackstone_bricks
+fill 429 100 33 432 100 33 polished_blackstone_bricks
+fill 433 100 33 435 100 33 blackstone
+fill 433 101 33 435 101 33 polished_blackstone_bricks
+fill 436 100 33 438 100 33 polished_blackstone_bricks
+fill 371 100 34 384 100 34 polished_blackstone_bricks
+fill 385 100 34 387 100 34 blackstone
+fill 385 101 34 387 101 34 polished_blackstone_bricks
+fill 388 100 34 390 100 34 polished_blackstone_bricks
+fill 391 100 34 391 100 34 blackstone
+fill 391 101 34 391 101 34 polished_blackstone_bricks
+fill 392 100 34 399 100 34 polished_blackstone_bricks
+fill 408 100 34 412 100 34 polished_blackstone_bricks
+fill 413 100 34 417 100 34 blackstone
+fill 413 101 34 417 101 34 polished_blackstone_bricks
+fill 418 100 34 420 100 34 polished_blackstone_bricks
+fill 430 100 34 431 100 34 polished_blackstone_bricks
+fill 432 100 34 436 100 34 blackstone
+fill 432 101 34 436 101 34 polished_blackstone_bricks
+fill 437 100 34 438 100 34 polished_blackstone_bricks
+fill 367 100 35 368 100 35 polished_blackstone_bricks
+fill 370 100 35 372 100 35 polished_blackstone_bricks
+fill 373 100 35 376 100 35 blackstone
+fill 373 101 35 376 101 35 polished_blackstone_bricks
+fill 377 100 35 378 100 35 polished_blackstone_bricks
+fill 379 100 35 384 100 35 blackstone
+fill 379 101 35 384 101 35 polished_blackstone_bricks
+fill 385 100 35 386 101 35 blackstone
+fill 385 102 35 386 102 35 polished_blackstone_bricks
+fill 387 100 35 397 100 35 blackstone
+fill 387 101 35 397 101 35 polished_blackstone_bricks
+fill 398 100 35 400 100 35 polished_blackstone_bricks
+fill 408 100 35 411 100 35 polished_blackstone_bricks
+fill 412 100 35 417 100 35 blackstone
+fill 412 101 35 417 101 35 polished_blackstone_bricks
+fill 418 100 35 423 100 35 polished_blackstone_bricks
+fill 430 100 35 431 100 35 polished_blackstone_bricks
+fill 432 100 35 433 100 35 blackstone
+fill 432 101 35 433 101 35 polished_blackstone_bricks
+fill 434 100 35 435 101 35 blackstone
+fill 434 102 35 435 102 35 polished_blackstone_bricks
+fill 436 100 35 438 100 35 blackstone
+fill 436 101 35 438 101 35 polished_blackstone_bricks
+fill 439 100 35 439 100 35 polished_blackstone_bricks
+fill 367 100 36 372 100 36 polished_blackstone_bricks
+fill 373 100 36 374 100 36 blackstone
+fill 373 101 36 374 101 36 polished_blackstone_bricks
+fill 375 100 36 375 101 36 blackstone
+fill 375 102 36 375 102 36 polished_blackstone_bricks
+fill 376 100 36 377 100 36 blackstone
+fill 376 101 36 377 101 36 polished_blackstone_bricks
+fill 378 100 36 379 100 36 polished_blackstone_bricks
+fill 380 100 36 380 100 36 blackstone
+fill 380 101 36 380 101 36 polished_blackstone_bricks
+fill 381 100 36 382 101 36 blackstone
+fill 381 102 36 382 102 36 polished_blackstone_bricks
+fill 383 100 36 384 100 36 blackstone
+fill 383 101 36 384 101 36 polished_blackstone_bricks
+fill 385 100 36 388 101 36 blackstone
+fill 385 102 36 388 102 36 polished_blackstone_bricks
+fill 389 100 36 390 100 36 blackstone
+fill 389 101 36 390 101 36 polished_blackstone_bricks
+fill 391 100 36 393 101 36 blackstone
+fill 391 102 36 393 102 36 polished_blackstone_bricks
+fill 394 100 36 397 100 36 blackstone
+fill 394 101 36 397 101 36 polished_blackstone_bricks
+fill 398 100 36 401 100 36 polished_blackstone_bricks
+fill 408 100 36 411 100 36 polished_blackstone_bricks
+fill 412 100 36 413 100 36 blackstone
+fill 412 101 36 413 101 36 polished_blackstone_bricks
+fill 414 100 36 414 101 36 blackstone
+fill 414 102 36 414 102 36 polished_blackstone_bricks
+fill 415 100 36 415 100 36 blackstone
+fill 415 101 36 415 101 36 polished_blackstone_bricks
+fill 416 100 36 424 100 36 polished_blackstone_bricks
+fill 430 100 36 432 100 36 polished_blackstone_bricks
+fill 433 100 36 433 100 36 blackstone
+fill 433 101 36 433 101 36 polished_blackstone_bricks
+fill 434 100 36 437 101 36 blackstone
+fill 434 102 36 437 102 36 polished_blackstone_bricks
+fill 438 100 36 439 100 36 blackstone
+fill 438 101 36 439 101 36 polished_blackstone_bricks
+fill 360 100 37 363 100 37 polished_blackstone_bricks
+fill 367 100 37 371 100 37 polished_blackstone_bricks
+fill 372 100 37 381 100 37 blackstone
+fill 372 101 37 381 101 37 polished_blackstone_bricks
+fill 382 100 37 384 101 37 blackstone
+fill 382 102 37 384 102 37 polished_blackstone_bricks
+fill 385 100 37 385 100 37 blackstone
+fill 385 101 37 385 101 37 polished_blackstone_bricks
+fill 386 100 37 388 101 37 blackstone
+fill 386 102 37 388 102 37 polished_blackstone_bricks
+fill 389 100 37 391 100 37 blackstone
+fill 389 101 37 391 101 37 polished_blackstone_bricks
+fill 392 100 37 392 101 37 blackstone
+fill 392 102 37 392 102 37 polished_blackstone_bricks
+fill 393 100 37 399 100 37 blackstone
+fill 393 101 37 399 101 37 polished_blackstone_bricks
+fill 400 100 37 402 100 37 polished_blackstone_bricks
+fill 408 100 37 410 100 37 polished_blackstone_bricks
+fill 411 100 37 415 100 37 blackstone
+fill 411 101 37 415 101 37 polished_blackstone_bricks
+fill 416 100 37 416 100 37 polished_blackstone_bricks
+fill 417 100 37 424 100 37 blackstone
+fill 417 101 37 424 101 37 polished_blackstone_bricks
+fill 425 100 37 426 100 37 polished_blackstone_bricks
+fill 431 100 37 431 100 37 polished_blackstone_bricks
+fill 432 100 37 434 100 37 blackstone
+fill 432 101 37 434 101 37 polished_blackstone_bricks
+fill 435 100 37 437 101 37 blackstone
+fill 435 102 37 437 102 37 polished_blackstone_bricks
+fill 438 100 37 439 100 37 blackstone
+fill 438 101 37 439 101 37 polished_blackstone_bricks
+fill 360 100 38 366 100 38 polished_blackstone_bricks
+fill 367 100 38 367 100 38 blackstone
+fill 367 101 38 367 101 38 polished_blackstone_bricks
+fill 368 100 38 370 100 38 polished_blackstone_bricks
+fill 371 100 38 371 100 38 blackstone
+fill 371 101 38 371 101 38 polished_blackstone_bricks
+fill 372 100 38 375 101 38 blackstone
+fill 372 102 38 375 102 38 polished_blackstone_bricks
+fill 376 100 38 376 100 38 blackstone
+fill 376 101 38 376 101 38 polished_blackstone_bricks
+fill 377 100 38 377 100 38 polished_blackstone_bricks
+fill 378 100 38 379 100 38 blackstone
+fill 378 101 38 379 101 38 polished_blackstone_bricks
+fill 380 100 38 381 101 38 blackstone
+fill 380 102 38 381 102 38 polished_blackstone_bricks
+fill 382 100 38 384 102 38 blackstone
+fill 382 103 38 384 103 38 polished_blackstone_bricks
+fill 385 100 38 388 101 38 blackstone
+fill 385 102 38 388 102 38 polished_blackstone_bricks
+fill 389 100 38 389 102 38 blackstone
+fill 389 103 38 389 103 38 polished_blackstone_bricks
+fill 390 100 38 390 101 38 blackstone
+fill 390 102 38 390 102 38 polished_blackstone_bricks
+fill 391 100 38 391 102 38 blackstone
+fill 391 103 38 391 103 38 polished_blackstone_bricks
+fill 392 100 38 393 101 38 blackstone
+fill 392 102 38 393 102 38 polished_blackstone_bricks

@@ -1,0 +1,69 @@
+{
+ "id": "q7_intro",
+ "numeric_id": 7,
+ "duration": 170,
+ "description": "퀘스트 7 시작: 검은별의 성채 전경",
+ "start_cmds": [],
+ "end_cmds": [],
+ "events": [
+  {
+   "t": 0,
+   "type": "fade",
+   "in": 6,
+   "hold": 0,
+   "out": 8
+  },
+  {
+   "t": 4,
+   "type": "cam",
+   "pos": [
+    338,
+    112,
+    0
+   ],
+   "facing": [
+    389,
+    118,
+    0
+   ]
+  },
+  {
+   "t": 8,
+   "type": "cam",
+   "pos": [
+    346,
+    118,
+    0
+   ],
+   "facing": [
+    389,
+    150,
+    0
+   ],
+   "ease": [
+    120,
+    "in_out_sine"
+   ]
+  },
+  {
+   "t": 15,
+   "type": "subtitle",
+   "text": "저 멀리, 검은별의 성채 첨탑이 하늘을 찌른다.",
+   "dur": 120
+  },
+  {
+   "t": 30,
+   "type": "sound",
+   "name": "mob.enderdragon.growl",
+   "vol": 0.3,
+   "pitch": 0.5
+  },
+  {
+   "t": 150,
+   "type": "fade",
+   "in": 6,
+   "hold": 0,
+   "out": 8
+  }
+ ]
+}

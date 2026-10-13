@@ -1,0 +1,20 @@
+# 구역 3 붕괴된 성벽 — 단계 light (1/1). 중심 x=300 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 300 100 0 4 bce_z3)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 260 100 -40 339 140 39 air (여러 번에 나눠서)
+
+setblock 297 103 -36 lantern
+setblock 297 103 -24 lantern
+setblock 297 103 -12 lantern
+setblock 297 103 0 lantern
+setblock 297 103 12 lantern
+setblock 297 103 24 lantern
+setblock 297 103 36 lantern
+setblock 324 105 -20 lantern
+setblock 324 105 20 lantern
+setblock 328 105 -20 lantern
+setblock 328 105 20 lantern
+setblock 332 105 -20 lantern
+setblock 332 105 20 lantern
+setblock 336 105 -20 lantern
+setblock 336 105 20 lantern
+fill 333 100 6 333 112 6 end_rod
+setblock 333 113 6 sea_lantern

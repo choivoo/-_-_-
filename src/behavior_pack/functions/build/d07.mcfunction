@@ -1,0 +1,10 @@
+execute if score #bcur bce_sys matches 70 run function build/steps/s070
+execute if score #bcur bce_sys matches 71 run function build/steps/s071
+execute if score #bcur bce_sys matches 72 run function build/steps/s072
+execute if score #bcur bce_sys matches 73 run function build/steps/s073
+execute if score #bcur bce_sys matches 74 run function build/steps/s074
+execute if score #bcur bce_sys matches 75 run function build/steps/s075
+execute if score #bcur bce_sys matches 76 run function build/steps/s076
+execute if score #bcur bce_sys matches 77 run function build/steps/s077
+execute if score #bcur bce_sys matches 78 run function build/steps/s078
+execute if score #bcur bce_sys matches 79 run function build/steps/s079

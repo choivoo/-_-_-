@@ -1,4 +1,5 @@
 # ADMIN ENTRY: /function bootstrap/install   (idempotent)
+tag @s add bce_admin
 function bootstrap/objectives
 function bootstrap/gamerules
 function bootstrap/constants

@@ -1,33 +1,45 @@
-# zone 2 interior 1
-fill 226 87 -1 226 90 1 air
-fill 226 86 -1 226 86 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 227 88 -1 227 91 1 air
-fill 227 87 -1 227 87 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 228 89 -1 228 92 1 air
-fill 228 88 -1 228 88 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 229 90 -1 229 93 1 air
-fill 229 89 -1 229 89 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 230 91 -1 230 94 1 air
-fill 230 90 -1 230 90 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 231 92 -1 231 95 1 air
-fill 231 91 -1 231 91 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 232 93 -1 232 96 1 air
-fill 232 92 -1 232 92 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 233 94 -1 233 97 1 air
-fill 233 93 -1 233 93 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 234 95 -1 234 98 1 air
-fill 234 94 -1 234 94 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 235 96 -1 235 99 1 air
-fill 235 95 -1 235 95 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 236 97 -1 236 100 1 air
-fill 236 96 -1 236 96 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 237 98 -1 237 101 1 air
-fill 237 97 -1 237 97 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 238 99 -1 238 102 1 air
-fill 238 98 -1 238 98 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 239 100 -1 239 103 1 air
-fill 239 99 -1 239 99 1 stone_brick_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
-fill 218 87 13 225 91 19 air
-fill 218 86 13 225 86 19 polished_andesite
-fill 220 87 12 220 89 12 cracked_stone_bricks
-scoreboard players add #bstep bce_sys 1
+# zone 1 ground 8
+scoreboard players set #bzone bce_sys 1
+execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 0
+execute if block 100 79 0 stone run fill 95 101 34 98 101 34 coarse_dirt
+execute if block 100 79 0 stone run fill 99 100 34 105 100 34 coarse_dirt
+execute if block 100 79 0 stone run fill 113 100 34 114 100 34 coarse_dirt
+execute if block 100 79 0 stone run fill 127 100 34 130 100 34 coarse_dirt
+execute if block 100 79 0 stone run fill 137 100 34 139 100 34 coarse_dirt
+execute if block 100 79 0 stone run fill 60 100 35 63 100 35 coarse_dirt
+execute if block 100 79 0 stone run fill 73 100 35 77 100 35 coarse_dirt
+execute if block 100 79 0 stone run fill 79 100 35 84 100 35 coarse_dirt
+execute if block 100 79 0 stone run fill 85 100 35 89 100 35 stone
+execute if block 100 79 0 stone run fill 85 101 35 89 101 35 coarse_dirt
+execute if block 100 79 0 stone run fill 90 100 35 91 100 35 coarse_dirt
+execute if block 100 79 0 stone run fill 92 100 35 99 100 35 stone
+execute if block 100 79 0 stone run fill 92 101 35 99 101 35 coarse_dirt
+execute if block 100 79 0 stone run fill 100 100 35 106 100 35 coarse_dirt
+execute if block 100 79 0 stone run fill 110 100 35 117 100 35 coarse_dirt
+execute if block 100 79 0 stone run fill 127 100 35 137 100 35 coarse_dirt
+execute if block 100 79 0 stone run fill 138 100 35 139 100 35 stone
+execute if block 100 79 0 stone run fill 138 101 35 139 101 35 coarse_dirt
+execute if block 100 79 0 stone run fill 60 100 36 63 100 36 coarse_dirt
+execute if block 100 79 0 stone run fill 73 100 36 84 100 36 coarse_dirt
+execute if block 100 79 0 stone run fill 85 100 36 86 100 36 stone
+execute if block 100 79 0 stone run fill 85 101 36 86 101 36 coarse_dirt
+execute if block 100 79 0 stone run fill 87 100 36 87 101 36 stone
+execute if block 100 79 0 stone run fill 87 102 36 87 102 36 coarse_dirt
+execute if block 100 79 0 stone run fill 88 100 36 93 100 36 stone
+execute if block 100 79 0 stone run fill 88 101 36 93 101 36 coarse_dirt
+execute if block 100 79 0 stone run fill 94 100 36 98 101 36 stone
+execute if block 100 79 0 stone run fill 94 102 36 98 102 36 coarse_dirt
+execute if block 100 79 0 stone run fill 99 100 36 99 100 36 stone
+execute if block 100 79 0 stone run fill 99 101 36 99 101 36 coarse_dirt
+execute if block 100 79 0 stone run fill 100 100 36 112 100 36 coarse_dirt
+execute if block 100 79 0 stone run fill 113 100 36 113 100 36 stone
+execute if block 100 79 0 stone run fill 113 101 36 113 101 36 coarse_dirt
+execute if block 100 79 0 stone run fill 114 100 36 117 100 36 coarse_dirt
+execute if block 100 79 0 stone run fill 127 100 36 139 100 36 coarse_dirt
+execute if block 100 79 0 stone run fill 60 100 37 60 100 37 coarse_dirt
+execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1

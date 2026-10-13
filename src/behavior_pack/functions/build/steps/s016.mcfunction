@@ -1,42 +1,45 @@
-# zone 1 ground 1
-fill 77 99 -28 78 99 -26 stone replace coarse_dirt
-fill 101 99 16 104 99 16 dirt replace coarse_dirt
-fill 79 99 6 81 99 7 stone replace coarse_dirt
-fill 91 99 11 91 99 12 dirt replace coarse_dirt
-fill 114 99 -38 114 99 -35 gravel replace coarse_dirt
-fill 78 99 29 78 99 29 podzol replace coarse_dirt
-fill 72 99 31 72 99 31 dirt replace coarse_dirt
-fill 121 99 0 124 99 3 podzol replace coarse_dirt
-fill 71 99 -8 71 99 -7 stone replace coarse_dirt
-fill 117 99 28 120 99 28 podzol replace coarse_dirt
-fill 72 99 -32 72 99 -29 gravel replace coarse_dirt
-fill 115 99 3 115 99 6 podzol replace coarse_dirt
-fill 99 99 0 99 99 3 gravel replace coarse_dirt
-fill 124 99 22 124 99 22 podzol replace coarse_dirt
-fill 75 99 5 76 99 7 dirt replace coarse_dirt
-fill 135 99 -10 137 99 -10 gravel replace coarse_dirt
-fill 69 99 26 70 99 28 gravel replace coarse_dirt
-fill 93 99 5 95 99 8 dirt replace coarse_dirt
-fill 116 99 3 117 99 5 podzol replace coarse_dirt
-fill 113 99 37 115 99 37 podzol replace coarse_dirt
-fill 78 99 -17 79 99 -16 gravel replace coarse_dirt
-fill 87 99 -38 87 99 -37 stone replace coarse_dirt
-fill 99 99 31 101 99 34 stone replace coarse_dirt
-fill 91 99 23 94 99 24 dirt replace coarse_dirt
-fill 81 99 -15 81 99 -13 dirt replace coarse_dirt
-fill 83 99 -5 84 99 -3 gravel replace coarse_dirt
-fill 109 99 2 111 99 5 podzol replace coarse_dirt
-fill 126 99 -17 127 99 -16 dirt replace coarse_dirt
-fill 85 99 -3 87 99 -2 podzol replace coarse_dirt
-fill 122 99 12 124 99 15 stone replace coarse_dirt
-fill 81 99 -15 83 99 -13 dirt replace coarse_dirt
-fill 108 99 -9 110 99 -7 podzol replace coarse_dirt
-fill 62 99 15 64 99 15 dirt replace coarse_dirt
-fill 129 99 6 129 99 6 podzol replace coarse_dirt
-fill 119 99 25 120 99 26 dirt replace coarse_dirt
-fill 126 99 2 126 99 2 gravel replace coarse_dirt
-fill 69 99 -35 71 99 -34 gravel replace coarse_dirt
-fill 133 99 35 133 99 36 stone replace coarse_dirt
-fill 124 99 30 126 99 32 stone replace coarse_dirt
-fill 65 99 0 67 99 2 gravel replace coarse_dirt
-scoreboard players add #bstep bce_sys 1
+# zone 0 interior 2
+scoreboard players set #bzone bce_sys 0
+execute unless block 0 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 0 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 0 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 0 79 0 stone run scoreboard players set #bstage bce_sys 2
+execute if block 0 79 0 stone run setblock 8 100 15 stone_bricks
+execute if block 0 79 0 stone run setblock 3 100 12 gravel
+execute if block 0 79 0 stone run setblock 8 100 10 stone_bricks
+execute if block 0 79 0 stone run setblock 8 100 9 gravel
+execute if block 0 79 0 stone run setblock 3 100 12 stone_bricks
+execute if block 0 79 0 stone run setblock 5 100 10 mossy_cobblestone
+execute if block 0 79 0 stone run setblock 5 100 11 stone_bricks
+execute if block 0 79 0 stone run fill -3 113 4 0 115 7 air
+execute if block 0 79 0 stone run setblock -1 100 4 stone_bricks
+execute if block 0 79 0 stone run setblock 0 100 5 mossy_cobblestone
+execute if block 0 79 0 stone run setblock -2 100 7 stone_bricks
+execute if block 0 79 0 stone run setblock 0 100 6 cobblestone
+execute if block 0 79 0 stone run setblock 1 100 5 mossy_cobblestone
+execute if block 0 79 0 stone run setblock -3 100 8 mossy_cobblestone
+execute if block 0 79 0 stone run setblock -2 100 7 stone_bricks
+execute if block 0 79 0 stone run fill 6 100 -17 10 104 -17 air
+execute if block 0 79 0 stone run fill 6 100 -18 10 104 -18 air
+execute if block 0 79 0 stone run fill 5 100 -18 5 105 -17 chiseled_stone_bricks
+execute if block 0 79 0 stone run fill 11 100 -18 11 105 -17 chiseled_stone_bricks
+execute if block 0 79 0 stone run fill 6 105 -18 10 105 -17 chiseled_stone_bricks
+execute if block 0 79 0 stone run setblock 8 100 -17 smithing_table
+execute if block 0 79 0 stone run setblock 8 99 -17 sea_lantern
+execute if block 0 79 0 stone run fill -2 99 -7 2 99 -7 deepslate_tiles
+execute if block 0 79 0 stone run fill -4 99 -6 4 99 -6 deepslate_tiles
+execute if block 0 79 0 stone run fill -5 99 -5 5 99 -5 deepslate_tiles
+execute if block 0 79 0 stone run fill -6 99 -4 6 99 -4 deepslate_tiles
+execute if block 0 79 0 stone run fill -6 99 -3 6 99 -3 deepslate_tiles
+execute if block 0 79 0 stone run fill -7 99 -2 7 99 -2 deepslate_tiles
+execute if block 0 79 0 stone run fill -7 99 -1 7 99 -1 deepslate_tiles
+execute if block 0 79 0 stone run fill -7 99 0 7 99 0 deepslate_tiles
+execute if block 0 79 0 stone run fill -7 99 1 7 99 1 deepslate_tiles
+execute if block 0 79 0 stone run fill -7 99 2 7 99 2 deepslate_tiles
+execute if block 0 79 0 stone run fill -6 99 3 6 99 3 deepslate_tiles
+execute if block 0 79 0 stone run fill -6 99 4 6 99 4 deepslate_tiles
+execute if block 0 79 0 stone run fill -5 99 5 5 99 5 deepslate_tiles
+execute if block 0 79 0 stone run fill -4 99 6 4 99 6 deepslate_tiles
+execute if block 0 79 0 stone run scoreboard players add #bstep bce_sys 1

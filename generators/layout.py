@@ -68,5 +68,5 @@ WALL_WAVES = {
 }
 MIDBOSS_POS = (CX[3] + 30, 100, 0)
 WALL_GATE_FILL = R(CX[3] + 37, 100, -3, CX[3] + 38, 106, 3)
-CIT_DOOR = R(CX[4] - 4, 100, -3, CX[4] - 3, 108, 3)
+CIT_DOOR = R(CX[4] - 1, 100, -3, CX[4] + 1, 108, 3)
 YARD_SPAWN = (28, 100, 0)

@@ -1,0 +1,250 @@
+# 구역 1 잿빛 마을 — 단계 detail (1/1). 중심 x=100 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 100 100 0 4 bce_z1)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 60 100 -40 139 140 39 air (여러 번에 나눠서)
+
+setblock 81 100 -25 crafting_table
+setblock 73 100 -19 barrel
+setblock 81 100 -19 bookshelf
+setblock 93 100 -24 furnace
+setblock 87 100 -19 chest
+setblock 93 100 -19 bookshelf
+setblock 113 100 -24 crafting_table
+setblock 107 100 -19 barrel
+setblock 129 100 -26 barrel
+setblock 119 100 -19 barrel
+setblock 129 100 -19 lectern
+setblock 129 100 -23 chest
+fill 120 103 -17 128 103 -16 red_wool
+fill 120 100 -16 128 100 -16 barrel
+setblock 81 100 18 furnace
+setblock 73 100 24 bookshelf
+setblock 93 100 18 crafting_table
+setblock 87 100 24 chest
+setblock 115 100 18 web
+fill 108 105 19 112 108 23 air
+fill 116 101 19 116 104 21 air
+setblock 109 100 19 cobblestone
+setblock 114 100 22 cobblestone
+setblock 113 100 22 web
+setblock 113 100 24 gravel
+setblock 112 100 23 spruce_planks
+setblock 115 100 20 gravel
+setblock 113 100 18 gravel
+setblock 113 100 19 web
+setblock 108 100 20 spruce_planks
+setblock 107 100 20 gravel
+setblock 108 100 21 spruce_planks
+setblock 115 100 19 gravel
+setblock 109 100 21 web
+setblock 108 100 20 cobblestone
+setblock 127 100 18 barrel
+setblock 121 100 23 furnace
+fill 140 99 -2 159 99 2 polished_andesite
+fill 140 99 -3 159 99 -3 stone_bricks
+fill 140 99 3 159 99 3 stone_bricks
+fill 140 100 -3 159 100 -3 iron_bars
+fill 140 100 3 159 100 3 iron_bars
+fill 142 88 -3 142 98 -3 stone_bricks
+fill 142 88 3 142 98 3 stone_bricks
+fill 142 101 -3 142 102 -3 stone_bricks
+fill 142 101 3 142 102 3 stone_bricks
+setblock 142 103 -3 lantern
+setblock 142 103 3 lantern
+fill 148 88 -3 148 98 -3 stone_bricks
+fill 148 88 3 148 98 3 stone_bricks
+fill 148 101 -3 148 102 -3 stone_bricks
+fill 148 101 3 148 102 3 stone_bricks
+setblock 148 103 -3 lantern
+setblock 148 103 3 lantern
+fill 154 88 -3 154 98 -3 stone_bricks
+fill 154 88 3 154 98 3 stone_bricks
+fill 154 101 -3 154 102 -3 stone_bricks
+fill 154 101 3 154 102 3 stone_bricks
+setblock 154 103 -3 lantern
+setblock 154 103 3 lantern
+fill 114 120 -12 118 120 -8 spruce_planks
+setblock 114 116 -13 stone_bricks
+setblock 114 117 -13 white_concrete
+setblock 114 118 -13 white_concrete
+setblock 114 119 -13 white_concrete
+setblock 114 120 -13 stone_bricks
+setblock 115 116 -13 white_concrete
+setblock 115 117 -13 white_concrete
+setblock 115 118 -13 white_concrete
+setblock 115 119 -13 white_concrete
+setblock 115 120 -13 white_concrete
+setblock 116 116 -13 white_concrete
+setblock 116 117 -13 white_concrete
+setblock 116 118 -13 white_concrete
+setblock 116 119 -13 white_concrete
+setblock 116 120 -13 white_concrete
+setblock 117 116 -13 white_concrete
+setblock 117 117 -13 white_concrete
+setblock 117 118 -13 white_concrete
+setblock 117 119 -13 white_concrete
+setblock 117 120 -13 white_concrete
+setblock 118 116 -13 stone_bricks
+setblock 118 117 -13 white_concrete
+setblock 118 118 -13 white_concrete
+setblock 118 119 -13 white_concrete
+setblock 118 120 -13 stone_bricks
+setblock 116 118 -13 black_concrete
+setblock 116 118 -13 black_concrete
+setblock 116 119 -13 black_concrete
+setblock 117 118 -13 black_concrete
+setblock 116 120 -13 black_concrete
+setblock 118 118 -13 black_concrete
+setblock 114 118 -13 sea_lantern
+setblock 118 118 -13 sea_lantern
+setblock 114 116 -7 stone_bricks
+setblock 114 117 -7 white_concrete
+setblock 114 118 -7 white_concrete
+setblock 114 119 -7 white_concrete
+setblock 114 120 -7 stone_bricks
+setblock 115 116 -7 white_concrete
+setblock 115 117 -7 white_concrete
+setblock 115 118 -7 white_concrete
+setblock 115 119 -7 white_concrete
+setblock 115 120 -7 white_concrete
+setblock 116 116 -7 white_concrete
+setblock 116 117 -7 white_concrete
+setblock 116 118 -7 white_concrete
+setblock 116 119 -7 white_concrete
+setblock 116 120 -7 white_concrete
+setblock 117 116 -7 white_concrete
+setblock 117 117 -7 white_concrete
+setblock 117 118 -7 white_concrete
+setblock 117 119 -7 white_concrete
+setblock 117 120 -7 white_concrete
+setblock 118 116 -7 stone_bricks
+setblock 118 117 -7 white_concrete
+setblock 118 118 -7 white_concrete
+setblock 118 119 -7 white_concrete
+setblock 118 120 -7 stone_bricks
+setblock 116 118 -7 black_concrete
+setblock 116 118 -7 black_concrete
+setblock 116 119 -7 black_concrete
+setblock 117 118 -7 black_concrete
+setblock 116 120 -7 black_concrete
+setblock 118 118 -7 black_concrete
+setblock 114 118 -7 sea_lantern
+setblock 118 118 -7 sea_lantern
+setblock 113 116 -12 stone_bricks
+setblock 113 117 -12 white_concrete
+setblock 113 118 -12 white_concrete
+setblock 113 119 -12 white_concrete
+setblock 113 120 -12 stone_bricks
+setblock 113 116 -11 white_concrete
+setblock 113 117 -11 white_concrete
+setblock 113 118 -11 white_concrete
+setblock 113 119 -11 white_concrete
+setblock 113 120 -11 white_concrete
+setblock 113 116 -10 white_concrete
+setblock 113 117 -10 white_concrete
+setblock 113 118 -10 white_concrete
+setblock 113 119 -10 white_concrete
+setblock 113 120 -10 white_concrete
+setblock 113 116 -9 white_concrete
+setblock 113 117 -9 white_concrete
+setblock 113 118 -9 white_concrete
+setblock 113 119 -9 white_concrete
+setblock 113 120 -9 white_concrete
+setblock 113 116 -8 stone_bricks
+setblock 113 117 -8 white_concrete
+setblock 113 118 -8 white_concrete
+setblock 113 119 -8 white_concrete
+setblock 113 120 -8 stone_bricks
+setblock 113 118 -10 black_concrete
+setblock 113 118 -10 black_concrete
+setblock 113 119 -10 black_concrete
+setblock 113 118 -9 black_concrete
+setblock 113 120 -10 black_concrete
+setblock 113 118 -8 black_concrete
+setblock 113 118 -12 sea_lantern
+setblock 113 118 -8 sea_lantern
+setblock 119 116 -12 stone_bricks
+setblock 119 117 -12 white_concrete
+setblock 119 118 -12 white_concrete
+setblock 119 119 -12 white_concrete
+setblock 119 120 -12 stone_bricks
+setblock 119 116 -11 white_concrete
+setblock 119 117 -11 white_concrete
+setblock 119 118 -11 white_concrete
+setblock 119 119 -11 white_concrete
+setblock 119 120 -11 white_concrete
+setblock 119 116 -10 white_concrete
+setblock 119 117 -10 white_concrete
+setblock 119 118 -10 white_concrete
+setblock 119 119 -10 white_concrete
+setblock 119 120 -10 white_concrete
+setblock 119 116 -9 white_concrete
+setblock 119 117 -9 white_concrete
+setblock 119 118 -9 white_concrete
+setblock 119 119 -9 white_concrete
+setblock 119 120 -9 white_concrete
+setblock 119 116 -8 stone_bricks
+setblock 119 117 -8 white_concrete
+setblock 119 118 -8 white_concrete
+setblock 119 119 -8 white_concrete
+setblock 119 120 -8 stone_bricks
+setblock 119 118 -10 black_concrete
+setblock 119 118 -10 black_concrete
+setblock 119 119 -10 black_concrete
+setblock 119 118 -9 black_concrete
+setblock 119 120 -10 black_concrete
+setblock 119 118 -8 black_concrete
+setblock 119 118 -12 sea_lantern
+setblock 119 118 -8 sea_lantern
+fill 116 120 -10 116 120 -10 spruce_log
+fill 134 101 -34 134 107 -34 spruce_log
+fill 134 105 -33 134 105 -32 spruce_log ["pillar_axis"="z"]
+fill 132 104 -34 133 104 -34 spruce_log ["pillar_axis"="x"]
+fill 115 101 -33 115 107 -33 spruce_log
+fill 113 106 -33 114 106 -33 spruce_log ["pillar_axis"="x"]
+fill 115 104 -32 115 104 -31 spruce_log ["pillar_axis"="z"]
+fill 113 104 -33 114 104 -33 spruce_log ["pillar_axis"="x"]
+fill 119 102 -37 119 108 -37 spruce_log
+fill 119 105 -39 119 105 -38 spruce_log ["pillar_axis"="z"]
+fill 120 105 -37 121 105 -37 spruce_log ["pillar_axis"="x"]
+fill 111 101 -34 111 107 -34 spruce_log
+fill 111 106 -36 111 106 -35 spruce_log ["pillar_axis"="z"]
+fill 111 105 -36 111 105 -35 spruce_log ["pillar_axis"="z"]
+fill 75 102 -35 75 108 -35 spruce_log
+fill 73 106 -35 74 106 -35 spruce_log ["pillar_axis"="x"]
+fill 73 106 -35 74 106 -35 spruce_log ["pillar_axis"="x"]
+fill 136 101 -33 136 108 -33 spruce_log
+fill 136 106 -35 136 106 -34 spruce_log ["pillar_axis"="z"]
+fill 136 106 -35 136 106 -34 spruce_log ["pillar_axis"="z"]
+fill 93 101 -35 93 108 -35 spruce_log
+fill 93 106 -37 93 106 -36 spruce_log ["pillar_axis"="z"]
+fill 94 106 -35 95 106 -35 spruce_log ["pillar_axis"="x"]
+fill 125 101 -36 126 102 -36 cobblestone
+fill 130 101 -36 131 102 -36 cobblestone
+fill 104 102 -38 105 103 -38 cobblestone
+fill 124 103 -39 125 104 -39 cobblestone
+fill 105 101 -33 106 102 -33 cobblestone
+fill 134 101 35 134 108 35 spruce_log
+fill 134 105 36 134 105 37 spruce_log ["pillar_axis"="z"]
+fill 134 105 36 134 105 37 spruce_log ["pillar_axis"="z"]
+fill 77 101 36 77 106 36 spruce_log
+fill 75 103 36 76 103 36 spruce_log ["pillar_axis"="x"]
+fill 77 104 34 77 104 35 spruce_log ["pillar_axis"="z"]
+fill 97 101 33 97 108 33 spruce_log
+fill 98 107 33 99 107 33 spruce_log ["pillar_axis"="x"]
+fill 95 107 33 96 107 33 spruce_log ["pillar_axis"="x"]
+fill 95 107 33 96 107 33 spruce_log ["pillar_axis"="x"]
+fill 132 102 37 132 108 37 spruce_log
+fill 132 105 38 132 105 39 spruce_log ["pillar_axis"="z"]
+fill 132 105 35 132 105 36 spruce_log ["pillar_axis"="z"]
+fill 132 106 38 132 106 39 spruce_log ["pillar_axis"="z"]
+fill 132 101 35 132 106 35 spruce_log
+fill 132 105 36 132 105 37 spruce_log ["pillar_axis"="z"]
+fill 132 103 33 132 103 34 spruce_log ["pillar_axis"="z"]
+fill 102 101 34 102 106 34 spruce_log
+fill 100 104 34 101 104 34 spruce_log ["pillar_axis"="x"]
+fill 102 104 32 102 104 33 spruce_log ["pillar_axis"="z"]
+fill 100 105 34 101 105 34 spruce_log ["pillar_axis"="x"]
+fill 118 100 36 119 101 36 cobblestone
+fill 137 101 35 138 102 35 cobblestone
+fill 84 100 33 85 101 33 cobblestone
+fill 66 100 35 67 101 35 cobblestone
+fill 96 103 36 97 104 36 cobblestone

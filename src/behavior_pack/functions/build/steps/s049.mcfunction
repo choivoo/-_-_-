@@ -1,42 +1,45 @@
-# zone 3 shell 1
-setblock 299 115 -11 stone_bricks
-setblock 299 115 -9 stone_bricks
-setblock 299 115 -7 stone_bricks
-setblock 299 115 -5 stone_bricks
-setblock 299 115 -3 stone_bricks
-setblock 299 115 -1 stone_bricks
-setblock 299 115 1 stone_bricks
-setblock 299 115 3 stone_bricks
-setblock 299 115 5 stone_bricks
-setblock 299 115 7 stone_bricks
-setblock 299 115 9 stone_bricks
-setblock 299 115 11 stone_bricks
-setblock 299 115 13 stone_bricks
-setblock 299 115 15 stone_bricks
-setblock 299 115 17 stone_bricks
-setblock 299 115 19 stone_bricks
-setblock 299 115 21 stone_bricks
-setblock 299 115 23 stone_bricks
-setblock 299 115 25 stone_bricks
-setblock 299 115 27 stone_bricks
-setblock 299 115 29 stone_bricks
-setblock 299 115 31 stone_bricks
-setblock 299 115 33 stone_bricks
-setblock 299 115 35 stone_bricks
-setblock 299 115 37 stone_bricks
-setblock 295 100 -34 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-setblock 295 101 -33 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-setblock 295 102 -32 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-setblock 295 103 -31 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-setblock 295 104 -30 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-setblock 295 105 -29 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-setblock 295 106 -28 stone_brick_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
-setblock 295 107 -28 air
-setblock 295 108 -28 air
-setblock 295 109 -28 air
-fill 294 100 -34 302 122 -26 stone_bricks
-fill 295 100 -33 301 121 -27 air
-fill 293 120 -35 303 120 -25 deepslate_bricks
-fill 295 120 -33 301 120 -27 spruce_planks
-setblock 293 121 -35 deepslate_bricks
-scoreboard players add #bstep bce_sys 1
+# zone 1 shell 7
+scoreboard players set #bzone bce_sys 1
+execute unless block 100 79 0 stone run scoreboard players set #bsm bce_sys 2
+execute unless block 100 79 0 stone run scoreboard players add #bwait bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #berr bce_sys 1
+execute if score #bwait bce_sys matches 2400.. run scoreboard players set #bsm bce_sys 7
+execute if block 100 79 0 stone run scoreboard players set #bsm bce_sys 3
+execute if block 100 79 0 stone run scoreboard players set #bstage bce_sys 1
+execute if block 100 79 0 stone run fill 128 107 20 128 107 21 spruce_planks
+execute if block 100 79 0 stone run fill 119 108 20 129 108 20 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 119 108 21 129 108 21 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 112 99 -14 120 99 -6 cobblestone
+execute if block 100 79 0 stone run fill 113 100 -13 119 122 -7 stone_bricks
+execute if block 100 79 0 stone run fill 113 100 -13 113 122 -13 spruce_log
+execute if block 100 79 0 stone run fill 113 100 -7 113 122 -7 spruce_log
+execute if block 100 79 0 stone run fill 119 100 -13 119 122 -13 spruce_log
+execute if block 100 79 0 stone run fill 119 100 -7 119 122 -7 spruce_log
+execute if block 100 79 0 stone run fill 112 114 -14 120 114 -6 spruce_planks
+execute if block 100 79 0 stone run fill 112 123 -14 120 123 -6 deepslate_bricks
+execute if block 100 79 0 stone run fill 113 124 -14 119 124 -14 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 113 124 -6 119 124 -6 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 112 124 -13 112 124 -7 spruce_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 120 124 -13 120 124 -7 spruce_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+execute if block 100 79 0 stone run setblock 112 124 -14 spruce_planks
+execute if block 100 79 0 stone run setblock 120 124 -14 spruce_planks
+execute if block 100 79 0 stone run setblock 112 124 -6 spruce_planks
+execute if block 100 79 0 stone run setblock 120 124 -6 spruce_planks
+execute if block 100 79 0 stone run fill 114 125 -13 118 125 -13 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 114 125 -7 118 125 -7 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 113 125 -12 113 125 -8 spruce_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 119 125 -12 119 125 -8 spruce_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+execute if block 100 79 0 stone run setblock 113 125 -13 spruce_planks
+execute if block 100 79 0 stone run setblock 119 125 -13 spruce_planks
+execute if block 100 79 0 stone run setblock 113 125 -7 spruce_planks
+execute if block 100 79 0 stone run setblock 119 125 -7 spruce_planks
+execute if block 100 79 0 stone run fill 115 126 -12 117 126 -12 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 115 126 -8 117 126 -8 spruce_stairs ["weirdo_direction"=3,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 114 126 -11 114 126 -9 spruce_stairs ["weirdo_direction"=0,"upside_down_bit"=false]
+execute if block 100 79 0 stone run fill 118 126 -11 118 126 -9 spruce_stairs ["weirdo_direction"=1,"upside_down_bit"=false]
+execute if block 100 79 0 stone run setblock 114 126 -12 spruce_planks
+execute if block 100 79 0 stone run setblock 118 126 -12 spruce_planks
+execute if block 100 79 0 stone run setblock 114 126 -8 spruce_planks
+execute if block 100 79 0 stone run setblock 118 126 -8 spruce_planks
+execute if block 100 79 0 stone run fill 116 127 -11 116 127 -11 spruce_stairs ["weirdo_direction"=2,"upside_down_bit"=false]
+execute if block 100 79 0 stone run scoreboard players add #bstep bce_sys 1

@@ -6,7 +6,8 @@ import layout as L
 
 SYS = "bce_sys"
 PLAYER_OBJ = ["bce_stam", "bce_cdslash", "bce_cddodge", "bce_cdult", "bce_cdheal", "bce_combo", "bce_cwin",
-              "bce_iframe", "bce_cur", "bce_prev", "bce_q", "bce_cp", "bce_ps", "bce_cs", "bce_cst"]
+              "bce_iframe", "bce_cur", "bce_prev", "bce_q", "bce_cp", "bce_ps", "bce_cs", "bce_cst",
+              "bce_cddash", "bce_cdbslash", "bce_cdjudge", "bce_ultt", "bce_tmp"]
 ENEMY_OBJ = ["bce_ai", "bce_aitm"]
 SK = read_json(os.path.join(DATA, "skills", "skills.json"))
 EN = read_json(os.path.join(DATA, "enemies", "enemies.json"))
@@ -71,11 +72,13 @@ def bootstrap(F, step_info):
     consts = [("#c2", 2), ("#c5", 5), ("#c10", 10), ("#c20", 20), ("#regen", ST["regen_per_5_ticks"]),
               ("#regen_c", max(1, ST["regen_per_5_ticks"] // 2)), ("#cost_dodge", ST["cost_dodge"]),
               ("#cost_heavy", ST["cost_heavy"]), ("#cost_ult", ST["cost_ult"]),
+              ("#cost_dash", ST["cost_dash"]), ("#cost_bslash", ST["cost_bslash"]), ("#cost_judge", ST["cost_judge"]), ("#c19", 19), ("#c100", 100), ("#c4", 4),
               ("#quality", 1), ("#shake", 1), ("#mode", 0), ("#bhp", 1000), ("#bstate", 0), ("#started", 0)]
     lines = ["execute unless score %s bce_sys matches -2147483648..2147483647 run scoreboard players set %s bce_sys %d" % (n, n, v)
              for n, v in consts]
     F.emit("bootstrap/constants", lines, doc="sets defaults only when a value does not exist (admin tuning survives re-install)")
     F.emit("bootstrap/install", [
+        "tag @s add bce_admin",
         "function bootstrap/objectives", "function bootstrap/gamerules", "function bootstrap/constants",
         "execute unless score #state bce_sys matches 1.. run function bootstrap/first_install",
         "execute if score #state bce_sys matches 1.. run function debug/status"],
@@ -150,7 +153,8 @@ def core(F, ):
         "execute as @a[tag=bce_cs,scores={bce_cst=1500..}] run function cutscenes/force_end",
         "execute as @a[tag=bce_cs,scores={bce_cs=0}] run function cutscenes/force_end",
         "tag @a remove bce_comb",
-        "execute as @a[tag=!bce_cs] run inputpermission set @s movement enabled"],
+        "execute as @a[tag=!bce_cs] run inputpermission set @s movement enabled",
+        "execute as @a[tag=!bce_cs] run inputpermission set @s camera enabled"],
         doc="recovery nets: stuck cutscenes, orphan input locks, stale combat tags")
 
 
@@ -175,8 +179,8 @@ def player(F):
     for k, it in items.items():
         lines.append("execute as @a[hasitem={item=%s,location=slot.weapon.mainhand}] run scoreboard players set @s bce_cur %s" % (it, k))
     lines += [
-        "execute as @a[tag=bce_cs] unless score @s bce_cur = @s bce_prev if score @s bce_cur matches 9 at @s run function cutscenes/skip",
-        "execute as @a[tag=bce_ctl,tag=!bce_cs,scores={bce_ps=2..}] unless score @s bce_cur = @s bce_prev if score @s bce_cur matches 1..8 at @s run function abilities/dispatch",
+        "execute as @a[tag=bce_cs] unless score @s bce_cur = @s bce_prev if score @s bce_cur matches 20 at @s run function cutscenes/skip",
+        "execute as @a[tag=bce_ctl,tag=!bce_cs,scores={bce_ps=2..}] unless score @s bce_cur = @s bce_prev if score @s bce_cur matches 1..19 at @s run function abilities/dispatch",
         "scoreboard players operation @a bce_prev = @a bce_cur"]
     F.emit("player/input", lines,
            doc="ONE-SHOT trigger: an ability fires only when the selected skill item CHANGES (re-select to fire again)")
@@ -185,6 +189,10 @@ def player(F):
         "scoreboard players remove @a[scores={bce_cddodge=1..}] bce_cddodge 1",
         "scoreboard players remove @a[scores={bce_cdult=1..}] bce_cdult 1",
         "scoreboard players remove @a[scores={bce_cdheal=1..}] bce_cdheal 1",
+        "scoreboard players remove @a[scores={bce_cddash=1..}] bce_cddash 1",
+        "scoreboard players remove @a[scores={bce_cdbslash=1..}] bce_cdbslash 1",
+        "scoreboard players remove @a[scores={bce_cdjudge=1..}] bce_cdjudge 1",
+        "execute as @a[scores={bce_ultt=1..}] at @s run function abilities/judge_tick",
         "scoreboard players remove @a[scores={bce_cwin=1..}] bce_cwin 1",
         "scoreboard players set @a[scores={bce_cwin=0,bce_combo=1..}] bce_combo 0",
         "scoreboard players remove @a[scores={bce_iframe=1..}] bce_iframe 1",
@@ -213,8 +221,11 @@ def abilities(F):
         "execute if score @s bce_cur matches 4 run function abilities/dodge_l",
         "execute if score @s bce_cur matches 5 run function abilities/dodge_r",
         "execute if score @s bce_cur matches 6 run function abilities/ult",
-        "execute if score @s bce_cur matches 7 run function abilities/heal"],
-        doc="as player at @s. cur: 1 slash 2-5 dodge F/B/L/R 6 ult 7 heal")
+        "execute if score @s bce_cur matches 7 run function abilities/heal",
+        "execute if score @s bce_cur matches 8 run function abilities/dash",
+        "execute if score @s bce_cur matches 10 run function abilities/bslash",
+        "execute if score @s bce_cur matches 11 run function abilities/judge"],
+        doc="as player at @s. cur: 1 slash 2-5 dodge F/B/L/R 6 shockwave 7 heal 8 star dash 10 blackstar slash 11 star judgment")
     F.emit("abilities/slash", ["execute if score @s bce_cdslash matches 0 run function abilities/slash_go"])
     F.emit("abilities/slash_go", [
         "scoreboard players add @s bce_combo 1",
@@ -280,6 +291,48 @@ def abilities(F):
         "effect @s regeneration 6 2 true", "effect @s instant_health 1 0 true",
         "particle minecraft:villager_happy ~ ~1 ~", "playsound random.levelup @s ~ ~ ~ 0.5 1.5"])
 
+    D = SK["dash"]; B = SK["black_slash"]; J = SK["judgment"]
+    F.emit("abilities/dash", ["execute if score @s bce_cddash matches 0 if score @s bce_stam >= #cost_dash bce_sys run function abilities/dash_go"])
+    stepf = "execute at @s rotated ~ 0 if block ^ ^ ^1 air if block ^ ^1 ^1 air unless block ^ ^-1 ^1 air unless block ^ ^-1 ^1 lava run tp @s ^ ^ ^1"
+    F.emit("abilities/dash_go", [
+        "scoreboard players operation @s bce_stam -= #cost_dash bce_sys",
+        "scoreboard players set @s bce_cddash %d" % D["cooldown"], "scoreboard players set @s bce_iframe %d" % D["iframes"], "tag @s add bce_iframe",
+        "particle minecraft:endrod ~ ~1 ~", "playsound random.orb @a ~ ~ ~ 0.8 1.6"] + [stepf] * D["steps"] + [
+        "execute positioned ^ ^0.8 ^1 run damage @e[tag=bce_enemy,r=%s] %d entity_attack entity @s" % (D["radius"], D["damage"]),
+        "execute positioned ^ ^0.8 ^1 if entity @e[tag=bce_boss,r=%s] if score #mode bce_sys matches 0 if score #binv bce_sys matches 0 run scoreboard players remove #bhp bce_sys %d" % (D["radius"], D["boss_ledger"]),
+        fx(1, "particle minecraft:totem_particle ~ ~1 ~"), SHAKE(0.12, 0.12)],
+        doc="SKILL 3: star dash = wall/edge-safe forward move, then one strike around the landing point")
+    F.emit("abilities/bslash", ["execute if score @s bce_cdbslash matches 0 if score @s bce_stam >= #cost_bslash bce_sys run function abilities/bslash_go"])
+    ds = [1.5 + 1.5 * i for i in range(int(B["length"] / 1.5))]
+    bl = ["scoreboard players operation @s bce_stam -= #cost_bslash bce_sys", "scoreboard players set @s bce_cdbslash %d" % B["cooldown"]]
+    for d in ds:
+        bl.append("execute positioned ^ ^1 ^%s run tag @e[tag=bce_enemy,r=1.6] add bce_hitmark" % d)
+        bl.append("execute positioned ^ ^1 ^%s run particle minecraft:soul_particle ~ ~ ~" % d)
+        bl.append(fx(1, "execute positioned ^ ^1 ^%s run particle minecraft:endrod ~ ~ ~" % d))
+    bl += ["damage @e[tag=bce_hitmark] %d entity_attack entity @s" % B["damage"],
+           "execute if entity @e[tag=bce_hitmark,tag=bce_boss] if score #mode bce_sys matches 0 if score #binv bce_sys matches 0 run scoreboard players remove #bhp bce_sys %d" % B["boss_ledger"],
+           "tag @e[tag=bce_hitmark] remove bce_hitmark", "playsound mob.wither.spawn @a ~ ~ ~ 0.4 2", SHAKE(0.3, 0.25)]
+    F.emit("abilities/bslash_go", bl, doc="SKILL 4: straight line of %d sphere probes; hit-mark tag prevents double damage" % len(ds))
+    F.emit("abilities/judge", ["execute if score @s bce_cdjudge matches 0 if score @s bce_stam >= #cost_judge bce_sys if score @s bce_ultt matches 0 run function abilities/judge_go"])
+    F.emit("abilities/judge_go", [
+        "scoreboard players operation @s bce_stam -= #cost_judge bce_sys", "scoreboard players set @s bce_cdjudge %d" % J["cooldown"],
+        "scoreboard players set @s bce_ultt 1", "scoreboard players set @s bce_iframe %d" % J["iframes"], "tag @s add bce_iframe",
+        "titleraw @s actionbar " + TXT("§d별의 심판 — 별빛을 모은다…"), "playsound random.levelup @a ~ ~ ~ 1 0.5"],
+        doc="ULTIMATE step 1/4 (prepare): invulnerable while charging")
+    jt = ["scoreboard players add @s bce_ultt 1"]
+    jt += ["execute if score @s bce_ultt matches %d run %s" % (t, c) for t, cs in [(2, ring(0, 0, 3, 12, "minecraft:totem_particle", 0.2)), (10, ring(0, 0, 6, 16, "minecraft:soul_particle", 0.3))] for c in cs]
+    jt += ["execute if score @s bce_ultt matches 10 run " + SHAKE(0.15, 0.4),
+           "execute if score @s bce_ultt matches 20 run damage @e[tag=bce_enemy,r=%d] %d entity_attack entity @s" % (J["radius_inner"], J["damage_inner"]),
+           "execute if score @s bce_ultt matches 20 if entity @e[tag=bce_boss,r=%d] if score #mode bce_sys matches 0 if score #binv bce_sys matches 0 run scoreboard players remove #bhp bce_sys %d" % (J["radius_inner"], J["boss_ledger"]),
+           "execute if score @s bce_ultt matches 20 run particle minecraft:huge_explosion_emitter ~ ~1 ~",
+           "execute if score @s bce_ultt matches 20 run playsound random.explode @a ~ ~ ~ 1 0.7",
+           "execute if score @s bce_ultt matches 20 run " + SHAKE(0.45, 0.5),
+           "execute if score @s bce_ultt matches 26 run damage @e[tag=bce_enemy,tag=!bce_boss,r=%d] %d entity_attack entity @s" % (J["radius_outer"], J["damage_outer"]),
+           "execute if score @s bce_ultt matches 26 run " + fx(1, "particle minecraft:huge_explosion_emitter ~4 ~1 ~"),
+           "execute if score @s bce_ultt matches 40 run titleraw @s actionbar " + TXT("§d별의 심판 완료"),
+           "execute if score @s bce_ultt matches 40.. run scoreboard players set @s bce_ultt 0"]
+    F.emit("abilities/judge_tick", jt, doc="ULTIMATE steps 2-4: effect ring (t=2,10) -> inner damage (t=20) -> outer damage (t=26) -> end (t=40)")
+
 
 def _up(v):
     p = v.split(" ")
@@ -307,10 +360,19 @@ def enemies(F):
         "execute if score @s bce_ai matches 3 run function enemies/st_prepare",
         "execute if score @s bce_ai matches 5 run function enemies/st_recover",
         "execute if score @s bce_ai matches 6 run function enemies/st_stun",
-        "execute if score @s bce_ai matches 7 run function enemies/st_return"],
-        doc="states: 0 IDLE 1 DETECT 2 CHASE 3 ATTACK_PREPARE 4 ATTACK(instant, see atk_*) 5 RECOVERY 6 STUNNED 7 RETURN 8 DEAD(entity removed)")
+        "execute if score @s bce_ai matches 7 run function enemies/st_return",
+        "execute if score @s bce_ai matches 8 run function enemies/st_patrol"],
+        doc="states: 0 IDLE 1 DETECT 2 CHASE 3 ATTACK_PREPARE 4 ATTACK(instant, see atk_*) 5 RECOVERY 6 STUNNED 7 RETURN 8 PATROL 9 DEAD(entity removed => no function can run)")
     setai = lambda n: ["scoreboard players set @s bce_ai %d" % n, "scoreboard players set @s bce_aitm 0"]
-    F.emit("enemies/st_idle", ["execute if entity @a[r=14,tag=bce_ctl] run function enemies/to_detect"])
+    F.emit("enemies/st_idle", ["execute if entity @a[r=14,tag=bce_ctl] run function enemies/to_detect",
+                               "execute if entity @s[tag=bce_patrol] unless entity @a[r=14,tag=bce_ctl] if score @s bce_aitm matches 60.. run function enemies/to_patrol"])
+    F.emit("enemies/to_patrol", setai(8) + ["tp @s ~ ~ ~ ~73 ~"])
+    pat = ["execute if entity @a[r=14,tag=bce_ctl] run function enemies/to_detect",
+           "execute unless block ^ ^ ^1 air run tp @s ~ ~ ~ ~100 ~"]
+    for t in range(10, 90, 10):
+        pat.append("execute if score @s bce_aitm matches %d if block ^ ^ ^1 air if block ^ ^1 ^1 air unless block ^ ^-1 ^1 air run tp @s ^ ^ ^1" % t)
+    pat.append("execute if score @s bce_aitm matches 90.. run function enemies/to_idle")
+    F.emit("enemies/st_patrol", pat, doc="PATROL: walk 8 blocks in short hops (air/floor checked), turn at walls, return to IDLE; aggro on sight")
     F.emit("enemies/to_detect", setai(1) + ["particle minecraft:critical_hit_emitter ~ ~2.2 ~", "playsound random.pop @a ~ ~ ~ 0.6 0.7"])
     F.emit("enemies/st_detect", [
         "execute unless entity @a[r=20,tag=bce_ctl] run function enemies/to_idle",
@@ -485,7 +547,8 @@ def boss(F):
             chg += ["execute as %s at @s run %s" % (bsel, c) for c in hitp(cl, 7, 8, 9, 10)]
     chg += [SHAKE(0.25, 0.25, "@a[%s]" % ARENA), "playsound mob.enderdragon.growl @a[%s] ~ ~ ~ 0.6 1.4" % ARENA]
     F.emit("bosses/h_charge", chg)
-    F.emit("bosses/w_slam", warn("§c⚠ 바닥 충격! 범위 밖으로") + ["execute as %s at @s run %s" % (bsel, c) for c in ring(0, 0, 5, 16, "minecraft:basic_flame_particle")])
+    F.emit("bosses/w_slam", warn("§c⚠ 바닥 충격! 범위 밖으로") + ["execute as %s at @s run %s" % (bsel, c) for c in ring(0, 0, 5, 16, "minecraft:basic_flame_particle")] + [
+        "execute if score #mode bce_sys matches 1 as %s at @s run particle bce:warning_ring ~ ~0.2 ~" % bsel])
     sl_ = "@a[r=5,tag=bce_ctl,tag=!bce_iframe]"
     F.emit("bosses/h_slam", ["execute as %s at @s run %s" % (bsel, c) for c in hitp(sl_, 8, 9, 10)] + [
         "execute as %s at @s run particle minecraft:huge_explosion_emitter ~ ~0.5 ~" % bsel,
@@ -599,8 +662,15 @@ def quests(F):
     rewards = {1: ["effect @s regeneration 3 1 true"], 2: kit, 3: ["give @s arrow 8", "scoreboard players set @s bce_ps 3"],
                4: ["clear @s nether_star", "give @s nether_star", TELL("@s", "§b[해금] §f네더의 별=충격파(스태미나 %d)" % ST["cost_ult"])],
                5: ["give @s golden_apple 2"], 6: ["give @s golden_apple 2", "effect @s health_boost 60 1 true"]}
+    dest = {2: "제단 옆 벽감(무기 선반)으로 가세요.", 3: "동쪽 훈련장으로 가서 적을 처치하세요.",
+            4: "동쪽 다리를 건너 잿빛 마을(입구 x≈66)로 가세요. 빛기둥이 표시합니다.", 5: "가라앉은 유적(x≈164) 지하로 내려가 레버 3개를 [켜짐-꺼짐-켜짐]으로 맞추세요. 벽의 등불이 힌트입니다.",
+            6: "붕괴된 성벽(x≈260~340)의 적을 모두 처치하고 성문을 통과하세요.", 7: "검은별의 성채(x≈360~440) 중앙 홀의 봉인된 문 너머가 보스 아레나입니다."}
+    intro = {3: "q4_intro", 5: "q6_intro", 6: "q7_intro"}      # cinematic at quest start (skippable)
     for n in range(1, 7):
-        F.emit("quests/done_%d" % n, adv(n) + rewards.get(n, []) + [nxt(n)], doc="Q%d %s -> Q%d" % (n, L.QUESTS[n][0], n + 1))
+        extra = [TELL("@s", "§e[목적지] §f" + dest[n + 1])] if (n + 1) in dest else []
+        if n in intro:
+            extra.append("function cutscenes/%s/start" % intro[n])
+        F.emit("quests/done_%d" % n, adv(n) + rewards.get(n, []) + [nxt(n)] + extra, doc="Q%d %s -> Q%d" % (n, L.QUESTS[n][0], n + 1))
     # checkpoints
     cl = []
     for n, (reg, pos, label) in L.CHECKPOINTS.items():
@@ -653,7 +723,7 @@ def world(F):
     F.emit("world/traps", tl, doc="every 20 ticks: vents warn (count 1) then damage (count 2). 1s warning; dodge/i-frames protect")
     # wall waves
     z3 = A("wall_zone")
-    sp = lambda wv: sum([["execute positioned %d 100 %d run function enemies/spawn_%s" % (x, z, k)] for k, x, z in L.WALL_WAVES[wv]], []) + [
+    sp = lambda wv: sum([["execute positioned %d 100 %d run function enemies/spawn_%s" % (x, z, k)] + (["execute positioned %d 100 %d run tag @e[tag=bce_%s,r=3,tag=!bce_patrol] add bce_patrol" % (x, z, k)] if k in ("e1", "e2") else []) for k, x, z in L.WALL_WAVES[wv]], []) + [
         "tag @e[tag=bce_enemy,tag=!bce_wave,%s] add bce_wave" % z3]
     F.emit("world/wall_wave1", ["scoreboard players set #wall bce_sys 1"] + sp(1) + [TELL("@a[%s]" % z3, "§c[성벽] §f적이 몰려온다! (1/3)")])
     F.emit("world/wall_wave2", ["scoreboard players set #wall bce_sys 2"] + sp(2) + [TELL("@a[%s]" % z3, "§c[성벽] §f정예병 출현! (2/3)")])
@@ -685,14 +755,27 @@ def world(F):
 
 # ---------------------------------------------------------------- UI / effects
 def ui(F):
-    h = []
+    h = ["scoreboard players operation #hp bce_sys = #tick bce_sys", "scoreboard players operation #hp bce_sys /= #c20 bce_sys",
+         "scoreboard players operation #hp bce_sys %= #c4 bce_sys"]   # page counter: changes every second, page B on odd 3s? see below
+    # page A (mission) shown when (second/3) is even, page B (skill cooldowns) otherwise. Keep it simple: 4s cycle, 2s each.
     for q in range(1, 8):
-        h.append("execute as @a[tag=bce_ctl,tag=!bce_cs,scores={bce_ps=2..6,bce_q=%d}] run titleraw @s actionbar %s" % (
+        h.append("execute if score #hp bce_sys matches 0..1 as @a[tag=bce_ctl,tag=!bce_cs,scores={bce_ps=2..6,bce_q=%d}] run titleraw @s actionbar %s" % (
             q, jraw("§aST§f ", ("@s", "bce_stam"), " §e회피§f ", ("@s", "bce_cddodge"), " §b" + L.QUESTS[q][1])))
-    h.append("execute as @a[tag=bce_ctl,tag=!bce_cs,scores={bce_ps=2..6,bce_q=8..}] run titleraw @s actionbar %s" % jraw("§aST§f ", ("@s", "bce_stam"), " §6임무 완료"))
+    h.append("execute if score #hp bce_sys matches 0..1 as @a[tag=bce_ctl,tag=!bce_cs,scores={bce_ps=2..6,bce_q=8..}] run titleraw @s actionbar %s" % jraw("§aST§f ", ("@s", "bce_stam"), " §6임무 완료"))
+    h += ["execute if score #hp bce_sys matches 2..3 as @a[tag=bce_ctl,tag=!bce_cs,scores={bce_ps=2..6}] run function ui/cd_page"]
     h.append("execute if score #bstate bce_sys matches 2 as @a[%s,tag=!bce_cs] run titleraw @s actionbar %s" % (ARENA, jraw(
         "§c수호자 ", ("#bpct", "bce_sys"), "% §7P", ("#bphase", "bce_sys"), " §aST§f ", ("@s", "bce_stam"))))
-    F.emit("ui/hud", h, doc="actionbar HUD every 5 ticks. HP = vanilla hearts (commands cannot read health). Text <= ~30 chars for phone widths")
+    F.emit("ui/hud", h, doc="actionbar HUD every 5 ticks. 2s mission page / 2s skill-cooldown page. HP = vanilla hearts (commands cannot read health)")
+    F.emit("ui/cd_page", [
+        "scoreboard players operation @s bce_tmp = @s bce_cddodge", "scoreboard players operation @s bce_tmp += #c19 bce_sys", "scoreboard players operation @s bce_tmp /= #c20 bce_sys",
+        "scoreboard players operation #t1 bce_sys = @s bce_tmp",
+        "scoreboard players operation @s bce_tmp = @s bce_cddash", "scoreboard players operation @s bce_tmp += #c19 bce_sys", "scoreboard players operation @s bce_tmp /= #c20 bce_sys",
+        "scoreboard players operation #t2 bce_sys = @s bce_tmp",
+        "scoreboard players operation @s bce_tmp = @s bce_cdbslash", "scoreboard players operation @s bce_tmp += #c19 bce_sys", "scoreboard players operation @s bce_tmp /= #c20 bce_sys",
+        "scoreboard players operation #t3 bce_sys = @s bce_tmp",
+        "scoreboard players operation @s bce_tmp = @s bce_cdjudge", "scoreboard players operation @s bce_tmp += #c19 bce_sys", "scoreboard players operation @s bce_tmp /= #c20 bce_sys",
+        "titleraw @s actionbar " + jraw("§e회피 ", ("#t1", "bce_sys"), " §b돌진 ", ("#t2", "bce_sys"), " §d참격 ", ("#t3", "bce_sys"), " §6심판 ", ("@s", "bce_tmp")),
+    ], doc="skill cooldown page (seconds, 0 = ready). uses shared fake-player temps; safe because commands run sequentially per player")
     F.emit("ui/shake_on", ["scoreboard players set #shake bce_sys 1", TELL("@s", "화면 흔들림: 켜짐")])
     F.emit("ui/shake_off", ["scoreboard players set #shake bce_sys 0", TELL("@s", "화면 흔들림: 꺼짐")])
     for i, nm in enumerate(["low", "medium", "high"]):
@@ -707,17 +790,23 @@ def ui(F):
 # ---------------------------------------------------------------- admin / debug
 def admin(F, info):
     F.emit("debug/status", [
-        "tellraw @s " + jraw("§e[BCE] 상태 #state=", ("#state", SYS), " 건축 ", ("#bstep", SYS), "/", ("#bstop", SYS), " 모드(0=A,1=B)=", ("#mode", SYS)),
+        "tellraw @s " + jraw("§e[BCE] 상태 #state=", ("#state", SYS), " 건축 ", ("#bstep", SYS), "/", ("#bstop", SYS), " 건축상태 ", ("#bsm", SYS), " 모드(0=A,1=B)=", ("#mode", SYS)),
         "tellraw @s " + jraw("§e[BCE] 퀘스트=", ("@s", "bce_q"), " 체크포인트=", ("@s", "bce_cp"), " 스태미나=", ("@s", "bce_stam"), " 보스상태=", ("#bstate", SYS), " 보스HP=", ("#bhp", SYS))],
         doc="/execute as @s run function debug/status")
     F.emit("debug/tick_probe", ["tellraw @a " + jraw("§7tick ", ("#tick", SYS))])
     F.emit("admin/grant", ["tag @s add bce_admin", TELL("@s", "§c[관리자] 권한 태그 부여 (치트가 켜진 월드에서 /function 으로만 사용)")])
-    F.emit("admin/rebuild_all", ["scoreboard players set #bstep bce_sys 0", "scoreboard players set #bstop bce_sys %d" % info["total"],
-                                 "scoreboard players set #state bce_sys 3", TELL("@a", "§e[BCE] 전체 맵을 다시 건축합니다.")])
+    F.emit("admin/rebuild_all", ["function build/start", TELL("@a", "§e[BCE] 전체 맵을 다시 건축합니다.")])
+    F.emit("admin/build_structures", ["function build/start_structures", TELL("@a", "§e[BCE] 구조물(.mcstructure) 방식으로 건축합니다.")])
+    F.emit("admin/build_pause", ["function build/pause"]); F.emit("admin/build_resume", ["function build/resume"])
+    F.emit("admin/build_status", ["function build/status"]); F.emit("admin/build_recover", ["function build/recover"])
+    F.emit("admin/combat_reset", ["scoreboard players set @s bce_combo 0", "scoreboard players set @s bce_cwin 0", "scoreboard players set @s bce_iframe 0", "tag @s remove bce_iframe",
+                                  "scoreboard players set @s bce_ultt 0", "scoreboard players set @s bce_cdslash 0", "scoreboard players set @s bce_cddodge 0",
+                                  "scoreboard players set @s bce_cddash 0", "scoreboard players set @s bce_cdbslash 0", "scoreboard players set @s bce_cdjudge 0", "scoreboard players set @s bce_cdult 0",
+                                  "function bosses/reset"], doc="reset combat state of the executor and the boss fight")
     for z in range(5):
         a, b = info["zones"][z]
-        F.emit("admin/rebuild_z%d" % z, ["scoreboard players set #bstep bce_sys %d" % a, "scoreboard players set #bstop bce_sys %d" % b,
-                                        "scoreboard players set #state bce_sys 3", TELL("@a", "§e[BCE] 구역 %d (%s) 재건축" % (z, L.ZNAME[z]))])
+        F.emit("admin/rebuild_z%d" % z, ["scoreboard players set #bstart bce_sys %d" % a, "scoreboard players set #bstep bce_sys %d" % a, "scoreboard players set #bstop bce_sys %d" % b,
+                                        "scoreboard players set #bsm bce_sys 1", "scoreboard players set #berr bce_sys 0", "scoreboard players set #bwait bce_sys 0", "scoreboard players set #state bce_sys 3", TELL("@a", "§e[BCE] 구역 %d (%s) 재건축" % (z, L.ZNAME[z]))])
         F.emit("admin/tp_z%d" % z, ["tp @s %d 102 0" % (L.CX[z] if z else 0)])
     for n in range(1, 9):
         F.emit("admin/set_quest_%d" % n, ["scoreboard players set @s bce_q %d" % n, "execute if score @s bce_ps matches ..1 run scoreboard players set @s bce_ps 3"])
@@ -729,7 +818,7 @@ def admin(F, info):
                                 "execute if score #bstate bce_sys matches 1 run function bosses/begin"], doc="test: summon boss and start immediately (stand in the arena)")
     F.emit("admin/end_boss", ["function bosses/reset"])
     F.emit("admin/cleanup", ["kill @e[tag=bce_enemy]", "kill @e[type=arrow]", "kill @e[type=item]", TELL("@a", "§7[BCE] 임시 엔티티를 정리했습니다.")])
-    for s, nm in [("opening", "opening"), ("boss_intro", "boss"), ("boss_death", "death"), ("ending", "ending")]:
+    for s, nm in [("opening", "opening"), ("boss_intro", "boss"), ("boss_death", "death"), ("ending", "ending"), ("q4_intro", "q4"), ("q6_intro", "q6"), ("q7_intro", "q7")]:
         F.emit("admin/cutscene_" + nm, ["function cutscenes/%s/start" % s], doc="test (as player)")
     for n in L.CHECKPOINTS:
         F.emit("admin/goto_cp%d" % n, ["tp @s %s %d %s" % (L.CHECKPOINTS[n][1][0], L.CHECKPOINTS[n][1][1], L.CHECKPOINTS[n][1][2])])

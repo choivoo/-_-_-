@@ -1,6 +1,6 @@
 # BCE pure-command export: bootstrap/01_install
 # 1st line = REPEATING command block (always active). all others = CHAIN blocks (always active, unconditional), placed in order.
-# One command per line. Total: 50
+# One command per line. Total: 61
 
 0001  scoreboard objectives add bce_sys dummy
 0002  scoreboard objectives add bce_stam dummy
@@ -18,37 +18,48 @@
 0014  scoreboard objectives add bce_ps dummy
 0015  scoreboard objectives add bce_cs dummy
 0016  scoreboard objectives add bce_cst dummy
-0017  scoreboard objectives add bce_ai dummy
-0018  scoreboard objectives add bce_aitm dummy
-0019  gamerule domobspawning false
-0020  gamerule mobgriefing false
-0021  gamerule keepinventory true
-0022  gamerule doimmediaterespawn true
-0023  gamerule dodaylightcycle false
-0024  gamerule doweathercycle false
-0025  gamerule commandblockoutput false
-0026  gamerule sendcommandfeedback false
-0027  gamerule showcoordinates true
-0028  gamerule pvp false
-0029  gamerule tntexplodes false
-0030  gamerule doinsomnia false
-0031  gamerule domobloot false
-0032  gamerule maxcommandchainlength 65535
-0033  difficulty normal
-0034  time set 18000
-0035  weather clear
-0036  execute unless score #c2 bce_sys matches -2147483648..2147483647 run scoreboard players set #c2 bce_sys 2
-0037  execute unless score #c5 bce_sys matches -2147483648..2147483647 run scoreboard players set #c5 bce_sys 5
-0038  execute unless score #c10 bce_sys matches -2147483648..2147483647 run scoreboard players set #c10 bce_sys 10
-0039  execute unless score #c20 bce_sys matches -2147483648..2147483647 run scoreboard players set #c20 bce_sys 20
-0040  execute unless score #regen bce_sys matches -2147483648..2147483647 run scoreboard players set #regen bce_sys 2
-0041  execute unless score #regen_c bce_sys matches -2147483648..2147483647 run scoreboard players set #regen_c bce_sys 1
-0042  execute unless score #cost_dodge bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_dodge bce_sys 25
-0043  execute unless score #cost_heavy bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_heavy bce_sys 20
-0044  execute unless score #cost_ult bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_ult bce_sys 30
-0045  execute unless score #quality bce_sys matches -2147483648..2147483647 run scoreboard players set #quality bce_sys 1
-0046  execute unless score #shake bce_sys matches -2147483648..2147483647 run scoreboard players set #shake bce_sys 1
-0047  execute unless score #mode bce_sys matches -2147483648..2147483647 run scoreboard players set #mode bce_sys 0
-0048  execute unless score #bhp bce_sys matches -2147483648..2147483647 run scoreboard players set #bhp bce_sys 1000
-0049  execute unless score #bstate bce_sys matches -2147483648..2147483647 run scoreboard players set #bstate bce_sys 0
-0050  execute unless score #started bce_sys matches -2147483648..2147483647 run scoreboard players set #started bce_sys 0
+0017  scoreboard objectives add bce_cddash dummy
+0018  scoreboard objectives add bce_cdbslash dummy
+0019  scoreboard objectives add bce_cdjudge dummy
+0020  scoreboard objectives add bce_ultt dummy
+0021  scoreboard objectives add bce_tmp dummy
+0022  scoreboard objectives add bce_ai dummy
+0023  scoreboard objectives add bce_aitm dummy
+0024  gamerule domobspawning false
+0025  gamerule mobgriefing false
+0026  gamerule keepinventory true
+0027  gamerule doimmediaterespawn true
+0028  gamerule dodaylightcycle false
+0029  gamerule doweathercycle false
+0030  gamerule commandblockoutput false
+0031  gamerule sendcommandfeedback false
+0032  gamerule showcoordinates true
+0033  gamerule pvp false
+0034  gamerule tntexplodes false
+0035  gamerule doinsomnia false
+0036  gamerule domobloot false
+0037  gamerule maxcommandchainlength 65535
+0038  difficulty normal
+0039  time set 18000
+0040  weather clear
+0041  execute unless score #c2 bce_sys matches -2147483648..2147483647 run scoreboard players set #c2 bce_sys 2
+0042  execute unless score #c5 bce_sys matches -2147483648..2147483647 run scoreboard players set #c5 bce_sys 5
+0043  execute unless score #c10 bce_sys matches -2147483648..2147483647 run scoreboard players set #c10 bce_sys 10
+0044  execute unless score #c20 bce_sys matches -2147483648..2147483647 run scoreboard players set #c20 bce_sys 20
+0045  execute unless score #regen bce_sys matches -2147483648..2147483647 run scoreboard players set #regen bce_sys 2
+0046  execute unless score #regen_c bce_sys matches -2147483648..2147483647 run scoreboard players set #regen_c bce_sys 1
+0047  execute unless score #cost_dodge bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_dodge bce_sys 25
+0048  execute unless score #cost_heavy bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_heavy bce_sys 20
+0049  execute unless score #cost_ult bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_ult bce_sys 30
+0050  execute unless score #cost_dash bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_dash bce_sys 15
+0051  execute unless score #cost_bslash bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_bslash bce_sys 25
+0052  execute unless score #cost_judge bce_sys matches -2147483648..2147483647 run scoreboard players set #cost_judge bce_sys 50
+0053  execute unless score #c19 bce_sys matches -2147483648..2147483647 run scoreboard players set #c19 bce_sys 19
+0054  execute unless score #c100 bce_sys matches -2147483648..2147483647 run scoreboard players set #c100 bce_sys 100
+0055  execute unless score #c4 bce_sys matches -2147483648..2147483647 run scoreboard players set #c4 bce_sys 4
+0056  execute unless score #quality bce_sys matches -2147483648..2147483647 run scoreboard players set #quality bce_sys 1
+0057  execute unless score #shake bce_sys matches -2147483648..2147483647 run scoreboard players set #shake bce_sys 1
+0058  execute unless score #mode bce_sys matches -2147483648..2147483647 run scoreboard players set #mode bce_sys 0
+0059  execute unless score #bhp bce_sys matches -2147483648..2147483647 run scoreboard players set #bhp bce_sys 1000
+0060  execute unless score #bstate bce_sys matches -2147483648..2147483647 run scoreboard players set #bstate bce_sys 0
+0061  execute unless score #started bce_sys matches -2147483648..2147483647 run scoreboard players set #started bce_sys 0

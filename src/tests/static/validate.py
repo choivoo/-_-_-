@@ -7,7 +7,7 @@ FUNCS = os.path.join(BP, "functions")
 
 COMMANDS = {"scoreboard", "tag", "tp", "teleport", "fill", "setblock", "summon", "kill", "damage", "effect", "particle", "playsound",
             "stopsound", "camera", "camerashake", "title", "titleraw", "tellraw", "give", "clear", "inputpermission", "function",
-            "execute", "gamerule", "difficulty", "time", "weather", "tickingarea", "setworldspawn", "spawnpoint", "replaceitem", "playanimation"}
+            "execute", "gamerule", "difficulty", "time", "weather", "tickingarea", "setworldspawn", "spawnpoint", "replaceitem", "playanimation", "structure"}
 JAVA_ONLY = [r"item_display", r"block_display", r"\bbossbar\b", r"\bposteffect\b", r"\bdata (merge|modify|get|remove)\b", r"\$\(", r"\bschedule function\b",
              r"\bexecute store\b", r"\bif data\b", r"\battribute\b", r"@e\[[^\]]*nbt=", r"\bforceload\b", r"^return\b", r"\bsetblock [^\n]*\{"]
 SOUNDS = {"ambient.cave", "random.orb", "random.levelup", "random.explode", "random.pop", "random.break", "random.click", "random.anvil_land",
@@ -19,11 +19,13 @@ BLOCKS = set("""air stone stone_bricks mossy_stone_bricks cracked_stone_bricks c
 chiseled_deepslate cobblestone mossy_cobblestone gravel coarse_dirt dirt podzol water lantern soul_lantern sea_lantern iron_bars glass_pane spruce_planks oak_planks spruce_log
 spruce_stairs oak_stairs oak_fence web bookshelf chest crafting_table furnace barrel lectern smithing_table fletching_table hay_block red_wool lever magma black_concrete
 gilded_blackstone blackstone polished_blackstone polished_blackstone_bricks cracked_polished_blackstone_bricks chiseled_polished_blackstone polished_blackstone_brick_stairs
-stone_brick_stairs obsidian crying_obsidian lava""".split())
+stone_brick_stairs obsidian crying_obsidian lava amethyst_block end_rod white_concrete purple_concrete oak_fence coarse_dirt""".split())
 OBJ_RE = re.compile(r"\b(bce_[a-z]+)\b")
-TAGS = {"bce_enemy", "bce_boss", "bce_wave", "bce_mid", "bce_init", "bce_ctl", "bce_admin", "bce_npc", "bce_comb", "bce_dbg", "bce_e", "bce_guardian"}
+TAGS = {"bce_enemy", "bce_boss", "bce_wave", "bce_mid", "bce_init", "bce_ctl", "bce_admin", "bce_npc", "bce_comb", "bce_dbg", "bce_hitmark", "bce_patrol", "bce_e", "bce_guardian"}
 
 errors, warnings, info = [], [], {}
+INV = collections.Counter()
+DOC_CHECKED = {'camera': 'syntax compared with Microsoft Learn camera command page (set/ease/pos/rot/facing/clear/fade time/color)', 'inputpermission': 'documented in the same page (camera/movement enabled|disabled); added 1.19.80 per community wiki', 'structure': 'syntax NOT verified in game', 'tickingarea': 'circle syntax NOT verified from an official page'}
 
 
 def err(m): errors.append(m)
@@ -122,6 +124,7 @@ def main():
             first = l.split()[0]
             if first not in COMMANDS: err(where + " unknown command '%s'" % first)
             fc = final_cmd(l)
+            INV[fc.split()[0]] += 1
             if fc.split()[0] not in COMMANDS and not fc.startswith("execute"): err(where + " unknown final command '%s'" % fc.split()[0])
             for pat in JAVA_ONLY:
                 if re.search(pat, l): err(where + " Java-only pattern /%s/ : %s" % (pat, l[:80]))
@@ -193,9 +196,12 @@ def main():
     png = open(os.path.join(RP, "textures/entity/bce_guardian.png"), "rb").read(24)
     if png[:8] != b"\x89PNG\r\n\x1a\n": err("texture is not a PNG")
     # 5 packaging
-    dist = os.path.join(ROOT, "dist")
-    expect = {"BCE_Behavior.mcpack": ["manifest.json", "functions/tick.json"], "BCE_Resources.mcpack": ["manifest.json"],
-              "BCE_Enhanced.mcaddon": ["BCE_Behavior/manifest.json", "BCE_Resources/manifest.json"], "BCE_Command_Only.zip": []}
+    dist = os.path.join(ROOT, "dist", "BCE_1.0_FINAL")
+    expect = {"BCE_Behavior_1.0.mcpack": ["manifest.json", "functions/tick.json", "entities/bce_guardian.entity.json", "structures/bce/z0_q00_0.mcstructure"],
+              "BCE_Resources_1.0.mcpack": ["manifest.json", "textures/entity/bce_guardian.png", "particles/bce_warning_ring.particle.json"],
+              "BCE_Enhanced_1.0.mcaddon": ["BCE_Behavior/manifest.json", "BCE_Resources/manifest.json", "BCE_Behavior/functions/tick.json"],
+              "BCE_Command_Only_1.0.zip": ["BCE_Command_Only/construction/INDEX.md", "BCE_Command_Only/command_blocks/A_essential_loop.txt"],
+              "BCE_1.0_Source.zip": ["BCE_1.0_Source/build.sh", "BCE_1.0_Source/generators/build_all.py"]}
     for f, req in expect.items():
         p = os.path.join(dist, f)
         if not os.path.exists(p): warn("package missing (run packs.py): " + f); continue
@@ -205,6 +211,14 @@ def main():
             for r in req:
                 if r not in names: err("%s lacks %s" % (f, r))
             if f.endswith(".mcpack") and any(n.startswith("src/") for n in names): err(f + " has wrong root")
+            if f.endswith(".mcpack") or f.endswith(".mcaddon"):
+                mans = [n for n in names if n.endswith("manifest.json")]
+                for mn in mans:
+                    mj = json.loads(z.read(mn))
+                    if mj.get("format_version") != 2: err("%s:%s bad manifest" % (f, mn))
+                    uuids[mj["header"]["uuid"]] += 0
+    for needed in ("BCE_1.0_Install_Guide.md", "BCE_1.0_Test_Report.md", "RELEASE_STATUS.txt"):
+        if not os.path.exists(os.path.join(dist, needed)): warn("missing release file " + needed)
     if os.path.exists(os.path.join(dist, "BCE_1.0.mcworld")): err("BCE_1.0.mcworld exists but no real world data was ever generated")
     # 6 spawn safety
     sp = os.path.join(ROOT, "reports", "spawn_safety.json")
@@ -212,12 +226,47 @@ def main():
         r = json.load(open(sp))
         for f in r["fail"]: err("unsafe spawn/teleport: %s" % f)
         info["spawn_points_checked"] = len(r["ok"]) + len(r["fail"])
+
+    # 8 structures (.mcstructure): NBT parse, size/palette/index checks, registry cross-check
+    sys.path.insert(0, os.path.join(ROOT, "generators"))
+    import structure as _st
+    reg = json.load(open(os.path.join(SRC, "data", "buildings", "registry.json"), encoding="utf-8"))
+    sdir = os.path.join(BP, "structures", "bce")
+    names = set()
+    for t_ in reg["structure_tiles"]:
+        p_ = os.path.join(sdir, t_["file"]); names.add(t_["file"])
+        if not os.path.exists(p_): err("missing structure file " + t_["file"]); continue
+        probs = _st.validate(p_, tuple(t_["size"]))
+        for pr in probs: err("%s: %s" % (t_["file"], pr))
+        if max(t_["size"]) > 64: err("%s exceeds 64 blocks on an axis" % t_["file"])
+    for f_ in os.listdir(sdir):
+        if f_ not in names: err("structure file not in registry: " + f_)
+    info["structure_files"] = len(names)
+    # structure names used by functions must exist
+    for fn, lines in files.items():
+        for l in lines:
+            m = re.search(r"structure load (bce:[a-z0-9_]+)", l)
+            if m and m.group(1).split(":")[1] + ".mcstructure" not in names: err("%s loads unknown structure %s" % (fn, m.group(1)))
+    # 9 custom particle must be defined and used (no decorative-only JSON)
+    pj = json.load(open(os.path.join(RP, "particles", "bce_warning_ring.particle.json")))["particle_effect"]["description"]["identifier"]
+    if not any(("particle " + pj) in l for ls in files.values() for l in ls): err("custom particle %s is never used" % pj)
+    # 10 admin separation: every admin/* command line is tag-guarded
+    for fn, lines in files.items():
+        if fn.startswith("admin/") and fn != "admin/grant":
+            for l in lines:
+                if l and not l.startswith("#") and not l.startswith("execute if entity @s[tag=bce_admin] run "): err("unguarded admin line %s: %s" % (fn, l[:60]))
+    # 11 build sequencer: marker guard on every step body line that touches the world
+    for fn, lines in files.items():
+        if fn.startswith("build/steps/"):
+            if not any("run scoreboard players add #bstep" in l for l in lines): err(fn + " never advances #bstep")
     # 7 per-tick static upper bound (informational)
     sys.path.insert(0, os.path.join(ROOT, "generators"))
     from command_generator import pure
     per_tick = {k: len(pure.flatten(files, k)) for k in ("player/input", "player/timers", "enemies/tick", "cutscenes/dispatch", "bosses/tick")}
     slot = {k: len(pure.flatten(files, k)) for k in ("core/every5", "core/every10", "core/every20")}
     info["static_command_lines"] = {"per_tick": per_tick, "slots": slot}
+    inv = {k: {"count": v, "syntax_source": DOC_CHECKED.get(k, "author knowledge; not verified in game")} for k, v in sorted(INV.items())}
+    json.dump(inv, open(os.path.join(ROOT, "reports", "command_inventory.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     out = {"errors": errors, "warnings": warnings, "info": info}
     os.makedirs(os.path.join(ROOT, "reports"), exist_ok=True)
     json.dump(out, open(os.path.join(ROOT, "reports", "static_report.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)

@@ -1,0 +1,4 @@
+STATUS: RELEASE_CANDIDATE (not 'FINAL VERIFIED')
+GATE G (real-device Android/iOS Bedrock test) has NOT been executed.
+No .mcworld is included: no real Bedrock world save could be generated in this environment.
+Folder name follows the project spec; see BCE_1.0_Test_Report.md for what was and was not verified.

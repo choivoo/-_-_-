@@ -9,3 +9,4 @@ clear @s nether_star
 give @s nether_star
 tellraw @s {"rawtext":[{"text":"§b[해금] §f네더의 별=충격파(스태미나 30)"}]}
 tellraw @s {"rawtext":[{"text":"§e[다음 임무] §f유적의 장치를 작동하다"}]}
+tellraw @s {"rawtext":[{"text":"§e[목적지] §f가라앉은 유적(x≈164) 지하로 내려가 레버 3개를 [켜짐-꺼짐-켜짐]으로 맞추세요. 벽의 등불이 힌트입니다."}]}

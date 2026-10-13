@@ -1,0 +1,403 @@
+# 구역 1 잿빛 마을 — 단계 ground (1/2). 중심 x=100 z=0, 사전 조건: 해당 구역 청크 로드(/tickingarea add circle 100 100 0 4 bce_z1)
+# 재건축: 구역 0번 단계부터 다시 실행. 초기화(지우기): /fill 60 100 -40 139 140 39 air (여러 번에 나눠서)
+
+fill 60 80 -40 99 98 -1 stone
+fill 60 80 0 99 98 39 stone
+fill 100 80 -40 139 98 -1 stone
+fill 100 80 0 139 98 39 stone
+fill 60 99 -40 139 99 39 coarse_dirt
+fill 60 100 -40 139 104 39 air
+fill 60 105 -40 139 109 39 air
+fill 60 110 -40 139 114 39 air
+fill 60 115 -40 139 119 39 air
+fill 60 120 -40 139 124 39 air
+fill 60 125 -40 139 129 39 air
+fill 60 130 -40 139 134 39 air
+fill 60 135 -40 139 139 39 air
+fill 60 99 -2 139 99 2 gravel
+fill 98 99 -40 102 99 39 gravel
+fill 91 99 -9 109 99 9 cobblestone
+fill 92 99 -8 108 99 8 stone_bricks
+fill 94 99 -6 106 99 6 polished_andesite
+fill 119 99 -32 122 99 -30 dirt replace coarse_dirt
+fill 135 99 -21 137 99 -20 dirt replace coarse_dirt
+fill 130 99 5 132 99 8 podzol replace coarse_dirt
+fill 88 99 -37 91 99 -36 podzol replace coarse_dirt
+fill 66 99 -10 69 99 -10 dirt replace coarse_dirt
+fill 129 99 -23 131 99 -20 stone replace coarse_dirt
+fill 68 99 5 69 99 6 stone replace coarse_dirt
+fill 121 99 -33 121 99 -31 podzol replace coarse_dirt
+fill 100 99 34 100 99 34 podzol replace coarse_dirt
+fill 75 99 -23 78 99 -22 dirt replace coarse_dirt
+fill 87 99 31 87 99 31 podzol replace coarse_dirt
+fill 80 99 -21 82 99 -20 podzol replace coarse_dirt
+fill 131 99 34 132 99 35 podzol replace coarse_dirt
+fill 118 99 2 118 99 4 podzol replace coarse_dirt
+fill 81 99 11 83 99 14 stone replace coarse_dirt
+fill 113 99 -20 114 99 -20 dirt replace coarse_dirt
+fill 63 99 24 64 99 26 gravel replace coarse_dirt
+fill 87 99 16 90 99 17 gravel replace coarse_dirt
+fill 81 99 -36 82 99 -34 stone replace coarse_dirt
+fill 83 99 14 85 99 16 stone replace coarse_dirt
+fill 135 99 -18 136 99 -17 podzol replace coarse_dirt
+fill 88 99 15 90 99 15 stone replace coarse_dirt
+fill 77 99 -28 78 99 -26 stone replace coarse_dirt
+fill 101 99 16 104 99 16 dirt replace coarse_dirt
+fill 79 99 6 81 99 7 stone replace coarse_dirt
+fill 91 99 11 91 99 12 dirt replace coarse_dirt
+fill 114 99 -38 114 99 -35 gravel replace coarse_dirt
+fill 78 99 29 78 99 29 podzol replace coarse_dirt
+fill 72 99 31 72 99 31 dirt replace coarse_dirt
+fill 121 99 0 124 99 3 podzol replace coarse_dirt
+fill 71 99 -8 71 99 -7 stone replace coarse_dirt
+fill 117 99 28 120 99 28 podzol replace coarse_dirt
+fill 72 99 -32 72 99 -29 gravel replace coarse_dirt
+fill 115 99 3 115 99 6 podzol replace coarse_dirt
+fill 99 99 0 99 99 3 gravel replace coarse_dirt
+fill 124 99 22 124 99 22 podzol replace coarse_dirt
+fill 75 99 5 76 99 7 dirt replace coarse_dirt
+fill 135 99 -10 137 99 -10 gravel replace coarse_dirt
+fill 69 99 26 70 99 28 gravel replace coarse_dirt
+fill 93 99 5 95 99 8 dirt replace coarse_dirt
+fill 116 99 3 117 99 5 podzol replace coarse_dirt
+fill 113 99 37 115 99 37 podzol replace coarse_dirt
+fill 78 99 -17 79 99 -16 gravel replace coarse_dirt
+fill 87 99 -38 87 99 -37 stone replace coarse_dirt
+fill 99 99 31 101 99 34 stone replace coarse_dirt
+fill 91 99 23 94 99 24 dirt replace coarse_dirt
+fill 81 99 -15 81 99 -13 dirt replace coarse_dirt
+fill 83 99 -5 84 99 -3 gravel replace coarse_dirt
+fill 109 99 2 111 99 5 podzol replace coarse_dirt
+fill 126 99 -17 127 99 -16 dirt replace coarse_dirt
+fill 85 99 -3 87 99 -2 podzol replace coarse_dirt
+fill 122 99 12 124 99 15 stone replace coarse_dirt
+fill 81 99 -15 83 99 -13 dirt replace coarse_dirt
+fill 108 99 -9 110 99 -7 podzol replace coarse_dirt
+fill 62 99 15 64 99 15 dirt replace coarse_dirt
+fill 129 99 6 129 99 6 podzol replace coarse_dirt
+fill 119 99 25 120 99 26 dirt replace coarse_dirt
+fill 126 99 2 126 99 2 gravel replace coarse_dirt
+fill 69 99 -35 71 99 -34 gravel replace coarse_dirt
+fill 133 99 35 133 99 36 stone replace coarse_dirt
+fill 124 99 30 126 99 32 stone replace coarse_dirt
+fill 65 99 0 67 99 2 gravel replace coarse_dirt
+fill 126 99 -38 127 99 -35 podzol replace coarse_dirt
+fill 131 99 2 134 99 5 dirt replace coarse_dirt
+fill 101 99 12 104 99 12 stone replace coarse_dirt
+fill 80 99 -7 82 99 -4 dirt replace coarse_dirt
+fill 118 99 -18 120 99 -15 podzol replace coarse_dirt
+fill 124 99 26 127 99 27 stone replace coarse_dirt
+fill 129 99 8 130 99 11 dirt replace coarse_dirt
+fill 89 99 23 90 99 26 dirt replace coarse_dirt
+fill 60 100 -39 60 100 -39 stone
+fill 60 101 -39 60 101 -39 coarse_dirt
+fill 68 100 -39 68 100 -39 coarse_dirt
+fill 69 100 -39 75 100 -39 stone
+fill 69 101 -39 75 101 -39 coarse_dirt
+fill 76 100 -39 77 101 -39 stone
+fill 76 102 -39 77 102 -39 coarse_dirt
+fill 78 100 -39 79 102 -39 stone
+fill 78 103 -39 79 103 -39 coarse_dirt
+fill 80 100 -39 80 101 -39 stone
+fill 80 102 -39 80 102 -39 coarse_dirt
+fill 81 100 -39 82 100 -39 stone
+fill 81 101 -39 82 101 -39 coarse_dirt
+fill 83 100 -39 84 100 -39 coarse_dirt
+fill 91 100 -39 91 100 -39 coarse_dirt
+fill 92 100 -39 93 100 -39 stone
+fill 92 101 -39 93 101 -39 coarse_dirt
+fill 94 100 -39 94 100 -39 coarse_dirt
+fill 95 100 -39 95 100 -39 stone
+fill 95 101 -39 95 101 -39 coarse_dirt
+fill 96 100 -39 96 101 -39 stone
+fill 96 102 -39 96 102 -39 coarse_dirt
+fill 97 100 -39 98 102 -39 stone
+fill 97 103 -39 98 103 -39 coarse_dirt
+fill 99 100 -39 100 101 -39 stone
+fill 99 102 -39 100 102 -39 coarse_dirt
+fill 101 100 -39 101 100 -39 stone
+fill 101 101 -39 101 101 -39 coarse_dirt
+fill 102 100 -39 102 100 -39 coarse_dirt
+fill 103 100 -39 104 100 -39 stone
+fill 103 101 -39 104 101 -39 coarse_dirt
+fill 105 100 -39 105 100 -39 coarse_dirt
+fill 106 100 -39 110 100 -39 stone
+fill 106 101 -39 110 101 -39 coarse_dirt
+fill 111 100 -39 114 100 -39 coarse_dirt
+fill 115 100 -39 117 100 -39 stone
+fill 115 101 -39 117 101 -39 coarse_dirt
+fill 118 100 -39 119 100 -39 coarse_dirt
+fill 120 100 -39 121 100 -39 stone
+fill 120 101 -39 121 101 -39 coarse_dirt
+fill 122 100 -39 125 101 -39 stone
+fill 122 102 -39 125 102 -39 coarse_dirt
+fill 126 100 -39 126 100 -39 stone
+fill 126 101 -39 126 101 -39 coarse_dirt
+fill 130 100 -39 131 100 -39 coarse_dirt
+fill 132 100 -39 133 100 -39 stone
+fill 132 101 -39 133 101 -39 coarse_dirt
+fill 134 100 -39 135 101 -39 stone
+fill 134 102 -39 135 102 -39 coarse_dirt
+fill 136 100 -39 137 100 -39 stone
+fill 136 101 -39 137 101 -39 coarse_dirt
+fill 138 100 -39 139 100 -39 coarse_dirt
+fill 67 100 -38 68 100 -38 coarse_dirt
+fill 69 100 -38 70 100 -38 stone
+fill 69 101 -38 70 101 -38 coarse_dirt
+fill 71 100 -38 71 100 -38 coarse_dirt
+fill 72 100 -38 74 100 -38 stone
+fill 72 101 -38 74 101 -38 coarse_dirt
+fill 75 100 -38 76 101 -38 stone
+fill 75 102 -38 76 102 -38 coarse_dirt
+fill 77 100 -38 79 102 -38 stone
+fill 77 103 -38 79 103 -38 coarse_dirt
+fill 80 100 -38 80 101 -38 stone
+fill 80 102 -38 80 102 -38 coarse_dirt
+fill 81 100 -38 81 100 -38 stone
+fill 81 101 -38 81 101 -38 coarse_dirt
+fill 82 100 -38 87 100 -38 coarse_dirt
+fill 91 100 -38 91 100 -38 coarse_dirt
+fill 92 100 -38 95 100 -38 stone
+fill 92 101 -38 95 101 -38 coarse_dirt
+fill 96 100 -38 96 101 -38 stone
+fill 96 102 -38 96 102 -38 coarse_dirt
+fill 97 100 -38 99 102 -38 stone
+fill 97 103 -38 99 103 -38 coarse_dirt
+fill 100 100 -38 100 101 -38 stone
+fill 100 102 -38 100 102 -38 coarse_dirt
+fill 101 100 -38 106 100 -38 stone
+fill 101 101 -38 106 101 -38 coarse_dirt
+fill 107 100 -38 108 101 -38 stone
+fill 107 102 -38 108 102 -38 coarse_dirt
+fill 109 100 -38 114 100 -38 stone
+fill 109 101 -38 114 101 -38 coarse_dirt
+fill 115 100 -38 116 101 -38 stone
+fill 115 102 -38 116 102 -38 coarse_dirt
+fill 117 100 -38 118 100 -38 stone
+fill 117 101 -38 118 101 -38 coarse_dirt
+fill 119 100 -38 121 100 -38 coarse_dirt
+fill 122 100 -38 122 100 -38 stone
+fill 122 101 -38 122 101 -38 coarse_dirt
+fill 123 100 -38 124 101 -38 stone
+fill 123 102 -38 124 102 -38 coarse_dirt
+fill 125 100 -38 126 100 -38 stone
+fill 125 101 -38 126 101 -38 coarse_dirt
+fill 127 100 -38 127 100 -38 coarse_dirt
+fill 131 100 -38 131 100 -38 coarse_dirt
+fill 132 100 -38 133 100 -38 stone
+fill 132 101 -38 133 101 -38 coarse_dirt
+fill 134 100 -38 137 101 -38 stone
+fill 134 102 -38 137 102 -38 coarse_dirt
+fill 138 100 -38 139 100 -38 stone
+fill 138 101 -38 139 101 -38 coarse_dirt
+fill 66 100 -37 66 100 -37 coarse_dirt
+fill 67 100 -37 69 100 -37 stone
+fill 67 101 -37 69 101 -37 coarse_dirt
+fill 70 100 -37 70 100 -37 coarse_dirt
+fill 71 100 -37 80 100 -37 stone
+fill 71 101 -37 80 101 -37 coarse_dirt
+fill 81 100 -37 81 100 -37 coarse_dirt
+fill 84 100 -37 85 100 -37 coarse_dirt
+fill 90 100 -37 93 100 -37 coarse_dirt
+fill 94 100 -37 96 100 -37 stone
+fill 94 101 -37 96 101 -37 coarse_dirt
+fill 97 100 -37 99 101 -37 stone
+fill 97 102 -37 99 102 -37 coarse_dirt
+fill 100 100 -37 119 100 -37 stone
+fill 100 101 -37 119 101 -37 coarse_dirt
+fill 120 100 -37 121 100 -37 coarse_dirt
+fill 122 100 -37 126 100 -37 stone
+fill 122 101 -37 126 101 -37 coarse_dirt
+fill 127 100 -37 127 100 -37 coarse_dirt
+fill 131 100 -37 131 100 -37 coarse_dirt
+fill 132 100 -37 139 100 -37 stone
+fill 132 101 -37 139 101 -37 coarse_dirt
+fill 65 100 -36 71 100 -36 coarse_dirt
+fill 72 100 -36 77 100 -36 stone
+fill 72 101 -36 77 101 -36 coarse_dirt
+fill 78 100 -36 82 100 -36 coarse_dirt
+fill 92 100 -36 94 100 -36 coarse_dirt
+fill 95 100 -36 96 100 -36 stone
+fill 95 101 -36 96 101 -36 coarse_dirt
+fill 97 100 -36 97 101 -36 stone
+fill 97 102 -36 97 102 -36 coarse_dirt
+fill 98 100 -36 98 100 -36 stone
+fill 98 101 -36 98 101 -36 coarse_dirt
+fill 99 100 -36 99 101 -36 stone
+fill 99 102 -36 99 102 -36 coarse_dirt
+fill 100 100 -36 100 100 -36 stone
+fill 100 101 -36 100 101 -36 coarse_dirt
+fill 101 100 -36 108 100 -36 coarse_dirt
+fill 109 100 -36 115 100 -36 stone
+fill 109 101 -36 115 101 -36 coarse_dirt
+fill 116 100 -36 132 100 -36 coarse_dirt
+fill 133 100 -36 133 100 -36 stone
+fill 133 101 -36 133 101 -36 coarse_dirt
+fill 134 100 -36 135 101 -36 stone
+fill 134 102 -36 135 102 -36 coarse_dirt
+fill 136 100 -36 139 100 -36 stone
+fill 136 101 -36 139 101 -36 coarse_dirt
+fill 64 100 -35 71 100 -35 coarse_dirt
+fill 72 100 -35 76 100 -35 stone
+fill 72 101 -35 76 101 -35 coarse_dirt
+fill 77 100 -35 79 100 -35 coarse_dirt
+fill 81 100 -35 84 100 -35 coarse_dirt
+fill 93 100 -35 95 100 -35 coarse_dirt
+fill 96 100 -35 99 100 -35 stone
+fill 96 101 -35 99 101 -35 coarse_dirt
+fill 100 100 -35 104 100 -35 coarse_dirt
+fill 106 100 -35 108 100 -35 coarse_dirt
+fill 109 100 -35 113 100 -35 stone
+fill 109 101 -35 113 101 -35 coarse_dirt
+fill 114 100 -35 121 100 -35 coarse_dirt
+fill 127 100 -35 132 100 -35 coarse_dirt
+fill 133 100 -35 139 100 -35 stone
+fill 133 101 -35 139 101 -35 coarse_dirt
+fill 66 100 -34 72 100 -34 coarse_dirt
+fill 73 100 -34 74 100 -34 stone
+fill 73 101 -34 74 101 -34 coarse_dirt
+fill 75 100 -34 76 100 -34 coarse_dirt
+fill 94 100 -34 101 100 -34 coarse_dirt
+fill 107 100 -34 116 100 -34 coarse_dirt
+fill 129 100 -34 136 100 -34 coarse_dirt
+fill 137 100 -34 138 100 -34 stone
+fill 137 101 -34 138 101 -34 coarse_dirt
+fill 139 100 -34 139 100 -34 coarse_dirt
+fill 63 100 -33 76 100 -33 coarse_dirt
+fill 92 100 -33 96 100 -33 coarse_dirt
+fill 100 100 -33 100 100 -33 coarse_dirt
+fill 102 100 -33 115 100 -33 coarse_dirt
+fill 130 100 -33 139 100 -33 coarse_dirt
+fill 68 100 -32 74 100 -32 coarse_dirt
+fill 102 100 -32 105 100 -32 coarse_dirt
+fill 108 100 -32 109 100 -32 coarse_dirt
+fill 131 100 -32 133 100 -32 coarse_dirt
+fill 135 100 -32 135 100 -32 coarse_dirt
+fill 138 100 -32 139 100 -32 coarse_dirt
+fill 94 100 32 104 100 32 coarse_dirt
+fill 128 100 32 128 100 32 coarse_dirt
+fill 138 100 32 139 100 32 coarse_dirt
+fill 60 100 33 61 100 33 coarse_dirt
+fill 73 100 33 75 100 33 coarse_dirt
+fill 77 100 33 78 100 33 coarse_dirt
+fill 85 100 33 90 100 33 coarse_dirt
+fill 93 100 33 105 100 33 coarse_dirt
+fill 127 100 33 129 100 33 coarse_dirt
+fill 131 100 33 131 100 33 coarse_dirt
+fill 137 100 33 139 100 33 coarse_dirt
+fill 60 100 34 62 100 34 coarse_dirt
+fill 73 100 34 74 100 34 coarse_dirt
+fill 83 100 34 94 100 34 coarse_dirt
+fill 95 100 34 98 100 34 stone
+fill 95 101 34 98 101 34 coarse_dirt
+fill 99 100 34 105 100 34 coarse_dirt
+fill 113 100 34 114 100 34 coarse_dirt
+fill 127 100 34 130 100 34 coarse_dirt
+fill 137 100 34 139 100 34 coarse_dirt
+fill 60 100 35 63 100 35 coarse_dirt
+fill 73 100 35 77 100 35 coarse_dirt
+fill 79 100 35 84 100 35 coarse_dirt
+fill 85 100 35 89 100 35 stone
+fill 85 101 35 89 101 35 coarse_dirt
+fill 90 100 35 91 100 35 coarse_dirt
+fill 92 100 35 99 100 35 stone
+fill 92 101 35 99 101 35 coarse_dirt
+fill 100 100 35 106 100 35 coarse_dirt
+fill 110 100 35 117 100 35 coarse_dirt
+fill 127 100 35 137 100 35 coarse_dirt
+fill 138 100 35 139 100 35 stone
+fill 138 101 35 139 101 35 coarse_dirt
+fill 60 100 36 63 100 36 coarse_dirt
+fill 73 100 36 84 100 36 coarse_dirt
+fill 85 100 36 86 100 36 stone
+fill 85 101 36 86 101 36 coarse_dirt
+fill 87 100 36 87 101 36 stone
+fill 87 102 36 87 102 36 coarse_dirt
+fill 88 100 36 93 100 36 stone
+fill 88 101 36 93 101 36 coarse_dirt
+fill 94 100 36 98 101 36 stone
+fill 94 102 36 98 102 36 coarse_dirt
+fill 99 100 36 99 100 36 stone
+fill 99 101 36 99 101 36 coarse_dirt
+fill 100 100 36 112 100 36 coarse_dirt
+fill 113 100 36 113 100 36 stone
+fill 113 101 36 113 101 36 coarse_dirt
+fill 114 100 36 117 100 36 coarse_dirt
+fill 127 100 36 139 100 36 coarse_dirt
+fill 60 100 37 60 100 37 coarse_dirt
+fill 61 100 37 62 100 37 stone
+fill 61 101 37 62 101 37 coarse_dirt
+fill 63 100 37 67 100 37 coarse_dirt
+fill 73 100 37 79 100 37 coarse_dirt
+fill 80 100 37 85 100 37 stone
+fill 80 101 37 85 101 37 coarse_dirt
+fill 86 100 37 88 101 37 stone
+fill 86 102 37 88 102 37 coarse_dirt
+fill 89 100 37 93 100 37 stone
+fill 89 101 37 93 101 37 coarse_dirt
+fill 94 100 37 95 101 37 stone
+fill 94 102 37 95 102 37 coarse_dirt
+fill 96 100 37 99 100 37 stone
+fill 96 101 37 99 101 37 coarse_dirt
+fill 100 100 37 104 100 37 coarse_dirt
+fill 105 100 37 107 100 37 stone
+fill 105 101 37 107 101 37 coarse_dirt
+fill 108 100 37 108 100 37 coarse_dirt
+fill 109 100 37 117 100 37 stone
+fill 109 101 37 117 101 37 coarse_dirt
+fill 118 100 37 118 100 37 coarse_dirt
+fill 120 100 37 120 100 37 coarse_dirt
+fill 128 100 37 133 100 37 stone
+fill 128 101 37 133 101 37 coarse_dirt
+fill 134 100 37 138 100 37 coarse_dirt
+fill 139 100 37 139 100 37 stone
+fill 139 101 37 139 101 37 coarse_dirt
+fill 60 100 38 66 100 38 stone
+fill 60 101 38 66 101 38 coarse_dirt
+fill 67 100 38 67 100 38 coarse_dirt
+fill 73 100 38 77 100 38 coarse_dirt
+fill 79 100 38 79 100 38 coarse_dirt
+fill 80 100 38 84 100 38 stone
+fill 80 101 38 84 101 38 coarse_dirt
+fill 85 100 38 85 101 38 stone
+fill 85 102 38 85 102 38 coarse_dirt
+fill 86 100 38 88 102 38 stone
+fill 86 103 38 88 103 38 coarse_dirt
+fill 89 100 38 95 101 38 stone
+fill 89 102 38 95 102 38 coarse_dirt
+fill 96 100 38 96 100 38 stone
+fill 96 101 38 96 101 38 coarse_dirt
+fill 97 100 38 100 100 38 coarse_dirt
+fill 101 100 38 110 100 38 stone
+fill 101 101 38 110 101 38 coarse_dirt
+fill 111 100 38 114 101 38 stone
+fill 111 102 38 114 102 38 coarse_dirt
+fill 115 100 38 115 100 38 stone
+fill 115 101 38 115 101 38 coarse_dirt
+fill 116 100 38 118 100 38 coarse_dirt
+fill 127 100 38 127 100 38 coarse_dirt
+fill 128 100 38 133 100 38 stone
+fill 128 101 38 133 101 38 coarse_dirt
+fill 134 100 38 139 100 38 coarse_dirt
+fill 60 100 39 64 100 39 stone
+fill 60 101 39 64 101 39 coarse_dirt
+fill 65 100 39 67 100 39 coarse_dirt
+fill 72 100 39 75 100 39 coarse_dirt
+fill 79 100 39 79 100 39 coarse_dirt
+fill 80 100 39 84 100 39 stone
+fill 80 101 39 84 101 39 coarse_dirt
+fill 85 100 39 85 101 39 stone
+fill 85 102 39 85 102 39 coarse_dirt
+fill 86 100 39 88 102 39 stone
+fill 86 103 39 88 103 39 coarse_dirt
+fill 89 100 39 89 101 39 stone
+fill 89 102 39 89 102 39 coarse_dirt
+fill 90 100 39 93 100 39 stone
+fill 90 101 39 93 101 39 coarse_dirt
+fill 94 100 39 94 101 39 stone
+fill 94 102 39 94 102 39 coarse_dirt
+fill 95 100 39 95 100 39 stone
+fill 95 101 39 95 101 39 coarse_dirt
+fill 96 100 39 99 100 39 coarse_dirt
+fill 100 100 39 101 100 39 stone
+fill 100 101 39 101 101 39 coarse_dirt
